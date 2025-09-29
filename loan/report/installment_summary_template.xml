@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="installment_summary_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>
+                            <center>
+                                <span t-esc="doc.seq_num"/>
+                            </center>
+                        </h2>
+                        <p>
+                            <![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]]></p>
+
+                        <div class="oe_structure"/>
+                        <div class="row">
+                            <div class="col-6">
+                                <strong>Customer :<![CDATA[&nbsp;&nbsp;]]></strong>
+                                <strong t-esc=" doc.name.name"/>
+                                <br/>
+                                <br/>
+                                <strong>Loan Amount :<![CDATA[&nbsp;&nbsp;]]></strong>
+                                <strong t-esc=" doc.loan_amount"/>
+                            </div>
+                            <div class="col-6">
+                                <strong>Request Date :<![CDATA[&nbsp;&nbsp;]]></strong>
+                                <strong t-esc=" doc.request_date"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+
+                            </div>
+                            <div class="col-6">
+                                <strong>Loan Type :<![CDATA[&nbsp;&nbsp;]]></strong>
+                                <strong t-esc=" doc.loan_type.name"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+
+                            </div>
+                            <div class="col-6">
+                                <strong>Installment Type :<![CDATA[&nbsp;&nbsp;]]></strong>
+                                <strong t-esc=" doc.installment_type"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+
+                            </div>
+                            <div class="col-6">
+                                <strong>Loan Term :<![CDATA[&nbsp;&nbsp;]]></strong>
+                                <strong t-esc=" doc.loan_term"/>
+                            </div>
+                        </div>
+                        <div>
+                            <p>
+                                <![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]]></p>
+                            <div class="row">
+                                <div class="col-6">
+                                    <strong>APR :<![CDATA[&nbsp;&nbsp;]]></strong>
+                                    <strong t-esc=" doc.apr * 100"/>
+                                    <span>%</span>
+                                </div>
+                                <div class="col-6">
+                                    <strong>Interest Amount Month :<![CDATA[&nbsp;&nbsp;]]></strong>
+                                    <strong t-esc=" doc.rate_per_month * 100"/>
+                                    <span>%</span>
+                                </div>
+                                <div class="col-6">
+                                    <strong>Interest Amount Month :<![CDATA[&nbsp;&nbsp;]]></strong>
+                                    <strong t-esc=" doc.rate_per_month"/>
+                                    <span>%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <!--                            <div class="col-6">-->
+                            <!--                                <strong>Monthly interest amount :<![CDATA[&nbsp;&nbsp;]]></strong>-->
+                            <!--                                <strong t-esc=" doc.interest_amount_month"/>-->
+                            <!--                                <span>SR</span>-->
+                            <!--                            </div>-->
+
+                        </div>
+                        <p>
+                            <![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]]></p>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Sequence Name</th>
+                                    <th>Date</th>
+                                    <th>Principal Amount</th>
+                                    <th>Interest Amount</th>
+                                    <th>Installment Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-set="total" t-value="0"/>
+                                <tr t-foreach='doc.installment_ids' t-as='line'>
+                                    <td>
+                                        <span t-esc="line.seq_name"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line.date"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line.principal_amount"/>
+                                        <span t-field="doc.currency_id.symbol"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line.interest_amount"/>
+                                        <span t-field="doc.currency_id.symbol"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="line.installment_amount"/>
+                                        <span t-field="doc.currency_id.symbol"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <h2>Total</h2>
+                                    </th>
+                                    <th></th>
+                                    <th>
+                                        <span t-esc="doc.loan_amount" style="color:Red;"/>
+                                        <span t-field="doc.currency_id.symbol"/>
+                                    </th>
+                                    <th>
+                                        <span t-esc="doc.interest_amount" style="color:Red;"/>
+                                        <span t-field="doc.currency_id.symbol"/>
+                                    </th>
+                                    <th>
+                                        <span t-esc="doc.remaining_amount" style="color:Red;"/>
+                                        <span t-field="doc.currency_id.symbol"/>
+                                    </th>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <div class="w-100 row justify-content-between"
+                             style="
+                          text-align: center;
+                          direction: rtl;
+                          color: green;">
+                            <div>
+                                <span>يعتبر هذا الجدول جزء لا يتجزأ من العقد</span>
+                                <span>أقر بالاطلاع الموافقة على كامل التفاصيل اعلاه بالإضافة الى استلامي نسخة من
+                                    جدول
+                                    السداد
+                                </span>
+                            </div>
+                            <br></br>
+                            <br></br>
+                        </div>
+                        <div class="w-100 row justify-content-between"
+                             style="
+                          text-align: right;
+                          direction: rtl;
+                          color: green;">
+                            <div class="col-4 ">
+                                <span></span>
+                                <br></br>
+                                <span>الاسم :
+                                    <span
+                                            t-esc="doc.name.name"/>
+                                </span>
+                                <br></br>
+                                <span>رقم الهوية :
+                                    <span
+                                            t-esc="doc.name.identification_no"/>
+                                </span>
+                                <br></br>
+                                <!--                                <span>التاريخ: .............................</span>-->
+                            </div>
+                            <td>
+                                <![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]]></td>
+
+                            <div class="col-4 ">
+                                <span>لاستخدام شركة فيول للتمويل يقر الموظف بالتأكد من توقيع العميل</span>
+                                <br></br>
+                                <span>اسم الموظف .............................</span>
+                                <br></br>
+                                <span>التوقيع .............................</span>
+                                <br></br>
+                                <span>التاريخ: .............................</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </t>
+            </t>
+        </t>
+    </template>
+    <record id="action_report_installment_loan" model="ir.actions.report">
+        <field name="name">Installment Summary</field>
+        <field name="model">loan.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">loan.installment_summary_template</field>
+        <field name="report_file">loan.installment_summary_template</field>
+        <field name="binding_model_id" ref="model_loan_order"/>
+        <field name="binding_type">report</field>
+    </record>
+    <record id="loan_installment_report" model="ir.actions.report">
+        <field name="name">جدول أقساط</field>
+        <field name="model">loan.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">loan.report_loan_installment</field>
+        <field name="report_file">loan.report_loan_installment</field>
+        <field name="binding_model_id" ref="model_loan_order"/>
+        <field name="groups_id" eval="[(4, ref('loan.group_accounting_move'))]"/>
+        <field name="binding_type">report</field>
+    </record>
+
+
+    <template id="report_loan_installment">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+
+                <t t-call="web.basic_layout">
+                    <div style="width: 100%; display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <div style="flex: 0 0 auto;">
+                            <img src="/loan/static/src/img/logo.png" class="img_fuel_icon" style="max-height: 80px;" />
+                        </div>
+                    </div>
+                    <div class="page" style="direction: rtl;">
+                        <style>
+                            * {
+                            color: #000000 !important;
+                            }
+                            .text-black {
+                            color: #000000 !important;
+                            }
+                            table, tr, th,td {
+                            border:1px solid #538135 !important;
+                            padding: 2px;
+                            }
+                        </style>
+
+                        <h2 style="text-align: center; text-color: #538135; ">جدول أقساط</h2>
+                        <div class="row" style="direction: rtl; text-color: #538135; font-size: 14px; margin-bottom: 10px;">
+
+                            <div class="col-8" style="text-align: right;width: 50%;">
+                                <div>أسم العميل: <t t-esc="doc.name.name"/></div>
+                                <div>رقم العقد: <t t-esc="doc.seq_num"/></div>
+                            </div>
+                            <div class="col-8" style="text-align: right;text-color: #538135;width: 50%;">
+                                <div>رقم الهوية: <t t-esc="doc.identification_id"/></div>
+                                <div>نوع التمويل: <t t-esc="doc.loan_type.name"/></div>
+                            </div>
+                        </div>
+
+
+                        <br/>
+                        <t t-set="i" t-value="1"/>
+
+                        <table class="table table-bordered" style="width: 100%; text-align: center;">
+                            <thead>
+                                <tr>
+                                    <th>رقم التسلسل</th>
+                                    <th>تاريخ الاستحقاق</th>
+                                    <th>تاريخ الدفع</th>
+                                    <th>المبلغ الأساسي</th>
+                                    <th>مبلغ الفائدة</th>
+                                    <th>القسط المستحق</th>
+                                    <th>المبلغ المسدد</th>
+                                    <th>المتبقي</th>
+                                    <th>الحالة</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="doc.installment_ids" t-as="line">
+                                    <td><t t-esc="i"/></td>
+                                    <td><t t-esc="line.date"/></td>
+                                    <td><t t-esc="line.payment_date"/></td>
+                                    <td><t t-esc="line.principal_amount"/></td>
+                                    <td><t t-esc="line.interest_amount"/></td>
+                                    <td><t t-esc="line.installment_amount"/></td>
+                                    <td><t t-esc="line.amount_paid"/></td>
+                                    <td><t t-esc="line.remaining_amount"/></td>
+                                    <td><t t-esc="line.state_arabic"/></td>
+
+                                    <t t-set="i" t-value="i+1"/>
+
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><strong>مبلغ التمويل</strong></td>
+                                    <td colspan="7"><t t-esc="doc.loan_amount"/></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><strong>مبلغ الفائدة</strong></td>
+                                    <td colspan="7"><t t-esc="doc.interest_amount"/></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><strong>المبلغ المدفوع</strong></td>
+                                    <td colspan="7"><t t-esc="doc.paid_amount"/></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" ><strong>المبلغ المتبقي</strong></td>
+                                    <td colspan="7"><t t-esc="doc.remaining_amount"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+
+</odoo>

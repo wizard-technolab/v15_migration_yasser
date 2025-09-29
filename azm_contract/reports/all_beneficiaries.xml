@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Define a report action for 'loan.order' model -->
+    <record id="all_beneficiaries_report" model="ir.actions.report"> <!-- Name of the report -->
+        <field name="name">All Beneficiaries</field>  <!-- The model to which this report is related -->
+        <field name="model">loan.order</field>  <!-- Type of report, in this case, PDF generated using QWeb -->
+        <field name="report_type">qweb-pdf</field>  <!-- Report name used in the QWeb template -->
+        <field name="report_name">azm_contract.all_beneficiaries
+        </field> <!-- Report file name (for the actual report file) -->
+        <field name="report_file">azm_contract.all_beneficiaries
+        </field> <!-- Reference to the model for which this report is bound -->
+        <field name="binding_model_id" ref="model_loan_order"/>  <!-- Binding type, specifying that this is a report -->
+        <field name="binding_type">report</field>
+    </record>
+    <!-- Define the QWeb template for the 'all_beneficiaries' report -->
+    <template id="all_beneficiaries" inherit_id=""> <!-- Call the base HTML container template provided by Odoo -->
+        <t t-call="web.html_container"> <!-- Iterate over the documents (reports) to be displayed -->
+            <t t-foreach="docs" t-as="doc"> <!-- Call the external layout template provided by Odoo -->
+                <t t-call="web.external_layout">
+                    <div class="page"> <!-- Page content starts here -->
+                        <div style="text-align: center"> <!-- Centered header section -->
+                            <div style="color:white;font-size: 16px; background-color:rgb(46, 184, 46);"
+                                 class="text-center">All Beneficiaries
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

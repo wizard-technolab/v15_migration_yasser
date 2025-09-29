@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="loan_type_form_view" model="ir.ui.view">
+            <field name="name">loan.type.view.inherit</field>
+            <field name="model">loan.type</field>
+            <field name="type">form</field>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="report_id" domain="[('model', '=', 'loan.order')]" groups="loan.group_admin"/>
+                                 <field name="product_type" groups="loan.group_admin"/>
+                                 <field name="salary_flag" groups="loan.group_admin"/>
+                            </group>
+                            <group>
+                                <field name="is_select" groups="loan.group_admin"/>
+                                <field name="security_type" groups="loan.group_admin"/>
+                                <field name="sub_product" groups="loan.group_admin"/>
+                                <field name="id_type" groups="loan.group_admin"/>
+                            </group>
+                            <!--                                    <field name="loan_amount_limit"/>-->
+                            <!--                                    <field name="loan_month"/>-->
+                            <!--                                    <field name="loan_quarter"/>-->
+
+<!--                            <div>-->
+<!--                                <group>-->
+<!--                                    <field name="apply_interest"/>-->
+<!--                                    <field name="interest_mode" invisible="1"/>-->
+<!--                                    <field name="rate_per_month" attrs="{'invisible':[('apply_interest','=', False)]}"-->
+<!--                                           invisible="0"/>-->
+<!--                                    <field name="rate" attrs="{'invisible':[('apply_interest','=', False)]}"/>-->
+<!--                                    <field name="apr" invisible="1"/>-->
+
+                                <!--                                </group>-->
+<!--                            </div>-->
+                        </group>
+                        <div/>
+                        <group>
+                            <div>
+                                <group>
+                                    <field name="disburse_account" groups="loan.group_accounting_move"/>
+                                    <field name="installment_account" groups="loan.group_accounting_move"/>
+                                    <field name="interest_account" groups="loan.group_accounting_move"/>
+                                    <field name="unearned_interest_account" groups="loan.group_accounting_move"/>
+                                </group>
+                            </div>
+                            <div>
+                                <group>
+                                    <field name="disburse_journal" groups="loan.group_accounting_move"/>
+                                    <field name="payment_journal" groups="loan.group_accounting_move"/>
+                                </group>
+                            </div>
+                        </group>
+                    </sheet>
+<!--                    <div class="oe_chatter">-->
+<!--                        <field name="message_follower_ids"/>-->
+<!--                        <field name="activity_ids"/>-->
+<!--                        <field name="message_ids"/>-->
+<!--                    </div>-->
+                </form>
+            </field>
+        </record>
+
+
+        <record id="loan_type_tree_view" model="ir.ui.view">
+            <field name="name">loan.type.view.inherit</field>
+            <field name="model">loan.type</field>
+            <field name="type">tree</field>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <!--                    <field name="apply_interest"/>-->
+                    <!--                    <field name="interest_mode"/>-->
+                    <!--                    <field name="rate_per_month"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <record id="loan_type_action" model="ir.actions.act_window">
+            <field name="name">Loan Type</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">loan.type</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Loan"
+                  id="loan_id"
+                  parent="loan_root"
+                  action="account.res_partner_action_customer"
+                  sequence="3"/>
+
+        <menuitem name="Loan Type"
+                  id="loan_type_id"
+                  parent="loan_id"
+                  action="loan_type_action"
+                  sequence="3"/>
+
+    </data>
+</odoo>

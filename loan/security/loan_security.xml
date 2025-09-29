@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record model="ir.module.category" id="module_category_loan">
+        <field name="name">Loan Management</field>
+        <field name="description">Category For Loan</field>
+        <field name="sequence">20</field>
+    </record>
+
+    <record id="group_use_loan_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="category_id" ref="module_category_loan"/>
+        <!--        <field name="implied_ids" eval="[(4, ref('group_user'))]"/>-->
+    </record>
+
+    <record id="group_use_loan_admin" model="res.groups">
+        <field name="name">Administrator</field>
+        <field name="category_id" ref="module_category_loan"/>
+        <field name="implied_ids" eval="[(4, ref('group_use_loan_user'))]"/>
+    </record>
+
+    <record id="group_use_loan_super_admin" model="res.groups">
+        <field name="name">Manager</field>
+        <field name="category_id" ref="module_category_loan"/>
+        <!--        <field name="implied_ids" eval="[(4, ref('group_use_loan_user'))]"/>-->
+    </record>
+
+    <record id="group_loan_approval" model="res.groups">
+        <field name="name">Credit User L2</field>
+    </record>
+
+    <record id="group_loan_credit" model="res.groups">
+        <field name="name">Credit User C1</field>
+    </record>
+
+    <record id="group_loan_write" model="res.groups">
+        <field name="name">Loan Write</field>
+    </record>
+
+    <record id="access_loan_field" model="ir.model.access">
+        <field name="name">Access Loan Field</field>
+        <field name="model_id" ref="model_loan_order"/>
+        <field name="group_id" ref="loan.group_loan_credit"/>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+    </record>
+
+
+    <record id="group_simah_access" model="res.groups">
+        <field name="name">Simah Data</field>
+    </record>
+
+    <record id="group_create_loan" model="res.groups">
+        <field name="name">Loan create</field>
+    </record>
+
+    <record id="group_purchase_confirm" model="res.groups">
+        <field name="name">Offer Price</field>
+    </record>
+<!--group_res_partner_sales-->
+    <record id="group_sales_cancel" model="res.groups">
+        <field name="name">Sales - Cancel</field>
+    </record>
+
+    <record id="group_sales_return" model="res.groups">
+        <field name="name">Sales - Return</field>
+    </record>
+
+    <record id="group_sales_exa_call" model="res.groups">
+        <field name="name">Sales - ExaCall</field>
+    </record>
+
+    <record id="group_sales_view_contract" model="res.groups">
+        <field name="name">Sales - Contract Status</field>
+    </record>
+
+    <record id="group_sales_manager" model="res.groups">
+        <field name="name">Sales - Manager C4</field>
+    </record>
+
+    <record id="group_purchase_acceptance" model="res.groups">
+        <field name="name">Acceptance Sales</field>
+    </record>
+
+    <record id="group_customer_operation" model="res.groups">
+        <field name="name">Operation User</field>
+    </record>
+
+    <record id="group_customer_operation_manager" model="res.groups">
+        <field name="name">Operation Manager</field>
+    </record>
+
+    <record id="group_reschedule_view" model="res.groups">
+        <field name="name">Reschedule Tab View</field>
+    </record>
+
+    <record id="group_manager" model="res.groups">
+        <field name="name">CEO Level</field>
+    </record>
+
+    <record id="group_archive" model="res.groups">
+        <field name="name">Archive</field>
+    </record>
+
+    <record id="group_collection" model="res.groups">
+        <field name="name">Collection User</field>
+    </record>
+
+    <record id="group_view_contracts" model="res.groups">
+        <field name="name">View Contract</field>
+    </record>
+
+    <!--    <record id="group_sales" model="res.groups">-->
+    <!--        <field name="name">Sales</field>-->
+    <!--    </record>-->
+
+    <record id="group_finance_loan" model="res.groups">
+        <field name="name">Finance Info</field>
+    </record>
+
+    <record id="group_accounting_move" model="res.groups">
+        <field name="name">Accountant</field>
+    </record>
+
+    <record model="ir.module.category" id="module_category_type_loan">
+        <field name="name">Loan Type Management</field>
+        <field name="description">Category For Type</field>
+        <field name="sequence">30</field>
+    </record>
+
+    <record id="group_use_loan_admin_type" model="res.groups">
+        <field name="name">Administrator</field>
+        <field name="category_id" ref="module_category_type_loan"/>
+        <!--        <field name="implied_ids" eval="[(4, ref('group_use_alon_user_type'))]"/>-->
+    </record>
+
+    <record id="group_use_alon_user_type" model="res.groups">
+        <field name="name">User</field>
+        <field name="category_id" ref="module_category_type_loan"/>
+        <!--        <field name="implied_ids" eval="[(4, ref('group_user'))]"/>-->
+    </record>
+
+    <record id="group_admin" model="res.groups">
+        <field name="name">Control Admin</field>
+    </record>
+
+    <record id="yakeen_access" model="res.groups">
+        <field name="name">Yakeen API</field>
+    </record>
+
+    <record id="group_installment_access" model="res.groups">
+        <field name="name">Installment Lines</field>
+    </record>
+
+    <record id="group_installment_line" model="res.groups">
+        <field name="name">View Installment Lines</field>
+    </record>
+
+    <record id="group_credit_l1" model="res.groups">
+        <field name="name">Credit User L1</field>
+    </record>
+
+    <record id="group_view_simah" model="res.groups">
+        <field name="name">Simah Report</field>
+    </record>
+
+    <record id="group_function_credit" model="res.groups">
+        <field name="name">Credit Functions</field>
+    </record>
+
+    <record id="group_user_finance" model="res.groups">
+        <field name="name">Finance Analyst</field>
+    </record>
+
+    <record id="group_user_tele_selas" model="res.groups">
+        <field name="name">Tele Selas C1</field>
+    </record>
+
+    <record id="group_manager_tele_selas" model="res.groups">
+        <field name="name">Tele Selas C4</field>
+    </record>
+    <!--        <record id="group_use_loan_manager" model="res.groups">-->
+    <!--            <field name="name">Administrator</field>-->
+    <!--            <field name="category_id" ref="Loan.module_category_loan"/>-->
+    <!--            <field name="implied_ids" eval="[(4, ref('group_use_loan_user'))]"/>-->
+
+    <!--        </record>-->
+
+</odoo>
+        <!--CREATE VIEW benchmatrix_customer AS SELECT PUBLIC.RES_PARTNER.ID,NAME,DISPLAY_NAME,PARENT_ID,ID_NUMBER,IQAMA,CONTACT_ADDRESS_COMPLETE,TZ,COMMENT,ACTIVE,TYPE,STREET,STREET2,ZIP,STATE_ID,COUNTRY_ID,PHONE,MOBILE,IS_COMPANY,INDUSTRY_ID,PARTNER_SHARE,COMMERCIAL_PARTNER_ID,COMMERCIAL_COMPANY_NAME,COMPANY_NAME,PARTNER_GID,ADDITIONAL_INFO,PHONE_SANITIZED,DEBIT_LIMIT,SUPPLIER_RANK,CUSTOMER_RANK,YEARS_WORK_MOVED0,YEARS_RETIRE_MOVED0,GUARANTOR_ID,ALLOW_LOAN,IS_CUSTOMER,LOAN_REQUEST_YEAR,IDENTIFICATION_NO,BIRTH_OF_DATE,RES_PARTNER.CITY,AGE,GENDER,NATIONALITY,MARITAL_STATUS,RISK,RELEASE_OF_DATE,EXPIRY_OF_DATE,PLACE,HOME_TYPE,EMPLOYER,SECTORS,YEARS_WORK,YEARS_NUMBER,YEARS_RETIRE,BASIC_SALARY,HOME_ALLOWANCE,TRANSPORT_ALLOWANCE,OTHER_ALLOWANCE,TOTAL_SALARY,OTHER_INCOME,TOTAL_INCOME,LOAN_LIMIT,SOURCE,NUMBER_DEPENDENTS,IBAN_NUMBER,BANK_NAME,INSTALLMENT_COMP,RATIO,INSTALLMENT_PERCENTAGE,STATE,LOAN_AMOUNT,MONTH_INSTALLMENT,TOTAL_LOAN,PERIOD_LOAN,LOAN_ID,INSTALLMENT_ID,TYPE_ID,DOWN_PAYMENT,ISPEP,REGION,INDUSTRY,"position",RES_PARTNER.CREATE_DATE,RES_PARTNER.CREATE_UID,RES_PARTNER.WRITE_UID,RES_PARTNER.WRITE_DATE,RES_PARTNER.UNIT_NUMBER,RES_PARTNER.ADDITIONAL_CODE PRODUCT_NAME FROM RES_PARTNER INNER JOIN ELM_YAKEEN_ADDRESS-->
+        <!--ON PUBLIC.RES_PARTNER.ID = ELM_YAKEEN_ADDRESS.ID;-->
+        <!--CREATE VIEW benchmatrix_stackholder AS SELECT ID,NAME,CREATE_DATE,STREET,STREET2,ZIP,CITY,STATE_ID,COUNTRY_ID,EMAIL,PHONE,MOBILE,INDUSTRY_ID,CREATE_UID,WRITE_UID,WRITE_DATE,IDENTIFICATION_NO,BIRTH_OF_DATE,AGE,GENDER,MARITAL_STATUS,ID_NUMBER,IQAMA,BASIC_SALARY,TOTAL_SALARY,TOTAL_INCOME,ANNUAL_INCOME,STATE,UNIT_NUMBER,BUILDING_NUMBER,ADDITIONAL_CODE,ISPEP,REGION,INDUSTRY,"position",company_id,nationality,is_company FROM PUBLIC.RES_PARTNER;-->
+<!--        CREATE VIEW benchmatrix_transaction AS SELECT ID,SEQUENCE_PREFIX,SEQUENCE_NUMBER,NAME, date,STATE,POSTED_BEFORE,JOURNAL_ID,COMPANY_ID,CURRENCY_ID,PARTNER_ID,IS_MOVE_SENT,PARTNER_BANK_ID,PAYMENT_REFERENCE,PAYMENT_ID,AMOUNT_UNTAXED,AMOUNT_TAX,AMOUNT_TOTAL,AMOUNT_RESIDUAL,AMOUNT_UNTAXED_SIGNED,AMOUNT_TAX_SIGNED,AMOUNT_TOTAL_SIGNED,AMOUNT_TOTAL_IN_CURRENCY_SIGNED,AMOUNT_RESIDUAL_SIGNED,PAYMENT_STATE,ALWAYS_TAX_EXIGIBLE,INVOICE_USER_ID,INVOICE_DATE,INVOICE_PARTNER_DISPLAY_NAME,CREATE_UID,CREATE_DATE,WRITE_UID,WRITE_DATE,TEAM_ID,DATETIME_INVOICE,TOTAL_DISCOUNT_AMOUNT,ISDOWN_PAYMENT,TRANSACTION_CHANNEL,IDENTIFICATION_ID,TRANSACTION_STATE,PARTNER_NAME,COMMERCIAL_PARTNER_ID,STATEMENT_LINE_ID,TAX_CASH_BASIS_REC_ID,TAX_CASH_BASIS_ORIGIN_MOVE_ID,REVERSED_ENTRY_ID,FISCAL_POSITION_ID,INVOICE_DATE_DUE,INVOICE_ORIGIN,INVOICE_PAYMENT_TERM_ID,SECURE_SEQUENCE_NUMBER,CAMPAIGN_ID,SOURCE_ID,MEDIUM_ID,PARTNER_SHIPPING_ID,DOCUMENT_REQUEST_LINE_ID,INVOICE_INCOTERM_ID,SUPPLY_DATE  FROM PUBLIC.ACCOUNT_MOVE;-->
+        <!--CREATE VIEW benchmatrix_agreement AS SELECT ID,CREATE_UID,CREATE_DATE,WRITE_UID,WRITE_DATE,NAME,LOAN_TYPE,REQUEST_DATE,APPROVE_DATE,LOAN_TERM,LOAN_AMOUNT,INTEREST_AMOUNT,PAID_AMOUNT,REMAINING_AMOUNT,STATE,SEQ_NUM,REJECT_REASON,REJECT_USER_ID,REJECT_DATE,TERMINATE_USER_ID,TERMINATE_DATE,TERMINATE_REASON,IDENTIFICATION_ID,TOTAL_LOAN,INSTALLMENT_END_DATE,TOTAL_INSTALLMENT,BRANCH,DOWN_PAYMENT_LOAN,INSTALLMENT_MONTH,CLOSE_DATE,DISBURSEMENT_DATE  FROM PUBLIC.LOAN_ORDER;-->
+        <!--ALTER TABLE benchmatrix_customer ADD COLUMN POSITION VARCHAR(50) ;-->
+        <!--,SERVICE_TYPE-->
+<!--        CREATE VIEW benchmatrix_customer AS SELECT PUBLIC.RES_PARTNER.ID,NAME,DISPLAY_NAME,PARENT_ID,ID_NUMBER,IQAMA,CONTACT_ADDRESS_COMPLETE,TZ,COMMENT,ACTIVE,TYPE,STREET,STREET2,ZIP,CITY,STATE_ID,COUNTRY_ID,PHONE,MOBILE,IS_COMPANY,INDUSTRY_ID,PARTNER_SHARE,COMMERCIAL_PARTNER_ID,COMMERCIAL_COMPANY_NAME,COMPANY_NAME,CREATE_UID,WRITE_UID,WRITE_DATE,PARTNER_GID,ADDITIONAL_INFO,PHONE_SANITIZED,DEBIT_LIMIT,SUPPLIER_RANK,CUSTOMER_RANK,YEARS_WORK_MOVED0,YEARS_RETIRE_MOVED0,GUARANTOR_ID,ALLOW_LOAN,IS_CUSTOMER,LOAN_REQUEST_YEAR,IDENTIFICATION_NO,BIRTH_OF_DATE,AGE,GENDER,NATIONALITY,MARITAL_STATUS,RISK,RELEASE_OF_DATE,EXPIRY_OF_DATE,PLACE,HOME_TYPE,EMPLOYER,SECTORS,YEARS_WORK,YEARS_NUMBER,YEARS_RETIRE,BASIC_SALARY,HOME_ALLOWANCE,TRANSPORT_ALLOWANCE,OTHER_ALLOWANCE,TOTAL_SALARY,OTHER_INCOME,TOTAL_INCOME,LOAN_LIMIT,SOURCE,NUMBER_DEPENDENTS,IBAN_NUMBER,BANK_NAME,INSTALLMENT_COMP,RATIO,INSTALLMENT_PERCENTAGE,STATE,LOAN_AMOUNT,MONTH_INSTALLMENT,TOTAL_LOAN,PERIOD_LOAN,LOAN_ID,INSTALLMENT_ID,TYPE_ID,UNIT_NUMBER,ADDITIONAL_CODE,DOWN_PAYMENT,ISPEP,REGION,INDUSTRY,"position", PRODUCT_NAME, ADDITIONAL_NUMBER,BUILDING_NUMBER,CITY,DISTRICT,LOCATION_COORDINATES,POST_CODE,STREET_NAME,UNIT_NUMBER FROM PUBLIC.RES_PARTNER,PUBLIC.ELM_YAKEEN_ADDRESS-->
+
+        <!--CREATE VIEW simah_update AS SELECT ID,CREATE_UID,CREATE_DATE,WRITE_UID,WRITE_DATE,SEQ_NUM,APPROVE_DATE,PRODUCT_TYPE,LOAN_AMOUNT,SALARY_FLAG,INSTALLMENT_END_DATE,PRODUCT_STATUS,INSTALLMENT_MONTH,INSTALLMENT_MONTH,INSTALLMENT_FREQUENCY,LOAN_TERM,SECURITY_TYPE,SUB_PRODUCT,CYCLE_ID,PAYMENT_STATUS,PAYMENT_STATUS,LATE_AMOUNT,AS_OF_DATE,ID_TYPE,IDENTIFICATION_ID,NATIONALITY_CODE,NAME,GENDER_LOAN,APPLICANT_TYPE  FROM PUBLIC.LOAN_ORDER;-->
+        <!--CREATE VIEW simah_update AS SELECT PUBLIC.LOAN_ORDER.ID,SEQ_NUM,APPROVE_DATE,PRODUCT_TYPE,LOAN_AMOUNT,SALARY_FLAG,INSTALLMENT_END_DATE,PRODUCT_STATUS,INSTALLMENT_MONTH,INSTALLMENT_MONTH,INSTALLMENT_FREQUENCY,LOAN_TERM,SECURITY_TYPE,SUB_PRODUCT,CYCLE_ID,LATE_AMOUNT,AS_OF_DATE,ID_TYPE,IDENTIFICATION_ID,NATIONALITY_CODE,LOAN_ORDER.NAME,LOAN_ORDER.GENDER_LOAN,APPLICANT_TYPE  FROM LOAN_ORDER INNER JOIN LOAN_TYPE ON PUBLIC.LOAN_ORDER.ID = LOAN_TYPE.ID;-->
+
+<!--UPDATE res.partner-->
+<!--SET expiry_of_date = '2024-09-25'-->
+<!--WHERE identification_no = 1077179149;-->

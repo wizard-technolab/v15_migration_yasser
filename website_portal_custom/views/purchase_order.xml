@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="purchase_order_send_email">
+            <field name="name">purchase.order form send email</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header" position="inside">
+                    <button name="send_to_clinic" type="object" states="draft,sent" string="Send To Clinic" class="oe_highlight" id="bid_confirm"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

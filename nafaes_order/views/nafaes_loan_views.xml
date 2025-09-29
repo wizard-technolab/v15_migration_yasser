@@ -1,0 +1,69 @@
+<odoo>
+    <data>
+        <record id="view_loan_order_form_inherit" model="ir.ui.view">
+            <field name="name">loan.order.form.nafaes</field>
+            <field name="model">loan.order</field>
+            <field name="inherit_id" ref="loan.request_form_view"/>
+            <field name="priority" eval="20"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Nafaes" name="nafaes_page">
+                        <button name="action_nafaes_recreate" type="object" string="Create New Order"
+                                class="oe_highlight"
+                                attrs="{'invisible': ['|', ('nafaes_order_id', '=', False), ('nafaes_error_invisible', '=', True)]}"
+                                confirm="Are you sure? This will create a new Nafaes Order"/>
+                        <div class="oe_title">
+                            <label for="nafaes_transactionReference"/>
+                            <h1>
+                                <field name="nafaes_transactionReference"/>
+                            </h1>
+                        </div>
+                        <div role="alert" class="alert alert-danger"
+                             attrs="{'invisible': ['|', ('nafaes_order_id', '=', False), ('nafaes_error_invisible', '=', True)]}">
+                            <field name="nafaes_api_error"/>
+                        </div>
+                        <group>
+                            <group string="Commodity">
+                                <field name="nafaes_order_id" invisible="0"/>
+                                <field name="nafaes_error_invisible" invisible="1"/>
+                                <field name="nafaes_commodityName" string="Name"/>
+                                <label for="nafaes_quantity"/>
+                                <div>
+                                    <field name="nafaes_quantity" class="oe_inline"/>
+                                    <field name="nafaes_unit" class="oe_inline" style="margin-left: 5px;"/>
+                                </div>
+                                <field name="nafaes_result_amount" string="Amount"/>
+                                <field name="nafaes_commission"/>
+                                <field name="nafaes_comm_currency_id" invisible="1"/>
+                                <field name="nafaes_result_date"/>
+                                <field name="nafaes_state"/>
+                                <field name="nafaes_referenceNo"/>
+                            </group>
+                            <group string="Attributes">
+                                <field name="nafaes_attribute1"/>
+                                <field name="nafaes_attribute2"/>
+                                <field name="nafaes_attribute3"/>
+                            </group>
+                            <group string="Additional Info">
+                                <field name="nafaes_executingUnit" string="Executing Unit"/>
+                                <field name="nafaes_certificateNo"/>
+                            </group>
+                            <group string="Users">
+                                <field name="nafaes_po_user_id"/>
+                                <field name="nafaes_so_user_id"/>
+                            </group>
+                            <group string="Technical Info" groups="base.group_system">
+                                <field name="nafaes_uuid_po" reaodnly="1"/>
+                                <field name="nafaes_uuid_to" reaodnly="1"/>
+                                <field name="nafaes_uuid_so" reaodnly="1"/>
+                                <field name="nafaes_purchaser" readonly="1" force_save="1"/>
+                                <field name="nafaes_currency"/>
+                                <field name="nafaes_valueDate"/>
+                            </group>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+    </data>
+</odoo>

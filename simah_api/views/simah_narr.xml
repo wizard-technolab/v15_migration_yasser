@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_simah_narrative_form" model="ir.ui.view">
+            <field name="name">view.simah.narrative.form</field>
+            <field name="model">simah.narrative</field>
+            <field name="arch" type="xml">
+                <form string="Simah Narrative">
+                    <sheet>
+                        <group string="Member Narratives">
+                            <group>
+                                <field name="narrTextDescAr"/>
+                            </group>
+                            <group>
+                                <field name="narrTextDescAr"/>
+                            </group>
+                            <group string="narrative Types">
+                                <field name="narrativeTypeDescAr"/>
+                                <field name="narrativeTypeDescEn"/>
+                                <field name="narrativeTypeCode"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="action_simah_narrative" model="ir.actions.act_window">
+            <field name="name">simah Narrative</field>
+            <field name="res_model">simah.narrative</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

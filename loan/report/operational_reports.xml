@@ -1,0 +1,268 @@
+<odoo>
+    <record id="action_report_order_approval" model="ir.actions.report">
+        <field name="name">أمر اعتماد</field>
+        <field name="model">loan.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">loan.report_order_approval_document</field>
+        <field name="report_file">loan.report_order_approval_document</field>
+        <field name="binding_model_id" ref="model_loan_order"/>
+        <field name="print_report_name">'أمر اعتماد - %s' % (object.name.name)</field>
+        <field name="groups_id" eval="[(4, ref('loan.group_customer_operation_manager'))]"/>
+    </record>
+    <template id="report_order_approval_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.basic_layout">
+                    <div style="width: 100%; display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <div style="flex: 0 0 auto;">
+                            <img src="/loan/static/src/img/logo.png" class="img_fuel_icon" style="max-height: 80px;" />
+                        </div>
+                    </div>
+                    <div class="page" style="font-family: 'Arial', sans-serif; direction: rtl; text-align: right;">
+                        <style>
+                            * {
+                            color: #538135 !important;
+                            }
+                            .text-black {
+                            color: #000000 !important;
+                            }
+                            table, tr, th,td {
+                            border:1px solid #000000 !important;
+                            padding: 2px;
+                            }
+                        </style>
+
+                        <h2 style="text-align: center;"><strong>أمر اعتماد</strong></h2>
+
+                        <p style="padding-right:5px;" class="text-black">
+                            التاريخ : <t t-esc="datetime.date.today()"/></p>
+
+                        <p style="padding-right:5px;" class="text-black">رقم الطلب :
+                            <t t-esc="doc.seq_num"/></p>
+
+
+                        <table style="border: 1px solid #000; width: 100%;">
+                            <tr>
+                                <td style="width: 15%;">المورد</td>
+                                <td class="text-black" colspan="3" style="width: 85%;">
+                                    <t t-esc="doc.quotation_id.partner_id.name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    رقم عرض السعر</td>
+                                <td class="text-black">
+                                    <t t-esc="doc.quotation_id.name"/>
+                                </td>
+                                <td>تاريخه</td>
+                                <td class="text-black">
+                                    <t t-esc="doc.request_date_date.strftime('%Y-%m-%d')"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 20%;">اسم العميل</td>
+                                <td class="text-black" style="width: 30%; border-bottom: 1px solid #000;">
+                                    <t t-esc="doc.name.name"/>
+                                </td>
+                                <td style="width: 20%;">رقم الهوية</td>
+                                <td class="text-black" style="border-bottom: 1px solid #000;">
+                                    <t t-esc="doc.identification_id"/>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <!-- Service table -->
+                        <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;" border="1">
+                            <thead>
+                                <tr style="background-color: #f0f0f0;text-align: center;">
+                                    <th style="padding: 5px;">الخدمة</th>
+                                    <th style="padding: 5px;">الكمية</th>
+                                    <th style="padding: 5px;">المبلغ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach='doc.quotation_id.order_line' t-as='line'>
+                                    <td class="text-black" style="padding: 10px;">
+                                        <t t-esc="line.product_id.name"/>
+                                    </td>
+                                    <td class="text-black" style="padding: 10px; text-align: center;">
+                                        <t t-esc="line.product_qty"/>
+                                    </td>
+                                    <td class="text-black" style="padding: 10px; text-align: center;">
+                                        <t t-esc="line.price_subtotal"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 20%;"><strong>الاجمالي</strong></td>
+                                    <td class="text-black"  colspan="2">
+                                        <t t-esc="doc.quotation_id.amount_total"/>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- Finance stamp -->
+                        <p style="margin-top: 40px;"><strong>الإدارة المالية</strong></p>
+                        <p style="text-align: center; margin-top: 40px;">الختم</p>
+
+                        <!-- Terms -->
+                        <h4 style="margin-top: 40px;">الشروط والاحكام</h4>
+                        <ul>
+                            <li class="text-black" style="padding-right:5px;">هذا الاعتماد ساري لمدة 4 أيام.</li>
+                            <li class="text-black" style="padding-right:5px;">لا يتم تقديم الخدمة الا بموجب نموذج امر تسليم الخدمة.</li>
+                        </ul>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_report_final_clearance" model="ir.actions.report">
+        <field name="name">مخالصة</field>
+        <field name="model">loan.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">loan.report_final_clearance</field>
+        <field name="report_file">loan.report_final_clearance</field>
+        <field name="binding_model_id" ref="model_loan_order"/>
+        <field name="print_report_name">'مخالصة - %s' % (object.name.name)</field>
+        <field name="groups_id" eval="[(4, ref('loan.group_customer_operation_manager'))]"/>
+    </record>
+
+    <template id="report_final_clearance">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.basic_layout">
+                    <style>
+                        * {
+                        font-family: 'DejaVu Sans', 'Noto Naskh Arabic', sans-serif;
+                        direction: rtl;
+                        }
+                    </style>
+                    <t t-if="doc.state not in ['close', 'early']">
+                        <p>هذا التقرير متاح فقط بعد إغلاق الطلب.</p>
+                    </t>
+                    <t t-else="">
+                        <div style="width: 100%; display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                            <div style="flex: 0 0 auto;">
+                                <img src="/loan/static/src/img/logo.png" class="img_fuel_icon" style="max-height: 80px;" />
+                            </div>
+                        </div>
+
+                        <div class="page" style="direction: rtl; font-size: 16px; line-height: 2; padding: 40px;">
+                            <h2 style="text-align: center;">مخــــــــــالصة</h2>
+                            <div style="text-align: right;">
+                                التاريخ: <t t-esc="doc.approve_date or ''"/>
+                            </div>
+                            <div style="text-align: justify; direction: rtl; margin-top: 20px;">
+                                تقر شركة فيول للتمويل بانتهاء العلاقة التعاقدية للسيد/ة
+                                <t t-out="doc.name.name or '...........................'"/>، هوية رقم /
+                                <t t-out="doc.identification_id or '.........................'"/>،
+                                مع الشركة بموجب عقد التمويل المبرم بتاريخ
+                                <t t-out="doc.approve_date or 'تاريخ العقد'"/>، ورقم الطلب
+                                <t t-out="doc.seq_num or 'رقم الطلب'"/>،
+                                وأنه غير مطالب بأي مبالغ لصالح شركة فيول للتمويل وأن هذه مخالصة نهائية وإبراء لذمته عن أي مبالغ والتزامات بموجب العقد المنتهي أعلاه.
+                                <br/>
+                                وبناءً على هذه المخالصة فإنه يُلغى أي أمر مستديم أو تفويض حسم مباشر مبني على هذا العقد المدرج رقمه أعلاه.
+                                <br/>
+                                ولم يعد بذلك للمذكور/ة أي حقوق لدى الشركة بموجب هذا العقد، وهذه مخالصة نهائية بين الطرفين تبرئ ذمة كل منهما قبل الآخر.
+                            </div>
+
+                            <br/><br/>
+                            <div style="text-align: right;">
+                                الختم<br/>
+                                <strong>شركة فيول للتمويل</strong>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <record id="action_report_delivery" model="ir.actions.report">
+        <field name="name">أمر تسليم</field>
+        <field name="model">loan.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">loan.report_order_delivery_document</field>
+        <field name="report_file">loan.report_order_delivery_document</field>
+        <field name="binding_model_id" ref="model_loan_order"/>
+        <field name="print_report_name">'أمر تسليم - %s' % (object.name.name)</field>
+        <field name="groups_id" eval="[(4, ref('loan.group_customer_operation_manager'))]"/>
+    </record>
+    <template id="report_order_delivery_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.basic_layout">
+                    <div style="width: 100%; display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <div style="flex: 0 0 auto;">
+                            <img src="/loan/static/src/img/logo.png" class="img_fuel_icon" style="max-height: 80px;" />
+                        </div>
+                    </div>
+                    <div class="page" style="font-family: 'Arial', sans-serif; direction: rtl; text-align: right;">
+                        <style>
+                            * {
+                            color: #538135 !important;
+                            }
+                            .text-black {
+                            color: #000000 !important;
+                            }
+                            table, tr, th,td {
+                            border:1px solid #000000 !important;
+                            padding: 2px;
+                            }
+                        </style>
+
+                        <h2 style="text-align: center;"><strong>أمر تسليم</strong></h2>
+
+                        <p style="padding-right:50px;" class="text-black">
+                            التاريخ : <t t-esc="datetime.date.today()"/></p>
+
+                        <p style="padding-right:70px;" class="text-black">رقم الطلب :
+                            <t t-esc="doc.quotation_id.name"/></p>
+
+
+                        <table style="border: 1px solid #000; width: 100%;">
+                            <tr>
+                                <td style="width: 15%;">المورد</td>
+                                <td class="text-black" colspan="3" style="width: 85%;">
+                                    <t t-esc="doc.quotation_id.partner_id.name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    رقم عرض السعر</td>
+                                <td class="text-black">
+                                    <t t-esc="doc.quotation_id.name"/>
+                                </td>
+                                <td>تاريخه</td>
+                                <td class="text-black">
+                                    <t t-esc="doc.quotation_id.date_approve.strftime('%Y-%m-%d') if doc.quotation_id.date_approve else 'غير محدد'"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 20%;">اسم العميل</td>
+                                <td class="text-black" style="width: 30%; border-bottom: 1px solid #000;">
+                                    <t t-esc="doc.name.name"/>
+                                </td>
+                                <td style="width: 20%;">رقم الهوية</td>
+                                <td class="text-black" style="border-bottom: 1px solid #000;">
+                                    <t t-esc="doc.identification_id"/>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <div style="direction: rtl; text-align: right; margin-top: 40px;">
+                            <span>أقر أنا ...........................، هوية رقم </span>
+                            <span><t t-esc="doc.identification_id"/></span>
+                            <span> باستلام المنتج بناء على المعلومات الموضحة أعلاه.</span>
+                        </div>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

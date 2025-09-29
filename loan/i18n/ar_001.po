@@ -1,0 +1,5245 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* loan
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e-20220324\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-25 07:30+0000\n"
+"PO-Revision-Date: 2023-01-25 10:56+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.2.2\n"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__deduction_after
+msgid " Total DPR"
+msgstr "مجموع الالتزامات"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.installment_summary_template
+msgid ""
+"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"
+"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"
+"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"
+"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.installment_summary_template
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"
+"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"
+"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"
+"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"
+"&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;"
+"&amp;nbsp;&amp;nbsp;"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "(+) Total financing cost"
+msgstr "(+) التكلفة الإجمالية للتمويل"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "(+) إجمالي كلفة التمويل"
+msgstr "(+) إجمالي كلفة التمويل(+) Financing Cost of financing"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "(-) advance payment"
+msgstr "(-) دفعه مقدمه"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "(-) دفعة مقدمه"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "(=) Total amount payable"
+msgstr "(=) إجمالي المبلغ المستحق الدفع"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "(=) إجمالي المبلغ المستحق سداده"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.purchase_order_inherit
+msgid "...ولكم جزيل الشكر"
+msgstr ""
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_type__name__12
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__period_loan__tow
+msgid "12 Month"
+msgstr "12 شهر"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__period_loan__eighteen
+msgid "18 Month"
+msgstr "18 شهر"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_type__name__24
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__period_loan__2four
+msgid "24 Month"
+msgstr "24 شهر"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__period_loan__three
+msgid "3 Month"
+msgstr "3 أشهر"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_type__name__36
+msgid "36 Month"
+msgstr "36 شهر"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__period_loan__six
+msgid "6 Month"
+msgstr "6 أشهر"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_kyc
+msgid ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;"
+"nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;"
+"nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;"
+"nbsp;&amp;nbsp;\n"
+"                                            Street:"
+msgstr ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;"
+"nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;"
+"nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;"
+"nbsp;&amp;nbsp;\n"
+"                                            الشارع:"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_kyc
+msgid ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;"
+"nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;"
+"nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;"
+"nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;\n"
+"                                            Home Type:"
+msgstr ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;"
+"nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;"
+"nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;"
+"nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;\n"
+"                                            نوع السكن:"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_kyc
+msgid ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            <br/>\n"
+"                                            <strong style=\"color:#3CB371;font-size: 18px;"
+"\">Financial Information\n"
+"                                            </strong>\n"
+"                                            <br/>\n"
+"                                            <br/>\n"
+"                                            Salary Bank:"
+msgstr ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            <br/>\n"
+"                                            <strong style=\"color:#3CB371;font-size: 18px;"
+"\">معلومات مالية\n"
+"                                            </strong>\n"
+"                                            <br/>\n"
+"                                            <br/>\n"
+"                                            الراتب البنكي:"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_kyc
+msgid ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            <strong style=\"color:#3CB371;font-size: 18px;"
+"\">National address</strong>\n"
+"                                            <br/>\n"
+"                                            City:"
+msgstr ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            <strong style=\"color:#3CB371;font-size: 18px;"
+"\">العنوان الوطني</strong>\n"
+"                                            <br/>\n"
+"                                            المدينة:"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_kyc
+msgid ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            Account Number:"
+msgstr ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            رقم الحساب:"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_kyc
+msgid ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            Another Income:"
+msgstr ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            دخل إضافي:"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_kyc
+msgid ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            Another Installment:"
+msgstr ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                           أقساط اخرى:"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_kyc
+msgid ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            Birth Of Date:"
+msgstr ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            تاريخ الميلاد:"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_kyc
+msgid ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            Building No:"
+msgstr ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            رقم المبنى:"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_kyc
+msgid ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            Classification:"
+msgstr ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            التصنيف:"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_kyc
+msgid ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            Dependents:"
+msgstr ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            المعالين:"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_kyc
+msgid ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            E-mail:"
+msgstr ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            البريد الإلكتروني:"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_kyc
+msgid ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            Educational level:"
+msgstr ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            المستوى التعليمي:"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_kyc
+msgid ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            Employer:"
+msgstr ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            جهة العمل:"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_kyc
+msgid ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            Expiry Date:"
+msgstr ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            تاريخ الانتهاء:"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_kyc
+msgid ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            Gender:"
+msgstr ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            الجنس:"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_kyc
+msgid ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            ID Number:"
+msgstr ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            رقم الهوية:"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_kyc
+msgid ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            Job Position:"
+msgstr ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            المسمى الوظيفي:"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_kyc
+msgid ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            Liability:"
+msgstr ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            اﻹلتزامات"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_kyc
+msgid ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            Nationality:"
+msgstr ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            الجنسية:"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_kyc
+msgid ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            Postal code:"
+msgstr ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            الرمز البريدي:"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_kyc
+msgid ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            Salary Release Date:"
+msgstr ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            تاريخ اخر راتب:"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_kyc
+msgid ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            Salary:"
+msgstr ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            الراتب:"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_kyc
+msgid ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            Tax ID:"
+msgstr ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            الرقم الضريبي:"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_kyc
+msgid ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            Work Phone:"
+msgstr ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            هاتف العمل:"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_kyc
+msgid ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            Years Retire:"
+msgstr ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            سنوات التقاعد:"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_kyc
+msgid ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            marital State:"
+msgstr ""
+"<br/>\n"
+"                                            <br/>\n"
+"                                            الحالة الاجتماعية:"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_kyc
+msgid ""
+"<br/>\n"
+"                                            <strong style=\"color:#3CB371;font-size: 18px;"
+"\">Call Information</strong>\n"
+"                                            <br/>\n"
+"                                            <br/>\n"
+"                                            Mobile number:"
+msgstr ""
+"<br/>\n"
+"                                            <strong style=\"color:#3CB371;font-size: 18px;"
+"\">معلومات الاتصال</strong>\n"
+"                                            <br/>\n"
+"                                            <br/>\n"
+"                                            رقم الجوال:"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.installment_summary_template
+msgid ""
+"<br/>\n"
+"                                <br/>\n"
+"                                <strong>Loan Amount :&amp;nbsp;&amp;nbsp;</strong>"
+msgstr ""
+"<br/>\n"
+"<br/>\n"
+"<strong>مبلغ التمويب :&amp;nbsp;&amp;nbsp;</strong>"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.r_of_q_inherit
+msgid ""
+"<br/>\n"
+"                <br/>\n"
+"                <br/>\n"
+"                <strong>Signature:</strong>\n"
+"                <br/>\n"
+"                <br/>\n"
+"                <br/>\n"
+"                <br/>\n"
+"                <br/>\n"
+"                <strong>Approved by the authorized director:</strong>\n"
+"                <br/>\n"
+"                <strong>Signature:</strong>"
+msgstr ""
+"<br/>\n"
+"                <br/>\n"
+"                <br/>\n"
+"                <strong>:التوقيع</strong>\n"
+"                <br/>\n"
+"                <br/>\n"
+"                <br/>\n"
+"                <br/>\n"
+"                <br/>\n"
+"                <strong>تم الإعتماد من المدير المخول:</strong>\n"
+"                <br/>\n"
+"                <strong>التوقيع:</strong>"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.purchase_order_inherit
+msgid ""
+"<br/>\n"
+"                <br/>\n"
+"                <br/>\n"
+"                <strong>ونفيدكم بأن شركة فيول التمويل غير مسؤولة وغير ضامنة لجودة الخدمات "
+"الطبية ويجب إفهام العميل بذلك\n"
+"                    لذا بعد الاطلاع وإبداء العميل رغبته الأولية لشروط التمويل وبعد افهام "
+"العميل بحقوقه على شركة التمويل\n"
+"                    وعلى مزود الخدمة الطبية نرجو منكم التكرم بالرد على عرضنا بخطاب قبول "
+"أمر الشراء (التزامكم بتنفيذ\n"
+"                    الخدمة الطبية للعميل حسب المطلوب)\n"
+"                    <br/>\n"
+"                    (info@fuelfinance.sa) على البريد\n"
+"                    <br/>\n"
+"                    او بالتواصل معنا على الهاتف الموحد\n"
+"                </strong>\n"
+"                <br/>\n"
+"                <br/>\n"
+"                <br/>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span/>\n"
+"                                        <br/>\n"
+"                                        <span>اسم العميل .............................</"
+"span>\n"
+"                                        <br/>\n"
+"                                        <span>التوقيع .............................</"
+"span>\n"
+"                                        <br/>\n"
+"                                        <span>التاريخ: .............................</span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.installment_summary_template
+msgid ""
+"<span/>\n"
+"                                <br/>\n"
+"                                <span>اسم العميل.............................</span>\n"
+"                                <br/>\n"
+"                                <span>التوقيع.............................</span>\n"
+"                                <br/>\n"
+"                                <span>التاريخ: .............................</span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid ""
+"<span/>\n"
+"                            <br/>\n"
+"                            <span>اسم العميل.............................</span>\n"
+"                            <br/>\n"
+"                            <span>التوقيع.............................</span>\n"
+"                            <br/>\n"
+"                            <span>التاريخ: .............................</span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>\n"
+"                                    شركة فيول للتمويل ، شركة سعودية بموجب السجل التجاري "
+"رقم\n"
+"                                    <span name=\"company_registry\"/>\n"
+"                                    التاريخ / / هـ ، صادر من الرياض ،\n"
+"                                    ...................... عنوانها الرياض .......... "
+"طريق ................... ، ص ب\n"
+"                                    ................. ، هاتف ................. ، فاكس\n"
+"                                </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.installment_summary_template
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "<span>%</span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>1/ يلتزم الطرف الثاني بسداد الاقساط الشهرية في او قبل يوم(25) من كل شهر هجري او\n"
+"                                    ميلادي وفقا لجدول الدفعات المرفق مع هذا العقد او مع "
+"موعد نزول الراتب\n"
+"                                    <br/>\n"
+"                                    <br/>\n"
+"                                    2/ لن يعتبر الطرف الثاني قد اوفي بالتزاماته تجاه الطرف "
+"الاول بسند رسمي موقع منه\n"
+"                                    يفيد استلامه لقيمة القسط اذا كان السداد نقدا بمقر "
+"الشركة او أحد فروعها و السداد\n"
+"                                    بموجب الخصم المباشر .من حساب الطرف الثاني بالبنك او "
+"السداد بموجب تحويل القسط عن\n"
+"                                    طريق البنوك او بشيك مصدق لصالح الطرف الاول والشركة "
+"غير\n"
+"                                    <br/>\n"
+"                                    <br/>ملزمة الا بعد التاكد من نزول\n"
+"                                    القسط بكشف الحساب البنكي والتدقيق في حالة السداد عن "
+"طريق التحويل البنكي او الامر\n"
+"                                    المستديم فيجب ان يودع المبلغ في حساب الطرف الاول في "
+"البنك الاهلي السعودي حساب ,رقم\n"
+"                                    الايبان\n"
+"                                    ( ) او على حساب الطرف الاول في مصرف الراجحي ,رقم "
+"الايبان ( )\n"
+"                                    على\n"
+"                                    ان يتم اخطار واشعار الطرف الاول \"الشركة\" في حالة "
+"تغيير البنك او ايقاف الامر المستديم\n"
+"                                </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>:كلفة التحصيل و التقاضي و التوثيق يقر و يتعهد الطرف الثاني بأنه يتحمل أي مصاريف أو\n"
+"                                    أتعاب أو رسوم توثيق للعقود و المستندات في حالة تكبد "
+"الطرف الأول أي مبالغ نظير تحصيل\n"
+"                                    أقساطه أو اللجوء إلى القضاء ولا يحق للطرف الثاني و "
+"كفيله الضامن الاعتراض ذلك . كما\n"
+"                                    يقر الطرف الثاني بأن هذا العقد ملزم له و لخلفائه و "
+"لكفلائه أمام الجهات لتنفيذيه و\n"
+"                                    كافة الجهات الرسمية\n"
+"                                </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "<span>month</span>"
+msgstr "<span>شهر</span>"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>أحكام عامه يخضع هذا العقد لكافة الأنظمة سارية المفعول بالمملكة العربية السعودية\n"
+"                                </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>أن تقوم الشركة بدفع الخدمة الطبية فقط وان العميل يتحمل المسؤولية\n"
+"                                    بعد إجراء الخدمة الطبية\n"
+"                                </span>\n"
+"                                <br/>\n"
+"                                <br/>\n"
+"                                <br/>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "<span>أنهما يتمتعان بكامل الأهلية المعتبرة شرعا ونظاما.</span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>إدراج المعلومات الائتمانية على الطرف الأول اتخاذ الإجراءات اللازمة لضمان الحفاظ\n"
+"                                    على سرية المعلومات والأطراف بهذه الوثيقة ، و يجوز "
+"للطرف الأول إدراج\n"
+"\n"
+"                                    <br/>المعلومات\n"
+"                                    الائتمانية أو أي بيانات يقررها في السجل الائتماني لأي "
+"جهة نظاميه أخرى تطبيقا لأنظمه\n"
+"                                    ذات علاقة أو تنفيذا لتعليمات جديدة قد تصدر من هذه "
+"الجهات .\n"
+"                                </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>إذا أخل بالضمانات المقدمة من قبله لصالح الطرف الأول وذلك بقيامه بأي تصرف أو\n"
+"                                        اتخاذه لأي إجراء يرى الطرف الأول ووفق تقديره "
+"المطلق أنه ينتقص منها أو تؤثر على\n"
+"                                        حقوق الطرف الأول المترتبة عليه\n"
+"                                    </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>إذا تأخر الطرف الثاني أو تخلف عن تنفيذ أي من التزاماته وتعهداته المنصوص عليها\n"
+"                                        في هذا العقد\n"
+"                                    </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>إقرار يقر كافة أطراف العقد أنهم قد اطلعوا على كافة بنود العقد</span>\n"
+"                                <br/>\n"
+"                                <br/>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>اذا تاخر الطرف الثاني عن سداد احد الاقساط لمدة خسمة عشر يوما فان القسط الذي\n"
+"                                        يليه يصبح واجب الدفع\n"
+"                                    </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>اذا تاخر الطرف الثاني عن سداد اي قسط لمدة ثلاثون يوما فان القسطين\n"
+"                                        التاليين تصبح واجبة الدفع\n"
+"                                    </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>اذا تاخر الطرف الثاني عن سداد اي قسط لمدة ستون يوما متتالية او متفرقة من تاريخ\n"
+"                                    الاستحقاق يحق للطرف الاول مطالبة الطرف الثاني والكفيل "
+"الضامن بسداد كامل المبلغ\n"
+"                                    المتبقي دون النظر لتواربخ الاستحقاق ودون الحاجة الى "
+"انذار او تنبيه مسبق ولايحق\n"
+"                                    للكفيل الضامن الاعتراض لاي سبب من الاسباب او التمسك "
+"باي دفع من الدفوع\n"
+"                                </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>اقرار الطرف الثاني القابل لهذا البيع بانه على علم بوصف الخدمة الطبية وصفا دقيقا\n"
+"                                    نافيا للجهالة وقبل بها\n"
+"                                </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>الإخطارات تتم جميع الإخطارات الموجهة فيما بين الطرفين بموجب خطابات رسمية تسلم إما\n"
+"                                    باليد وإما بالبريد المسجل على عناوينهم المبينة بصدر "
+"هذا العقد أو بإرسال رسائل نصيه\n"
+"                                    فيما يتعلق بعمليات المتابعة و التحصيل و المطالبات و "
+"فيما لا يتعارض مع إقرار الاتصال\n"
+"                                    و المتابعة المرفق بهذا العقد , كما يتعهد ويلتزم الطرف "
+"الثاني وكفلائه الضامنين\n"
+"                                    بمراجعة الطرف الأول ( الشركة ) بمقره الرئيسي أو في أي "
+"فرع من فروعه المعلنة داخل\n"
+"                                    المملكة وتحديث بياناتهم الجوهرية ووسائل الاتصال حالة "
+"تغيرها أو تعديلها أو تجديدها (\n"
+"                                    الهوية ــ جهة العمل ــ وسائل الاتصال ) ويتحمل الطرف "
+"الثاني وكفلائه المسئولية كاملة\n"
+"                                    حال عدم تجاوبهم ولا يحول ذلك أو يمنع الطرف الأول في "
+"اتخاذ كافة الإجراءات والتدابير\n"
+"                                    النظامية التي تكفل كامل حقوقه وتخلى مسئوليته حيال ذلك\n"
+"                                </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>الإخلال بالالتزامات يعتبر الطرف الثاني مخلا بالتزاماته وتعهداته المترتبة عليه\n"
+"                                    بموجب هذا العقد ويتحمل ما يترتب على ذلك من ضرر في أي "
+"من الحالات التالية:\n"
+"                                </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>التاخير عن السداد : بما لايتعارض مع ضوابط واجراءت التحصيل ولا يتعارض مع الانظمة\n"
+"                                    المرعية\n"
+"                                    اتفق الطرفان عن الاتي\n"
+"                                </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>الرسوم الادارية يلتزم الطرف الثاني بسداد مبلغ وقدره(0) ريال كرسوم ومصاريف ادارية\n"
+"                                    غير مسترده في حالة الموافقة على التمويل تسدد فور "
+"الموافقة وقبل استلام مستند الخدمة\n"
+"                                    الطبية لا تتجاوز الرسوم والعمولات وتكاليف الخدمات "
+"الادارية التي يحصل عليها الطرف\n"
+"                                    الاول من الطرف الثاني مايعادل (1%) من مبلغ التمويل "
+"او(5000) خمسة الاف ريال ايهما اقل\n"
+"                                </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>السداد الجزئي يحق للطرف الثاني بعد موافقة الطرف الأول خطيا بتعجيل سداد جزء من ثمن\n"
+"                                    المبيع المستحق للطرف الأول قبل تاريخ استحقاقه ,فيكون "
+"للطرف الأول وفقا لتقديره الخاص\n"
+"                                    بإعادة جدولة باقي المديونية المستحقة دون إضافة أي "
+"مبالغ جديدة على الطرف الثاني ودون\n"
+"                                    إضافة أي أرباح\n"
+"                                </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>السداد المبكر يحق للطرف الثاني تعجيل سداد باقي مبلغ التمويل بعد 3 أشهر من تاريخ\n"
+"                                    بداية التمويل ،ولا يجوز تحميل الطرف الثاني كلفة الأجل "
+"عن المدة الباقية\n"
+"\n"
+"                                </span>\n"
+"                                <span>هذا و للطرف الأول الحصول على تعويض عما يلي :-</span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>الضمانات ضمانا لحقوق الطرف الاول وافق الطرف الثاني على تقديم الضمانات التالية :\n"
+"                                </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>الطرف الاول :</span>\n"
+"                                    <br/>\n"
+"                                    <span>شركة فيول للتمويل</span>\n"
+"                                    <br/>\n"
+"                                    <span>يمثلها : السيد / .............................</"
+"span>\n"
+"                                    <br/>\n"
+"                                    <span>الصفة: الرئيس التنفيذي</span>\n"
+"                                    <br/>\n"
+"                                    <span>التوقيع .............................</span>\n"
+"                                    <br/>\n"
+"                                    <span>التاريخ: .............................</span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>الطرف الاول :</span>\n"
+"                                    <br/>\n"
+"                                    <span>موظف فيول</span>\n"
+"                                    <br/>\n"
+"                                    <span>يمثلها : الموظف / .............................</"
+"span>\n"
+"                                    <br/>\n"
+"                                    <span>التوقيع .............................</span>\n"
+"                                    <br/>\n"
+"                                    <span>التاريخ: .............................</span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>الطرف الثاني :</span>\n"
+"                                    <br/>\n"
+"                                    <span>الاسم .............................</span>\n"
+"                                    <br/>\n"
+"                                    <span>بطاقة الاحوال .............................</"
+"span>\n"
+"\n"
+"                                    <br/>\n"
+"                                    <span>التوقيع .............................</span>\n"
+"                                    <br/>\n"
+"                                    <span>التاريخ: .............................</span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>الغش و التزوير يحق للطرف الأول (الشركة )وبإرادتها المنفردة إنهاء عقد التمويل و\n"
+"                                    تعجيل كافة الأقساط و يصبح كامل المبلغ مستحق الأداء حال "
+"اكتشاف غش أو تزوير في الأوراق\n"
+"                                    أو المستندات المقدمة من الطرف الأول أو من كفلائه أو "
+"الضمانات أو انتحال للشخصية شريطة\n"
+"                                    ثبوت ذلك للطرف الأول\n"
+"                                </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>الكفيل الضامن :</span>\n"
+"                                    <br/>\n"
+"                                    <span>الاسم .............................</span>\n"
+"                                    <br/>\n"
+"                                    <span>بطاقة الاحوال .............................</"
+"span>\n"
+"\n"
+"                                    <br/>\n"
+"                                    <span>التوقيع .............................</span>\n"
+"                                    <br/>\n"
+"                                    <span>التاريخ: .............................</span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>المتابعة و تحصيل الأقساط يحق للطرف الأول ( الشركة ) الاتصال على الطرف الثاني و على\n"
+"                                    كفيله الضامن في أي وقت من أوقات الدوام الرسمي و كذلك "
+"إرسال رسائل تذكيريه أو رسائل\n"
+"                                    بريدية أو إلكترونيه طالما يتعلق الأمر بتحصيل و متابعه "
+"أموال الطرف الأول ( الشركة ) و\n"
+"                                    حقوقه لدى الطرف الثاني و كفيله الضامن و ذلك دون أدنى "
+"اعتراض من قبل الطرف الثاني أو\n"
+"                                    كفيله الضامن .\n"
+"                                </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>المشتري و المكفول كفالة غرم واداء من قبل كل من السيد/ .....................\n"
+"                                    الجنسية( )بموجب سجل مدني رقم ..................... و "
+"عنوانه .....................\n"
+"                                    الرمز المختصر للعنوان الوطني ....................... "
+"هاتف منزل ....................\n"
+"                                    هاتف عمل ......................... جوال "
+"رقم .....................\n"
+"                                </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>حق الانسحاب لا يحق للطرف الثاني الانسحاب أو الامتناع عن استلام مستند الخدمة الطبية\n"
+"                                    بعد إبرام عقد تمويل المرابحة و التوقيع عليه\n"
+"                                </span>\n"
+"                                <br/>\n"
+"                                <br/>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>ذلك وفقا</span>\n"
+"                                <span>للتمهيد: حيث ان الطرف الاول يعمل في مجال تجارة البيع "
+"بالتمويل \"المرابحة\" حيث تقدم\n"
+"                                    الطرف الثاني للطرف الاول بطلب شراء وذلك حسب البيان "
+"المرفق ويعتبر البيان جزء لا\n"
+"                                    يتجزاء من العقد\n"
+"                                </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>رهن الصكوك العقارية والتهميش عليها او التنازل عن الاوراق المالية او الاسهم\n"
+"                                        اوالسندات مع جواز تنفيذ و بيعها او التصرف فيها حال "
+"التاخر عن السداد شريطة\n"
+"                                        تقديرها قبل تنفيذ العقد\n"
+"                                    </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>سريان و انقضاء العقد هذا العقد ساري في جميع الأحوال ولا يزول ولا ينقضي إلا بما\n"
+"                                    يقتضي الزوال أو الإنهاء من أحكام تعاميم البنك المركزي "
+"أو الأنظمة المرعية بما في ذلك\n"
+"                                    ( ضوابط التحصيل للعملاء الأفراد )\n"
+"                                </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>سند لامر صادر الطرف الثاني وكفلائه الضامنين لمصلحة الطرف الاول ينفذ عند\n"
+"                                        الاستحقاق\n"
+"                                    </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>سياسة الرصيد المتناقص يتبع الطرف الأول طريقة الرصيد المتناقص في توزيع كلفة الاجل\n"
+"                                    على فترة الاستحقاق\n"
+"                                </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>طريقة وموعد السداد يلتزم الطرف الثاني بسداد قيمة مستند الخدمة الطبية ( ) ريال\n"
+"                                    تسعة وستون وتسعة وتسعون الف واربعة وثمانون ريال تسدد "
+"على اقساط شهرية (متساوية\n"
+"                                    ومتتالية حسب البيان التالي وكذلك البيان التفصيلي ) "
+"المرفق\n"
+"                                </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>عدم وجود ديون بذمتهما تحول دون إمكانية قيام أي منهما بسداد قيمة الأقساط\n"
+"                                        الشهرية عند استحقاقها\n"
+"                                    </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>على الطرف الأول اتخاذ الإجراءات اللازمة لضمان الحفاظ على سرية المعلومات\n"
+"                                        للأطراف الوارد بياناتهم بهذه الوثيقة ومرفقاتها\n"
+"                                    </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "<span>كفيل غارم يقبل به الطرف الاول او اكثر من كفيل غارم</span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>كل ما لم يرد بشأنه نص خاص في هذا العقد تسرى عليه القواعد والأنظمة المعمول بها\n"
+"                                        في المملكة العربية السعودية\n"
+"                                    </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>كلفة إعادة الاستثمار بما لا يتجاوز كلفة الأجل للثلاثة أشهر التالية للسداد\n"
+"                                        محتسبه على أساس الرصيد المتناقص\n"
+"                                    </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>لاستخدام شركة فيول للتمويل يقر الموظف بالتأكد من توقيع العميل</span>\n"
+"                                        <br/>\n"
+"                                        <span>اسم الموظف .............................</"
+"span>\n"
+"                                        <br/>\n"
+"                                        <span>التوقيع .............................</"
+"span>\n"
+"                                        <br/>\n"
+"                                        <span>التاريخ: .............................</span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.installment_summary_template
+msgid ""
+"<span>لاستخدام شركة فيول للتمويل يقر الموظف بالتأكد من توقيع العميل</span>\n"
+"                                <br/>\n"
+"                                <span>اسم الموظف .............................</span>\n"
+"                                <br/>\n"
+"                                <span>التوقيع .............................</span>\n"
+"                                <br/>\n"
+"                                <span>التاريخ: .............................</span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid ""
+"<span>لاستخدام شركة فيول للتمويل يقر الموظف بالتأكد من توقيع العميل</span>\n"
+"                            <br/>\n"
+"                            <span>اسم الموظف .............................</span>\n"
+"                            <br/>\n"
+"                            <span>التوقيع .............................</span>\n"
+"                            <br/>\n"
+"                            <span>التاريخ: .............................</span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>ما تدفعه شركة التمويل لطرف ثالث بسبب عقد التمويل من النفقات التي نص عليها\n"
+"                                        العقد إذا كانت نفقات لا يمكن استردادها و ذلك عن "
+"المدة الباقية من عقد التمويل\n"
+"                                    </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>مستند الخدمة الطبية(المبيع) وثمنها/ باع الطرف الاول للطرف الثاني مستند الخدمة\n"
+"                                    الطبية المعين في التمهيد اعلاه بثمن اجمالي وقدره( ) "
+"ريال دفع دفعة مقدمة مبلغ\n"
+"                                    على اقساط شهرية مبلغ( ) ريال فقط مؤجلا تسدد وقدره(0) "
+"ريال فقط والباقي قيمة\n"
+"                                    القسط( ) ريال لمدة (....... شهرا) على ان يبدا اول قسط "
+"بتاريخ\n"
+"\n"
+"                                </span>\n"
+"                                <span>الموافق وينتهي اخر قسط بتاريخ الموافق وفقا لجدول\n"
+"                                    السداد المرفق\n"
+"                                </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>نسخ العقد حرر هذا العقد من ثلاثة نسخ باللغة العربية حيث استلم كل طرف نسخه منه\n"
+"                                    للاحتفاظ به طرفه والعمل بموجبه وتم إيداع النسخة "
+"الثالثة بالمقر الرئيسي للطرف الأول\n"
+"                                </span>\n"
+"\n"
+"                                <span>وعلى ذلك جرى التوقيع .....</span>\n"
+"                                <br/>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>وحيث ان الطرف الاول \"الشركة\" يتملك مستند الخدمة الطبية المرفق بالعقد لذا فقد اتفق\n"
+"                                    الطرفان بكامل طوعهم واختيارهم وهما بكامل الاوصاف "
+"المعتبرة شرعا ونظاما ودون اجبار او\n"
+"                                    اكراه وبعد فهم مواد العقد فهما تاما وعلمهم التام "
+"بمحتوياته علما نافيا لأي جهالة\n"
+"                                    باحكامه وشروطه وقد اتفقوا على الاتي :\n"
+"                                </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>يعتبر التمهيد اعلاه وطلب الشراء بالتمويل ومرفقاته وكافة الملاحق و المستندات\n"
+"                                    <br/>\n"
+"                                    <br/>والجداول و كذلك الاقرارات والتعهدات والايضاحات "
+"المرفقة مع هذا الملف و الموقعة\n"
+"                                    بين الطرفين في هذا الخصوص تعتبر جزءاً لا يتجزأ من هذا "
+"العقد ومكملة و مفسرة له كوثائق\n"
+"                                    اساسية\n"
+"                                </span>\n"
+"                                <br/>\n"
+"                                <br/>\n"
+"                                <br/>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.installment_summary_template
+msgid ""
+"<span>يعتبر هذا الجدول جزء لا يتجزأ من العقد</span>\n"
+"                                <span>أقر بالاطلاع الموافقة على كامل التفاصيل اعلاه "
+"بالإضافة الى استلامي نسخة من\n"
+"                                    جدول\n"
+"                                    السداد\n"
+"                                </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>يقر الطرف الثاني و الكفيل الضامن بأن توقيعهم على هذا العقد يعتبر قبولا مطلقا\n"
+"                                        لا رجوع فيه ولا يحق لأى منهما الامتناع عن سداد "
+"الأقساط أو أي مبالغ تستحق للطرف\n"
+"                                        الأول نتيجة تقصيرهم\n"
+"                                    </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"<span>يقر كافة أطراف العقد أنهم أطلعوا على كافة بنود العقد وفهم محتوياته وأنهم\n"
+"                                        ملتزمون بكل شروطه وأحكامه . وفي حالة حدوث أي خلاف "
+"فإن هذا العقد يخضع للأنظمة\n"
+"                                        المعمول بها في المملكة العربية السعودية وبما لا "
+"يتعارض مع أحكام الشريعة\n"
+"                                        الإسلامية وذلك وفقاً لما تقتضيه الأنظمة المعمول بها "
+"في المملكة العربية السعودية\n"
+"                                    </span>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_kyc
+msgid ""
+"<strong style=\"color:#3CB371;font-size: 16px;\">Personal information about\n"
+"                                                the applicant\n"
+"                                            </strong>\n"
+"                                            <br/>\n"
+"                                            <br/>\n"
+"                                            Name:"
+msgstr ""
+"<strong style=\"color:#3CB371;font-size: 16px;\">معلومات شخصية عن\n"
+"                                                مقدم الطلب\n"
+"                                            </strong>\n"
+"                                            <br/>\n"
+"                                            <br/>\n"
+"                                            الاسم:"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_kyc
+msgid ""
+"<strong style=\"color:#3CB371;font-size: 18px;\">Work Information</strong>\n"
+"                                            <br/>\n"
+"                                            <br/>\n"
+"                                            Sector Type:"
+msgstr ""
+"<strong style=\"color:#3CB371;font-size: 18px;\">معلومات العمل</strong>\n"
+"                                            <br/>\n"
+"                                            <br/>\n"
+"                                            نوع القطاع:"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_kyc
+msgid "<strong style=\"color:#3CB371;font-size: 24px;\">Know Your Customer KYC</strong>"
+msgstr "<strong style=\"color:#3CB371;font-size: 24px;\">إعرف عميلك KYC</strong>"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.purchase_order_inherit
+msgid ""
+"<strong>:السلام عليكم ورحمة الله وبركاته ,, تحية طيبة وبعد</strong>\n"
+"                <br/>\n"
+"                <br/>\n"
+"                <strong>بالإشارة إلى عقد المبرم معكم بتاريخ , ولرغبة العميل الموضح بياناته "
+"أدناه , وبناء على عرض السعر\n"
+"                    الموضح في خطابكم المؤرخ بتاريخ نقدم لكم أمر الشراء التالي\n"
+"                </strong>\n"
+"                <br/>\n"
+"                <br/>"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.installment_summary_template
+msgid "<strong>APR :&amp;nbsp;&amp;nbsp;</strong>"
+msgstr "<strong>معدل الربح السنوي :&amp;nbsp;&amp;nbsp;</strong>"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.installment_summary_template
+msgid "<strong>Customer :&amp;nbsp;&amp;nbsp;</strong>"
+msgstr "<strong>:العميل&amp;nbsp;&amp;nbsp;</strong>"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.r_of_q_inherit
+msgid ""
+"<strong>Customer:</strong>\n"
+"                <br/>\n"
+"                <strong>ID Number:</strong>\n"
+"                <br/>\n"
+"                <br/>\n"
+"                <br/>\n"
+"                <br/>\n"
+"                <br/>\n"
+"                <br/>"
+msgstr ""
+"<strong>:العميل</strong>\n"
+"                <br/>\n"
+"                <strong>:رقم الهوية</strong>\n"
+"                <br/>\n"
+"                <br/>\n"
+"                <br/>\n"
+"                <br/>\n"
+"                <br/>\n"
+"                <br/>"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid ""
+"<strong>Employee Signature:</strong>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <strong>Manager's Signature:</strong>"
+msgstr ""
+"<strong>:توقيع الموظف</strong>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <br/>\n"
+"                        <strong>:توقيع المدير</strong>"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.installment_summary_template
+msgid "<strong>Installment Type :&amp;nbsp;&amp;nbsp;</strong>"
+msgstr "<strong> :نوع التقسيط&amp;nbsp;&amp;nbsp;</strong>"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.installment_summary_template
+msgid "<strong>Interest Amount Month :&amp;nbsp;&amp;nbsp;</strong>"
+msgstr "<strong>:مبلغ الربح الشهري&amp;nbsp;&amp;nbsp;</strong>"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.installment_summary_template
+msgid "<strong>Loan Term :&amp;nbsp;&amp;nbsp;</strong>"
+msgstr "<strong> :مدة التمويل&amp;nbsp;&amp;nbsp;</strong>"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.installment_summary_template
+msgid "<strong>Loan Type :&amp;nbsp;&amp;nbsp;</strong>"
+msgstr "<strong>:نوع التمويل&amp;nbsp;&amp;nbsp;</strong>"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.installment_summary_template
+msgid "<strong>Request Date :&amp;nbsp;&amp;nbsp;</strong>"
+msgstr "<strong>:تاريخ الطلب&amp;nbsp;&amp;nbsp;</strong>"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__account
+msgid "AC-Accountant"
+msgstr "AC - محاسب"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__affairs
+msgid "AFF - The Ministry of Foreign Affairs"
+msgstr "AFF - وزارة الخارجية"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__agriculture
+msgid "AGR - Ministry Of Agriculture"
+msgstr "AGR - وزارة الزراعة"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__air
+msgid "AIF - Air Forces"
+msgstr "AIF - القوات الجوية"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__airlines
+msgid "AIR - Airlines"
+msgstr "الخطوط الجوية - الخطوط الجوية"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__number_liability
+#: model:ir.model.fields,field_description:loan.field_res_users__number_liability
+msgid "ALL liability"
+msgstr "جميع الالتزامات"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__number_liability_report
+#: model:ir.model.fields,field_description:loan.field_res_users__number_liability_report
+msgid "ALL liability Report"
+msgstr "تقرير جميع الالتزامات"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__apr_annual
+#: model:ir.model.fields,field_description:loan.field_loan_type__apr
+msgid "APR"
+msgstr "معدل النسبة السنوية"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__associations
+msgid "ASS - Associations"
+msgstr "ASS - الجمعيات"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__audit
+msgid "AU-Auditor"
+msgstr "AU- مدقق"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__about_us
+#: model:ir.model.fields,field_description:loan.field_res_users__about_us
+msgid "About us"
+msgstr "معلومات عنا"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Academic Achievement"
+msgstr "المستوى الإكاديمي"
+
+#. module: loan
+#: model:mail.activity.type,name:loan.mail_activity_sales
+msgid "Accept Sales"
+msgstr "قبول البيع"
+
+#. module: loan
+#: model:res.groups,name:loan.group_purchase_acceptance
+msgid "Acceptance Sales"
+msgstr "قبول بيع"
+
+#. module: loan
+#: model:mail.activity.type,name:loan.mail_activity_apply_done
+msgid "Accepted Request"
+msgstr "طلب التطبيق"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__access_warning
+#: model:ir.model.fields,field_description:loan.field_res_partner__access_warning
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__access_warning
+msgid "Access warning"
+msgstr "تحذير الوصول"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.request_form_view
+#: model_terms:ir.ui.view,arch_db:loan.view_loan_installment_form
+msgid "Accounting"
+msgstr "المحاسبة"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__message_needaction
+#: model:ir.model.fields,field_description:loan.field_res_partner__message_needaction
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__message_needaction
+msgid "Action Needed"
+msgstr "الإجراءات اللازمة"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__activity_ids
+#: model:ir.model.fields,field_description:loan.field_res_partner__activity_ids
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__activity_ids
+msgid "Activities"
+msgstr "الأنشطة"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__activity_exception_decoration
+#: model:ir.model.fields,field_description:loan.field_res_partner__activity_exception_decoration
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr " استثناء النشاط"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__activity_state
+#: model:ir.model.fields,field_description:loan.field_res_partner__activity_state
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__activity_state
+msgid "Activity State"
+msgstr "حالة النشاط"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__activity_type_icon
+#: model:ir.model.fields,field_description:loan.field_res_partner__activity_type_icon
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "شكل نوع النشاط"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__additional_code
+#: model:ir.model.fields,field_description:loan.field_res_users__additional_code
+msgid "Additional Code"
+msgstr "الرقم الإضافي"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "Additional Notes"
+msgstr "ملاحظات إضافية"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "Administration fee"
+msgstr "رسوم إدارية"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__fees
+msgid "Administrative fees"
+msgstr "الرسوم الإدارية"
+
+#. module: loan
+#: model:res.groups,name:loan.group_use_loan_admin
+#: model:res.groups,name:loan.group_use_loan_admin_type
+msgid "Administrator"
+msgstr "المسؤول"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__age
+#: model:ir.model.fields,field_description:loan.field_res_users__age
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Age"
+msgstr "العمر"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__reject_reason__6
+msgid "Age is less than allowed"
+msgstr "العمر أقل من المسموح به"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__liability
+#: model:ir.model.fields,field_description:loan.field_res_users__liability
+msgid "All Liability"
+msgstr "جميع الالتزام"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__state
+msgid "All State"
+msgstr "كل الحالات"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__allow_loan
+#: model:ir.model.fields,field_description:loan.field_res_users__allow_loan
+msgid "Allow Loan"
+msgstr "السماح بالتمويل"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "Amount (SAR)"
+msgstr "المبلغ (ريال سعودي)"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Amount of Monthly Expenses"
+msgstr "مبلغ المصاريف الشهرية"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "Amount to be paid"
+msgstr "المبلغ المستحق للدفع"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "Annual Percentage Rate (APR)"
+msgstr "معدل النسبة السنوية (APR)"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__annual_rent
+#: model:ir.model.fields,field_description:loan.field_res_users__annual_rent
+msgid "Annual Rent"
+msgstr "الإيجار السنوي"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__annual_income
+#: model:ir.model.fields,field_description:loan.field_res_users__annual_income
+msgid "Annually Income"
+msgstr "الدخل السنوي"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.request_form_view
+msgid "Apply"
+msgstr "تطبيق"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__interest_apply
+#: model:ir.model.fields,field_description:loan.field_loan_type__apply_interest
+msgid "Apply Interest"
+msgstr "تطبيق الفائدة"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__state__approve
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__state__approve
+#: model_terms:ir.ui.view,arch_db:loan.request_form_view
+msgid "Approve"
+msgstr "الموافقة"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__approve_date
+msgid "Approve Date"
+msgstr "تاريخ الموافقة"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__message_attachment_count
+#: model:ir.model.fields,field_description:loan.field_res_partner__message_attachment_count
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__bankstaff
+msgid "BA-Banker (Bank Staff)"
+msgstr "BA- مصرفي (موظفو البنك)"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__brig
+msgid "BG-Brigadier General"
+msgstr "BG-العميد"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__bank
+msgid "BNK - Banks"
+msgstr "BNK - البنوك"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__command
+msgid "BOD - Command Body"
+msgstr "BOD - هيئة القيادة"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__birth_date
+msgid "BOfD"
+msgstr "تاريخ الميلاد"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__certificate_level__bachelor
+msgid "Bachelor"
+msgstr "بكالوريوس"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__bank_name
+#: model:ir.model.fields,field_description:loan.field_res_users__bank_name
+msgid "Bank"
+msgstr "البنك"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__basic_salary_loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__basic_salary
+#: model:ir.model.fields,field_description:loan.field_res_users__basic_salary
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Basic Salary"
+msgstr "الراتب الاساسي"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "Beneficiary No"
+msgstr "رقم المستفيد"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "Beneficiary data"
+msgstr "بيانات المستفيد"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__about_us__billboards
+msgid "Billboards"
+msgstr "اللوحات الإعلانية"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Birth Date"
+msgstr "تاريخ الميلاد"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__birth_of_date
+#: model:ir.model.fields,field_description:loan.field_res_users__birth_of_date
+msgid "Birth Of Date"
+msgstr "تاريخ الميلاد"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__branch
+msgid "Branch"
+msgstr "الفرع"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__sector__businessmen
+msgid "Businessmen"
+msgstr "رجل اعمال"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__captain
+msgid "CAP-Captain"
+msgstr "CAP- قائد"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__region__center
+msgid "CEN - Central"
+msgstr "CEN - وسط"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__ceo
+msgid "CFO-Chief Financial Officer"
+msgstr "CFO- المدير المالي"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__clerk
+msgid "CL-Clerk"
+msgstr "CL- كاتب"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__consult
+msgid "CO-Consultant"
+msgstr "CO- مستشار"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__col
+msgid "COL-Colonel"
+msgstr "COL- كولونيل"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__commerce
+msgid "COM - Ministry of Commerce"
+msgstr "COM - وزارة التجارة"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__comp
+msgid "COM - companies"
+msgstr "COM - الشركات"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__cor
+msgid "COR-Corporal"
+msgstr "COR- عريف"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__communications
+msgid "COU -  The ministry of communications"
+msgstr "COU - وزارة الاتصالات"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__court
+msgid "COU - Royal Court"
+msgstr "COU - الديوان الملكي"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__programmer
+msgid "CP-Computer Programmer"
+msgstr "CP- مبرمج كمبيوتر"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__cashier
+msgid "CS-Cashier"
+msgstr "CS- أمين الصندوق"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__csg
+msgid "CSG-Chief Sergeant"
+msgstr "CSG- رقيب اول"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__customerservice
+msgid "CSR-Customer Service Representative"
+msgstr "CSR- ممثل خدمة العملاء"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__culture
+msgid "CUL - Ministry of Culture"
+msgstr "CUL - وزارة الثقافة"
+
+#. module: loan
+#: model:ir.ui.menu,name:loan.calculate_id
+msgid "Calculate"
+msgstr "حاسبة"
+
+#. module: loan
+#: model:res.groups,name:loan.group_call_customer
+msgid "Call Customer"
+msgstr "اتصل بالعميل"
+
+#. module: loan
+#: model:mail.activity.type,name:loan.mail_activity_call_done
+#: model_terms:ir.ui.view,arch_db:loan.request_form_view
+msgid "Call Done"
+msgstr "تم الاتصال"
+
+#. module: loan
+#: model:mail.activity.type,name:loan.mail_activity_call_reject
+#: model_terms:ir.ui.view,arch_db:loan.request_form_view
+msgid "Call Reject"
+msgstr "مكالمة بالرفض"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.partner_report_view
+msgid "Cancel"
+msgstr "إلغاء"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__personal_care_exp
+#: model:ir.model.fields,field_description:loan.field_res_users__personal_care_exp
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Care Expenses"
+msgstr "مصاريف الرعاية"
+
+#. module: loan
+#: model:ir.module.category,description:loan.module_category_loan
+msgid "Category For Loan"
+msgstr "فئة التمويل"
+
+#. module: loan
+#: model:ir.module.category,description:loan.module_category_type_loan
+msgid "Category For Type"
+msgstr "فئات النوع"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__certificate_level_loan
+msgid "Certificate Level Loan"
+msgstr "تمويل مستوى الشهادة"
+
+#. module: loan
+#: model:ir.model,name:loan.model_mail_activity_type
+msgid "Change Field"
+msgstr "تغيير الحقول"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__classification_employer_loan
+msgid "Classification"
+msgstr "التصنيف"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__classification_employer
+#: model:ir.model.fields,field_description:loan.field_res_users__classification_employer
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Classification Employer"
+msgstr "تصنيف صاحب العمل"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__clinic_name
+#: model:ir.model.fields,field_description:loan.field_res_users__clinic_name
+msgid "Clinic Name"
+msgstr "اسم العيادة"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__state__close
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__state__close
+#: model_terms:ir.ui.view,arch_db:loan.view_report_installment
+msgid "Close"
+msgstr "أغلق"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__close_date
+#: model:ir.model.fields,field_description:loan.field_res_users__close_date
+msgid "Close Date"
+msgstr "تاريخ الاغلاق"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__comment_loan
+msgid "Comment"
+msgstr "تعليق"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__communicat_phone
+#: model:ir.model.fields,field_description:loan.field_res_users__communicat_phone
+msgid "Communicat number"
+msgstr "رقم التواصل"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__communicat_name
+#: model:ir.model.fields,field_description:loan.field_res_users__communicat_name
+msgid "Communicate Name"
+msgstr "اسم التواصل"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.partner_inherit_form
+msgid "Communicate with another person"
+msgstr "تواصل مع شخص آخر"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_installment__company_id
+#: model:ir.model.fields,field_description:loan.field_loan_order__company
+msgid "Company"
+msgstr "شركة"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__home_type__company
+msgid "Company Provider"
+msgstr "الشركة المزودة"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.partner_inherit_form
+msgid "Complete"
+msgstr "مكتمل"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__state__create
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__state__create
+#: model_terms:ir.ui.view,arch_db:loan.request_form_view
+msgid "Confirm"
+msgstr "تأكيد"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__state__confirm_call
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__state__confirm_call
+msgid "Confirm Call"
+msgstr "تأكيد الاتصال"
+
+#. module: loan
+#: model:ir.ui.menu,name:loan.partner_report_menu
+msgid "Contact report"
+msgstr "تقرير العميل"
+
+#. module: loan
+#: model:ir.model,name:loan.model_contact_report
+msgid "Contact report wizard"
+msgstr ""
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__state__contract
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__state__contract
+msgid "Contract"
+msgstr "العقود"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "Contract Reference Number"
+msgstr "الرقم المرجعي للعقد"
+
+#. module: loan
+#: model:ir.model,name:loan.model_res_partner
+msgid "Create Customer"
+msgstr "إنشاء عميل"
+
+#. module: loan
+#: model:ir.model,name:loan.model_res_partner_line
+msgid "Create Customer Liability"
+msgstr "إنشاء التزامات العميل"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.partner_inherit_form
+msgid "Create Loan"
+msgstr "إنشاء طلب تمويل"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_contact_report__create_uid
+#: model:ir.model.fields,field_description:loan.field_installment_report_wizard__create_uid
+#: model:ir.model.fields,field_description:loan.field_loan_calculate__create_uid
+#: model:ir.model.fields,field_description:loan.field_loan_installment__create_uid
+#: model:ir.model.fields,field_description:loan.field_loan_order__create_uid
+#: model:ir.model.fields,field_description:loan.field_loan_type__create_uid
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__create_uid
+msgid "Created by"
+msgstr "أنشاء بواسطة"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_contact_report__create_date
+#: model:ir.model.fields,field_description:loan.field_installment_report_wizard__create_date
+#: model:ir.model.fields,field_description:loan.field_loan_calculate__create_date
+#: model:ir.model.fields,field_description:loan.field_loan_installment__create_date
+#: model:ir.model.fields,field_description:loan.field_loan_order__create_date
+#: model:ir.model.fields,field_description:loan.field_loan_type__create_date
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__create_date
+msgid "Created on"
+msgstr "تم إنشاؤها على"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__res_partner_line
+#: model:ir.model.fields,field_description:loan.field_res_users__res_partner_line
+msgid "Credit Commitment"
+msgstr "التزام الائتمان"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Credit Liability"
+msgstr "الالتزامات الائتمانية"
+
+#. module: loan
+#: model:ir.actions.report,name:loan.loan_customer_report
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Credit Model"
+msgstr "نموذج الأئتمان"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_installment_report_wizard__currency_id
+#: model:ir.model.fields,field_description:loan.field_loan_installment__currency_id
+#: model:ir.model.fields,field_description:loan.field_loan_order__currency_id
+msgid "Currency"
+msgstr "العملة"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__installment_month
+msgid "Current Deduction"
+msgstr "الخصم الحالي"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Current Work Years"
+msgstr "سنوات العمل الحالية"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Current Working"
+msgstr "العمل الحالي"
+
+#. module: loan
+#: model:ir.actions.act_window,name:loan.partner_id_action
+#: model:ir.model.fields,field_description:loan.field_installment_report_wizard__early_name
+#: model:ir.model.fields,field_description:loan.field_loan_installment__name
+#: model:ir.model.fields,field_description:loan.field_loan_order__name
+#: model:ir.ui.menu,name:loan.customer_id
+msgid "Customer"
+msgstr "العميل"
+
+#. module: loan
+#: model:mail.activity.type,name:loan.mail_activity_partner_complete
+msgid "Customer Data Complete"
+msgstr "بيانات العميل كاملة"
+
+#. module: loan
+#: model:mail.activity.type,name:loan.mail_activity_partner_incomplete
+msgid "Customer Data InComplete"
+msgstr "بيانات العميل غير مكتملة"
+
+#. module: loan
+#: model:mail.activity.type,name:loan.mail_activity_partner_done
+msgid "Customer Done"
+msgstr "تم الشريك"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_purchase_order__id_number
+msgid "Customer ID Number"
+msgstr "رقم هوية العميل"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Customer Liability"
+msgstr "إلتزامات العميل"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_purchase_order__customer_name
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Customer Name"
+msgstr "إسم العميل"
+
+#. module: loan
+#: model:ir.model.fields,help:loan.field_loan_order__access_url
+#: model:ir.model.fields,help:loan.field_res_partner__access_url
+#: model:ir.model.fields,help:loan.field_res_partner_line__access_url
+msgid "Customer Portal URL"
+msgstr "عنوان URL لبوابة العميل"
+
+#. module: loan
+#: model:res.groups,name:loan.group_customer_service
+msgid "Customer Service"
+msgstr "خدمة العملاء"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__reject_reason__27
+msgid "Customer risk is high"
+msgstr "مخاطر العميل عالية"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__mua
+msgid "D11-Muakib"
+msgstr ""
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__purchase
+msgid "D12-Purchaser"
+msgstr "D12- المشتري"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__data
+msgid "D13-Data Entry Clerk"
+msgstr "D13- كاتب إدخال البيانات"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__op
+msgid "D14-Tel Operator"
+msgstr "D14- مشغل اتصال"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__real
+msgid "D16-Real State"
+msgstr "D16- عقارات"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__admin
+msgid "D17-General and Admin Services"
+msgstr "D17- الخدمات العامة والإدارية"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__tic
+msgid "D19-Ticketing Clerk"
+msgstr "D19- كاتب التذاكر"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__per
+msgid "D20-Personal Rel Officer"
+msgstr "D20- مسؤول العلاقات الشخصية"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__tra
+msgid "D21-Training Officer"
+msgstr "D21- ضابط تدريب"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__accountclerk
+msgid "D22-Accounts Clerk"
+msgstr "D22- كاتب حسابات"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__nurse
+msgid "D23-Male Nurse"
+msgstr "D23- ممرض ذكر"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__owner
+msgid "D33-Business Owner"
+msgstr "D33- صاحب العمل"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__director
+msgid "D34-Director"
+msgstr "D34- المخرج"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__secretary
+msgid "D4-Secretary"
+msgstr "D4- سكرتير"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__air
+msgid "D41-Airliner"
+msgstr "D41- كابتن طائرة"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__art
+msgid "D42-Architect / Artest"
+msgstr "D42- مهندس معماري / رسام"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__auto
+msgid "D43-automotive"
+msgstr "D43- ميكانيكا السيارات"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__biot
+msgid "D44-Biotechnology"
+msgstr "D44- التكنولوجيا الحيوية"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__business
+msgid "D45-Business MAN / Woman"
+msgstr "D45- رجل أعمال / امرأة"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__construct
+msgid "D46-Construction"
+msgstr "D46- بناء"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__contact
+msgid "D47-Contacting"
+msgstr "D47- تعاقدي"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__consultant
+msgid "D48-Consultant"
+msgstr "D48- استشاري"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__customer
+msgid "D49-Customer service"
+msgstr "D49- خدمة عملاء"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__finance
+msgid "D50-Financial"
+msgstr "D50- المالية"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__govsector
+msgid "D51-government sector"
+msgstr "D51- قطاع حكومي"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__practice
+msgid "D52-Healthcare, practice. and tech."
+msgstr "D52- رعاية صحية ، ممارسة. والتكنولوجيا."
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__hr
+msgid "D53-Human Resources"
+msgstr "D53- موارد بشرية"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__insurance
+msgid "D54-Insurance"
+msgstr "D54- تأمين"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__it
+msgid "D55-Information TTechnology"
+msgstr "D55- تقنية معلومات"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__main
+msgid "D57-Maintenance"
+msgstr "D57- الصيانة"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__manu
+msgid "D58-Manufacturing"
+msgstr "D58- التصنيع"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__mechanic
+msgid "D59-Mechanical"
+msgstr "D59- ميكانيكي"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__military
+msgid "D60-Military"
+msgstr "D60- عسكري"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__mining
+msgid "D61-Mining"
+msgstr "D61- التعدين"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__petro
+msgid "D62-Petrochemical"
+msgstr "D62- البتروكيماويات"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__bhd
+msgid "D63-Professor or BHD"
+msgstr "D63- أستاذ أو بروفيسور"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__public
+msgid "D64-Public Relation"
+msgstr "D64- العلاقات العامة"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__quality
+msgid "D65-Quality Service"
+msgstr "D65- خدمة الجودة"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__safety
+msgid "D66-Safety / Environment"
+msgstr "D66- السلامة / البيئة"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__security
+msgid "D67-Security"
+msgstr "D67- الامن"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__ship
+msgid "D69-Shipping"
+msgstr "D69- الشحن"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__banker
+msgid "D7-Banker"
+msgstr "D7- مصرفي"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__support
+msgid "D70-Support service"
+msgstr "D70- خدمة الدعم"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__tel
+msgid "D71-Telecommunication"
+msgstr "D71- الاتصالات"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__tele
+msgid "D72-Telemarketing"
+msgstr "D72- التسويق الهاتفي"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__trans
+msgid "D73-Transportation"
+msgstr "D73- النقل"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__class
+msgid "D74-Not Class Warning"
+msgstr "D74- غير مصنف تحذير"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__ins
+msgid "D75-Vehicle Ins Maine"
+msgstr "D75- مركبة"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__sport
+msgid "D8-Sportsman"
+msgstr "D8- رياضي"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__defense
+msgid "DEF - Ministry of Defense"
+msgstr "DEF - وزارة الدفاع"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__head
+msgid "DH-Division Head (Department)"
+msgstr "DH- رئيس القسم (القسم)"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__doctor
+msgid "DR-Doctor"
+msgstr "DR- طبيب"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_installment_report_wizard__early_date
+#: model:ir.model.fields,field_description:loan.field_loan_installment__date
+#: model:ir.model.fields,field_description:loan.field_loan_order__date_loan
+#: model_terms:ir.ui.view,arch_db:loan.installment_summary_template
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Date"
+msgstr "التاريخ"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__state__decision
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__state__decision
+msgid "Decision"
+msgstr "القرار"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Dependent Number"
+msgstr "رقم الكفيل"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__state__disburse
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__state__disburse
+msgid "Disburse"
+msgstr "صرف"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__disburse_account
+#: model:ir.model.fields,field_description:loan.field_loan_type__disburse_account
+msgid "Disburse Account"
+msgstr "حساب الصرف"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__disburse_journal_entry
+msgid "Disburse Account Entry"
+msgstr "حساب قيد الصرف"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__disburse_journal
+#: model:ir.model.fields,field_description:loan.field_loan_type__disburse_journal
+msgid "Disburse Journal"
+msgstr "يومية الصرف"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.request_form_view
+msgid "Disburse Loan"
+msgstr "تمويل الصرف"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__disbursement_date
+msgid "Disbursement Date"
+msgstr "تاريخ صرف"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__disclosure
+#: model:ir.model.fields,field_description:loan.field_res_users__disclosure
+msgid "Disclosure"
+msgstr "إفشاء"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_contact_report__display_name
+#: model:ir.model.fields,field_description:loan.field_installment_report_wizard__display_name
+#: model:ir.model.fields,field_description:loan.field_loan_calculate__display_name
+#: model:ir.model.fields,field_description:loan.field_loan_installment__display_name
+#: model:ir.model.fields,field_description:loan.field_loan_order__display_name
+#: model:ir.model.fields,field_description:loan.field_loan_type__display_name
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__display_name
+msgid "Display Name"
+msgstr "عرض الاسم"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.partner_inherit_form
+msgid "Do you have a political relative?"
+msgstr "هل لديك قريب سياسي؟"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.partner_inherit_form
+msgid "Done"
+msgstr "تم"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__down_payment_loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__down_payment
+#: model:ir.model.fields,field_description:loan.field_res_users__down_payment
+msgid "Down Payment"
+msgstr "دفعة مقدمه"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__state__draft
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__state__draft
+msgid "Draft"
+msgstr "مسودة"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__reject_reason__17
+msgid "Duplicate request"
+msgstr "طلب مكرر"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__economy
+msgid "ECO - Ministry of Economy"
+msgstr "ECO - وزارة الاقتصاد"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_installment__total_amount
+msgid "EMI"
+msgstr ""
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__engineer
+msgid "EN-Engineer"
+msgstr "EN- مهندس"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__region__east
+msgid "EST - Eastern"
+msgstr "EST - الشرقية"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__state__early
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__state__early
+msgid "Early"
+msgstr "مبكر"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.request_form_view
+msgid "Early Installments"
+msgstr "أقساط مبكرة"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.request_form_view
+#: model_terms:ir.ui.view,arch_db:loan.view_loan_installment_form
+msgid "Early Pay"
+msgstr "سداد مبكر"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.view_report_installment
+msgid "Early Payment"
+msgstr "سداد مبكر"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.request_form_view
+msgid "Early pay"
+msgstr "سداد مبكر"
+
+#. module: loan
+#: model:ir.model,name:loan.model_account_move
+msgid "Edit Account Move"
+msgstr "تحرير نقل الحساب"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__education_exp
+#: model:ir.model.fields,field_description:loan.field_res_users__education_exp
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Education Expenses"
+msgstr "نفقات التعليم"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__certificate_level
+#: model:ir.model.fields,field_description:loan.field_res_users__certificate_level
+msgid "Educational level"
+msgstr "المستوى التعليمي"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Electricity"
+msgstr "كهرباء"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__employer_loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__employer
+#: model:ir.model.fields,field_description:loan.field_res_users__employer
+msgid "Employer"
+msgstr "جهة العمل"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__installment_end_date
+msgid "End Date"
+msgstr "تاريخ الإنتهاء"
+
+#. module: loan
+#: code:addons/loan/models/customer.py:0
+#, python-format
+msgid "Error ! Identification Id Incorrect "
+msgstr "خطأ ! رقم الهوية غير صحيح"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Existing Liability"
+msgstr "الالتزامات الحالية"
+
+#. module: loan
+#: code:addons/loan/models/customer.py:0
+#, python-format
+msgid "Exists ! Already a Identification Id exists in this Customer"
+msgstr "موجود! يوجد بالفعل رقم الهوية في هذا العميل"
+
+#. module: loan
+#: code:addons/loan/models/customer.py:0
+#, python-format
+msgid "Exists ! This Customer Blocked"
+msgstr "موجود! هذا العميل محظور"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Expenses"
+msgstr "المصروفات"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__expiry_of_date
+#: model:ir.model.fields,field_description:loan.field_res_users__expiry_of_date
+msgid "Expiry  Date"
+msgstr "تاريخ الانتهاء"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Extra Monthly Income"
+msgstr "الدخل الشهري الإضافي"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__gender__female
+msgid "F - Female"
+msgstr "F - انثى"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__finance
+msgid "FIN - Ministry of Finance"
+msgstr "FIN - وزارة المالية"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__lie
+msgid "FL-First Lieutenant"
+msgstr "FL- ملازم أول"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__foreign
+msgid "FOR - Ministry of Foreign Affairs"
+msgstr "FOR - وزارة الخارجية"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__soldier
+msgid "FS-First Soldier"
+msgstr "FS- جندي أول"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__about_us__clients
+msgid "FUEL Clients"
+msgstr "عميل فيول"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Finance Term"
+msgstr "مدة التمويل"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "Finance data"
+msgstr "بيانات المالية"
+
+#. module: loan
+#: model:ir.actions.report,name:loan.contract_loan_full_report
+msgid "Financing Contract"
+msgstr "عقد التمويل"
+
+#. module: loan
+#: model:ir.actions.report,name:loan.contract_loan_report
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "Financing Contract Summary"
+msgstr "ملخص عقد التمويل"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.partner_inherit_form
+msgid "Financing Info"
+msgstr "معلومات مالية"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "First installment due date"
+msgstr "تاريخ استحقاق القسط الأول"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_type__interest_mode__flat
+msgid "Flat"
+msgstr "مرابحة"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__message_follower_ids
+#: model:ir.model.fields,field_description:loan.field_res_partner__message_follower_ids
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__message_follower_ids
+msgid "Followers"
+msgstr "متابعين"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__message_partner_ids
+#: model:ir.model.fields,field_description:loan.field_res_partner__message_partner_ids
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "المتابعون (الشركاء)"
+
+#. module: loan
+#: model:ir.model.fields,help:loan.field_loan_order__activity_type_icon
+#: model:ir.model.fields,help:loan.field_res_partner__activity_type_icon
+#: model:ir.model.fields,help:loan.field_res_partner_line__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "رمز الخط الرائع ، على سبيل المثال FA- المهام"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Food Expense"
+msgstr "نفقات الطعام"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__food_exp
+#: model:ir.model.fields,field_description:loan.field_res_users__food_exp
+msgid "Food Expenses"
+msgstr "نفقات الطعام"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__nationality__foreign
+msgid "Foreign"
+msgstr "أجنبي"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Funding Amount"
+msgstr "مبلغ التمويل"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__funding_authority
+msgid "Funding Authority"
+msgstr "هيئة التمويل"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__cost_future
+#: model:ir.model.fields,field_description:loan.field_res_users__cost_future
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Future Expenses"
+msgstr "المصاريف المستقبلية"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__gmanager
+msgid "GM-General Manager"
+msgstr "GM- المدير العام"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__departments
+msgid "GOV - Government departments"
+msgstr "GOV - الدوائر الحكومية"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__grievances
+msgid "GRI - Board of Grievances"
+msgstr "GRI - ديوان المظالم"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__gender_loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__gender
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Gender"
+msgstr "الجنس"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__gov_loan
+#: model:ir.model.fields,field_description:loan.field_res_users__gov_loan
+msgid "Gov Loan"
+msgstr "دعم حكومي"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__sector__governmental
+msgid "Governmental"
+msgstr "حكومي"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__education
+msgid "HED - Ministry of Higher Education"
+msgstr "HED - وزارة التعليم العالي"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__health
+msgid "HELTH - Ministry of Health"
+msgstr "HELTH - وزارة الصحة"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__hajj
+msgid "HIA - Ministry of Hajj"
+msgstr "HIA - وزارة الحج"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__hotel
+msgid "HOT - Hotels"
+msgstr "HOT - الفنادق"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__housing
+msgid "HOU - Ministry of Housing"
+msgstr "HOU - وزارة الإسكان"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__has_message
+#: model:ir.model.fields,field_description:loan.field_res_partner__has_message
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__has_message
+msgid "Has Message"
+msgstr "رسالة"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__reject_reason__12
+msgid "He does not answer the phone"
+msgstr "لا يرد على الهاتف"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__reject_reason__25
+msgid "He has an irregular repayment in his poison"
+msgstr "لديه سداد غير منتظم لسمه"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__reject_reason__23
+msgid "He has stumbled into the fuel company"
+msgstr "لديه تعثر في شركة فيول"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__classification_employer__high
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__risk__high
+msgid "High"
+msgstr "عالي"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__reject_reason__2
+msgid "High Liabilities"
+msgstr "إلتزامات عالية"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__reject_reason__15
+msgid "High risk company"
+msgstr "شركة عالية المخاطر"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__reject_reason__30
+msgid "His position Stopped"
+msgstr "وظيفة موقفه"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Home"
+msgstr "المنزل"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__home_allowance
+#: model:ir.model.fields,field_description:loan.field_res_users__home_allowance
+msgid "Home Allowance"
+msgstr "بدل السكن"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__cost_home
+#: model:ir.model.fields,field_description:loan.field_res_users__cost_home
+msgid "Home Expenses"
+msgstr "نفقات السكن"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__home_loan
+#: model:ir.model.fields,field_description:loan.field_res_users__home_loan
+msgid "Home Loan"
+msgstr "تمويل عقاري"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__home_type
+#: model:ir.model.fields,field_description:loan.field_res_users__home_type
+msgid "Home Type"
+msgstr "نوع السكن"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__iban
+#: model:ir.model.fields,field_description:loan.field_res_partner__iban_number
+#: model:ir.model.fields,field_description:loan.field_res_users__iban_number
+msgid "IBAN Number"
+msgstr "رقم IBAN"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_contact_report__id
+#: model:ir.model.fields,field_description:loan.field_installment_report_wizard__id
+#: model:ir.model.fields,field_description:loan.field_loan_calculate__id
+#: model:ir.model.fields,field_description:loan.field_loan_installment__id
+#: model:ir.model.fields,field_description:loan.field_loan_order__id
+#: model:ir.model.fields,field_description:loan.field_loan_type__id
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__id
+msgid "ID"
+msgstr ""
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__id_number
+#: model:ir.model.fields,field_description:loan.field_res_users__id_number
+msgid "ID number"
+msgstr "رقم الهوية"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__imam
+msgid "IMA-Imam"
+msgstr "IMA- الإمام"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__industry
+msgid "IND - The Ministry of Industry"
+msgstr "IND - وزارة الصناعة"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__information
+msgid "INF - Ministry of Information"
+msgstr "INF - وزارة الإعلام"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__international
+msgid "INO - International Organizations"
+msgstr "INO - المنظمات الدولية"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__insurance
+msgid "INS - Insurance"
+msgstr "INS - شركات التأمين"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__interior
+msgid "INT - Ministry of Interior Affairs"
+msgstr "INT - وزارة الداخلية"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__activity_exception_icon
+#: model:ir.model.fields,field_description:loan.field_res_partner__activity_exception_icon
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__activity_exception_icon
+msgid "Icon"
+msgstr "رمز"
+
+#. module: loan
+#: model:ir.model.fields,help:loan.field_loan_order__activity_exception_icon
+#: model:ir.model.fields,help:loan.field_res_partner__activity_exception_icon
+#: model:ir.model.fields,help:loan.field_res_partner_line__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "رمز للإشارة إلى نشاط تم استثنائه."
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.customer_id_search_view
+msgid "Id"
+msgstr ""
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__identification_id
+#: model:ir.model.fields,field_description:loan.field_res_partner__identification_no
+#: model:ir.model.fields,field_description:loan.field_res_users__identification_no
+msgid "Identification ID"
+msgstr "رقم الهوية"
+
+#. module: loan
+#: model:ir.model.fields,help:loan.field_loan_order__message_needaction
+#: model:ir.model.fields,help:loan.field_loan_order__message_unread
+#: model:ir.model.fields,help:loan.field_res_partner__message_needaction
+#: model:ir.model.fields,help:loan.field_res_partner__message_unread
+#: model:ir.model.fields,help:loan.field_res_partner_line__message_needaction
+#: model:ir.model.fields,help:loan.field_res_partner_line__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "إذا تم تحديدها ، فإن الرسائل الجديدة تتطلب انتباهك."
+
+#. module: loan
+#: model:ir.model.fields,help:loan.field_loan_order__message_has_error
+#: model:ir.model.fields,help:loan.field_loan_order__message_has_sms_error
+#: model:ir.model.fields,help:loan.field_res_partner__message_has_error
+#: model:ir.model.fields,help:loan.field_res_partner__message_has_sms_error
+#: model:ir.model.fields,help:loan.field_res_partner_line__message_has_error
+#: model:ir.model.fields,help:loan.field_res_partner_line__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "إذا تم تحديده ، فإن بعض الرسائل بها خطأ في التسليم."
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.partner_inherit_form
+msgid "Income Info"
+msgstr "معلومات الدخل"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__source
+#: model:ir.model.fields,field_description:loan.field_res_users__source
+msgid "Income Source"
+msgstr "مصدر الدخل"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__reject_reason__3
+msgid "Income is Low"
+msgstr "الدخل منخفض"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.partner_inherit_form
+msgid "Incomplete"
+msgstr "غير مكتمل"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__reject_reason__32
+msgid "Incomplete application form"
+msgstr "استمارة طلب غير مكتملة"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__industry
+#: model:ir.model.fields,field_description:loan.field_res_users__industry
+msgid "Industry"
+msgstr "الصناعة"
+
+#. module: loan
+#: model:ir.ui.menu,name:loan.information_id
+msgid "Information Customer"
+msgstr "معلومات العميل"
+
+#. module: loan
+#: model:ir.model,name:loan.model_helpdesk_team
+msgid "Inherit Helpdesk Team"
+msgstr ""
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_installment__installment_amount
+#: model:ir.model.fields,field_description:loan.field_loan_installment__installment_amount_early
+#: model:ir.model.fields,field_description:loan.field_loan_order__installment_comp_loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__installment_id
+#: model:ir.model.fields,field_description:loan.field_res_users__installment_id
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+#: model_terms:ir.ui.view,arch_db:loan.request_form_view
+msgid "Installment"
+msgstr "تقسيط"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_installment__installment_account
+#: model:ir.model.fields,field_description:loan.field_loan_type__installment_account
+msgid "Installment Account"
+msgstr "حساب التقسيط"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__installment_amount_loan
+#: model_terms:ir.ui.view,arch_db:loan.installment_summary_template
+msgid "Installment Amount"
+msgstr "تقسيط المبلغ"
+
+#. module: loan
+#: model:ir.model,name:loan.model_installment_report_wizard
+msgid "Installment Loan Request"
+msgstr "طلب تمويل اقساط"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__installment_percentage_loan
+msgid "Installment Per"
+msgstr "القسط لكل"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__installment_percentage
+#: model:ir.model.fields,field_description:loan.field_res_users__installment_percentage
+msgid "Installment Percentage"
+msgstr "نسبة القسط"
+
+#. module: loan
+#: model:ir.actions.report,name:loan.action_report_installment_loan
+msgid "Installment Summary"
+msgstr "ملخص الاقساط"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__installment_type
+msgid "Installment Type"
+msgstr "نوع القسط"
+
+#. module: loan
+#: code:addons/loan/models/loan.py:0
+#, python-format
+msgid "Installment pay after loan Open !!!"
+msgstr "تقسيط السداد بعد القرض مفتوح !!!"
+
+#. module: loan
+#: model:ir.actions.act_window,name:loan.action_report_installment
+#: model:ir.model.fields,field_description:loan.field_loan_order__installment_ids
+#: model_terms:ir.ui.view,arch_db:loan.request_form_view
+msgid "Installments"
+msgstr "ملخص القسط"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__insurance_discount
+#: model:ir.model.fields,field_description:loan.field_res_users__insurance_discount
+msgid "Insurance Discount"
+msgstr "خصم التأمينات الإجتماعية"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__cost_insurance
+#: model:ir.model.fields,field_description:loan.field_res_users__cost_insurance
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Insurance Expenses"
+msgstr "نتفقات التأمين"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_installment__interest_account
+#: model:ir.model.fields,field_description:loan.field_loan_type__interest_account
+msgid "Interest Account"
+msgstr "حساب الفائدة"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_installment_report_wizard__early_interest_amount
+#: model:ir.model.fields,field_description:loan.field_loan_installment__interest_amount
+#: model:ir.model.fields,field_description:loan.field_loan_order__interest_amount
+#: model:ir.model.fields,field_description:loan.field_res_partner__interest_amount
+#: model:ir.model.fields,field_description:loan.field_res_users__interest_amount
+#: model_terms:ir.ui.view,arch_db:loan.installment_summary_template
+msgid "Interest Amount"
+msgstr "مبلغ الفائدة"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__interest_amount_month
+msgid "Interest Amount Month"
+msgstr "مبلغ الربح الشهري"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__interest_mode_loan
+#: model:ir.model.fields,field_description:loan.field_loan_type__interest_mode
+msgid "Interest Mode"
+msgstr "طريقة الفائدة"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__interest_rate_per_month
+msgid "Interest Month"
+msgstr "الفائدة الشهرية"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__interest_rate
+#: model:ir.model.fields,field_description:loan.field_res_partner__interest_rate
+#: model:ir.model.fields,field_description:loan.field_res_users__interest_rate
+msgid "Interest Rate"
+msgstr "نسبة الربح"
+
+#. module: loan
+#: code:addons/loan/models/loan.py:0
+#, python-format
+msgid "Interest Rate Must be Percent !!!"
+msgstr "معدل الربح ينبغي ان يكون نسبة!!"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_calculate__interest
+msgid "Interest rate per year"
+msgstr "معدل الفائدة في السنة"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__iqama
+#: model:ir.model.fields,field_description:loan.field_res_users__iqama
+msgid "Iqama ID"
+msgstr "رقم الإقامة"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__message_is_follower
+#: model:ir.model.fields,field_description:loan.field_res_partner__message_is_follower
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__message_is_follower
+msgid "Is Follower"
+msgstr "تابع"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_account_bank_statement_line__isdown_payment
+#: model:ir.model.fields,field_description:loan.field_account_move__isdown_payment
+#: model:ir.model.fields,field_description:loan.field_account_payment__isdown_payment
+msgid "IsDownpayment"
+msgstr "هو دفع مقدم؟"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__ispep
+#: model:ir.model.fields,field_description:loan.field_res_users__ispep
+msgid "Ispep"
+msgstr ""
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__reject_reason__31
+msgid "It is on the terrorist list"
+msgstr "إنه على قائمة الإرهاب"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__jour
+msgid "JO-Journalist"
+msgstr "JO- صحفي"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__justice
+msgid "JUS - Ministry of Justice"
+msgstr "JUS - وزارة العدل"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__reject_reason__10
+msgid "Job is not supported"
+msgstr "الوظيفة غير مدعومة"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__years_retire_loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__years_retire
+#: model:ir.model.fields,field_description:loan.field_res_users__years_retire
+msgid "Joining Date"
+msgstr "تاريخ الانضمام"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_installment__journal_entry_id
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: loan
+#: model:ir.actions.report,name:loan.kyc_loan_report
+msgid "Know Your Customer"
+msgstr "اعرف عميلك"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__advisor
+msgid "LA-Legal Advisor"
+msgstr "LA- مستشار قانوني"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__labor
+msgid "LAB - Ministry of Labor"
+msgstr "LAB - وزارة العمل"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__labor
+msgid "LB-Labor"
+msgstr "LB- عامل"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__licol
+msgid "LC-Lieutenant Colonel"
+msgstr "LC- ملازم أول"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__lieu
+msgid "LI-Lieutenant"
+msgstr "LI- ملازم"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__law
+msgid "LW-Lawyer"
+msgstr "LW- المحامي"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__cost_labor
+#: model:ir.model.fields,field_description:loan.field_res_users__cost_labor
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Labor Expenses"
+msgstr "مصاريف العمالة"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_contact_report____last_update
+#: model:ir.model.fields,field_description:loan.field_installment_report_wizard____last_update
+#: model:ir.model.fields,field_description:loan.field_loan_calculate____last_update
+#: model:ir.model.fields,field_description:loan.field_loan_installment____last_update
+#: model:ir.model.fields,field_description:loan.field_loan_order____last_update
+#: model:ir.model.fields,field_description:loan.field_loan_type____last_update
+#: model:ir.model.fields,field_description:loan.field_res_partner_line____last_update
+msgid "Last Modified on"
+msgstr "تاريخ آخر تعديل"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_contact_report__write_uid
+#: model:ir.model.fields,field_description:loan.field_installment_report_wizard__write_uid
+#: model:ir.model.fields,field_description:loan.field_loan_calculate__write_uid
+#: model:ir.model.fields,field_description:loan.field_loan_installment__write_uid
+#: model:ir.model.fields,field_description:loan.field_loan_order__write_uid
+#: model:ir.model.fields,field_description:loan.field_loan_type__write_uid
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__write_uid
+msgid "Last Updated by"
+msgstr "آخر تحديث بواسطة"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_contact_report__write_date
+#: model:ir.model.fields,field_description:loan.field_installment_report_wizard__write_date
+#: model:ir.model.fields,field_description:loan.field_loan_calculate__write_date
+#: model:ir.model.fields,field_description:loan.field_loan_installment__write_date
+#: model:ir.model.fields,field_description:loan.field_loan_order__write_date
+#: model:ir.model.fields,field_description:loan.field_loan_type__write_date
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__write_date
+msgid "Last Updated on"
+msgstr "تاريخ آخر تعديل"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "Last installment due date"
+msgstr "تاريخ استحقاق القسط الأخير"
+
+#. module: loan
+#: model:res.groups,name:loan.group_legal
+msgid "Legal Admin"
+msgstr "المسؤول القانوني"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_calculate__liability
+#: model:ir.model.fields,field_description:loan.field_loan_order__liability_loan
+msgid "Liability"
+msgstr "إلتزامات"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Liability to Salary Rata"
+msgstr "نسبة الالتزام من الراتب"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__loan_limit_month
+#: model:ir.model.fields,field_description:loan.field_res_partner__loan_limit
+#: model:ir.model.fields,field_description:loan.field_res_users__loan_limit
+msgid "Limit"
+msgstr "محدود"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__rate_limit
+#: model:ir.model.fields,field_description:loan.field_res_users__rate_limit
+msgid "Limit Rate"
+msgstr "معدل القسط المتاح"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_installment__loan_id
+#: model:ir.model.fields,field_description:loan.field_res_partner__loan_id
+#: model:ir.model.fields,field_description:loan.field_res_users__loan_id
+#: model:ir.ui.menu,name:loan.loan_id model:ir.ui.menu,name:loan.loan_root
+#: model_terms:ir.ui.view,arch_db:loan.view_loan_installment_form
+msgid "Loan"
+msgstr "تمويل"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_installment_report_wizard__early_loan_amount
+#: model:ir.model.fields,field_description:loan.field_loan_order__loan_amount
+#: model:ir.model.fields,field_description:loan.field_res_partner__loan_amount
+#: model:ir.model.fields,field_description:loan.field_res_users__loan_amount
+msgid "Loan Amount"
+msgstr "مبلغ التمويل"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__loan_amount_limiting
+msgid "Loan Amount Limit"
+msgstr "حد مبلغ التمويل"
+
+#. module: loan
+#: model:mail.activity.type,name:loan.mail_activity_loan_approval
+#: model:res.groups,name:loan.group_loan_approval
+msgid "Loan Approval"
+msgstr "الموافقة على التمويل"
+
+#. module: loan
+#: model:ir.model,name:loan.model_loan_calculate
+msgid "Loan Calculate"
+msgstr "حساب التمويل"
+
+#. module: loan
+#: model:ir.actions.act_window,name:loan.loan_calculate_action
+msgid "Loan Calculator"
+msgstr "حاسبة تمويل"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__loan_count
+#: model:ir.model.fields,field_description:loan.field_res_users__loan_count
+msgid "Loan Count"
+msgstr "حساب القرض"
+
+#. module: loan
+#: model:res.groups,name:loan.group_loan_credit
+msgid "Loan Credit"
+msgstr "تمويل ائتماني"
+
+#. module: loan
+#: model:mail.activity.type,name:loan.mail_activity_loan_done
+msgid "Loan Done"
+msgstr "تم التمويل"
+
+#. module: loan
+#: model:ir.actions.act_window,name:loan.action_dev_loan_installment
+#: model:ir.model,name:loan.model_loan_installment
+msgid "Loan Installment"
+msgstr "تقسيط التمويل"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.partner_inherit_form
+msgid "Loan Liability"
+msgstr "التزامات ائتمانية"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__compare_limit
+#: model:ir.model.fields,field_description:loan.field_res_users__compare_limit
+msgid "Loan Limit"
+msgstr "القسط المتاح"
+
+#. module: loan
+#: model:ir.module.category,name:loan.module_category_loan
+msgid "Loan Management"
+msgstr "إدارة التمويل"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__marital_status_loan
+msgid "Loan Marital Status"
+msgstr "الحالة الاجتماعية"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__loan_imit_percentage
+#: model:ir.model.fields,field_description:loan.field_res_users__loan_imit_percentage
+msgid "Loan Percentage"
+msgstr "نسبة التمويل"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__loan_imit_percentage_gov
+#: model:ir.model.fields,field_description:loan.field_res_users__loan_imit_percentage_gov
+msgid "Loan Percentage GOv"
+msgstr "نسبة التمويل GOv"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__period_loan
+#: model:ir.model.fields,field_description:loan.field_res_users__period_loan
+msgid "Loan Period"
+msgstr "مدة التمويل"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.partner_inherit_form
+msgid "Loan Program"
+msgstr "البرنامج التمويل"
+
+#. module: loan
+#: code:addons/loan/models/customer.py:0 model:ir.actions.act_window,name:loan.request_action
+#: model:ir.model,name:loan.model_loan_order model:ir.ui.menu,name:loan.loan_request_id
+#, python-format
+msgid "Loan Request"
+msgstr "طلب التمويل"
+
+#. module: loan
+#: model:ir.actions.act_window,name:loan.action_loan_approve
+#: model:ir.ui.menu,name:loan.loan_approval_id
+msgid "Loan Request Approval"
+msgstr "الموافقة على طلب التمويل"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__loan_request_year
+#: model:ir.model.fields,field_description:loan.field_res_users__loan_request_year
+msgid "Loan Request Per Year"
+msgstr "طلب تمويل سنوي"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_installment__loan_state
+msgid "Loan State"
+msgstr "حالة التمويل"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__loan_term
+msgid "Loan Term"
+msgstr "فترة التمويل"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_type__loan_month
+msgid "Loan Term By Month"
+msgstr "فترة التمويل في الشهر"
+
+#. module: loan
+#: code:addons/loan/models/loan.py:0
+#, python-format
+msgid "Loan Term By Month Must be Number of Months !!!"
+msgstr "يجب أن تكون مدة التمويل بالشهر عدد الأشهر !!!"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__total_loan
+#: model:ir.model.fields,field_description:loan.field_res_users__total_loan
+msgid "Loan Total"
+msgstr "مجموع التمويل"
+
+#. module: loan
+#: model:ir.actions.act_window,name:loan.loan_type_action
+#: model:ir.model,name:loan.model_loan_type
+#: model:ir.model.fields,field_description:loan.field_loan_order__loan_type
+#: model:ir.ui.menu,name:loan.loan_type_id
+msgid "Loan Type"
+msgstr "نوع التمويل"
+
+#. module: loan
+#: model:ir.module.category,name:loan.module_category_type_loan
+msgid "Loan Type Management"
+msgstr "أدارة نوع التمويل"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "Loan Type(SAR)"
+msgstr "نوع التمويل"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_calculate__loan_amount
+msgid "Loan amount"
+msgstr "مبلغ التمويل"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_installment__installment_type_id
+msgid "Loan installment type"
+msgstr "نوع قسط التمويل"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_calculate__term_month
+msgid "Loan term in months"
+msgstr "مدة التمويل في شهور"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_calculate__term_year
+msgid "Loan term in years"
+msgstr "مدة التمويل في سنوات"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__loan_num
+#: model:ir.model.fields,field_description:loan.field_res_users__loan_num
+msgid "Loans"
+msgstr "تمويلات"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__classification_employer__low
+msgid "Low"
+msgstr "منخفض"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__risk__low
+msgid "Low Risk"
+msgstr "خطر قليل"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__gender__male
+msgid "M - Male"
+msgstr "M - ذكر"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__account_move__transaction_channel__manual
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__branch__manual
+msgid "M-Manual"
+msgstr "M- يدوي"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__mech
+msgid "ME-Mechanic"
+msgstr "ME- ميكانيكي"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__major
+msgid "MG-Major General"
+msgstr "MG- اللواء"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__man
+msgid "MGR-Manager"
+msgstr "MGR- المدير"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__marketing
+msgid "MS-Marketing Specialist"
+msgstr "MS- أخصائي تسويق"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__municipalities
+msgid "MUN - Municipalities"
+msgstr "MUN - البلديات"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__message_main_attachment_id
+#: model:ir.model.fields,field_description:loan.field_res_partner__message_main_attachment_id
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "المرفق الرئيسي"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__maj
+msgid "Maj-Major"
+msgstr "Maj- رئيسي"
+
+#. module: loan
+#: model:res.groups,name:loan.group_use_loan_super_admin
+msgid "Manager"
+msgstr "المدير"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__marital_status__married
+msgid "Married"
+msgstr "متزوج"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__certificate_level__master
+msgid "Master"
+msgstr "ماستر"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__service
+#: model:ir.model.fields,field_description:loan.field_res_users__service
+msgid "Medical Service"
+msgstr "الخدمة الطبية"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__classification_employer__medium
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__risk__medium
+msgid "Medium"
+msgstr "متوسط"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__message_has_error
+#: model:ir.model.fields,field_description:loan.field_res_partner__message_has_error
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__message_has_error
+msgid "Message Delivery error"
+msgstr "خطأ في تسليم الرسالة"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__message_ids
+#: model:ir.model.fields,field_description:loan.field_res_partner__message_ids
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__message_ids
+msgid "Messages"
+msgstr "رسائل"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__installment_type__month
+msgid "Month"
+msgstr "شهر"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__month_installment
+#: model:ir.model.fields,field_description:loan.field_res_users__month_installment
+msgid "Month Installment"
+msgstr "القسط الشهري"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__month_nb
+msgid "Month nb"
+msgstr "الشهر"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Monthly Income"
+msgstr "الدخل الشهري"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__monthly_installment
+msgid "Monthly Installment"
+msgstr "القسط الشهري"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "Monthly Installment Amount (SAR)"
+msgstr "مبلغ القسط الشهري (ريال سعودي)"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "Monthly interest rate"
+msgstr "نسبة الربح الشهري"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_calculate__monthly_payments
+msgid "Monthly payments"
+msgstr "الاقساط الشهرية"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__my_activity_date_deadline
+#: model:ir.model.fields,field_description:loan.field_res_partner__my_activity_date_deadline
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "الموعد النهائي لنشاطي"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__national
+msgid "NAT - National Guard"
+msgstr "NAT - الحرس الوطني"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__navy
+msgid "NAV - Navy"
+msgstr "NAV - البحرية"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__fore
+msgid "ND4-ForeMan"
+msgstr ""
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__region__north
+msgid "NOR -  Northern"
+msgstr "NOR - الشمالية"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__nunurse
+msgid "NU-Nurse (Male / Female)"
+msgstr "NU-ممرض (ذكر / انثى)"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_contact_report__partner_name
+#: model:ir.model.fields,field_description:loan.field_loan_type__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__relation_name
+#: model:ir.model.fields,field_description:loan.field_res_users__relation_name
+msgid "Name Of Member"
+msgstr "اسم العضو"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__relative_name
+#: model:ir.model.fields,field_description:loan.field_res_users__relative_name
+msgid "Name of relative in home town"
+msgstr "اسم القريب من البلد الام"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__nationality_loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__nationality
+#: model:ir.model.fields,field_description:loan.field_res_users__nationality
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Nationality"
+msgstr "الجنسية"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__reject_reason__14
+msgid "Negative site visit"
+msgstr "زيارة الموقع السلبية"
+
+#. module: loan
+#: code:addons/loan/models/customer.py:0 code:addons/loan/models/loan.py:0
+#, python-format
+msgid "New"
+msgstr "جديد"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_mail_activity_type__lol
+msgid "New Name"
+msgstr "اسم جديد"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__activity_calendar_event_id
+#: model:ir.model.fields,field_description:loan.field_res_partner__activity_calendar_event_id
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__activity_calendar_event_id
+msgid "Next Activity Calendar Event"
+msgstr "النشاط التالي في التقويم"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__activity_date_deadline
+#: model:ir.model.fields,field_description:loan.field_res_partner__activity_date_deadline
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "الموعد النهائي للنشاط التالي"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__activity_summary
+#: model:ir.model.fields,field_description:loan.field_res_partner__activity_summary
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__activity_summary
+msgid "Next Activity Summary"
+msgstr "ملخص النشاط التالي"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__activity_type_id
+#: model:ir.model.fields,field_description:loan.field_res_partner__activity_type_id
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع النشاط التالي"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__disclosure__no
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__ispep__no
+msgid "No"
+msgstr "رقم"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "No Civil Registry/iaqama"
+msgstr "رقم الهوية/الإقامة"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.request_form_view
+msgid "Not Apply"
+msgstr "غير منطبق"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__number_dependents
+#: model:ir.model.fields,field_description:loan.field_res_users__number_dependents
+msgid "Num Of Dependents"
+msgstr "عدد المعالين"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__number_dependents_loan
+msgid "Number Dependents"
+msgstr "عدد المعالين"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__message_needaction_counter
+#: model:ir.model.fields,field_description:loan.field_res_partner__message_needaction_counter
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__message_needaction_counter
+msgid "Number of Actions"
+msgstr "عدد الإجراءات"
+
+#. module: loan
+#: code:addons/loan/models/customer.py:0
+#, python-format
+msgid "Number of dependents less than 1 !!!"
+msgstr "عدد المعالين أقل من 1 !!!"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__message_has_error_counter
+#: model:ir.model.fields,field_description:loan.field_res_partner__message_has_error_counter
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__message_has_error_counter
+msgid "Number of errors"
+msgstr "عدد الأخطاء"
+
+#. module: loan
+#: model:ir.model.fields,help:loan.field_loan_order__message_needaction_counter
+#: model:ir.model.fields,help:loan.field_res_partner__message_needaction_counter
+#: model:ir.model.fields,help:loan.field_res_partner_line__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "عدد الرسائل التي تتطلب اتخاذ إجراء"
+
+#. module: loan
+#: model:ir.model.fields,help:loan.field_loan_order__message_has_error_counter
+#: model:ir.model.fields,help:loan.field_res_partner__message_has_error_counter
+#: model:ir.model.fields,help:loan.field_res_partner_line__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "عدد الرسائل التي بها خطأ في التسليم"
+
+#. module: loan
+#: model:ir.model.fields,help:loan.field_loan_order__message_unread_counter
+#: model:ir.model.fields,help:loan.field_res_partner__message_unread_counter
+#: model:ir.model.fields,help:loan.field_res_partner_line__message_unread_counter
+msgid "Number of unread messages"
+msgstr "عدد الرسائل غير المقروءة"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__account_move__transaction_channel__online
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__branch__online
+msgid "O-Online"
+msgstr "O- اونلاين"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__ofc
+msgid "OFC-Officer"
+msgstr "OFC- ضابط"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__oth
+msgid "OTH-Others"
+msgstr "OTH- أخرين"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__liability_amount
+msgid "Obligation Amount"
+msgstr "مبلغ الالتزام"
+
+#. module: loan
+#: model:mail.activity.type,name:loan.mail_activity_purchase_confirm
+#: model:res.groups,name:loan.group_purchase_confirm
+msgid "Offer Price"
+msgstr "عرض السعر"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__old_installment
+msgid "Old Installment"
+msgstr "القسط القديم"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__state__open
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__state__open
+msgid "Open"
+msgstr "مفتوح"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.request_form_view
+msgid "Open Loan"
+msgstr "تمويل مفتوح"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Order No"
+msgstr "رقم الطلب"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.customer_request_search_view
+msgid "Order Number"
+msgstr "رقم الطلب"
+
+#. module: loan
+#: model:res.groups,name:loan.group_res_partner_operation
+msgid "Order Receipt"
+msgstr "مستلم الطلب"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__other_liability_loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__certificate_level__other
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__period_loan__other
+msgid "Other"
+msgstr "إخرى"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__other_allowance
+#: model:ir.model.fields,field_description:loan.field_res_users__other_allowance
+msgid "Other Allowance"
+msgstr "البدلات الاخرى"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__other_income
+#: model:ir.model.fields,field_description:loan.field_res_users__other_income
+msgid "Other Income"
+msgstr "الدخل الاضافي"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__other_liability
+#: model:ir.model.fields,field_description:loan.field_res_users__other_liability
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Other Liability"
+msgstr "إلتزامات اخرى"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__home_type__owned
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Owned"
+msgstr "ملكي"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__petroleum
+msgid "PET - Ministry of petroleum"
+msgstr "PET - وزارة البترول"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__ph
+msgid "PH-Pharmacist"
+msgstr "PH- صيدلي"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__pilot
+msgid "PI-Pilot"
+msgstr "PI- طيار"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__post
+msgid "POS - Post Office"
+msgstr "POS - ساعي بريد"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__pro
+msgid "PR-Professor"
+msgstr "PR- بروفيسور"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__prm
+msgid "PRM-Public Relation Manager"
+msgstr "PRM- مدير العلاقات العامه"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_installment__state__paid
+msgid "Paid"
+msgstr "مدفوع"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_installment_report_wizard__early_paid_amount
+#: model:ir.model.fields,field_description:loan.field_loan_order__paid_amount
+msgid "Paid Amount"
+msgstr "المبلغ المدفوع"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__partner_id
+msgid "Partner Id"
+msgstr "رقم الشريك"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.request_form_view
+#: model_terms:ir.ui.view,arch_db:loan.view_loan_installment_form
+msgid "Pay"
+msgstr "يدفع"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_installment__payment_date
+msgid "Payment Date"
+msgstr "تاربخ الدفع"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_installment__payment_journal
+#: model:ir.model.fields,field_description:loan.field_loan_type__payment_journal
+msgid "Payment Journal"
+msgstr "يومية الدفع"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__payment_status
+msgid "Payment Status"
+msgstr "حالة السداد"
+
+#. module: loan
+#: model:ir.actions.act_window,name:loan.prm_view_action
+msgid "People"
+msgstr "الناس"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Personal Expenses"
+msgstr "نفقات شخصية"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Personal Loan"
+msgstr "تمويل شخصي"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__phone_customer
+msgid "Phone Number"
+msgstr "رقم الهاتف"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__phone_outside
+#: model:ir.model.fields,field_description:loan.field_res_users__phone_outside
+msgid "Phone Outside"
+msgstr "جوال خارج المملكة"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__relative_phone
+#: model:ir.model.fields,field_description:loan.field_res_users__relative_phone
+msgid "Phone number"
+msgstr "رقم الهاتف"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__place
+#: model:ir.model.fields,field_description:loan.field_res_users__place
+msgid "Place of issue"
+msgstr "مكان الإصدار"
+
+#. module: loan
+#: code:addons/loan/models/loan.py:0
+#, python-format
+msgid "Please Select Installment Account !!!"
+msgstr "الرجاء تحديد حساب التقسيط !!!"
+
+#. module: loan
+#: code:addons/loan/models/loan.py:0
+#, python-format
+msgid "Please Select Interest Account !!!"
+msgstr "الرجاء تحديد حساب الفائدة !!!"
+
+#. module: loan
+#: code:addons/loan/models/loan.py:0
+#, python-format
+msgid "Please Select Payment Journal !!!"
+msgstr "الرجاء تحديد يومية الدفع !!!"
+
+#. module: loan
+#: code:addons/loan/models/loan.py:0
+#, python-format
+msgid "Please Select the Loan Type !!!"
+msgstr "الرجاء تحديد نوع التمويل !!!"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__access_url
+#: model:ir.model.fields,field_description:loan.field_res_partner__access_url
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__access_url
+msgid "Portal Access URL"
+msgstr "عنوان URL للوصول إلى المدخل"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__position
+#: model:ir.model.fields,field_description:loan.field_res_users__position
+msgid "Position"
+msgstr "الوظيفة"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__offer_num
+#: model:ir.model.fields,field_description:loan.field_res_users__offer_num
+msgid "Price Offer Number"
+msgstr "رقم عرض السعر"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_installment__principal_amount
+#: model_terms:ir.ui.view,arch_db:loan.installment_summary_template
+msgid "Principal Amount"
+msgstr "المبلغ الأساسي"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.partner_report_view
+msgid "Print"
+msgstr "طباعة"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__sector__private
+msgid "Private"
+msgstr "خاص"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Product Type"
+msgstr "نوع المنتج"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__reject_reason__18
+msgid "Product not eligible"
+msgstr "المنتج غير مؤهل"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Profit Rate"
+msgstr "معدل الربح"
+
+#. module: loan
+#: model:ir.model,name:loan.model_purchase_order
+msgid "Purchase Offer"
+msgstr "عرض الشراء"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__installment_type__quarter
+msgid "Quarter"
+msgstr "ربع سنوي"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_type__interest_mode__quarterly
+msgid "Quarterly"
+msgstr "ربعي سنوي"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__re
+msgid "RE-Retired"
+msgstr "RE- متقاعد"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__rec
+msgid "REC-Reception"
+msgstr "REC- إستقبال"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__royal
+msgid "ROY - The Royal Guard"
+msgstr "ROY - الحرس الملكي"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__about_us__radio
+msgid "Radio"
+msgstr "الراديو"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_type__rate
+msgid "Rate"
+msgstr "معدل"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_type__rate_per_month
+msgid "Rate Per Month"
+msgstr "معدل في الشهر"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__reject_reason__1
+msgid "Re-evaluation"
+msgstr "إعادة التقييم"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__sequence
+#: model:ir.model.fields,field_description:loan.field_res_users__sequence
+msgid "Reference"
+msgstr "مرجع"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__region
+#: model:ir.model.fields,field_description:loan.field_res_users__region
+msgid "Region"
+msgstr "منطقة"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__state__reject
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__state__reject
+#: model_terms:ir.ui.view,arch_db:loan.request_form_view
+msgid "Reject"
+msgstr "الرفض"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__reject_user_id
+msgid "Reject By"
+msgstr "الرفض بواسطة"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__reject_date
+msgid "Reject Date"
+msgstr "تاريخ الرفض"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__reject_reason
+#: model_terms:ir.ui.view,arch_db:loan.request_form_view
+msgid "Reject Reason"
+msgstr "سبب الرفض"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.request_form_view
+msgid "Rejected Request"
+msgstr "طلب مرفوض"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__communicat_type
+#: model:ir.model.fields,field_description:loan.field_res_users__communicat_type
+msgid "Relationship Type"
+msgstr "نوع العلاقة"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__about_us__friends
+msgid "Relative Friends"
+msgstr "الأصدقاء المقربون"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__relation_relative
+#: model:ir.model.fields,field_description:loan.field_res_users__relation_relative
+msgid "Relative Relation"
+msgstr "علاقة النسب"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__relative_type
+#: model:ir.model.fields,field_description:loan.field_res_users__relative_type
+msgid "Relative type"
+msgstr "نوع النسب"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__release_of_date
+#: model:ir.model.fields,field_description:loan.field_res_users__release_of_date
+msgid "Release Date"
+msgstr "يوم الاصدار"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_installment_report_wizard__early_remaining_amount
+#: model:ir.model.fields,field_description:loan.field_loan_order__remaining_amount
+msgid "Remaining Amount"
+msgstr "المبلغ المتبقي"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__home_type__rent
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Rent"
+msgstr "تأجير"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__request_date
+#: model:ir.model.fields,field_description:loan.field_res_partner__request_date
+#: model:ir.model.fields,field_description:loan.field_res_users__request_date
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Request Date"
+msgstr "تاريخ الطلب"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__seq_num
+msgid "Request Reference"
+msgstr "مرجع الطلب"
+
+#. module: loan
+#: model:mail.activity.type,name:loan.mail_activity_apply_reject
+#: model:mail.activity.type,name:loan.mail_activity_reject_credit
+#: model:mail.activity.type,name:loan.mail_activity_reject_done
+msgid "Request Reject"
+msgstr "طلب الرفض"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__activity_user_id
+#: model:ir.model.fields,field_description:loan.field_res_partner__activity_user_id
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__activity_user_id
+msgid "Responsible User"
+msgstr "مسؤولية المستخدم"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__sector__retired
+msgid "Retired"
+msgstr "متقاعد"
+
+#. module: loan
+#: model:mail.activity.type,name:loan.mail_activity_return_date
+msgid "Return Process"
+msgstr "إرجاع الاجراء"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__state__review_done
+msgid "Review"
+msgstr "مراجعة"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__state__review_done
+msgid "Reviewed"
+msgstr "تمت المراجعة"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__risk
+#: model:ir.model.fields,field_description:loan.field_res_users__risk
+msgid "Risk"
+msgstr "خطر"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__sabek
+msgid "SAB - Sabek"
+msgstr "SAB - سابك"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__sc
+msgid "SC-Scientist"
+msgstr "SC- عالم"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__emp
+msgid "SE-Self Employed"
+msgstr "SE- العمل الخاص"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__service
+msgid "SER - Ministry of Civil Service"
+msgstr "SER - وزارة الخدمة المدنية"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__ser
+msgid "SER-Sergeant"
+msgstr "SER- رقيب"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__sk
+msgid "SK-Storekeeper"
+msgstr "SK- أمين مخزن"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__sl
+msgid "SL-Salesman"
+msgstr "SL- بائع"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__sm
+msgid "SM-Security Man"
+msgstr "SM- رجل الأمن"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__about_us__sms
+msgid "SMS"
+msgstr "رسالة نصية"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__message_has_sms_error
+#: model:ir.model.fields,field_description:loan.field_res_partner__message_has_sms_error
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطأ في تسليم الرسائل النصية"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__sol
+msgid "SO-Soldier"
+msgstr "SO- الجندي"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__wishes
+msgid "SOC - Social Wishes"
+msgstr "SOC - الرغبات الاجتماعية"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__sp
+msgid "SP-Specialist"
+msgstr "SP- أخصائي"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__sergeant
+msgid "SS-Staff Sergeant"
+msgstr "SS- رقيب اول"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__region__south
+msgid "STH - Southern"
+msgstr "STH - الجنوبية"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__su
+msgid "SU-Supervisor"
+msgstr "SU- مشرف"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__salary_rate
+#: model:ir.model.fields,field_description:loan.field_res_users__salary_rate
+msgid "Salary Rate"
+msgstr "معدل الراتب"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__purchase_order__state__acceptance
+msgid "Sale Acceptance"
+msgstr "قبول البيع"
+
+#. module: loan
+#: model:mail.activity.type,name:loan.mail_activity_not_apply
+#: model:res.groups,name:loan.group_sales
+msgid "Sales"
+msgstr "المبيعات"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Sales Employee"
+msgstr "موظف مبيعات"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__about_us__sales
+msgid "Sales Representative"
+msgstr "مندوب مبيعات"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__nationality__saudi
+msgid "Saudi"
+msgstr "سعودي"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__certificate_level__secondary
+msgid "Secondary"
+msgstr "ثانوية"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__sector_loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__sector
+#: model:ir.model.fields,field_description:loan.field_res_users__sector
+msgid "Sector"
+msgstr "قطاع"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__access_token
+#: model:ir.model.fields,field_description:loan.field_res_partner__access_token
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__access_token
+msgid "Security Token"
+msgstr "رمز الأمان"
+
+#. module: loan
+#: code:addons/loan/models/loan.py:0
+#, python-format
+msgid "Select Client Receivable Account !!!"
+msgstr "حدد حساب العميل المدين !!!"
+
+#. module: loan
+#: code:addons/loan/models/loan.py:0
+#, python-format
+msgid "Select Customer Receivable Account !!!"
+msgstr "حدد حساب العملاء المدينين !!!"
+
+#. module: loan
+#: code:addons/loan/models/loan.py:0
+#, python-format
+msgid "Select Disburse Account !!!"
+msgstr "حدد حساب الصرف !!!"
+
+#. module: loan
+#: code:addons/loan/models/loan.py:0
+#, python-format
+msgid "Select Disburse Journal !!!"
+msgstr "حدد يومية الصرف!!"
+
+#. module: loan
+#: model:mail.activity.type,name:loan.mail_activity_send_back
+#: model_terms:ir.ui.view,arch_db:loan.partner_inherit_form
+#: model_terms:ir.ui.view,arch_db:loan.request_form_view
+msgid "Send Back"
+msgstr "إرجاع الطلب"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_installment__seq_name
+#: model_terms:ir.ui.view,arch_db:loan.installment_summary_template
+msgid "Sequence Name"
+msgstr "رقم التسلسل"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__service_type
+#: model:ir.model.fields,field_description:loan.field_res_users__service_type
+msgid "Service Provider"
+msgstr "مزود الخدمة"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.request_form_view
+msgid "Set to Draft"
+msgstr "تعيين إلى مسودة"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.partner_inherit_form
+msgid "Simah Data"
+msgstr "معلومات سمة"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__installment_comp
+#: model:ir.model.fields,field_description:loan.field_res_users__installment_comp
+msgid "Simah Monthly Deduction"
+msgstr "خصم سمة الشهري"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__marital_status__single
+msgid "Single"
+msgstr "أعزب"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__about_us__social
+msgid "Social Media"
+msgstr "وسائل التواصل الاجتماعي"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Social Status"
+msgstr "الحالة الاجتماعية"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__sector__soldier
+msgid "Soldier"
+msgstr "جندي"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__source
+msgid "Source"
+msgstr "مصدر"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__installment_start_date
+msgid "Start Date"
+msgstr "تاريخ البداية"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_installment__state
+#: model:ir.model.fields,field_description:loan.field_loan_order__state
+#: model:ir.model.fields,field_description:loan.field_loan_order__state_loan
+msgid "State"
+msgstr "حالة"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_purchase_order__state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: loan
+#: model:ir.model.fields,help:loan.field_loan_order__activity_state
+#: model:ir.model.fields,help:loan.field_res_partner__activity_state
+#: model:ir.model.fields,help:loan.field_res_partner_line__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"الحالة على أساس الأنشطة\n"
+"المتأخرة: تاريخ الاستحقاق مر\n"
+"اليوم: تاريخ النشاط هو اليوم\n"
+"المخطط: الأنشطة المستقبلية."
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__reject_reason__26
+msgid "Stumbled upon a feature"
+msgstr ""
+
+#. module: loan
+#: model:mail.activity.type,name:loan.mail_activity_legal_apply
+msgid "Support to the Order"
+msgstr "دعم الطلب"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__tc
+msgid "TC-Teacher"
+msgstr "TC- المعلم"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__te
+msgid "TE-Technician"
+msgstr "TE- فني"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__telcom
+msgid "TEL - Telecommunications"
+msgstr "TEL - الاتصالات"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__position__tlr
+msgid "TLR-Teller (Bank)"
+msgstr "TLR- صراف(البنك)"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__transport
+msgid "TRA - Ministry of Transportation"
+msgstr "TRA - وزارة النقل"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__tax_id
+msgid "Tax"
+msgstr "ضريبة"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Telecom"
+msgstr "اتصالات"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__cost_telecom
+#: model:ir.model.fields,field_description:loan.field_res_users__cost_telecom
+msgid "Telecom Expenses"
+msgstr "مصاريف الاتصالات"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.request_form_view
+msgid "Terminate"
+msgstr "إنهاء"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__terminate_user_id
+msgid "Terminate By"
+msgstr "إنهاء بواسطة"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__terminate_date
+msgid "Terminate Date"
+msgstr "تاريخ إنتهاء العقد"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__terminate_reason
+msgid "Terminate Reason"
+msgstr "سبب الإنهاء"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__reject_reason__7
+msgid "The age is greater than the allowed"
+msgstr "العمر أكبر من المسموح به"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__reject_reason__8
+msgid "The documents are incorrect"
+msgstr "المستندات غير صحيحة"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__reject_reason__13
+msgid "The employer is not approved"
+msgstr "صاحب العمل غير معتمد"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__reject_reason__33
+msgid "The existing balance is sufficient"
+msgstr "الرصيد الحالي كافٍ"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__reject_reason__5
+msgid "The existing contract is less than permissible"
+msgstr "العقد الحالي أقل من المسموح به"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__reject_reason__9
+msgid "The information is incorrect"
+msgstr "المعلومات غير صحيحة"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__reject_reason__11
+msgid "The sponsor information is incorrect"
+msgstr "معلومات الكفيل غير صحيحة"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "The term of the financing contract"
+msgstr "مدة عقد التمويل"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__reject_reason__4
+msgid "The vehicle does not qualify for the companys terms"
+msgstr "المنتج غير مؤهلة لشروط الشركة"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__reject_reason__29
+msgid "The work area is not supported"
+msgstr "منطقة العمل غير مدعومة"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__reject_reason__22
+msgid "There is no proof of income"
+msgstr "لا يوجد دليل على الدخل"
+
+#. module: loan
+#: code:addons/loan/models/loan.py:0
+#, python-format
+msgid "This Customer allow only one Loan Request in Year !!!"
+msgstr "يسمح هذا العميل بطلب تمويل واحد فقط في السنة !!!"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_helpdesk_team__ticket_id
+msgid "Ticket"
+msgstr "تذكرة"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.installment_summary_template
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Total"
+msgstr "المجموع"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__total_installment
+msgid "Total Deduction"
+msgstr "إجمالي الخصم"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__total_income
+#: model:ir.model.fields,field_description:loan.field_res_users__total_income
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Total Income"
+msgstr "إجمالي الدخل"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__total_installment_liability
+#: model:ir.model.fields,field_description:loan.field_res_users__total_installment_liability
+msgid "Total Installment Company"
+msgstr "مجموع شركة التقسيط"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__total_liability
+#: model:ir.model.fields,field_description:loan.field_res_users__total_liability
+msgid "Total Liability"
+msgstr "إجمالي الالتزامات"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__total_liability_loan
+msgid "Total Liability Loan"
+msgstr "تمويل إجمالي الالتزامات"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__total_loan
+msgid "Total Loan"
+msgstr "مجموع التمويل"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__total_salary_loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__total_salary
+#: model:ir.model.fields,field_description:loan.field_res_users__total_salary
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Total Salary"
+msgstr "مجموع الراتب"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__deduction_before
+#: model:ir.model.fields,field_description:loan.field_res_users__deduction_before
+msgid "Total Simah Deduction"
+msgstr "إجمالي خصم سمة"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_calculate__total_interest
+msgid "Total interest paid"
+msgstr "إجمالي الفوائد المدفوعة"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_calculate__principal
+msgid "Total principal paid"
+msgstr "إجمالي رأس المال المدفوع"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_account_bank_statement_line__transaction_channel
+#: model:ir.model.fields,field_description:loan.field_account_move__transaction_channel
+#: model:ir.model.fields,field_description:loan.field_account_payment__transaction_channel
+msgid "Transaction Channel"
+msgstr "قناة التحويل"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__transport_allowance
+#: model:ir.model.fields,field_description:loan.field_res_users__transport_allowance
+msgid "Transport Allowance"
+msgstr "بدل الترحيل"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Transport Expense"
+msgstr "نفقات النقل"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__tran_exp
+#: model:ir.model.fields,field_description:loan.field_res_users__tran_exp
+msgid "Transport Expenses"
+msgstr "نفقات الترحيل"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__type_id
+#: model:ir.model.fields,field_description:loan.field_res_users__type_id
+msgid "Type"
+msgstr "النوع"
+
+#. module: loan
+#: model:ir.model.fields,help:loan.field_loan_order__activity_exception_decoration
+#: model:ir.model.fields,help:loan.field_res_partner__activity_exception_decoration
+#: model:ir.model.fields,help:loan.field_res_partner_line__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع نشاط الاستثناء المسجل."
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__unit_number
+#: model:ir.model.fields,field_description:loan.field_res_users__unit_number
+msgid "Unit Number"
+msgstr "رقم الوحدة"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_installment__state__unpaid
+msgid "Unpaid"
+msgstr "غير مدفوع"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__message_unread
+#: model:ir.model.fields,field_description:loan.field_res_partner__message_unread
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__message_unread
+msgid "Unread Messages"
+msgstr "رسائل غير مقروءة"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__message_unread_counter
+#: model:ir.model.fields,field_description:loan.field_res_partner__message_unread_counter
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "عدد الرسائل غير المقروءة"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__user
+#: model:ir.model.fields,field_description:loan.field_res_partner__user
+#: model:ir.model.fields,field_description:loan.field_res_users__user
+#: model:res.groups,name:loan.group_use_alon_user_type
+#: model:res.groups,name:loan.group_use_loan_user
+msgid "User"
+msgstr "مستخدم"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.r_of_q_inherit
+msgid "User:"
+msgstr "مستخدم:"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "VAT"
+msgstr "ضريبة القيمة المضافة"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__count_loan
+#: model:ir.model.fields,field_description:loan.field_res_users__count_loan
+#: model_terms:ir.ui.view,arch_db:loan.partner_inherit_form
+msgid "View Loan"
+msgstr "عرض التمويل"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__industry__water
+msgid "WAT - Ministry of Water"
+msgstr "WAT - وزارة المياه"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__region__west
+msgid "WST - Western"
+msgstr "WST - الغربية"
+
+#. module: loan
+#: code:addons/loan/models/loan.py:0
+#, python-format
+msgid "Warning!"
+msgstr "تحذير!"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_customer
+msgid "Water"
+msgstr "ماء"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__website_message_ids
+#: model:ir.model.fields,field_description:loan.field_res_partner__website_message_ids
+#: model:ir.model.fields,field_description:loan.field_res_partner_line__website_message_ids
+msgid "Website Messages"
+msgstr "رسائل الموقع"
+
+#. module: loan
+#: model:ir.model.fields,help:loan.field_loan_order__website_message_ids
+#: model:ir.model.fields,help:loan.field_res_partner__website_message_ids
+#: model:ir.model.fields,help:loan.field_res_partner_line__website_message_ids
+msgid "Website communication history"
+msgstr "سجل اتصال الموقع"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__home_type__family
+msgid "With Family"
+msgstr "مع العائلة"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__work_area
+#: model:ir.model.fields,field_description:loan.field_res_users__work_area
+msgid "Work Area"
+msgstr "منطقة العمل"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__work_city
+#: model:ir.model.fields,field_description:loan.field_res_users__work_city
+msgid "Work City"
+msgstr "مدينة العمل"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__work_mail
+#: model:ir.model.fields,field_description:loan.field_res_users__work_mail
+msgid "Work Mail"
+msgstr "بريد العمل الإلكتروني"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__work_phone
+msgid "Work Phone"
+msgstr "رقم هاتف العمل"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__work_street
+#: model:ir.model.fields,field_description:loan.field_res_users__work_street
+msgid "Work Street"
+msgstr "شارع العمل"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__reject_reason__19
+msgid "Working period is low"
+msgstr "فترة العمل قليلة"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__years_number
+#: model:ir.model.fields,field_description:loan.field_res_users__years_number
+msgid "Years"
+msgstr "سنوات"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_order__years_work_loan
+msgid "Years Work"
+msgstr "سنوات العمل"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__disclosure__yes
+#: model:ir.model.fields.selection,name:loan.selection__res_partner__ispep__yes
+msgid "Yes"
+msgstr "نعم"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_helpdesk_team__message
+msgid "Your file is stored in the directory C:/"
+msgstr "يتم تخزين ملفك في الدليل C: /"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__building_number
+#: model:ir.model.fields,field_description:loan.field_res_users__building_number
+msgid "building Number"
+msgstr "رقم المبنى"
+
+#. module: loan
+#: model:ir.actions.act_window,name:loan.action_partner_report
+msgid "contact report"
+msgstr "تقرير العميل"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__reject_reason__24
+msgid "defaulted on fuel company"
+msgstr "إفتراضي عن شركة فيول"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__reject_reason__16
+msgid "discontinued company"
+msgstr "شركة متوقفة"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "healthy"
+msgstr "صحي"
+
+#. module: loan
+#: model:ir.actions.report,name:loan.action_installment_report
+msgid "installment.report.wizard"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.request_form_view
+msgid "installment_amount"
+msgstr "تقسيط المبلغ"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_installment__interest_q
+msgid "interest quarter"
+msgstr "ربع الفائدة"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.request_form_view
+msgid "interest_amount"
+msgstr "مبلغ الفائدة"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__reject_reason__20
+msgid "legal case"
+msgstr "الحالة القانونية"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.request_tree_view
+msgid "loan_amount"
+msgstr "مبلغ التمويل"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__marital_status
+#: model:ir.model.fields,field_description:loan.field_res_users__marital_status
+msgid "marital Status"
+msgstr "الحالة الاجتماعية"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.partner_inherit_form
+msgid "member of FUEL Finance Company?"
+msgstr "هل انت عضو في شركة FUEL للتمويل؟"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "net financing amount"
+msgstr "مبلغ التمويل الصافي"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "number of installments"
+msgstr "عدد الاقساط"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_loan_type__per_net_amt
+msgid "percent field"
+msgstr "النسبة"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.request_form_view
+msgid "principal_amount"
+msgstr "المبلغ الاساسي"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.request_form_view
+msgid "process"
+msgstr "إجراء"
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__ratio
+#: model:ir.model.fields,field_description:loan.field_res_users__ratio
+msgid "ratio"
+msgstr "المعدل"
+
+#. module: loan
+#: model:ir.model.fields.selection,name:loan.selection__loan_order__reject_reason__28
+msgid "rejected"
+msgstr "مرفوض"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "term cost"
+msgstr "تكلفة المدة"
+
+#. module: loan
+#: code:addons/loan/models/loan.py:0
+#, python-format
+msgid "the monthly installments that are greater than the limit!!!"
+msgstr "القسط الشهري يزيد عن حد القسط الشهري المسموح!!!"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.partner_inherit_form
+msgid "total_income"
+msgstr ""
+
+#. module: loan
+#: model:ir.model.fields,field_description:loan.field_res_partner__years_work
+#: model:ir.model.fields,field_description:loan.field_res_users__years_work
+msgid "working Date"
+msgstr "تاريخ العمل"
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.purchase_order_inherit
+msgid "أمر الشراء"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "إجراءات التعامل مع الضمانات في حال انخفاضها"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "إجراءات السداد المبكر"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "إجراءات حق الانسحاب"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "إجراءات ممارسة حق انهاء عقد التمويل"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.purchase_order_inherit
+msgid "إدارة الشراكات"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"إنه في تاريخ\n"
+"                                    :"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "ابرم هذا العقد بين كل من :-"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "الآثار المترتبة على التأخر في سداد الأقساط"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "الرسوم الإدارية"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "الطرف الاول"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "الطرف الثاني"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "المادة الاولى :"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"المادة التاسعة : الإقرارت يقر كلاً من الطرف\n"
+"                                    الثاني والكفيل القادم بالأتي :-"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "المادة التاسعة عشر :"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "المادة الثالثة :"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "المادة الثالثة عشر :"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "المادة الثالثة والعشرون :"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "المادة الثامنة :"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "المادة الثامنة عشر :"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "المادة الثانية :"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "المادة الثانية عشر :"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "المادة الثانية والعشرون :"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "المادة الحادية العشرون :"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "المادة الحادية عشر :"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "المادة الخامسة :"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "المادة الخامسة عشر :"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "المادة الرابعة :"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "المادة الرابعة عشر :"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "المادة السابعة :"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "المادة السابعة عشر :"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "المادة السادسة :"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "المادة السادسة عشر :"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "المادة العاشرة :"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "المادة العشرون :"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "المادة رقم (10) الصفحة رقم (4)"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "المادة رقم (11) الصفحة رقم (4)"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "المادة رقم (15) الصفحة رقم (4)"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "المادة رقم (5) الصفحة رقم (2) + ملحق الأقساط المرفق"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "المادة رقم (7) الصفحة رقم (3)"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "المبلغ(ريال)"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "الملاحظات الإضافية"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"بيانات\n"
+"                                                التمويل"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "تاريخ استحقاق القسط الأخير"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "تاريخ استحقاق القسط الأول"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"تفاصيل المبلغ المستحق\n"
+"                                                سداده"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "جدول السداد لعقد التمويل"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "خالي"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "رقم السند"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.purchase_order_inherit
+msgid "شركة فيول للتمويل"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "صافي مبلغ التمويل"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "صحي"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "ضريبة القيمة المضافة"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "عدد الأقساط"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "عقد تمويل رقم :"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "عقد تمويل مرابحة أفراد"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "كلفة الاجل"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_contract
+msgid "لا ينطبق"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "للعميل :"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "مبلغ التمويل"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "مبلغ القسط الشهري (ريال)"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "متسلسل"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "مدة عقد التمويل"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "معدل النسبة السنوية(APR)"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "نسبة الربح الشهرية"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid "نوع التمويل"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"هذا ويشار الى \"الطرف الاول\"و \"الطرف الثاني\" مجتمعين فيما بعد ب \"الطرفين\" او\n"
+"                                    \"الطرفان\" لما يلي :"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"هـ الموافق :.......................... :م ,\n"
+"                                    بمدينة\n"
+"                                    : الرياض"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.report_full_contract
+msgid ""
+"يمثلها في التوقيع على هذا العقد السيد / عبدالله العساف مدير\n"
+"                                    / مفوضا من الرئيس التنفيذي ، و يشار إليها في هذا العقد "
+"بالطرف الأول \" الشركة \" ( ً\n"
+"                                    بصفته /\n"
+"                                    الرئيس التنفيذي السيد / عبدالله العساف "
+"الجنسية( سعودي )\n"
+"                                    بموجب سجل مدني رقم :.......................... ، "
+"وعنوانه ..........................،\n"
+"                                    الرمز المختصر للعنوان الوطني،\n"
+"                                    .......................هاتف "
+"عمل : .........................., فاكس\n"
+"                                    :.......................... , جوال "
+"رقم .......................\n"
+"                                    و يشار إليه في هذا العقد"
+msgstr ""
+
+#. module: loan
+#: model_terms:ir.ui.view,arch_db:loan.partner_inherit_form
+msgid "ًWork Info"
+msgstr "ًمعلومات العمل"

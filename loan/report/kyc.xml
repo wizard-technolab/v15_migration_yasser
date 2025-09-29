@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_kyc" inherit_id="">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <div class="page">
+                    <div class="oe_structure"/>
+                    <div class="row">
+                        <div class="col-12">
+                            <t t-call="web.external_layout">
+                                <header>
+                                    <center>
+                                        <strong style="color:#3CB371;font-size: 24px;">Know Your Customer KYC</strong>
+                                    </center>
+                                    <br/>
+                                </header>
+                                <table class="table table-bordered" style="border:3px solid black !important">
+                                    <tr style="border:1px solid">
+                                        <td style="border:1px solid">
+                                            <strong style="color:#3CB371;font-size: 16px;">Personal information about
+                                                the applicant
+                                            </strong>
+                                            <br/>
+                                            <br/>
+                                            Name:
+                                            <strong t-esc="o.name"/>
+                                            <br/>
+                                            <br/>
+                                            Nationality:
+                                            <strong t-esc="o.nationality"/>
+                                            <br/>
+                                            <br/>
+                                            Gender:
+                                            <strong t-esc="o.gender"/>
+                                            <br/>
+                                            <br/>
+                                            ID Number:
+                                            <strong t-esc="o.identification_no"/>
+                                            <br/>
+                                            <br/>
+                                            Expiry Date:
+                                            <strong t-esc="o.expiry_of_date"/>
+                                            <br/>
+                                            <br/>
+                                            Birth Of Date:
+                                            <strong t-esc="o.birth_of_date"/>
+                                            <br/>
+                                            <br/>
+                                            marital State:
+                                            <strong t-esc="o.marital_status"/>
+                                            <br/>
+                                            <br/>
+                                            Dependents:
+                                            <strong t-esc="o.number_dependents"/>
+                                            <br/>
+                                            <br/>
+                                            Educational level:
+                                            <strong t-esc="o.certificate"/>
+                                            <br/>
+                                            <br/>
+                                            <strong style="color:#3CB371;font-size: 18px;">National address</strong>
+                                            <br/>
+                                            City:
+                                            <strong t-esc="o.state_id.name"/>
+                                            <br/>
+                                            <br/>
+                                            <![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]]>
+                                            Street:
+                                            <strong t-esc="o.street"/>
+                                            <br/>
+                                            <br/>
+                                            Building No:
+                                            <strong t-esc="o.street2"/>
+                                            <br/>
+                                            <br/>
+                                            Tax ID:
+                                            <strong t-esc="o.vat"/>
+                                            <br/>
+                                            <br/>
+                                            <![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]]>
+                                            Home Type:
+                                            <strong t-esc="o.home_type"/>
+                                        </td>
+                                        <td style="border:1px solid">
+                                            <strong style="color:#3CB371;font-size: 18px;">Work Information</strong>
+                                            <br/>
+                                            <br/>
+                                            Sector Type:
+                                            <strong t-esc="o.sectors"/>
+                                            <br/>
+                                            <br/>
+                                            Employer:
+                                            <strong t-esc="o.employer"/>
+                                            <br/>
+                                            <br/>
+                                            Classification:
+                                            <strong t-esc="o.classification_employer"/>
+                                            <br/>
+                                            <br/>
+                                            Job Position:
+                                            <strong t-esc="o.function"/>
+                                            <br/>
+                                            <br/>
+                                            Years Retire:
+                                            <strong t-esc="o.years_retire"/>
+                                            <br/>
+                                            <br/>
+                                            <br/>
+                                            <strong style="color:#3CB371;font-size: 18px;">Financial Information
+                                            </strong>
+                                            <br/>
+                                            <br/>
+                                            Salary Bank:
+                                            <strong t-esc="o.bank_name"/>
+                                            <br/>
+                                            <br/>
+                                            Account Number:
+                                            <strong t-foreach='o.bank_ids' t-as='line'>
+                                                <span t-esc="line.acc_number"/>
+                                            </strong>
+                                            <br/>
+                                            <br/>
+                                            Salary Release Date:
+                                            <strong t-esc="o.years_retire"/>
+                                            <br/>
+                                            <br/>
+                                            Salary:
+                                            <strong t-esc="o.total_salary"/>
+                                            <br/>
+                                            <br/>
+                                            Another Income:
+                                            <strong t-esc="o.other_income"/>
+                                            <br/>
+                                            <br/>
+                                            Liability:
+                                            <strong t-esc="o.total_installment_liability"/>
+                                            <br/>
+                                            <br/>
+                                            Another Installment:
+                                            <strong t-esc="o.installment_comp"/>
+                                            <br/>
+                                            <strong style="color:#3CB371;font-size: 18px;">Call Information</strong>
+                                            <br/>
+                                            <br/>
+                                            Mobile number:
+                                            <strong t-esc="o.phone"/>
+                                            <br/>
+                                            <br/>
+                                            Work Phone:
+                                            <strong t-esc="o.mobile"/>
+                                            <br/>
+                                            <br/>
+                                            E-mail:
+                                            <strong t-esc="o.email"/>
+                                            <br/>
+                                            <br/>
+                                            Postal code:
+                                            <strong t-esc="o.zip"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+    <record id="kyc_loan_report" model="ir.actions.report">
+        <field name="name">Know Your Customer</field>
+        <field name="model">res.partner</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">loan.report_kyc</field>
+        <field name="report_file">loan.report_kyc</field>
+        <field name="binding_model_id" ref="model_res_partner"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

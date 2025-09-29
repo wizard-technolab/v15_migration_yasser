@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <!-- Email template for contract confirmation -->
+        <record id="mail_template_sent_to_clinic" model="mail.template">
+            <field name="name">Clinic: send the email to Clinic</field>
+            <field name="model_id" ref="purchase.model_purchase_order"/>
+            <field name="subject">Purchase Order {{object.name}}</field>
+            <field name="email_from">"{{object.company_id.name}}" &lt;{{(object.company_id.email or user.email)}}&gt;</field>
+            <field name="email_to">{{object.partner_id.email_formatted}}</field>
+            <field name="body_html" type="html">
+                <style type="text/css">
+                    div {
+                        font-style: normal;
+                        font-weight: 60px;
+                        bottom: 10px;
+                        top: 1px;
+                        text-align:center !important;
+                        }
+                </style>
+                <table border="0" cellpadding="0" cellspacing="0"
+                       style="padding-top: 16px; background-color: #F1F1F1; font-family:Verdana, Arial,sans-serif; color: #454748; width: 100%; border-collapse:separate;">
+                    <tr>
+                        <td align="center">
+                            <table border="0" cellpadding="0" cellspacing="0" width="590"
+                                   style="padding: 16px; background-color: white; color: #454748; border-collapse:separate;">
+                                <tbody>
+                                    <!-- HEADER -->
+                                    <tr dir="rtl">
+                                        <td align="center" style="min-width: 590px;">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="590"
+                                                   style="min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;">
+                                                <tr>
+                                                    <td valign="middle">
+                                                        <span style="font-size: 10px;">Purchase Order</span>
+                                                        <br/>
+                                                        <span style="font-size: 10px; font-weight: bold;">
+                                                            <t t-out="object.name"/> \ <t t-out="object.partner_id.name"/>
+                                                        </span>
+                                                    </td>
+                                                    <td dir="ltr" valign="middle" align="right">
+                                                        <img src="/logo.png" style="width: 150px;height: 80px;" alt="FUEL"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2" style="text-align:center;">
+                                                        <hr width="100%"
+                                                            style="background-color:#017e84;border:medium none;clear:both;display:block;font-size:0px;min-height:1px;line-height:0; margin: 16px 0px 16px 0px;"/>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <!-- CONTENT -->
+                                    <tr dir="rtl">
+                                        <td style="min-width: 590px;">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="590"
+                                                   style="min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;">
+                                                <tr>
+                                                    <td valign="top" style="font-size: 13px;">
+                                                        <div>
+                                                            Dear <t t-out="object.partner_id.name"/>,
+                                                            <br/>
+                                                            <br/>
+                                                            Your Purchase Order <t t-out="object.name"/> has been successfully confirmed!
+                                                            <br/>
+                                                            <br/>
+                                                            <a t-att-href="ctx['base_url']"
+                                                                style="background-color: #be7c31; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size:13px;">
+                                                                Go to portal <t t-out="object.name"/>
+                                                            </a>
+                                                            <br/>
+                                                            <br/>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <!-- FOOTER -->
+                                    <tr>
+                                        <td align="center" style="min-width: 590px;">
+                                            <table border="0" cellpadding="0" cellspacing="0" width="590"
+                                                   style="min-width: 590px; background-color: white; font-size: 11px; padding: 0px 8px 0px 8px; border-collapse:separate;">
+                                                <tr>
+                                                    <td valign="middle" align="left">
+                                                        <t t-out="object.company_id.name"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td valign="middle" align="left" style="opacity: 0.7;">
+                                                        <t t-out="object.company_id.phone"/>
+                                                        <!-- % if object.company_id.email -->
+                                                        <!-- | -->
+                                                        <t t-if="object.company_id.email">
+                                                            <a href="'mailto:%s' % {{object.company_id.email}}"
+                                                            style="text-decoration:none; color: #454748;">
+                                                                <t t-out="object.company_id.email"/>
+                                                            </a>
+                                                        </t>
+                                                        <!-- % endif -->
+                                                        <!-- % if object.company_id.website -->
+                                                        <!-- | -->
+                                                        <a href="'%s' % {{object.company_id.website}}"
+                                                           style="text-decoration:none; color: #454748;">
+                                                            <t t-out="object.company_id.website"/>
+                                                        </a>
+                                                        <!-- % endif -->
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </field>
+            <field name="auto_delete" eval="False"/>
+        </record>
+    </data>
+</odoo>

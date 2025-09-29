@@ -1,0 +1,103 @@
+<odoo>
+    <data>
+        <record id="partner_inherit_form" model="ir.ui.view">
+            <field name="name">partner.elm.yakeen.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='age']" position="after">
+                    <field name="elm_gender" invisible="1"/>
+                </xpath>
+                <notebook position="inside">
+                    <page string="Elm &amp; Yakeen" groups="loan.yakeen_access">
+                        <button name="action_verify_elm_yakeen" type="object" string="Verify"
+                                attrs="{'invisible': [('elm_yakeen_id', '!=', False)]}" class="oe_highlight"/>
+                        <button name="action_reset" type="object" string="Reset" groups="base.group_system"/>
+                        <group>
+                            <group string="General Info">
+                                <field name="elm_yakeen_id" invisible="1"/>
+                                <label for="elm_first_name" string="Name"/>
+                                <div class="o_address_format">
+                                    <field name="elm_family_name" class="o_address_city"/>
+                                    <field name="elm_grand_father_name" class="o_address_city"/>
+                                    <field name="elm_father_name" class="o_address_city"/>
+                                    <field name="elm_first_name"/>
+                                </div>
+
+                                <label for="elm_english_first_name" string="English Name"/>
+                                <div class="o_address_format">
+                                    <field name="elm_english_first_name" class="o_address_city"/>
+                                    <field name="elm_english_second_name" class="o_address_city"/>
+                                    <field name="elm_english_third_name" class="o_address_city"/>
+                                    <field name="elm_english_last_name"/>
+                                </div>
+
+                                <field name="elm_id_expiry_date" string='ID Expiry Date' widget="date_hijri"
+                                       attrs="{'invisible': [('nationality', '!=', 'saudi')]}"/>
+                                <field name="elm_id_expiry_date" string='Iqama Expiry Date'
+                                       attrs="{'invisible': [('nationality', '=', 'saudi')]}" widget="date_hijri"/>
+                                <field name="elm_date_of_birth" widget="date_hijri"/>
+                                <field name="elm_occupation_code"
+                                       attrs="{'invisible': [('nationality', '!=', 'saudi')]}"/>
+                            </group>
+                            <group string="Forigner Info" attrs="{'invisible': [('nationality', '=', 'saudi')]}">
+                                <field name="elm_sponsor_name"/>
+                                <field name="elm_nationality_code"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Addresses">
+                                <field name="elm_address_line_ids">
+                                    <tree>
+                                        <field name="additional_number"/>
+                                        <field name="building_number"/>
+                                        <field name="city"/>
+                                        <field name="district"/>
+                                        <field name="post_code"/>
+                                        <field name="street_name"/>
+                                        <field name="unit_number"/>
+                                        <field name="location_coordinates"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="additional_number"/>
+                                                <field name="building_number"/>
+                                                <field name="city"/>
+                                                <field name="district"/>
+                                            </group>
+                                            <group>
+                                                <field name="post_code"/>
+                                                <field name="street_name"/>
+                                                <field name="unit_number"/>
+                                                <field name="location_coordinates"/>
+                                            </group>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+        <record id="partner_inherit_form_loan" model="ir.ui.view">
+            <field name="name">partner.elm.yakeen.loan.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="loan.partner_inherit_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <field name="birth_of_date" position="after">
+                    <field name="hijri_birth_date_day"
+                           style="width: 45%" invisible="1"/>
+                    <field name="hijri_birth_date_month"
+                           style="width: 45%" invisible="1"/>
+                    <field name="hijri_birth_date_year"
+                           style="width: 45%" invisible="1"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

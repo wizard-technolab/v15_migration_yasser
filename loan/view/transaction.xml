@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="transaction_form" model="ir.ui.view">
+        <field name="name">transaction.form</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="model">account.move</field>
+        <field name="arch" type="xml">
+            <field name="ref" position="replace">
+                <field name="partner_name" />
+                <field name="isdown_payment" />
+                <field name="transaction_channel" />
+                <field name="transaction_state" />
+                <field name="transaction_type" />
+<!--                <field name="partner_name" />-->
+                <field name="identification_id" invisible="0"/>
+            </field>
+        </field>
+    </record>
+</odoo>
+

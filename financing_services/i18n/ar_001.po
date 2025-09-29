@@ -1,0 +1,1220 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* financing_services
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-12 15:44+0000\n"
+"PO-Revision-Date: 2022-07-12 15:44+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "1.1 Customer Details"
+msgstr "1.1 البيانات الشخصية"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "1.2 Communicating with anthor person"
+msgstr "1.2 التواصل مع شخص اخر"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "1.3 Disclousure"
+msgstr "1.3 الإفصاح"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "1.4 National Address"
+msgstr "1.4 العنوان الوطني"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "1.5 Financing Plan"
+msgstr "1.5 البرنامج التمويلي"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "1.6 How did you hear about us ?"
+msgstr "1.6 كيف سمعت عنا ؟"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "12 Months"
+msgstr "12 شهر"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "18 Months"
+msgstr "18 شهر"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "2.1 Job Details"
+msgstr "2.1 بيانات الوظيفة"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "2.2 Customer's Income"
+msgstr "2.2 بيانات الدخل"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "2.3 Credit Commitment"
+msgstr "2.3 المصاريف الأساسية"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "2.4 Requirements"
+msgstr "2.4 المستندات المطلوبة"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "24 Months"
+msgstr "24 شهر"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "3 Months"
+msgstr "3 أشهر"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "3 Months Account Statement"
+msgstr "كشف حساب لثلاث أشهر موضح به الراتب"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "3.1 Guarantor Details"
+msgstr "3.1 بيانات الكفيل"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "3.2 National Address"
+msgstr "3.2 العنوان الوطني"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "3.3 Job Details"
+msgstr "3.3 بيانات الوظيفة"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "3.4 Credit Commitment"
+msgstr "3.4 المصاريف الأساسية"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Residential Expenses"
+msgstr "مصاريف السكن"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "4.1 Terms and Conditioins For Customer"
+msgstr "4.1 الشروط والأحكام للعميل"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "4.1 Undertakings"
+msgstr "4.1 الإقرار و التفويض"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "4.2 The Real User Indemnity"
+msgstr "4.2 تعهد المستخدم الحقيقي"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "4.3 Terms and Conditioins For Guarantor"
+msgstr "4.3 الشروط و الأحكام للكفيل"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "6 Months"
+msgstr "6 أشهر"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "<b>If Employed / Self Empolyed</b>"
+msgstr "<b> إذا كان موظف/صاحب مؤسسة </b>"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "<b>Required for non-Saudis</b>"
+msgstr "<b>إلزامي للمقيمين</b>"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.my_document_submit
+#: model_terms:website.page,arch_db:financing_services.aboutus_page
+msgid ""
+"<i class=\"fa fa-check-circle fa-1x text-success mr-2\" role=\"img\" aria-"
+"label=\"Success\" title=\"Success\"/>"
+msgstr ""
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "<span class=\"input-group-text\" id=\"basic-addon2\">S.R</span>"
+msgstr ""
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Add your profile piccture and let companies find youy fast."
+msgstr ""
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Additional No."
+msgstr "الرقم الإضافي"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Address"
+msgstr "العنوان"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Age"
+msgstr "العمر"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Annual Rent"
+msgstr "الإيجار السنوي"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Annualy"
+msgstr "الدخل السنوي"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Any kind of cancer disease?"
+msgstr "أي نوع من امراض السرطان؟"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Any psychiatric illness?"
+msgstr "أي مرض نفسي؟"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form4
+msgid "Applicant Name"
+msgstr "اسم مقدم الطلب"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Are you unable to work now ?"
+msgstr "هل أنت غير قادر على العمل الآن؟"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Asthma, bronchitis or other chest problems?"
+msgstr "الربو و التهاب الشعب الهوائية أو مشاكل أخرى في الصدر؟"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Authorized Service Provider"
+msgstr "إسم الخدمة (العملية)"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Bachelor"
+msgstr "جامعي"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Back"
+msgstr "السابقة"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Bank Certificate"
+msgstr "الشهادة البنكية (الآيبان)"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Quotation Number"
+msgstr "عرض السعر"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Basic Information"
+msgstr "معلومات أساسية"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Billboards"
+msgstr "اللوحات الإعلانية"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "City"
+msgstr "المدينة"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Civil"
+msgstr "مدني"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Civilian"
+msgstr "مدني"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form1
+msgid "Client Full Name"
+msgstr "اسم العميل رباعي"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Company"
+msgstr "شركة"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Company Provided"
+msgstr "مؤمن عن طريق العمل"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form1
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+#: model_terms:ir.ui.view,arch_db:financing_services.form4
+msgid "Congratulations!"
+msgstr "تهانينا"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form4
+msgid "Contract Date"
+msgstr "تاريخ العقد"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form4
+msgid "Contract Name"
+msgstr "رقم العقد"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form4
+msgid "Contract Name-Number"
+msgstr "إسم-رقم العقد"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form4
+msgid "Customer Id"
+msgstr "رقم هوية العميل"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form4
+msgid "Customer Name"
+msgstr "إسم العميل"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Date of Birth"
+msgstr "تاريخ الميلاد"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Date of Expiry"
+msgstr "تاريخ الإنتهاء"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Date of Issue"
+msgstr "تاريخ الإصدار"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form4
+msgid "Describtion"
+msgstr "الوصف"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Diabetes of any kind 7"
+msgstr "مرض السكري بأي نوع من أنواعه؟"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid ""
+"Difficulty digestion with or without ulceration and inflammation In the "
+"colon?"
+msgstr "صعوبة في الهضم مع أو بدون التهاب في القولون؟"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "District"
+msgstr "الحي"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Do you have a relationship with any member of FUEL Finance Company?"
+msgstr "هل لديك صلة قرابة بأحد موظفي شركة فيول للتمويل؟"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Do you have any disability , total disability or partial disability?"
+msgstr "هل لديك أي إعاقة او عجز كلي او عجز جزئي؟"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "E-mail"
+msgstr "البريد الإلكتروني"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Education Expenses"
+msgstr "مصاريف التعليم"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Education Level"
+msgstr "المستوى الدراسي"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Employee Title / Military Rank"
+msgstr "المسمى الوظيفي/الرتبة العسكرية"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Enter your personal information to get closer to companies."
+msgstr ""
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Establishment"
+msgstr "مؤسسة"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Ex: 39"
+msgstr "مثلاَ: 39"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Expected Future Expenses"
+msgstr "مصاريف مستقبلية متوقعة"
+
+#. module: financing_services
+#: model:website.menu,name:financing_services.website_menu_form1
+msgid "Expression of Desire"
+msgstr "إبداء الرغبة"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form1
+msgid "Expression of desire form"
+msgstr "نموذج إبداء الرغبة"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid ""
+"Failure to fill the weight and height information will result in refusal to "
+"cover the cost of obesity surge"
+msgstr ""
+"عدم تعبئة بيانات الطول و الوزن سيؤدي إلى رفض تغطية"
+" تكاليف عملية جراحة السمنة المفرطة."
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Family"
+msgstr "العائلة"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Female"
+msgstr "انثى"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Financed Amount (Medical Fees)"
+msgstr "مبلغ التمويل (رسوم العلاج)"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid ""
+"Financed Period <span class=\"text-danger\">* min 3 Months,max 24 "
+"Months</span>"
+msgstr ""
+"مدة التمويل <span class=\"text-danger\">* كحد أدنى 3 أشهر ,كحد أقصى 24 "
+"شهر</span>"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "First"
+msgstr "الأول"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Food Expenses"
+msgstr "مصاريف الأغذية"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Foreign"
+msgstr "أجنبي"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Fuel Clients"
+msgstr "عملاء فيول"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form1
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Full Name"
+msgstr "الإسم بالكامل"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Gender"
+msgstr "الجنس"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid ""
+"Get to know better by adding your diploma,certificate and education life."
+msgstr ""
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Government"
+msgstr "حكومي"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Guarantor Details <small>(if any)</small>"
+msgstr "معلومات الكفيل <small>(إن وجد)</small>"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Guarantor Type"
+msgstr "فئة الكفيل"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "HIV/ AIDS, AIDS?"
+msgstr "مرض نقص المناعة او الايدز (فيروس نقص المناعية البشري)؟"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Has/Had long medical condition?"
+msgstr "مرض في الكلى او المثانة؟"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid ""
+"Have you been diagnosed with any of the following chronic diseases limited to: Autism, Benign Tumor, Cancer, Heart Diseases, Chronic Hepatitis C, Gallstones, Kidney failure, Urinary tract\n"
+"                                                                        stones, thyroid goiter, Cysts, fibroid uterus, Hernias, autoimmune diseases or Multiple sclerosis."
+msgstr ""
+"هل تم تشخيصك بأي من الأمراض المزمنة التالية فقط:  التوحد، الأورام الحميدة، السرطان، أمراض القلب، الألتهاب الكبدي الفيروسي المزمن سي، حصوات المرارة، الفشل الكلوي، \n"
+"                                                                        حصوات المسالك البولية، تضخم الغدة الدرقية، التكيسات، ورم ليفي بالرحم، الفتق، أمراض المناعة الذاتية أو التصلب المتعدد."
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid ""
+"Have you been unable to work for 30 consecutive days during the last five "
+"years?"
+msgstr ""
+"هل خلال الخمس سنوات الماضية لم تتمكن من العمل لمدة 20 يوما "
+"متواصلة؟"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Have you suffered any accident caused you serious damage"
+msgstr "هل تعرضت لأي حادث تسبب لك اضرار في اضرار جسدية"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid ""
+"Have you suffered or are suffering from the following diseases or "
+"conditions?"
+msgstr ""
+"أمراض القلب و الشرايين او جلطة أو ارتفاع ضغط"
+"الدم؟"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid ""
+"Have you taken any treatment or medication for more than 14 consecutive days"
+" during the past (2) years to treat a disease (leg for, blood pressure, "
+"diabetes, cholesterol, or other diesels"
+msgstr ""
+"هل تناولت أي علاج او ادوية لمدة تزيد عن 24 يوما متتالية"
+" خلال السنتين الماضيتين لعلاج مرض ما (مثال لا الحصر ضغط"
+"سكري،  كولسترول، وغيرها من الأمراض )"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Health Care Expenses"
+msgstr "مصاريف الرعاية الصحية"
+
+#. module: financing_services
+#: model:website.menu,name:financing_services.website_menu_form3
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Health Declaration"
+msgstr "الإقرار الصحي"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Height"
+msgstr "الطول"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid ""
+"Help companies get to know you better by telling then about your past "
+"experiences."
+msgstr ""
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Hepatitis?"
+msgstr "الكبد الوبائي؟"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid ""
+"Hereby, Iam the undersigned agree to provide Fuel Finance Company. with any information that it requires for the establishing and/or auditing and/or administering my accounts and facilities therewith and I authorize it to obtain and collect any information\n"
+"                                                        as it deems necessary or in need for regarding me, my accounts and facilities therewith, from the Saudi Credit Bureau (SIMAH) and to disclose and share (Inclusive of Date Pooling) that information\n"
+"                                                        to the said company (SIMAH) in accordance with the Membership Agreement and Code of Conduct approved or to any other agency approved by Saudi Central Bank (SAMA). I confirm that the data mentioned\n"
+"                                                        in the bank statement is accurate and correct I also fully agree to register the finance lease contract with the Saudi Company fo the registration of financial leases contracts and to disclose the\n"
+"                                                        data of the contract and exchange win the relevant parties"
+msgstr ""
+"بهذا أنا الموقع أدناه أوافق على تزود شركة فيول بأي معلومات أو بيانات تطلبها مني لتأسيس حسابي لدى الشركة و/أو لإدارته وأفوض الشركة بأن تحصل على ما يلزم أو تحتاج إليه من معلومات \n"
+"                                                        تخصني أو تخص حسابي المذكور أو أي حساب آخر يكون لدى الشركة من الشركة السعودية الإئتمانية (سمه) كما أوافق على أن تفصح الشركة عن المعلومات الخاصة بي و بحسابي المذكور أو أي حساب آخر يكون لدى المفوض\n"
+"                                                        للشركة السعودية للمعلومات (سمة) من خلال اتفاقية العضوية المبمة وقواعد العمل المقرة و خاصة بتبادل الملعومات و/أو لأي جهة أخرى توافق\n"
+"                                                        عليها البنك المركزي السعود (ساما)، وأقر أن البيانات المذكورة في كشف الحساب البنكي دقيقة وصحيحة كما أقر بموافقتي التامة على تسجيل عقدي لدى الشركة السعودية\n"
+"                                                        لتسجيل عقود التمويل والإفصاح لبيانات العقد وتبادلها لدى الجهات ذات العلاقة."
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid ""
+"Hereby. I am the undersigned agree to provide Fuel Finance Company. with any information that it requires for the establishing auditing and/or administering my accounts and facilities therewith and I authorize It to obtain and collect any information\n"
+"                                                        as it deems necessary or in need for regarding me, my accounts and facilities therewith, from the Saudi Credit Bureau (SIMAH) and to disclose and share (Inclusive of Date Pooling) that Information\n"
+"                                                        to the Saudi Information company (SIMAH) In accordance with the Membership Agreement and Code of Conduct approved or to any other agency approved by Saudi . Central Bank SAMA"
+msgstr ""
+"بهذا أنا الموقع ادناه أوافق على تزويد شركة فيول للتمويل باي معلومات أو بيانات تطلبها مني لتأسيس حسابي لدى الشركة و/أو لمراجعته و/أو لإدارته وأفوض الشركة بأن تحصل على ما يلزم أو تحتاج إليه من معلومات\n"
+"                                                        تخصني أو تخص حسابي المذكور أو أي حساب آخر يكون لدى الشركة من الشركة السعودية الإئتمانية (سمه) كما أوافق على أن تفصح الشركة عن المعلومات الخاصة بي و بحسابي المذكور أو أي حساب آخر يكون لدى المفوض\n"
+"                                                        للشركة السعودية للمعلومات (سمة) من خلال اتفاقية العضوية المبرمة وقواعد العمل المقرة و الخاصة بتبادل المعلومات لأي جهة أخرى توافق عليها البنك المركزي السعودي (ساما)"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "High cholesterol?"
+msgstr "كولسترول عالي؟"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Hospital / Clinic"
+msgstr "المستشفى/العيادة"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form4
+msgid "Hospital Email"
+msgstr "بريد المستشفى"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form4
+msgid "Hospital Phone"
+msgstr "جوال المستشفى"
+
+#. module: financing_services
+#: model:website.menu,name:financing_services.website_menu_form4
+#: model_terms:ir.ui.view,arch_db:financing_services.form4
+msgid "Hospital Quotation"
+msgstr "عرض السعر"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form4
+msgid "Hospital Quotation <span id=\"company_name\"/> For Fuel"
+msgstr "عرض السعر من عيادة <span id=\"company_name\"/> إلى شركة فيول للتمويل"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Housing Expenses"
+msgstr "مصاريف السكن"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid ""
+"I agree that fuel finance has the right to reject the coverage/claims in full in case of no declaration of any cases prior to the contractual date or before enrolling or adding a new Insured during\n"
+"                                                            the contract."
+msgstr ""
+"أوافق على أحقيـة فيول للتمويل في رفض المطالبة أو التغطية كلياَ عند عدم الافصاح عن وجود أي من الحالات المذكورة أعلاه التي نشأت قبل تاريخ التعاقد أو قبل تسجيل أو إضافة مؤمن له خلال فترة سريان\n"
+"                                                             العقد."
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "I agree to the"
+msgstr "أوافق على "
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid ""
+"I confirm that I am the real user of the financing contract granted by Fuel Finance Co, and I did not apply on behalf of any person or company. And I undertake not to transfer or authorize to use the asset of the financing contract now or Later to any\n"
+"                                                        person or company without taking the required approvals from Fuel Finance Company"
+msgstr ""
+"أقر أنا بأني مستخدم حقيقي لعقد التمويل الممنوح من شركة فيول للتمويل, ولم أقم بتقديم الطلب نيابة عن أي شخص أو شركة. و أتعهد كذلك بعدم تحويل أو أستخدام الأصل محل عقد التمويل الأن أو  لاحقا لأي \n"
+"                                                        شخص أو شركة بدون موافقة شركة فيول للتمويل"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid ""
+"I hereby confirm reading and understanding all points presented in this form"
+" and I agree that not marking any case is understood as “Nothing requires "
+"declaration” and I sign on these basis."
+msgstr ""
+"أقر بأني قد قرأت و فهمت جميع ما جاء في هذا النموذج"
+" كما اتعهد بأن عدم إشارتي أمام أي من الحالات المذكورة اعلاه يعتبر بمثابة نفي "
+"وجود ما يستحق الإفصاح عنه و عليه أوقع."
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid ""
+"I hereby undertake that all above information are correct and the acceptance of my enrolment will be on the basis of such information and that fuel finance company has the right to contact the hospital(s)\n"
+"                                                            I deal with to collect any medical information needed to assess the risk(s)."
+msgstr ""
+"أقر أن البيانات و المعلومات المذكورة أعلاه كاملة و صحـيحة و بناء عليه فإن قبول الطلب سيتم على اساس هذه البيانات وأن شركة فيول للتمويل لها الحق في الاتصال بالمستشفيات \n"
+"                                                            التي أتعامل معها لتزويدها بأي معلومات طبية قد تحتاج إليها لتقديم المخاطر."
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form1
+msgid "ID Number"
+msgstr "رقم الهوية"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form1
+msgid ""
+"If the request is rejected, the customer has the right to receive his papers"
+" within a maximum period of two months from the date of the request."
+msgstr ""
+"في حال رفض الطلب يحق للعميل استلام أوراقه "
+" في مدة أقصاها شهرين من تاريخ الطلب."
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid ""
+"I, the undersigned, and I fully certify that I have applied to Fuel Finance with this application, the details of which are described above, and that all\n"
+"                                                        The information is correct and I take full responsibility if it turns out otherwise, and Fuel Company has the right to refuse the application if it turns out\n"
+"                                                        Otherwise, I agree that Fuel Company has the right to verify and verify this and take what it deems appropriate, as I authorize Fuel Company\n"
+"                                                        By exchanging information with others and obtaining the necessary credit information from the Saudi Information Company (SIMAH), as well as\n"
+"                                                        I acknowledge that Fuel has the right to keep my documents provided by me even if the application is rejected."
+msgstr "اقر انا الموقع ادناه وانا بكامل اهليتي اني تقدمت لشركة فيول للتمويل بهذا الطلب الموضحة بياناته أعلاه , وان جميع
+"المعلومات صحيحة واتحمل كامل المسؤولية اذا تبين خلاف ذلك وان لشركة فيول الحق في رفض الطلب في حال تبين"
+"خلاف ذلك , واوافق على ان لشركة فيول الحق بالتحقق والتأكد من ذلك واتخاذ ما تراه مناسب , كما افوض شركة فيول"
+"بتبادل المعلومات مع الغير وان تحصل على ما يلزمها من معلومات ائتمانية من الشركة السعودية للمعلومات (سمة) , كما"
+"اقر بأن لشركة فيول الحق في الاحتفاظ بالمستندات الخاصة بي والمزودة من قبلي حتى في حالة رفض الطلب ."
+
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Insurance Expenses"
+msgstr "مصاريف التأمين"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "International Mobile Number"
+msgstr "جوال خارج المملكة"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Job Type"
+msgstr "نوع العمل"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Join Date / Date of Establishment"
+msgstr "تاريخ الإلتحاق بالعمل/تاريخ إنشاء المؤسسة"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Labor Cost"
+msgstr "أجور العمالة المنزلية"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Last"
+msgstr "الجد"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Living with Parents/Family"
+msgstr "مقيم مع الوالدين/العائلة"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Loan Amount"
+msgstr "مبلغ القرض"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Loan Period"
+msgstr "مدة القرض"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Loan Request"
+msgstr "عرض سعر الخدمات الطبية"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Male"
+msgstr "ذكر"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Married"
+msgstr "متزوج"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Martial Status"
+msgstr "الحالة الإجتماعية"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Master"
+msgstr "دراسات عليا"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Medical History Information"
+msgstr "معلومات التاريخ الطبي"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Medical Services"
+msgstr "خدمات طبية"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Medical Services Finance Application"
+msgstr "نموذج طلب خدمة تمويل + إعرف عميلك"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Name in Arabic"
+msgstr "الاسم بالعربي"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Name in English"
+msgstr "الاسم بالإنجليزي"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Military"
+msgstr "عسكري"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form1
+msgid "Mobile No."
+msgstr "رقم الجوال"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Mobile Number"
+msgstr "رقم الجوال"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Name"
+msgstr "الإسم"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Name in Arabic"
+msgstr "الإسم بالعربي"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Name in English"
+msgstr "الإسم بالإنجليزي"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Name of Employer"
+msgstr "جهة العمل"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Name of a relative in your home town"
+msgstr "اسم احد الأقارب في البلد الأم"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Nationality"
+msgstr "الجنسية"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Next Step"
+msgstr "الخطوة القادمة"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "No"
+msgstr "لا"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form1
+msgid "Notes:"
+msgstr "ملحوظة:"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Number of Dependants"
+msgstr "عدد المعالين"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Other"
+msgstr "أخرى"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Other Income"
+msgstr "دخل آخر"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Other Obligations"
+msgstr "إلتزامات أخرى"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Owned"
+msgstr "ملك"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Phone"
+msgstr "رقم الهاتف"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Phone Expenses"
+msgstr "مصاريف الإتصالات"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Photo ID Attachment"
+msgstr "صورة الهوية الوطنية موقعة من العمل"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Place of Birth"
+msgstr "مكان الميلاد"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Place of Issue"
+msgstr "مكان الإصدار"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Postal Code"
+msgstr "الرمز البريدي"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Previous and current health status"
+msgstr "الحالة الصحية السابقة و الحالية"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Private Sector"
+msgstr "قطاع خاص"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Radio"
+msgstr "الراديو"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Relationship Type"
+msgstr "طبيعة العلاقة"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Relative Relation"
+msgstr "نوع العلاقة"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Relatives and Friends"
+msgstr "الأقارب و الأصدقاء"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Rent"
+msgstr "إيجار"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Requst Information"
+msgstr "معلومات الطلب"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Residence Number"
+msgstr "هاتف المنزل"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Residencial Status"
+msgstr "نوع السكن"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Retired"
+msgstr "متقاعد"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Rheumatic fever and the umatoid arthritis?"
+msgstr "الحمى الروماتيزمية او التهاب الشعب الهوائية او مشاكل أخرى في الصدر؟"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "SMS"
+msgstr "الرسائل النصية"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Salary Definition"
+msgstr "خطاب تعريف الراتب"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Salary/Income"
+msgstr "الراتب/الدخل"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Sales Representatives"
+msgstr "مندوبي المبيعات"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Saudi"
+msgstr "سعودي"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Saudi ID/Iqama"
+msgstr "هوية سعودي/مقيم"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Second"
+msgstr "الثاني"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Secondary"
+msgstr "ثانوي"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Self Employed"
+msgstr "عمل خاص"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form1
+#: model_terms:ir.ui.view,arch_db:financing_services.form4
+msgid "Service Amount"
+msgstr "مبلغ الخدمة"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form4
+msgid "Service Name"
+msgstr "اسم الخدمة"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form1
+msgid "Service Provider (Clinic Name)"
+msgstr "مقدم الخدمة (اسم العيادة)"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Single"
+msgstr "اعزب"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Social Media"
+msgstr "وسائل التواصل الإجتماعي"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Source"
+msgstr "المصدر"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Step <span class=\"step-number\">1</span>"
+msgstr "الخطوة <span class=\"step-number\">1</span>"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Street"
+msgstr "الشارع"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form1
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+#: model_terms:ir.ui.view,arch_db:financing_services.form4
+msgid "Submit Form"
+msgstr "تسليم النموذج"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Terms and Conditions"
+msgstr "الأحكام و الشروط"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.my_document_submit
+#: model_terms:website.page,arch_db:financing_services.aboutus_page
+msgid "Thank you for submitting your application"
+msgstr "شكراَ لك على تسليم الطلب"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form1
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+#: model_terms:ir.ui.view,arch_db:financing_services.form4
+msgid ""
+"Thanks Mr./Mrs. <span class=\"shown_name\"/> your information have been "
+"submitted successfully for the future reference we will contact you soon."
+msgstr ""
+"شكراَ <span class=\"shown_name\"/> لقد تم رفع بياناتك "
+"بنجاح، سيتم التواصل معك قريباَ"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form1
+msgid "The Real Beneficiary"
+msgstr "المستفيد الحقيقي"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form1
+msgid ""
+"The company has the right to accept or reject any request with an "
+"explanation of the reasons."
+msgstr ""
+"للشركة الحق في قبول او رفض أي طلب مع "
+"توضيح الأسباب."
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Thyroid, anemia, bloated glands?"
+msgstr "الغدة الدرقية، فقر الدم، الغدد المتضخمة؟"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form1
+msgid "Type of Financing (Medical Service Provided)"
+msgstr "نوع التمويل (الخدمة الطبية المقدمة)"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Undertakings"
+msgstr "الإقرار و التفويض"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Unit No."
+msgstr "رقم الوحدة"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Wasel"
+msgstr "واصل"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Weight"
+msgstr "الوزن"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Work Nature"
+msgstr "طبيعة العمل"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Work Telephone Numbers / Extension"
+msgstr "هاتف العمل/التحويلة"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "Yes"
+msgstr "نعم"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.my_document_submit
+#: model_terms:website.page,arch_db:financing_services.aboutus_page
+msgid "Your Document is"
+msgstr ""
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "hosptial name"
+msgstr "إسم المستشفى"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "other"
+msgstr "أخرى"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+#: model_terms:ir.ui.view,arch_db:financing_services.form3
+msgid "terms and conditions"
+msgstr "الأحكام و الشروط"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "transportation Expenses"
+msgstr "مصاريف النقل"
+
+#. module: financing_services
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Do you have Guarantor?"
+msgstr "هل يوجد كفيل؟"
+
+#. module: financing_services
+#: model:website.menu,name:financing_services.website_menu_form2
+#: model_terms:ir.ui.view,arch_db:financing_services.form2
+msgid "Medical Services Finance Application"
+msgstr "نموذج طلب خدمة تمويل و إعرف عميلك"

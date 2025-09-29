@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="partner_report_template">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <!--            dir="rtl"-->
+                <div class="page">
+                    <div class="oe_structure"/>
+                    <center>
+                        <h2>Credit Report</h2>
+                    </center>
+                    <br/>
+                    <div class="row">
+                        <tr>
+                            <td>Credit User</td>
+                            <td>:</td>
+                            <td>
+                                <t t-if="form_data.get('user_id')">
+                                    <t t-esc="form_data['user_id'][1]"/>
+                                </t>
+                            </td>
+                        </tr>
+                        <br/>
+                        <tr>
+                            <td>Date From</td>
+                            <td>:</td>
+                            <td>
+                                <t t-if="form_data.get('loan_request_from')">
+                                    <t t-esc="form_data['loan_request_from']"/>
+                                </t>
+                            </td>
+                        </tr>
+                        <br/>
+                        <tr>
+                            <td>Date To</td>
+                            <td>:</td>
+                            <td>
+                                <t t-if="form_data.get('loan_request_to')">
+                                    <t t-esc="form_data['loan_request_to']"/>
+                                </t>
+                            </td>
+                        </tr>
+                    </div>
+                    <br/>
+                    <br/>
+                    <table class="table table-condensed">
+                        <thead class="table table-bordered mt32">
+                            <tr>
+                                <th>
+                                    <span>Sequence</span>
+                                </th>
+                                <th>
+                                    <span>Loan Amount</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <!--                            <t t-set="request_total" t-value="0"/>-->
+                        <tbody>
+                            <t t-foreach="docs" t-as="o">
+                                <!--                                <t t-set="request_total" t-value="request_total + 1"/>-->
+                                <tr>
+                                    <td style="text-align:left;">
+                                        <span t-esc="o['seq_name']"/>
+                                    </td>
+                                    <td style="text-align:left;">
+                                        <span t-esc="o['loan_amount']"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                        <!--                        <tr>-->
+                        <!--                            <td>-->
+                        <!--                                <strong>Total</strong>-->
+                        <!--                            </td>-->
+                        <!--                            <td>-->
+                        <!--                                <t t-esc="request_total"/>-->
+                        <!--                            </td>-->
+                        <!--                        </tr>-->
+                    </table>
+                </div>
+                <tr>
+                    <td>Note</td>
+                    <td>:</td>
+                    <td>
+                        <t t-if="form_data.get('note')">
+                            <t t-esc="form_data['note']"/>
+                        </t>
+                    </td>
+                </tr>
+            </t>
+        </t>
+    </template>
+    <menuitem name="Credit Report"
+              id="partner_report_menu"
+              parent="configuration_id"
+              action="loan.action_partner_report"
+              sequence="6"/>
+
+    <record id="action_credit_report" model="ir.actions.report">
+        <field name="name">Credit Report</field>
+        <field name="model">loan.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">loan.partner_report_template</field>
+        <field name="report_file">loan.partner_report_template</field>
+        <field name="binding_model_id" ref="model_res_partner"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

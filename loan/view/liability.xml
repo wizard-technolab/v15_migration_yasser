@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="liability_tree_view" model="ir.ui.view">
+            <field name="name">customer.liability.tree.inherit</field>
+            <field name="model">customer.liability.type</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="liability_form_view" model="ir.ui.view">
+            <field name="name">customer.liability.view.inherit</field>
+            <field name="model">customer.liability.type</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="customer_liability_action" model="ir.actions.act_window">
+            <field name="name">Customer Liability</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">customer.liability.type</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Configuration"
+                  id="configuration_id"
+                  parent="loan_root"
+                  sequence="9"
+        />
+        <menuitem name="Liability"
+                  id="liability_id"
+                  parent="configuration_id"
+                  action="loan.customer_liability_action"
+                  sequence="10"
+        />
+    </data>
+</odoo>

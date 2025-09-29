@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_credit_instrument_form" model="ir.ui.view">
+            <field name="name">view.credit.instrument.form</field>
+            <field name="model">credit.instrument</field>
+            <field name="arch" type="xml">
+                <form string="Credit Instrument">
+                    <sheet>
+                        <group>
+                            <group string="ciCreditor">
+                                <field name="memberCode"/>
+                                <field name="memberNameEN"/>
+                                <field name="memberNameAR"/>
+                            </group>
+                            <group string="ciProductTypeDesc">
+                                <field name="productId"/>
+                                <field name="code"/>
+                                <field name="textEn"/>
+                                <field name="textAr"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="ciAccountNumber"/>
+                                <field name="ciLimit"/>
+                                <field name="ciClosingDate"/>
+                            </group>
+                            <group>
+                                <field name="ciIssuedDate"/>
+                                <field name="ciExpirationDate"/>
+                                <field name="ciTenure"/>
+                                <field name="ciInstallmentAmount"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="ciStatus">
+                                <field name="creditInstrumentStatusCode"/>
+                                <field name="creditInstrumentStatusDescAr"/>
+                                <field name="creditInstrumentStatusDescEn"/>
+                            </group>
+                            <group string="ciPaymentFrequency">
+                                <field name="paymentFrequencyCodeDescEn"/>
+                                <field name="paymentFrequencyCodeDescAr"/>
+                                <field name="paymentFrequencyCodeName"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="ciSalaryAssignmentFlag">
+                                <field name="salaryAssignmentFlagDescEn"/>
+                                <field name="salaryAssignmentFlagDescAr"/>
+                                <field name="salaryAssignmentFlagCode"/>
+                            </group>
+                            <group string="ciConsumerSecurityType">
+                                <field name="consumerSecurityTypeDescEn"/>
+                                <field name="consumerSecurityTypeDescAr"/>
+                                <field name="consumerSecurityTypeCode"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="ciOutstandingBalance"/>
+                                <field name="ciAsOfDate"/>
+                                <field name="ciDownPayment"/>
+                            </group>
+                            <group>
+                                <field name="ciPastDue"/>
+                                <field name="ciNextDueDate"/>
+                                <field name="ciDispensedAmount"/>
+                            </group>
+                            <group>
+                                <field name="ciLastAmountPaid"/>
+                                <field name="ciSummary"/>
+                                <field name="ciMaxInstalmentAmount"/>
+                            </group>
+                            <group>
+                                <field name="ciLastPaymentDate"/>
+                                <field name="ciBalloonPayment"/>
+                                <field name="total_installment"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="ciSubProduct">
+                                <field name="nameEn"/>
+                                <field name="nameAr"/>
+                                <field name="ciSubProduct_code"/>
+                            </group>
+                            <!--                            <group string="multiInstalmentDetails">-->
+                            <!--                                <field name="startDate"/>-->
+                            <!--                                <field name="instalmentAmount"/>-->
+                            <!--                            </group>-->
+                        </group>
+                        <group>
+                            <group>
+                                <field name="jointApplicantDetail"/>
+                                <field name="ciAverageInstallmentAmount"/>
+                                <field name="ciNumberOfApplicants"/>
+                            </group>
+                            <group>
+                                <field name="code"/>
+                                <field name="textEn"/>
+                                <field name="textAr"/>
+                            </group>
+                            <group>
+                                <field name="jointApplicantFlag_code"/>
+                                <field name="jointApplicantFlag_textEn"/>
+                                <field name="jointApplicantFlag_textAr"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="action_credit_instrument" model="ir.actions.act_window">
+            <field name="name">Credit Instrument</field>
+            <field name="res_model">credit.instrument</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

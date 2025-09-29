@@ -1,0 +1,10 @@
+<odoo>
+  <data>
+
+        <record id="partner_reports.medical_services_financing_request_action" model="ir.actions.report">
+            <field name="model">crm.lead</field>
+            <field name="binding_model_id" ref="crm.model_crm_lead"/>
+        </record>
+
+  </data>
+</odoo>

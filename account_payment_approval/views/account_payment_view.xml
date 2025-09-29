@@ -1,0 +1,196 @@
+<odoo>
+    <data>
+        <record id="view_account_payment_form_inherit" model="ir.ui.view">
+            <field name="name">account.payment.form</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//header//button[@name='action_post']" position="after">
+                    <button name="transfer_accounting_manager" string="Send" type="object"
+                            class="oe_highlight"
+                            states="draft"/>
+                    <button name="transfer_approved" string="Approve" type="object"
+                            class="oe_highlight"
+                            states="accounting_manager"
+                            groups="account_payment_approval.payment_vp_approval"/>
+                    <button name="reject_transfer" string="Reject" type="object"
+                            class="oe_highlight"
+                            states="accounting_manager"/>
+                </xpath>
+                <xpath expr="//header//button[@name='action_post']" position="attributes">
+                    <attribute name="states">approved</attribute>
+                    <attribute name="groups">account.group_account_manager</attribute>
+<!--                    <attribute name="attrs">{'invisible': [('payment_type', '=', 'outbound')]}-->
+<!--                    </attribute>-->
+                </xpath>
+                <xpath expr="//header//button[@name='action_cancel']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('state', 'not in', ('rejected', 'posted'))]}
+                    </attribute>
+                </xpath>
+            </field>
+        </record>
+
+
+    </data>
+    <template id="report_payment_receipt_document_inhh" inherit_id="account.report_payment_receipt_document">
+        <xpath expr="." position="replace">
+            <t t-call="web.external_layout">
+                <t t-set="o" t-value="o.with_context(lang=lang)"/>
+                <div class="page">
+                    <h3>
+                        <strong>Receipt Voucher
+                            <span t-field="o.name"/>
+                        </strong>
+                    </h3>
+                    <div class="mb-4 mt-3">
+                        <div class="row">
+                            <div class="col-8">
+                                Payment Date:
+                                <span t-field="o.date"/>
+                                <br></br>
+                                Reference Number:
+                                <span t-field="o.ref"/>
+                                <br></br>
+                                <t t-if="o.partner_type == 'customer'">
+                                    Received From:
+                                </t>
+                                <t t-if="o.partner_type == 'supplier'">
+                                    Vendor:
+                                </t>
+                                <span t-field="o.partner_id"/>
+                                <br></br>
+                                Payment Mode:
+                                <span t-field="o.payment_method_id.name"/>
+                            </div>
+                            <div class="col-4" style="background-color:#9E9E9E;">
+                                <span style="color:white">Payment Amount</span>
+                                <br></br>
+                                <h1>
+                                    <span t-field="o.amount" style="color:white"
+                                          t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                </h1>
+                            </div>
+                        </div>
+                        <!--                        <div class="row">-->
+                        <!--                            <div class="col-6" t-if="o.date">-->
+                        <!--                                Payment Date:-->
+                        <!--                                <span t-field="o.date"/>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
+                        <!--                        <div class="row">-->
+                        <!--                            <div class="col-6" t-if="o.partner_type">-->
+                        <!--                                <t t-if="o.partner_type == 'customer'">-->
+                        <!--                                    Customer:-->
+                        <!--                                </t>-->
+                        <!--                                <t t-if="o.partner_type == 'supplier'">-->
+                        <!--                                    Vendor:-->
+                        <!--                                </t>-->
+                        <!--                                <span t-field="o.partner_id"/>-->
+                        <!--                            </div>-->
+                        <!--                            <div class="col-6" t-if="o.payment_method_id">-->
+                        <!--                                Payment Method:-->
+                        <!--                                <span t-field="o.payment_method_id.name"/>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
+                        <!--                        <div class="row">-->
+                        <!--                            <div class="col-6" t-if="o.amount">-->
+                        <!--                                Payment Amount:-->
+                        <!--                                <span t-field="o.amount"-->
+                        <!--                                      t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>-->
+                        <!--                            </div>-->
+                        <!--                            <div class="col-6" t-if="o.ref">-->
+                        <!--                                Reference Number:-->
+                        <!--                                <span t-field="o.ref"/>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
+                    </div>
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <span>Invoice Date</span>
+                                </th>
+                                <th>
+                                    <span>Invoice Number</span>
+                                </th>
+                                <th>
+                                    <span>Reference</span>
+                                </th>
+                                <th class="text-right">
+                                    <span>Amount</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="o.move_id._get_reconciled_invoices_partials()" t-as="rec">
+                                <!-- MOVE -->
+                                <t t-set="inv" t-value="rec[2].move_id"/>
+                                <t t-if="inv.move_type != 'entry'">
+                                    <tr>
+                                        <td>
+                                            <span t-field="inv.invoice_date"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="inv.name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="inv.ref"/>
+                                        </td>
+                                        <td class="text-right">
+                                            <span t-field="inv.amount_total"/>
+                                        </td>
+                                    </tr>
+                                    <!-- PAYMENTS/REVERSALS -->
+                                    <tr t-foreach="inv._get_reconciled_invoices_partials()" t-as="par">
+                                        <t t-set="amount" t-value="par[1]"/>
+                                        <t t-set="payment" t-value="par[2].move_id"/>
+                                        <td>
+                                            <span t-field="payment.date"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="payment.name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="payment.ref"/>
+                                        </td>
+                                        <td class="text-right">-
+                                            <span t-esc="amount"
+                                                  t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                        </td>
+                                    </tr>
+                                    <!-- BALANCE -->
+                                    <tr>
+                                        <td/>
+                                        <td>
+                                            <strong>Due Amount for
+                                                <span t-field="inv.name"/>
+                                            </strong>
+                                        </td>
+                                        <td/>
+                                        <td class="text-right">
+                                            <strong>
+                                                <span t-field="inv.amount_residual"/>
+                                            </strong>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </t>
+                        </tbody>
+                    </table>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <div class="mb-4 mt-3">
+                        <div class="row">
+                            <div class="col-4">
+                            </div>
+                            <div class="col-8">
+                                Authorized Signature ----------------------------------------------------------------
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </xpath>
+    </template>
+</odoo>

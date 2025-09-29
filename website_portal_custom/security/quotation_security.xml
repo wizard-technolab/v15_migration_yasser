@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record model="ir.module.category" id="module_category_quotation">
+        <field name="name">Quotation Management</field>
+        <field name="description">Category For Quotation</field>
+        <field name="sequence">50</field>
+    </record>
+
+    <record id="group_use_quotation_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="category_id" ref="module_category_quotation"/>
+    </record>
+
+    <record id="group_use_quotation_admin" model="res.groups">
+        <field name="name">Administrator</field>
+        <field name="category_id" ref="module_category_quotation"/>
+        <field name="implied_ids" eval="[(4, ref('group_use_quotation_user'))]"/>
+    </record>
+
+
+    <record model="ir.module.category" id="module_category_declaration">
+        <field name="name">Declaration Management</field>
+        <field name="description">Category For Declaration</field>
+        <field name="sequence">60</field>
+    </record>
+
+    <record id="group_use_declaration_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="category_id" ref="module_category_declaration"/>
+        <!--        <field name="implied_ids" eval="[(4, ref('group_user'))]"/>-->
+    </record>
+
+    <record id="group_use_declaration_admin" model="res.groups">
+        <field name="name">Administrator</field>
+        <field name="category_id" ref="module_category_declaration"/>
+        <field name="implied_ids" eval="[(4, ref('group_use_declaration_user'))]"/>
+    </record>
+
+
+    <record model="ir.module.category" id="module_category_expression">
+        <field name="name">Expression Management</field>
+        <field name="description">Category For Expression</field>
+        <field name="sequence">70</field>
+    </record>
+
+    <record id="group_use_expression_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="category_id" ref="module_category_expression"/>
+        <!--        <field name="implied_ids" eval="[(4, ref('group_user'))]"/>-->
+    </record>
+
+    <record id="group_use_expression_admin" model="res.groups">
+        <field name="name">Administrator</field>
+        <field name="category_id" ref="module_category_expression"/>
+        <field name="implied_ids" eval="[(4, ref('group_use_expression_user'))]"/>
+    </record>
+
+
+</odoo>

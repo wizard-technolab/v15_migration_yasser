@@ -1,0 +1,18 @@
+# -*- coding: utf-8 -*-
+
+# from odoo import models, fields, api
+
+
+# class fuel_hide(models.Model):
+#     _name = 'fuel_hide.fuel_hide'
+#     _description = 'fuel_hide.fuel_hide'
+
+#     name = fields.Char()
+#     value = fields.Integer()
+#     value2 = fields.Float(compute="_value_pc", store=True)
+#     description = fields.Text()
+#
+#     @api.depends('value')
+#     def _value_pc(self):
+#         for record in self:
+#             record.value2 = float(record.value) / 100

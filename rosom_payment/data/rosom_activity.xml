@@ -1,0 +1,20 @@
+<odoo>
+    <data>
+        <record id="mail_activity_rosom_payment" model="mail.activity.type">
+            <field name="name">Rosom Payment</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">100</field>
+            <field name="res_model">loan.order</field>
+        </record>
+
+        <record id="action_server_remove_rosom_value" model="ir.actions.server">
+            <field name="name">Reset Rosom Bills</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_loan_order"/>
+            <field name="binding_model_id" ref="model_loan_order"/>
+            <field name="state">code</field>
+            <field name="groups_id" eval="[(4, ref('loan.group_admin'))]"/>
+            <field name="code">records.remove_rosom_value()</field>
+        </record>
+    </data>
+</odoo>

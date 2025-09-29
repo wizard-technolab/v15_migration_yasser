@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_simah_address_form" model="ir.ui.view">
+            <field name="name">view.simah.address.form</field>
+            <field name="model">simah.addresses</field>
+            <field name="arch" type="xml">
+                <form string="Simah Address">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="adrsDateLoaded"/>
+                                <field name="addressNameAR"/>
+                                <field name="addressTypeCode"/>
+                                <field name="adrsAddressLineFirstDescAr"/>
+                                <field name="adrsCityDescAr"/>
+                                <field name="adrsPostalCode"/>
+                                <field name="streetAr"/>
+                                <field name="districtAr"/>
+                                <field name="additionalNumber"/>
+                            </group>
+                            <group>
+                                <field name="addressID"/>
+                                <field name="addressNameEN"/>
+                                <field name="adrsPOBox"/>
+                                <field name="adrsAddressLineFirstDescEn"/>
+                                <field name="adrsCityDescEn"/>
+                                <field name="buildingNumber"/>
+                                <field name="streetEn"/>
+                                <field name="districtEn"/>
+                                <field name="unitNumber"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="action_simah_address" model="ir.actions.act_window">
+            <field name="name">simah Address</field>
+            <field name="res_model">simah.addresses</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

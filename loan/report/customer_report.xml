@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="customer_report_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <style type="text/css">
+                            @font-face {
+                            font-family: SST Arabic ;
+                            src: url(/loan/static/src/fonts/SST Arabic Bold.ttf);
+                            }
+                            h2 {font-family: SST Arabic;}
+                            td {font-family: SST Arabic;}
+                            th { font-family: SST Arabic;}
+                            h5 { font-family: SST Arabic;}
+                            h4 { font-family: SST Arabic;}
+                            p { font-family: SST Arabic;}
+                            div { font-family: SST Arabic;}
+
+
+                            span, table, th, td, b, p {
+                            text-align: center;
+                            }
+
+                            .newh {
+                            font-size: 16px;
+                            text-align: center;
+                            background-color:#138086;
+                            }
+
+                            table, tr, th,td {
+                            border:1px solid #000000 !important;
+                            }
+
+
+                            .con{float:right;padding-left: 10px;padding-right: 10px;margin:3px;}
+                            .bor{border: 1px solid black;;padding: 5px;}
+                            .fon{font-size: 10px;}
+                            .nob{border: no-border !important}
+                        </style>
+                        <div style="text-align: center">
+                            <div style="color:white;font-size: 16px; background-color:rgb(46, 184, 46);"
+                                 class="text-center">Customer Data Report
+                            </div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <div style="text-align: left">
+                            <div style="color:black;font-size: 16px;"
+                                 class="text-left">Customer Information :
+                            </div>
+                        </div>
+                        <br/>
+                        <table class="table" style="color:black;font-size: 12px;">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Phone</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span t-esc="doc.name.identification_no"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="doc.name.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="doc.name.phone"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br/>
+                        <table class="table" style="color:black;font-size: 12px;">
+                            <thead>
+                                <tr>
+                                    <th>Nationality</th>
+                                    <th>Total Income</th>
+                                    <th>Sector</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span t-esc="doc.name.nationality"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="doc.name.total_income"/>
+                                        <span t-field="doc.currency_id.symbol"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="doc.name.sectors"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br/>
+                        <br/>
+                        <div style="text-align: left">
+                            <div style="color:black;font-size: 16px;"
+                                 class="text-left">Loan Information :
+                            </div>
+                        </div>
+                        <br/>
+                        <table class="table" style="color:black;font-size: 12px;">
+                            <thead>
+                                <tr>
+                                    <th>Request Number</th>
+                                    <th>Loan Type</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span t-esc="doc.seq_num"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="doc.loan_type.name"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br/>
+                        <table class="table" style="color:black;font-size: 12px;">
+                            <thead>
+                                <tr>
+                                    <th>Loan Amount</th>
+                                    <th>Loan Term</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span t-esc="doc.total_loan"/>
+                                        <span t-field="doc.currency_id.symbol"/>
+                                    </td>
+                                    <td>
+                                        <span t-esc="doc.loan_term"/>
+                                        <span>month</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <table class="table" style="color:black;font-size: 12px;">
+                            <thead>
+                                <tr>
+                                    <th>Operation User</th>
+                                    <th>
+                                        <span t-esc="doc.user.name"/>
+                                    </th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+    <record id="customer_report" model="ir.actions.report">
+        <field name="name">Customer Report</field>
+        <field name="model">loan.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">loan.customer_report_template</field>
+        <field name="report_file">loan.customer_report_template</field>
+        <field name="binding_model_id" ref="model_loan_order"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

@@ -1,0 +1,6 @@
+<odoo>
+    <data>
+        <!--    Reports Root Menu  -->
+        <menuitem id="fuel_report_root_menu" name="Reports" web_icon="fuel_report,static/description/icon.png" sequence="1"/>
+    </data>
+</odoo>

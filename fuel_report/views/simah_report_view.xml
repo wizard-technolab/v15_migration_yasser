@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+        <!--  View -->
+        <record id="simah_excel_report_action" model="ir.actions.server">
+            <field name="name">Excel Report Action</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_simah_report"/>
+            <field name="binding_model_id" ref="model_simah_report"/>
+            <field name="sequence">0</field>
+            <field name="state">code</field>
+            <field name="code">action = model.generate_excel_report()</field>
+        </record>
+        <!--    Root Menu   -->
+        <menuitem id="simah_excel_report_root_menu" name="Simah Report" parent="fuel_report_root_menu"/>
+
+        <!--     Menu   -->
+        <menuitem id="simah_excel_report_menu" name="Simah Report" parent="simah_excel_report_root_menu"
+                  action="simah_excel_report_action"/>
+
+    </data>
+</odoo>

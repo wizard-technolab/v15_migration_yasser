@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <template id="expression_of_desire_form_template">
+            <t t-call="web.html_container">
+                <t t-call="partner_reports.expression_report_header_footer">
+                </t>
+                <t t-call="web.external_layout">
+                    <t t-foreach="docs" t-as="o">
+                        <t t-set="o" t-value="o.with_context(lang='en_US')" />
+                        <div class="page" dir="rtl">
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <h2>إستمارة إبداء رغبة</h2>
+                                </div>
+                            </div>
+                            <div class="row" dir="rtl" style="margin-top:80px;">
+                                <div class="col-5 text-right">
+                                    <span style="font-size:20px;maring-top:15px;padding-right:60px;">إسم العميل: </span> <br/>
+                                    <span style="font-size:20px;maring-top:15px;padding-right:60px;">رقم الهوية: </span> <br/>
+                                    <span style="font-size:20px;maring-top:15px;padding-right:60px;">رقمة الجوال: </span>
+                                </div>
+                                <div class="col-5 text-right">
+                                    <span style="font-size:20px;maring-top:15px;"><t t-esc="o.name"/></span> <br/>
+                                    <span style="font-size:20px;maring-top:15px;"><t t-esc="o.id_number"/></span> <br/>
+                                    <span style="font-size:20px;maring-top:15px;"><t t-esc="o.phone_number"/></span>
+                                </div>
+                            </div>
+                            <div class="row" dir="rtl" style="margin-top:70px;">
+                                <div class="col-10" style="padding-right:70px;">
+                                    <table class="table table-borderd" >
+                                        <tr class="text-right" style="border:1px solid gray;background-color:#ffffff!important;font-size:16px;">
+                                            <td style="border:1px solid gray;background-color:#ffffff!important;font-size:16px;">نوع التمويل (الخدمة الطبية المقدمة)</td>
+                                            <td style="border:1px solid gray;background-color:#ffffff!important;font-size:16px;width:50%"><t t-esc="o.loan_type"/></td>
+                                        </tr>
+                                        <tr class="text-right" style="border:1px solid gray;background-color:#f2f2f2!important;font-size:16px;">
+                                            <td style="border:1px solid gray;background-color:#f2f2f2!important;font-size:16px;">مقدم الخدمة (اسم العيادة)</td>
+                                            <td style="border:1px solid gray;background-color:#f2f2f2!important;font-size:16px;width:50%"><t t-esc="o.service_provider"/></td>
+                                        </tr>
+                                        <tr class="text-right" style="border:1px solid gray;background-color:#ffffff!important;font-size:16px;">
+                                            <td style="border:1px solid gray;background-color:#ffffff!important;font-size:16px;">مبلغ الخدمة</td>
+                                            <td style="border:1px solid gray;background-color:#ffffff!important;font-size:16px;width:50%"><t t-esc="o.service_amount"/></td>
+                                        </tr>
+                                        <tr class="text-right" style="border:1px solid gray;background-color:#f2f2f2!important;font-size:16px;">
+                                            <td style="border:1px solid gray;background-color:#f2f2f2!important;font-size:16px;color:black;">المستفيد الحقيقي</td>
+                                            <td style="border:1px solid gray;background-color:#f2f2f2!important;font-size:16px;color:black;width:50%"><t t-esc="o.actual_beneficiary"/></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row" dir="rtl" style="margin-top:110px;">
+                                <div class="col-10 text-right" dir="rtl">
+                                    <span style="font-size:20px;maring-top:15px;padding-right:20px;" dir="rtl">ملاحظة: </span> <br/>
+                                    <span style="font-size:20px;maring-top:15px;padding-right:20px;" dir="rtl">1-للشركة حق في قبول او رفض أي طلب مع توضيح الأسباب.</span> <br/>
+                                    <span style="font-size:20px;maring-top:15px;padding-right:20px;" dir="rtl">2-في حال رفض الطلب يحق للعميل استلام أوراقه في مدة أقصاها شهرين من تاريخ الطلب.</span>
+                                </div>
+                                <div class="col-2 text-right">
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <record id="expression_of_desire_form_paperformat" model="report.paperformat">
+            <field name="name">Custom Paperformat for Expression of desire form</field>
+            <field name="default" eval="False"/>
+            <field name="disable_shrinking" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">40</field>
+            <field name="margin_bottom">15</field>
+            <field name="margin_left">8</field>
+            <field name="margin_right">10</field>
+            <field name="dpi">130</field>
+        </record>
+
+        <record id="expression_of_desire_form_action" model="ir.actions.report">
+            <field name="name">Expression of desire form</field>
+            <field name="model">res.partner</field>
+            <field name="binding_model_id" ref="base.model_res_partner"/>
+            <field name="binding_type">report</field>
+            <field name="multi">True</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">partner_reports.expression_of_desire_form_template</field>
+            <field name="report_file">partner_reports.expression_of_desire_form_template</field>
+            <field name="paperformat_id" ref="expression_of_desire_form_paperformat"/>
+        </record>  
+    </data>
+</odoo>

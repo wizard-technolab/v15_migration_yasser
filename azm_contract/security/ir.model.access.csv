@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_azm_contract,Azm.contract,model_azm_contract,,1,1,1,0
+access_bebeficiary_integration,bebeficiary.integration,model_bebeficiary_integration,,1,1,1,1
+access_all_contracts_intg,all_contracts_intg,model_all_contracts_integration,,1,1,1,1
+access_sanad_group_integration,sanad.group.integration,model_sanad_group_integration,,1,1,1,1

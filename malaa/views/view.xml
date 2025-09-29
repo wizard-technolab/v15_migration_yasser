@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="malaa_partner_inherit_form" model="ir.ui.view">
+            <field name="name">malaa.partner.inherit.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/notebook/page[2]" position="after">
+                    <page string="KYC">
+                        <group>
+                            <group string="Customer Info">
+                                <field name="kyc_name"/>
+                                <field name="customer_nationality"/>
+                                <field name="nationalitycode"/>
+                                <field name="release_of_date"/>
+                                <field name="expiry_of_date"/>
+                            </group>
+                            <group string=' '>
+                                <field name="place"/>
+                                <field name="id_version_number"/>
+                                <field name="legal_status"/>
+                                <field name="number_dependents"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="occupation_history_ids" readonly="1">
+                                <tree editable="bottom">
+                                    <field name="occupation_code" invisible="1"/>
+                                    <field name="position"/>
+                                    <field name="sector_type"/>
+                                    <field name="industry"/>
+                                    <field name="employer_name"/>
+                                    <field name="employment_start_date"/>
+                                    <field name="employment_end_date"/>
+                                    <field name="is_current_occupation"/>
+                                </tree>
+                            </field>
+                        </group>
+                        <group>
+                            <field name="financial_evaluation_ids" readonly="1">
+                                <tree editable="bottom">
+                                    <!--                                    <field name="net_monthly_income"/>-->
+                                    <field name="food_expenses"/>
+                                    <field name="housing_expenses"/>
+                                    <field name="housing_ownership_status"/>
+                                    <!--                                    <field name="housing_utilities_included"/>-->
+                                    <field name="domestic_labor_wages"/>
+                                    <!--                                    <field name="has_domestic_labor"/>-->
+                                    <field name="education_expenses"/>
+                                    <!--                                    <field name="dependents_count"/>-->
+                                    <!--                                    <field name="healthcare_expenses"/>-->
+                                    <!--                                    <field name="transportation_expenses"/>-->
+                                    <!--                                    <field name="communication_expenses"/>-->
+                                    <field name="total_expenses"/>
+                                    <!--                                    <field name="total_monthly_obligations"/>-->
+                                    <!--                                    <field name="net_available_income_after_obligations"/>-->
+                                    <field name="obligation_ids">
+                                        <tree>
+                                            <field name="name"/>
+                                            <field name="credit_amount"/>
+                                            <field name="monthly_payment"/>
+                                            <field name="payment_frequency"/>
+                                        </tree>
+                                    </field>
+                                </tree>
+                            </field>
+                        </group>
+                        <form>
+                            <group>
+                            </group>
+                        </form>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_financial_obligation_tree" model="ir.ui.view">
+            <field name="name">financial.obligation.tree</field>
+            <field name="model">financial.obligation</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="credit_amount"/>
+                    <field name="monthly_payment"/>
+                    <field name="payment_frequency"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="malaa_loan_inherit_form" model="ir.ui.view">
+            <field name="name">malaa.loan.inherit.form</field>
+            <field name="model">loan.order</field>
+            <field name="inherit_id" ref="loan.request_form_view"/>
+            <field name="priority" eval="20"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <header position="inside">
+                    <button name="update_loan_request_status" string="Submit To Malaa" type="object" class="btn-success"
+                            groups="loan.group_admin"/>
+                    <button name="update_installments_status" string="Update Installments" type="object"
+                            class="btn-success"
+                            groups="loan.group_admin"/>
+<!--                    <button name="action_malaa_submit"-->
+<!--                            states="l1,l2"-->
+<!--                            string="Pre Approve"-->
+<!--                            type="object"-->
+<!--                            class="btn-success"-->
+<!--                            attrs="{'invisible': [-->
+<!--            ('state', 'in', ('simah', 'contract', 'pending', 'return', 'disburse', 'active', 'early', 'close', 'cancel', 'reject', 'buying', 'archive')),-->
+<!--            ('obligation_id', '!=', False),-->
+<!--            ('account_analytic', '!=', '19')-->
+<!--        ]}"/>-->
+
+                    <!--                     states="review_kyc,initial-approval,l1,l2"-->
+                    <!--attrs="{'invisible':[('malaa_state','in',('simah','l1','l2','contract','pending','return','disburse','active','early','close','cancel','reject','buying','archive')),('obligation_id', '!=', False)]}"-->
+                </header>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+<!--        <record id="partner_id_form_user" model="ir.ui.view">-->
+<!--            <field name="name">partner.inherit.user</field>-->
+<!--            <field name="model">res.partner</field>-->
+<!--            <field name="inherit_id" ref="base.view_partner_form"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <group></group>-->
+<!--            </field>-->
+<!--        </record>-->
+<!--        <record id="partner_id_action_user" model="ir.actions.act_window">-->
+<!--            <field name="name">Customer</field>-->
+<!--            <field name="type">ir.actions.act_window</field>-->
+<!--            <field name="res_model">res.partner</field>-->
+<!--            <field name="view_id" ref="loan.partner_inherit_form"/>-->
+<!--            &lt;!&ndash;            <field name="domain">[('allow_loan','=',True)]</field>&ndash;&gt;-->
+<!--            &lt;!&ndash;            <field name="view_mode">form</field>&ndash;&gt;-->
+<!--            <field name="help" type="html">-->
+<!--                <p class="o_view_nocontent_smiling_face">-->
+<!--                </p>-->
+<!--            </field>-->
+<!--        </record>-->
+    </data>
+</odoo>

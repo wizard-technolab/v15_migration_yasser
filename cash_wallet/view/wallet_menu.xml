@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem name="Cash Wallet"
+              id="wallet_root_menu"
+              sequence="14"
+              web_icon="cash_wallet,static/description/icon.png"/>/>
+
+</odoo>

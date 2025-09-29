@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="account_analytic_view_form" model="ir.ui.view">
+            <field name="name">account.analytic.view.inherit</field>
+            <field name="model">account.analytic.account</field>
+            <field name="inherit_id" ref="analytic.view_account_analytic_account_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='%(analytic.account_analytic_line_action)d']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <div class="oe_button_box" name="button_box" position="inside">
+                    <button class="oe_stat_button" type="object" name="get_customer" icon="fa-user-o">
+                        <div class="o_form_field o_stat_info">
+                            <span class="o_stat_text">Customers</span>
+                            <span class="o_stat_value">
+                                <field name="customer_count"/>
+                            </span>
+                        </div>
+                    </button>
+                    <button class="oe_stat_button" type="object" name="get_total_balance"
+                            icon="fa-usd" context="{'default_partner_id': active_id}">
+                        <div class="o_form_field o_stat_info">
+                            <span class="o_stat_text">Balance</span>
+                            <span class="o_stat_value">
+                                <field name="currency_id" invisible="1"/>
+                                <field name="total_balance" widget='monetary'
+                                       options="{'currency_field': 'currency_id'}"/>
+                            </span>
+                        </div>
+                    </button>
+                    <button class="oe_stat_button" type="object" name="get_total_loans"
+                            icon="fa-usd" context="{'default_partner_id': active_id}">
+                        <div class="o_form_field o_stat_info">
+                            <span class="o_stat_text">Total Receivable</span>
+                            <span class="o_stat_value">
+                                <field name="currency_id" invisible="1"/>
+                                <field name="total_loan" widget='monetary'
+                                       options="{'currency_field': 'currency_id'}"/>
+                            </span>
+                        </div>
+                    </button>
+                    <button class="oe_stat_button" type="object" name="get_total_loans"
+                            icon="fa-usd" context="{'default_partner_id': active_id}">
+                        <div class="o_form_field o_stat_info">
+                            <span class="o_stat_text">Total Principal</span>
+                            <span class="o_stat_value">
+                                <field name="currency_id" invisible="1"/>
+                                <field name="total_loan_amount" widget='monetary'
+                                       options="{'currency_field': 'currency_id'}"/>
+                            </span>
+                        </div>
+                    </button>
+                    <button class="oe_stat_button" type="object" name="get_total_loans"
+                            icon="fa-usd" context="{'default_partner_id': active_id}">
+                        <div class="o_form_field o_stat_info">
+                            <span class="o_stat_text">Total Interest</span>
+                            <span class="o_stat_value">
+                                <field name="currency_id" invisible="1"/>
+                                <field name="total_loan_interest" widget='monetary'
+                                       options="{'currency_field': 'currency_id'}"/>
+                            </span>
+                        </div>
+                    </button>
+                    <button class="oe_stat_button" type="object" name="get_total_loans"
+                            icon="fa-usd" context="{'default_partner_id': active_id}">
+                        <div class="o_form_field o_stat_info">
+                            <span class="o_stat_text">Principal Paid</span>
+                            <span class="o_stat_value">
+                                <field name="currency_id" invisible="1"/>
+                                <field name="total_paid_principal" widget='monetary'
+                                       options="{'currency_field': 'currency_id'}"/>
+                            </span>
+                        </div>
+                    </button>
+                    <button class="oe_stat_button" type="object" name="get_total_loans"
+                            icon="fa-usd" context="{'default_partner_id': active_id}">
+                        <div class="o_form_field o_stat_info">
+                            <span class="o_stat_text">Interest Paid</span>
+                            <span class="o_stat_value">
+                                <field name="currency_id" invisible="1"/>
+                                <field name="total_paid_interest" widget='monetary'
+                                       options="{'currency_field': 'currency_id'}"/>
+                            </span>
+                        </div>
+                    </button>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>

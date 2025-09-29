@@ -1,0 +1,96 @@
+<odoo>
+    <data>
+        <record id="rosom_payment_view_search" model="ir.ui.view">
+            <field name="name">rosom.payment.search</field>
+            <field name="model">rosom.payment</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="InvoiceId" string="Invoice Id"/>
+                    <field name="PaymentId" string="PaymentId"/>
+                    <field name="SADADNumber" string="SADADNumber"/>
+                </search>
+            </field>
+        </record>
+        <record id="rosom_payment_view_tree" model="ir.ui.view">
+            <field name="name">rosom.payment.tree</field>
+            <field name="model">rosom.payment</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="payment_id_char"/>
+                    <field name="SADADTransactionId"/>
+                    <field name="BankTransactionId"/>
+                    <field name="PaidAmount" sum="Total"/>
+                    <field name="PaymentDate"/>
+                    <field name="SADADNumber"/>
+                </tree>
+            </field>
+        </record>
+        <record id="rosom_payment_view_form" model="ir.ui.view">
+            <field name="name">rosom.payment.form</field>
+            <field name="model">rosom.payment</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <label class="oe_edit_only" for="payment_id_char"/>
+                            <h1>
+                                <field name="payment_id_char" widget="char"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <button name="post_create" type="object" >Pay</button>
+                            <group string="Payment Info">
+                                <field name="SADADTransactionId"/>
+                                <field name="BankTransactionId"/>
+                                <field name="PaidAmount"/>
+                                <field name="PaymentDate"/>
+                                <field name="SADADNumber"/>
+                                <field name="ServiceType"/>
+                                <field name="bill_id"/>
+                            </group>
+                            <group string="Bank Info">
+                                <field name="BankName"/>
+                                <field name="DistrictCode"/>
+                                <field name="BranchCode"/>
+                                <field name="AccessChannel"/>
+                                <field name="PmtMethod"/>
+                                <field name="PmtType"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="rosom_payment_action_view_tree" model="ir.actions.act_window">
+            <field name="name">Rosom Payments</field>
+            <field name="res_model">rosom.payment</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'create':True,'edit':False}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No Rosom Payments found. Let's create one!
+                </p>
+                <p>
+                    Helps improving the business workflow.
+                </p>
+            </field>
+        </record>
+        <menuitem name="Payments" action="rosom_payment_action_view_tree" id="rosom_payment_menu" parent="root_menu"
+                  sequence="30"/>
+
+
+        <record id="action_create_multiple_bills" model="ir.actions.server">
+            <field name="name">Create Rosom Bills</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_loan_order"/>
+            <field name="binding_model_id" ref="model_loan_order"/>
+            <field name="state">code</field>
+            <field name="groups_id" eval="[(4, ref('loan.group_admin'))]"/>
+            <field name="code">records.action_create_multiple_rosom_bills()</field>
+        </record>
+    </data>
+</odoo>

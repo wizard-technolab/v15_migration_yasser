@@ -1,0 +1,469 @@
+<odoo>
+    <template id="portal_my_home_menu_quotations" name="Portal layout : quotations menu entries"
+              inherit_id="portal.portal_breadcrumbs" priority="40">
+<!--        <style type="text/css">-->
+<!--            @font-face {-->
+<!--            font-family: SST Arabic ;-->
+<!--            src: url(/website_portal_custom/static/src/fonts/SST Arabic Bold.ttf);-->
+<!--            }-->
+<!--            h2 {font-family: SST Arabic;}-->
+<!--            td {font-family: SST Arabic;}-->
+<!--            th { font-family: SST Arabic;}-->
+<!--            h5 { font-family: SST Arabic;}-->
+<!--            h4 { font-family: SST Arabic;}-->
+<!--            p { font-family: SST Arabic;}-->
+<!--            div { font-family: SST Arabic;}-->
+
+
+<!--            span, table, th, td, b, p {-->
+<!--            text-align: center;-->
+<!--            }-->
+
+<!--            .newh {-->
+<!--            font-size: 16px;-->
+<!--            text-align: center;-->
+<!--            background-color:#138086;-->
+<!--            }-->
+
+<!--            table, tr, th,td {-->
+<!--            border:1px solid #000000 !important;-->
+<!--            }-->
+
+
+<!--            .con{float:right;padding-left: 10px;padding-right: 10px;margin:3px;}-->
+<!--            .bor{border: 1px solid black;;padding: 5px;}-->
+<!--            .fon{font-size: 10px;}-->
+<!--            .nob{border: no-border !important}-->
+<!--        </style>-->
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li t-if="page_name == 'quotations'" t-attf-class="breadcrumb-item #{'active ' if not quotations else ''}">
+                <a t-if="quotations" t-attf-href="/my/quotations?{{ keep_query() }}">Hospital Quotations</a>
+                <t t-else="">Hospital Quotations</t>
+            </li>
+
+            <li t-if="page_name == 'quotation'" t-attf-class="breadcrumb-item #{'active ' if not quotation else ''}">
+                <a t-if="quotation" t-attf-href="/my/quotations?{{ keep_query() }}">Hospital Quotations</a>
+                <t t-else="">Hospital Quotations</t>
+            </li>
+            <li t-if="quotation" class="breadcrumb-item active">
+                <t t-esc="quotation.seq" t-if="quotation.seq != '/'"/>
+                <t t-else="">
+                    <t t-esc="quotation.seq"/>
+                </t>
+            </li>
+        </xpath>
+    </template>
+
+    <template id="portal_my_home_quotation" name="Show Hospital Quotation" inherit_id="portal.portal_my_home"
+              customize_show="True" priority="40">
+<!--        <style type="text/css">-->
+<!--            @font-face {-->
+<!--            font-family: SST Arabic ;-->
+<!--            src: url(/website_portal_custom/static/src/fonts/SST Arabic Bold.ttf);-->
+<!--            }-->
+<!--            h2 {font-family: SST Arabic;}-->
+<!--            td {font-family: SST Arabic;}-->
+<!--            th { font-family: SST Arabic;}-->
+<!--            h5 { font-family: SST Arabic;}-->
+<!--            h4 { font-family: SST Arabic;}-->
+<!--            p { font-family: SST Arabic;}-->
+<!--            div { font-family: SST Arabic;}-->
+
+
+<!--            span, table, th, td, b, p {-->
+<!--            text-align: center;-->
+<!--            }-->
+
+<!--            .newh {-->
+<!--            font-size: 16px;-->
+<!--            text-align: center;-->
+<!--            background-color:#138086;-->
+<!--            }-->
+
+<!--            table, tr, th,td {-->
+<!--            border:1px solid #000000 !important;-->
+<!--            }-->
+
+
+<!--            .con{float:right;padding-left: 10px;padding-right: 10px;margin:3px;}-->
+<!--            .bor{border: 1px solid black;;padding: 5px;}-->
+<!--            .fon{font-size: 10px;}-->
+<!--            .nob{border: no-border !important}-->
+<!--        </style>-->
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="title">Hospital Quotations</t>
+                <t t-set="url" t-value="'/my/quotations'"/>
+                <t t-set="placeholder_count" t-value="'quotation_count'"/>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="portal_my_quotations" name="My Hospital Quotations">
+        <t t-call="portal.portal_layout">
+            <t t-set="breadcrumbs_searchbar" t-value="True"/>
+
+            <t t-call="portal.portal_searchbar">
+                <t t-set="title">Hospital Quotation</t>
+            </t>
+            <t t-if="not quotations">
+                <p>There are currently no Hospital Quotation for your account.</p>
+            </t>
+            <t t-if="quotations" t-call="portal.portal_table">
+                <thead>
+                    <tr class="active">
+                        <th>Sequence</th>
+                        <!--                    <th>Customer Name</th>-->
+                        <th>Customer Name</th>
+                        <th>ِAmount</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <t t-foreach="quotations" t-as="quotation">
+                        <tr>
+                            <td>
+                                <a t-att-href="quotation.get_portal_url()" t-att-title="quotation.seq">
+                                    <t t-esc="quotation.seq"/>
+                                </a>
+                            </td>
+
+                            <!--                        <td><span t-field="quotation.contract_name"/></td>-->
+                            <td>
+                                <span t-field="quotation.customer_name"/>
+                            </td>
+                            <td>
+                                <span t-field="quotation.service_amount"/>
+                            </td>
+                            <td>
+                                <span t-field="quotation.email"/>
+                            </td>
+                            <td>
+                                <span t-field="quotation.phone"/>
+                            </td>
+                        </tr>
+                    </t>
+                </tbody>
+            </t>
+        </t>
+    </template>
+
+    <template id="portal_quotation_page" name="Hospital Quotations Portal Template" inherit_id="portal.portal_sidebar"
+              primary="True">
+        <xpath expr="//div[hasclass('o_portal_sidebar')]" position="inside">
+            <div class="row mt16 o_portal_invoice_sidebar">
+                <t t-call="portal.portal_record_sidebar">
+                    <t t-set="classes" t-value="'col-lg-auto d-print-none'"/>
+                    <t t-set="entries">
+                        <ul class="list-group list-group-flush flex-wrap flex-row flex-lg-column">
+                            <li class="list-group-item flex-grow-1">
+                                <div class="o_download_pdf btn-toolbar flex-sm-nowrap">
+                                    <div class="btn-group  flex-grow-1 mr-1 mb-1">
+                                        <a class="btn btn-secondary btn-block o_download_btn"
+                                           t-att-href="quotation.get_portal_url(report_type='pdf', download=True)"
+                                           title="Download">
+                                            <i class="fa fa-download"/>
+                                            Download
+                                        </a>
+                                    </div>
+                                    <div class="btn-group flex-grow-1 mb-1">
+                                        <a class="btn btn-secondary btn-block o_print_btn o_portal_invoice_print"
+                                           t-att-href="quotation.get_portal_url(report_type='pdf')"
+                                           id="print_invoice_report" title="Print" target="_blank">
+                                            <i class="fa fa-print"/>
+                                            Print
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </t>
+                </t>
+
+                <div id="invoice_content" class="col-12 col-lg">
+                    <t t-if="error or warning" t-call="account.portal_invoice_error"/>
+                    <t t-if="success and (not error and not warning)" t-call="account.portal_invoice_success"/>
+                    <div class="o_portal_html_view shadow p-3">
+                        <div class="o_portal_html_loader text-center">
+                            <i class="fa fa-circle-o-notch fa-spin fa-2x fa-fw text-black-50"></i>
+                        </div>
+                        <iframe id="invoice_html" class="mt8 mb8" width="100%" height="100%" frameborder="0"
+                                scrolling="no" t-att-src="quotation.get_portal_url(report_type='html')"/>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+
+    <template id="purchase.purchase_order_portal_content" name="Purchase Order Portal Content">
+        <!-- Intro -->
+        <div id="introduction" t-attf-class="pb-2 pt-3 #{'card-header bg-white' if report_type == 'html' else ''}">
+            <h2 class="my-0">
+                <t t-if="order.state in ['draft', 'sent']">Request for Quotation</t>
+                <t t-else="1">
+                    Purchase Orders
+                </t>
+                <em t-esc="order.name"/>
+            </h2>
+        </div>
+        <div t-attf-class="#{'card-body' if report_type == 'html' else ''}">
+            <!-- Informations -->
+            <div id="informations">
+                <div class="row" id="po_date">
+                    <div class="mb-3 col-6">
+                        <t t-if="order.state in ['draft', 'sent']">
+                            <strong>Request For Quotation Date:</strong>
+                        </t>
+                        <t t-if="order.state in ['purchase', 'done', 'cancel']">
+                            <strong>Order Date:</strong>
+                        </t>
+                        <span t-field="order.date_order" t-options='{"widget": "date"}'/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <strong class="d-block mb-1">From:</strong>
+                        <address t-field="order.company_id.partner_id"
+                                 t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}'/>
+                        <strong>Confirmation Date:</strong>
+                        <span t-field="order.date_approve" t-options='{"widget": "date"}'/>
+                        <br/>
+                        <div t-att-class="'d-inline' if order.date_planned else 'd-none'">
+                            <strong>Receipt Date:</strong>
+                            <span class="ml-1" t-field="order.date_planned" t-options='{"widget": "date"}'/>
+                        </div>
+                    </div>
+                </div>
+
+                <t t-set="invoices" t-value="[i for i in order.invoice_ids if i.state not in ['draft', 'cancel']]"/>
+                <div t-if="invoices" class="row">
+                    <div class="col">
+                        <strong class="d-block mb-1">Invoices</strong>
+                        <ul class="list-group mb-4">
+                            <t t-foreach="invoices" t-as="i">
+                                <t t-set="report_url" t-value="i.get_portal_url(report_type='pdf', download=True)"/>
+                                <div class="d-flex flex-wrap align-items-center justify-content-between">
+                                    <div>
+                                        <a t-att-href="report_url">
+                                            <span t-esc="i.name"/>
+                                        </a>
+                                        <div class="small d-lg-inline-block">Date:
+                                            <span class="text-muted" t-field="i.invoice_date"/>
+                                        </div>
+                                    </div>
+                                    <span t-if="i.payment_state in ('paid', 'in_payment')"
+                                          class="small badge badge-success orders_label_text_align">
+                                        <i class="fa fa-fw fa-check"/>
+                                        <b>Paid</b>
+                                    </span>
+                                    <span t-else="" class="small badge badge-info orders_label_text_align">
+                                        <i class="fa fa-fw fa-clock-o"/>
+                                        <b>Waiting Payment</b>
+                                    </span>
+                                </div>
+                            </t>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <section id="details" style="page-break-inside: auto;" class="mt32">
+                <h3 id="details">Pricing</h3>
+
+                <table t-att-data-order-id="order.id" t-att-data-token="order.access_token" class="table table-sm"
+                       id="purchase_order_table">
+                    <thead class="bg-100">
+                        <tr>
+                            <th class="text-left">Products</th>
+                            <th class="text-right">Quantity</th>
+                            <th t-if="update_dates" class="text-right">Scheduled Date</th>
+                            <th t-if="update_dates" class="text-right">
+                                <strong>Update Here</strong>
+                            </th>
+                            <th t-if="not update_dates and order.state in ['purchase', 'done']"
+                                t-attf-class="text-right {{ 'd-none d-sm-table-cell' if report_type == 'html' else '' }}">
+                                Unit Price
+                            </th>
+                            <th t-if="not update_dates and order.state in ['purchase', 'done']"
+                                t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
+                                <span>Taxes</span>
+                            </th>
+                            <th class="text-right" t-if="order.state in ['purchase', 'done']">
+                                <span groups="account.group_show_line_subtotals_tax_excluded">Amount</span>
+                                <span groups="account.group_show_line_subtotals_tax_included">Total Price</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="purchase_tbody">
+
+                        <t t-set="current_subtotal" t-value="0"/>
+
+                        <t t-foreach="order.order_line" t-as="line">
+
+                            <t t-set="current_subtotal" t-value="current_subtotal + line.price_subtotal"
+                               groups="account.group_show_line_subtotals_tax_excluded"/>
+                            <t t-set="current_subtotal" t-value="current_subtotal + line.price_total"
+                               groups="account.group_show_line_subtotals_tax_included"/>
+
+                            <tr t-att-class="'bg-200 font-weight-bold o_line_section' if line.display_type == 'line_section' else 'font-italic o_line_note' if line.display_type == 'line_note' else ''">
+                                <t t-if="not line.display_type">
+                                    <td id="product_name">
+                                        <img t-att-src="image_data_uri(resize_to_48(line.product_id.image_1024))"
+                                             alt="Product" class="d-none d-lg-inline"/>
+                                        <span t-field="line.name"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <div id="quote_qty">
+                                            <span t-field="line.product_qty"/>
+                                            <span t-field="line.product_uom" groups="uom.group_uom"/>
+                                        </div>
+                                    </td>
+                                    <td t-if="update_dates" class="text-right">
+                                        <span t-esc="line.date_planned.date()"/>
+                                    </td>
+                                    <td t-if="update_dates" class="text-right">
+                                        <form t-attf-action="/my/purchase/#{order.id}/update?access_token=#{order.access_token}"
+                                              method="post">
+                                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                            <div class="container">
+                                                <div class="form-group">
+                                                    <div class="input-group date">
+                                                        <input type="text"
+                                                               class="form-control datetimepicker-input o-purchase-datetimepicker"
+                                                               t-attf-id="datetimepicker_#{line.id}"
+                                                               t-att-name="line.id"
+                                                               data-toggle="datetimepicker"
+                                                               data-date-format="YYYY-MM-DD"
+                                                               t-attf-data-target="#datetimepicker_#{line.id}"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </td>
+                                    <td t-if="not update_dates and order.state in ['purchase', 'done']"
+                                        t-attf-class="text-right {{ 'd-none d-sm-table-cell' if report_type == 'html' else '' }}">
+                                        <div
+                                                t-field="line.price_unit"
+                                                class="text-right"
+                                        />
+                                    </td>
+                                    <td t-if="not update_dates and order.state in ['purchase', 'done']"
+                                        t-attf-class="text-right {{ 'd-none d-md-table-cell' if report_type == 'html' else '' }}">
+                                        <span t-esc="', '.join(map(lambda x: (x.description or x.name), line.taxes_id))"/>
+                                    </td>
+                                    <td class="text-right"
+                                        t-if="not update_dates and order.state in ['purchase', 'done']">
+                                        <span class="oe_order_line_price_subtotal" t-field="line.price_subtotal"
+                                              groups="account.group_show_line_subtotals_tax_excluded"/>
+                                        <span class="oe_order_line_price_total" t-field="line.price_total"
+                                              groups="account.group_show_line_subtotals_tax_included"/>
+                                    </td>
+                                </t>
+                                <t t-if="line.display_type == 'line_section'">
+                                    <td colspan="99">
+                                        <span t-field="line.name"/>
+                                    </td>
+                                    <t t-set="current_section" t-value="line"/>
+                                    <t t-set="current_subtotal" t-value="0"/>
+                                </t>
+                                <t t-if="line.display_type == 'line_note'">
+                                    <td colspan="99">
+                                        <span t-field="line.name"/>
+                                    </td>
+                                </t>
+                            </tr>
+
+                            <t t-if="current_section and (line_last or order.order_line[line_index+1].display_type == 'line_section') and order.state in ['purchase', 'done']">
+                                <tr class="is-subtotal text-right">
+                                    <td colspan="99">
+                                        <strong class="mr16">Subtotal</strong>
+                                        <span
+                                                t-esc="current_subtotal"
+                                                t-options='{"widget": "monetary", "display_currency": order.currency_id}'
+                                        />
+                                    </td>
+                                </tr>
+                            </t>
+                        </t>
+                    </tbody>
+                </table>
+
+                <div id="total" t-if="order.state in ['purchase', 'done']" class="row" name="total"
+                     style="page-break-inside: avoid;">
+                    <div t-attf-class="#{'col-4' if report_type != 'html' else 'col-sm-7 col-md-5'} ml-auto">
+                        <t t-call="purchase.purchase_order_portal_content_totals_table"/>
+                    </div>
+                </div>
+            </section>
+
+            <section id="terms" class="mt-5" t-if="order.notes">
+                <h3 class="">Terms &amp; Conditions</h3>
+                <hr class="mt-0 mb-1"/>
+                <em t-field="order.notes"/>
+            </section>
+
+            <section class="mt-5" t-if="order.payment_term_id">
+                <h3 class="">Payment terms</h3>
+                <hr class="mt-0 mb-1"/>
+                <span t-field="order.payment_term_id"/>
+            </section>
+            <div class="row">
+                <div class="col-12">
+                    <!--                    <h1>Terms and Conditions:</h1>-->
+                    <div>
+                        <p>
+                            JUST AS EXAMPLE: Hereby, Iam the undersigned agree to provide Fuel Finance Company. with any
+                            information that it requires for the establishing and/or auditing and/or administering my
+                            accounts and facilities therewith and I authorize it to obtain and collect any information
+                            as it deems necessary or in need for regarding me, my accounts and facilities therewith,
+                            from the Saudi Credit Bureau (SIMAH) and to disclose and share (Inclusive of Date Pooling)
+                            that information
+                            to the said company (SIMAH) in accordance with the Membership Agreement and Code of Conduct
+                            approved or to any other agency approved by Saudi Central Bank (SAMA). I confirm that the
+                            data mentioned
+                            in the bank statement is accurate and correct I also fully agree to register the finance
+                            lease contract with the Saudi Company fo the registration of financial leases contracts and
+                            to disclose the
+                            data of the contract and exchange win the relevant parties
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <t t-if="order.state == 'purchase'">
+                    <label class="custom-control-label" for="accept">Accept</label>
+                    <input type="checkbox" onclick="button_visibility()" value="false" id="accept" name="accept"/>
+                </t>
+            </div>
+            <br/>
+            <br/>
+            <div class="row">
+                <div class="_portal_accep_purchase" id="accept_button" style="display:none;">
+                    <t t-if="order.state == 'purchase'">
+                        <div class="btn-group flex-grow-1 mb-1">
+                            <a style="color:white;" class="btn btn-primary btn-block o_print_btn"
+                               t-att-href="order.change_state(order)" id="print_invoice_report" title="Print">Accept The
+                                Purchase Order
+                            </a>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </div>
+        <script>
+            function button_visibility(){
+            var checkbox = document.getElementById('accept');
+            var accept_button = document.getElementById('accept_button');
+            if (checkbox.checked == true){
+            accept_button.setAttribute('style','display:flex;')
+            }else{
+            accept_button.setAttribute('style','display:none;')
+            }
+            }
+        </script>
+    </template>
+
+
+</odoo>

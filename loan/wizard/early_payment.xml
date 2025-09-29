@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+<!--        <record id="view_early_payment" model="ir.ui.view">-->
+<!--            <field name="name">early.payment</field>-->
+<!--            <field name="model">early.payment</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <form string="Loan" create="false" edit="true">-->
+<!--                    <header>-->
+<!--&lt;!&ndash;                        <button name="action_paid_installment" states="unpaid" string="Pay"&ndash;&gt;-->
+<!--&lt;!&ndash;                                class="btn-primary" type="object" groups="account.group_account_invoice"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <field name="state" widget="statusbar" statusbar_visible="unpaid,paid"/>&ndash;&gt;-->
+<!--                    </header>-->
+<!--                    <sheet>-->
+<!--&lt;!&ndash;                        <label for="name" class="oe_edit_only"/>&ndash;&gt;-->
+<!--                        <h1>-->
+<!--                            <field name="early_seq_name" readonly="1"/>-->
+<!--                        </h1>-->
+<!--                        <group>-->
+<!--                            <group>-->
+<!--                                <field name="early_name"/>-->
+<!--                                <field name="early_seq_name"/>-->
+<!--                            </group>-->
+<!--                            <group>-->
+<!--                                <field name="early_date" readonly="1"/>-->
+<!--&lt;!&ndash;                                <field name="early_payment_date" readonly="1" />&ndash;&gt;-->
+<!--                                <field name="early_principal_amount" readonly="1"/>-->
+<!--                                <field name="early_interest_amount" readonly="1"/>-->
+<!--                                <field name="early_installment_amount" readonly="1"/>-->
+<!--                            </group>-->
+<!--                        </group>-->
+<!--&lt;!&ndash;                        <notebook>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <page name="accounting" string='Accounting' groups="account.group_account_invoice">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <group>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <group>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <field name="interest_account"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <field name="installment_account"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </group>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <group>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <field name="payment_journal"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <field name="journal_entry_id" readonly="0"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </group>&ndash;&gt;-->
+<!--&lt;!&ndash;                                </group>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </page>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </notebook>&ndash;&gt;-->
+<!--                    </sheet>-->
+<!--                </form>-->
+<!--            </field>-->
+<!--        </record>-->
+    </data>
+</odoo>
+

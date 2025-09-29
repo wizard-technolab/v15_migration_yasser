@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+    <template id="generic_report_header_footer">
+        <!-- <style type="text/css">
+            @font-face {
+                font-family: 'Tajawal';
+                font-style: normal;
+                font-weight: 400;
+                src: url(/backend_font/static/src/fonts/tajawal-v3-arabic-regular.eot);
+                src: url(/backend_font/static/src/fonts/tajawal-v3-arabic-regular.svg);
+                src: url(/backend_font/static/src/fonts/tajawal-v3-arabic-regular.woff2) format('woff2'),
+                    url(/backend_font/static/src/fonts/tajawal-v3-arabic-regular.woff) format('woff'),
+                    url(/backend_font/static/src/fonts/tajawal-v3-arabic-regular.ttf) format('truetype');
+                }
+            div {
+                font-family: "Tajawal" !important;
+                font-style: normal;
+                font-weight: 60px;
+                bottom: 10px;
+                top: 1px;
+                font-size: 130%;
+                text-align:right !important;
+                }
+        </style> -->
+        <div dir="rtl" class="header" style="font-family: 'Tajawal' !important;padding-bottom:10px;">
+            <!-- <div class="row">
+                <div dir="rtl" class="col-3 text-center" style="margin-top:30px;font-weight: 100;text-align:center;">
+                    <t t-raw="0"/>
+                </div>
+                <div class="col-1"/>
+                <div class="col-4 text-center" style="padding:0">
+                    <img t-if="user.company_id.logo" t-att-src="image_data_uri(user.company_id.logo)" style="max-height:190pt;max-width:220%" alt="Company Logo"/>
+                </div>
+
+                <div class="col-3" style="padding-top:0px;margin-top:0px;">
+                    <table style="width:100%;padding-top:0px;margin-top:-8px;">
+                        <tbody style="border:1px solid gray;">
+                            <tr style="padding:10px;border:1px solid gray;">
+                                <td style="padding:10px;border:1px solid gray;text-align:right;">تاريخ الإصدار</td>
+                                <td style="padding:10px;border:1px solid gray;text-align:left;">Issuing Date</td>
+                            </tr>
+                            <tr style="border:1px solid gray;text-align:center;">
+                                <td colspan="2" style="padding:10px;"><span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H:%M')"/></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-1"/>
+            </div> -->
+            <div class="row">
+                <div class="col-6 text-right" style="margin-top:0px;">
+                    <span style="font-weight:bold;font-size:24px;">FFC-10-01-01-03-22-CAM</span><br/>
+                    <div style="margin-top:10px;margin-right:20px;">
+                        <span style="color:#0c8000;font-size:16px;font-weight:bold;">الإقرار الصحي</span> <!-- <t t-esc=""/> --> <br/>
+                    </div>
+                    <div style="margin-top:10px;margin-right:20px;">
+                        <span style="color:#0c8000;font-size:14px;">رقم الطلب: </span> <!-- <t t-esc=""/> --> <br/>
+                    </div>
+                    <div style="margin-top:10px;margin-right:20px;">
+                        <span style="color:#0c8000;font-size:14px;">التاريخ: </span> <!-- <t t-esc=""/> --> <br/>
+                    </div>
+                </div>
+                <div class="col-3">
+                </div>
+                <div class="col-3 text-left" style="margin-top:15px;font-size:21px;">
+                        <img src="/partner_reports/static/src/img/fuel_exposior_icon.png" class="icon_fuel" /><br/>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer" style="font-family: 'Tajawal' !important;margin-top:400px !important;">
+            <!-- <div style="border-top: 1px solid #808080;font-size:20px;color:#808080;">
+                <div class="row" t-if="env.user.company_id">
+                    <div class="col-5" style="padding-top:20px;">
+                        صالح بن سليمان الهبدان <br/>
+                        0112447636 <br/>
+                        الرياض - حي الجزيرة
+                    </div>
+                    <div class="col-2 text-center" dir="rtl" style="padding-top:20px;">
+                        <small>
+                            <span>صفحة</span>
+                            <span class="page" />
+                            من
+                            <span class="topage" />
+                        </small>
+                    </div>
+                    <div class="col-5 text-right" style="padding-top:20px; text-align:right;">
+                        Salih Bin Suliman Alhabdan <br/>
+                        0112447636 <br/>
+                        Riyadh – Eastern Ring Rd<br/>
+                    </div>
+                </div>
+            </div> -->
+            <div class="row" dir="ltr">
+                <div class="col-3 text-center" style="margin-right:100px;">
+                    <img src="/partner_reports/static/src/img/footer_logo.png" style="width:130px;" /><br/>
+                </div>
+                <div class="col-3" style="margin-top:10px;">
+                    <div class="text-left check_box_text check_box_request_information">
+                        <span class="black_bold_text">Fuel Finance Company</span><br/>
+                        <span class="black_bold_text">3385 Al Thumama Rd - Al Nada</span>
+                    </div>
+                </div>
+                <div class="col-3" style="margin-top:10px;">
+                    <div class="text-left check_box_text check_box_request_information">
+                        <span class="black_bold_text">شركة فيول للتمويل</span><br/>
+                        <span class="black_bold_text">طريق الثمامة - حي الندى 3385</span>
+                    </div>
+                </div>
+                <div class="col-3" style="margin-top:10px;margin-left:-20px;">
+                    <div class="text-left check_box_text check_box_request_information">
+                        <span class="black_bold_text">fuelfinance.sa</span><br/>
+                        <span class="black_bold_text">get@fuelfinance.sa</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </template>
+
+
+    <template id="expression_report_header_footer">
+        <div dir="rtl" class="header" style="font-family: 'Tajawal' !important;padding-bottom:10px;">
+            <div class="row">
+                <div class="col-3 text-right" style="margin-top:0px;">
+                </div>
+                <div class="col-3">
+                </div>
+                <div class="col-6 text-left" style="margin-top:0px;font-size:21px;padding-left:5px;">
+                    <span style="font-size:11px;">Sharia certificate Ref#:FFC-10-01-02-03-22-01-01#CAM</span><br/>
+                    <img style="margin-top:10px;" src="/partner_reports/static/src/img/fuel_exposior_icon.png" class="icon_fuel" /><br/>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer" style="font-family: 'Tajawal' !important;margin-top:400px !important;">
+            <!-- <div style="border-top: 1px solid #808080;font-size:20px;color:#808080;">
+                <div class="row" t-if="env.user.company_id">
+                    <div class="col-5" style="padding-top:20px;">
+                        صالح بن سليمان الهبدان <br/>
+                        0112447636 <br/>
+                        الرياض - حي الجزيرة
+                    </div>
+                    <div class="col-2 text-center" dir="rtl" style="padding-top:20px;">
+                        <small>
+                            <span>صفحة</span>
+                            <span class="page" />
+                            من
+                            <span class="topage" />
+                        </small>
+                    </div>
+                    <div class="col-5 text-right" style="padding-top:20px; text-align:right;">
+                        Salih Bin Suliman Alhabdan <br/>
+                        0112447636 <br/>
+                        Riyadh – Eastern Ring Rd<br/>
+                    </div>
+                </div>
+            </div> -->
+            <div class="row" dir="ltr">
+                <div class="col-3 text-center" style="margin-right:100px;">
+                    <img src="/partner_reports/static/src/img/footer_logo.png" style="width:130px;" /><br/>
+                </div>
+                <div class="col-3" style="margin-top:10px;">
+                    <div class="text-left check_box_text check_box_request_information">
+                        <span class="black_bold_text">Fuel Finance Company</span><br/>
+                        <span class="black_bold_text">3385 Al Thumama Rd - Al Nada</span>
+                    </div>
+                </div>
+                <div class="col-3" style="margin-top:10px;">
+                    <div class="text-left check_box_text check_box_request_information">
+                        <span class="black_bold_text">شركة فيول للتمويل</span><br/>
+                        <span class="black_bold_text">طريق الثمامة - حي الندى 3385</span>
+                    </div>
+                </div>
+                <div class="col-3" style="margin-top:10px;margin-left:-20px;">
+                    <div class="text-left check_box_text check_box_request_information">
+                        <span class="black_bold_text">fuelfinance.sa</span><br/>
+                        <span class="black_bold_text">get@fuelfinance.sa</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </template>
+
+
+</data>
+</odoo>

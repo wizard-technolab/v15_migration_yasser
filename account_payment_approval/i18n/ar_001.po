@@ -1,0 +1,359 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_payment_approval
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0+e-20220524\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-15 06:46+0000\n"
+"PO-Revision-Date: 2022-08-15 06:46+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.odoo_std_report_invoice_document_inh
+msgid ""
+"<i class=\"fa-square-o\"/>\n"
+"                                        <span>حوالة</span>"
+msgstr ""
+
+#. module: account_payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.odoo_std_report_invoice_document_inh
+msgid ""
+"<i class=\"fa-square-o\"/>\n"
+"                                        <span>شيك</span>"
+msgstr ""
+
+#. module: account_payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.odoo_std_report_invoice_document_inh
+msgid ""
+"<i class=\"fa-square-o\"/>\n"
+"                                        <span>نقد</span>"
+msgstr ""
+
+#. module: account_payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.odoo_std_report_invoice_document_inh
+msgid ""
+"<span>اسم البنك</span>\n"
+"                                <br/>\n"
+"                                <span>Bank Name</span>"
+msgstr ""
+
+#. module: account_payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.odoo_std_report_invoice_document_inh
+msgid ""
+"<span>اسم المستفيد</span>\n"
+"                                <br/>\n"
+"                                <span>Name of Beneficiary</span>"
+msgstr ""
+
+#. module: account_payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.odoo_std_report_invoice_document_inh
+msgid ""
+"<span>الادارة</span>\n"
+"                                <br/>\n"
+"                                <span>Departement</span>"
+msgstr ""
+
+#. module: account_payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.odoo_std_report_invoice_document_inh
+msgid ""
+"<span>الايبان</span>\n"
+"                                <br/>\n"
+"                                <span>IBAN</span>"
+msgstr ""
+
+#. module: account_payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.odoo_std_report_invoice_document_inh
+msgid ""
+"<span>العملة</span>\n"
+"                                <br/>\n"
+"                                <span>Currency</span>"
+msgstr ""
+
+#. module: account_payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.odoo_std_report_invoice_document_inh
+msgid ""
+"<span>المبلغ</span>\n"
+"                                <br/>\n"
+"                                <span>Amount</span>"
+msgstr ""
+
+#. module: account_payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.odoo_std_report_invoice_document_inh
+msgid "<span>المحاسب</span>"
+msgstr ""
+
+#. module: account_payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.odoo_std_report_invoice_document_inh
+msgid "<span>المدير المالي</span>"
+msgstr ""
+
+#. module: account_payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.odoo_std_report_invoice_document_inh
+msgid ""
+"<span>المورد</span>\n"
+"                                <br/>\n"
+"                                <span>Supplier</span>"
+msgstr ""
+
+#. module: account_payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.odoo_std_report_invoice_document_inh
+msgid ""
+"<span>تاريخ الفاتورة</span>\n"
+"                                <br/>\n"
+"                                <span>Invoice Date</span>"
+msgstr ""
+
+#. module: account_payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.odoo_std_report_invoice_document_inh
+msgid ""
+"<span>رقم الفاتورة</span>\n"
+"                                <br/>\n"
+"                                <span>#Invoice</span>"
+msgstr ""
+
+#. module: account_payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.odoo_std_report_invoice_document_inh
+msgid ""
+"<span>رقم المستند</span>\n"
+"                                <br/>\n"
+"                                <span>Document No.</span>"
+msgstr ""
+
+#. module: account_payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.odoo_std_report_invoice_document_inh
+msgid ""
+"<span>رقم امر الشراء/العقد</span>\n"
+"                                <br/>\n"
+"                                <span>#PO / #CO</span>"
+msgstr ""
+
+#. module: account_payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.odoo_std_report_invoice_document_inh
+msgid ""
+"<span>عنوان البنك</span>\n"
+"                                <br/>\n"
+"                                <span>Bank Address</span>"
+msgstr ""
+
+#. module: account_payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.odoo_std_report_invoice_document_inh
+msgid "<span>نائب الرئيس التنفيذي لقطاع الخدمات العامة</span>"
+msgstr ""
+
+#. module: account_payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.odoo_std_report_invoice_document_inh
+msgid "<strong>General Information</strong>"
+msgstr ""
+
+#. module: account_payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.odoo_std_report_invoice_document_inh
+msgid "<strong>Justification of Payment</strong>"
+msgstr ""
+
+#. module: account_payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.completion_certificate_template_inh
+msgid "<strong>الاسم</strong>"
+msgstr ""
+
+#. module: account_payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.odoo_std_report_invoice_document_inh
+msgid "<strong>التوقيع والاعتماد</strong>"
+msgstr ""
+
+#. module: account_payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.completion_certificate_template_inh
+msgid "<strong>التوقيع</strong>"
+msgstr ""
+
+#. module: account_payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.completion_certificate_template_inh
+msgid "<strong>المنصب</strong>"
+msgstr ""
+
+#. module: account_payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.odoo_std_report_invoice_document_inh
+msgid "<strong>مبررات الدفع</strong>"
+msgstr ""
+
+#. module: account_payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.odoo_std_report_invoice_document_inh
+msgid "<strong>معلومات الدفع</strong>"
+msgstr ""
+
+#. module: account_payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.odoo_std_report_invoice_document_inh
+msgid "<strong>معلومات عامة</strong>"
+msgstr ""
+
+#. module: account_payment_approval
+#: model:ir.model.fields,field_description:account_payment_approval.field_res_company__account_manager_id
+#: model:ir.model.fields,field_description:account_payment_approval.field_res_config_settings__account_manager_id
+#: model:ir.model.fields.selection,name:account_payment_approval.selection__account_move__state__accounting_manager
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.res_config_settings_view_form_inherit
+msgid "Accounting Manager"
+msgstr "مدير المالية"
+
+#. module: account_payment_approval
+#: model:ir.model.fields,field_description:account_payment_approval.field_account_bank_statement_line__accounting_manager_approved
+#: model:ir.model.fields,field_description:account_payment_approval.field_account_move__accounting_manager_approved
+#: model:ir.model.fields,field_description:account_payment_approval.field_account_payment__accounting_manager_approved
+msgid "Accounting Manager Approved"
+msgstr ""
+
+#. module: account_payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.view_account_payment_form_inherit
+msgid "Approve"
+msgstr "موافقة"
+
+#. module: account_payment_approval
+#: model:mail.activity.type,name:account_payment_approval.mail_activity_data_po
+msgid "Approve Payment"
+msgstr "الموافقة على المدفوعات"
+
+#. module: account_payment_approval
+#: model:ir.model.fields.selection,name:account_payment_approval.selection__account_move__state__approved
+msgid "Approved"
+msgstr "تم الموافقة"
+
+#. module: account_payment_approval
+#: model:ir.model.fields,field_description:account_payment_approval.field_account_payment__bill_id
+msgid "Bill"
+msgstr "فاتورة"
+
+#. module: account_payment_approval
+#: model:ir.model,name:account_payment_approval.model_res_company
+msgid "Companies"
+msgstr "شركات"
+
+#. module: account_payment_approval
+#: model:ir.model,name:account_payment_approval.model_res_config_settings
+msgid "Config Settings"
+msgstr "ضبط الاعدادات"
+
+#. module: account_payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.res_config_settings_view_form_inherit
+msgid "Enables approval feature in payments."
+msgstr "السماح بخاصية الموافقة على المدفوعات"
+
+#. module: account_payment_approval
+#: model:ir.model,name:account_payment_approval.model_account_move
+msgid "Journal Entry"
+msgstr "قيد اليومية"
+
+#. module: account_payment_approval
+#: model:ir.model.fields,field_description:account_payment_approval.field_res_company__payment_approval
+#: model:ir.model.fields,field_description:account_payment_approval.field_res_config_settings__payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.res_config_settings_view_form_inherit
+msgid "Payment Approval"
+msgstr "الموافقة على المدفوعات"
+
+#. module: account_payment_approval
+#: model:ir.model,name:account_payment_approval.model_account_payment
+msgid "Payments"
+msgstr "المدفوعات"
+
+#. module: account_payment_approval
+#: code:addons/account_payment_approval/models/account_payment.py:0
+#: code:addons/account_payment_approval/models/account_payment.py:0
+#: code:addons/account_payment_approval/models/account_payment.py:0
+#: code:addons/account_payment_approval/models/account_payment.py:0
+#, python-format
+msgid "Please select the Bill."
+msgstr "الرجاء إختيار فاتورة"
+
+#. module: account_payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.view_account_payment_form_inherit
+msgid "Print Completion Certificate"
+msgstr "طباعة شهادة الإنجاز"
+
+#. module: account_payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.view_account_payment_form_inherit
+msgid "Print Exchange Order"
+msgstr "طباعة امر الصرف"
+
+#. module: account_payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.view_account_payment_form_inherit
+msgid "Print Voucher Exchange"
+msgstr "طباعة سند الصرف"
+
+#. module: account_payment_approval
+#: model:ir.model.fields.selection,name:account_payment_approval.selection__account_move__state__project_manager
+msgid "Project Manager"
+msgstr "مدير المشروع"
+
+#. module: account_payment_approval
+#: model:ir.model.fields,field_description:account_payment_approval.field_account_bank_statement_line__project_manager_approved
+#: model:ir.model.fields,field_description:account_payment_approval.field_account_move__project_manager_approved
+#: model:ir.model.fields,field_description:account_payment_approval.field_account_payment__project_manager_approved
+msgid "Project Manager Approved"
+msgstr ""
+
+#. module: account_payment_approval
+#: model:ir.model.fields,field_description:account_payment_approval.field_account_bank_statement_line__user_pr_id
+#: model:ir.model.fields,field_description:account_payment_approval.field_account_move__user_pr_id
+#: model:ir.model.fields,field_description:account_payment_approval.field_account_payment__user_pr_id
+msgid "Project manager"
+msgstr "مدير المشروع"
+
+#. module: account_payment_approval
+#: model:ir.model,name:account_payment_approval.model_purchase_order
+msgid "Purchase Order"
+msgstr "أمر شراء"
+
+#. module: account_payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.view_account_payment_form_inherit
+msgid "Reject"
+msgstr "رفض"
+
+#. module: account_payment_approval
+#: model:ir.model.fields.selection,name:account_payment_approval.selection__account_move__state__rejected
+msgid "Rejected"
+msgstr "مرفوض"
+
+#. module: account_payment_approval
+#: model:ir.model.fields,field_description:account_payment_approval.field_account_payment__user_resp_id
+msgid "Responsible"
+msgstr "المسوؤل"
+
+#. module: account_payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.view_account_payment_form_inherit
+msgid "Send"
+msgstr "ارسال"
+
+#. module: account_payment_approval
+#: model:ir.model.fields,field_description:account_payment_approval.field_account_move__state
+#: model:ir.model.fields,field_description:account_payment_approval.field_account_payment__state
+msgid "Status"
+msgstr "الحالة"
+
+#. module: account_payment_approval
+#: model:ir.model.fields,field_description:account_payment_approval.field_res_company__vp_user_id
+#: model:ir.model.fields,field_description:account_payment_approval.field_res_config_settings__vp_user_id
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.res_config_settings_view_form_inherit
+msgid "VP"
+msgstr "الموافقة على المدفوعات"
+
+#. module: account_payment_approval
+#: model:ir.model.fields.selection,name:account_payment_approval.selection__account_move__state__vp
+#: model:res.groups,name:account_payment_approval.payment_vp_approval
+msgid "VP of General Services"
+msgstr "الموافقة على المدفوعات"
+
+#. module: account_payment_approval
+#: model:ir.model.fields,field_description:account_payment_approval.field_account_bank_statement_line__vp_approved
+#: model:ir.model.fields,field_description:account_payment_approval.field_account_move__vp_approved
+#: model:ir.model.fields,field_description:account_payment_approval.field_account_payment__vp_approved
+msgid "Vp Approved"
+msgstr ""
+
+#. module: account_payment_approval
+#: model_terms:ir.ui.view,arch_db:account_payment_approval.odoo_std_report_invoice_document_inh
+msgid "سند صرف"
+msgstr ""

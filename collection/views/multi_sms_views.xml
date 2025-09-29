@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="multi_sms_form_view" model="ir.ui.view">
+            <field name="name">collection.multi.sms.form</field>
+            <field name="model">collection.sms</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="action_send_massages"
+                                type="object"
+                                string="Send SMS Massages"
+                                class="btn-primary"
+                                icon="fa-commenting"
+                                attrs="{'invisible': [('status', '=', 'sent')]}"/>
+                        <field name="status" widget="statusbar" statusbar_visible="draft,sent"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="customer_ids" widget="many2many_tags" attrs="{'readonly': [('status', '=', 'sent')]}"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="massage" attrs="{'readonly': [('status', '=', 'sent')]}"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="multi_sms_tree_view" model="ir.ui.view">
+            <field name="name">collection.multi.sms.tree</field>
+            <field name="model">collection.sms</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="massage"/>
+                    <field name="status"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="collection_multi_sms_action" model="ir.actions.act_window">
+            <field name="name">SMS Management</field>
+            <field name="res_model">collection.sms</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="multi_sms_form_view"/>
+        </record>
+
+        <menuitem name="Send Multi Massages"
+                  id="sms_ids"
+                  parent="sms_menu"
+                  action="collection.collection_multi_sms_action"
+                  sequence="12"
+        />
+
+    </data>
+</odoo>

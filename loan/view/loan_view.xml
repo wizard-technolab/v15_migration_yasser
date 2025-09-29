@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+<!--        <record id="prm_view_action" model="ir.actions.act_window">-->
+<!--            <field name="name">People</field>-->
+<!--            <field name="type">ir.actions.act_window</field>-->
+<!--            <field name="res_model">crm.lead</field>-->
+<!--            <field name="view_mode">kanban,form</field>-->
+<!--            <field name="help" type="html">-->
+<!--                <p class="o_view_nocontent_smiling_face">-->
+<!--                </p>-->
+<!--            </field>-->
+<!--        </record>-->
+
+
+        <menuitem name="Loan"
+                  id="loan_root"
+                  sequence="11"
+                  action="loan.request_action"
+                  groups="loan.group_use_loan_admin,loan.group_use_loan_user"
+                  web_icon="loan,static/description/icon.png"/>
+
+
+        <!--        ***************************** Information Customer **********************************-->
+
+        <!--        <menuitem name="Information Customer"-->
+        <!--                  id="information_id"-->
+        <!--                  parent="loan_root"-->
+        <!--                  action="account.res_partner_action_customer"-->
+        <!--                  sequence="1"/>-->
+
+
+        <!--        <menuitem name="Customer"-->
+        <!--                  id="customer_id"-->
+        <!--                  parent="information_id"-->
+        <!--                  action="partner_id_action"-->
+        <!--                  sequence="2"/>-->
+
+        <!--        ***************************** Report **********************************-->
+<!--        <menuitem name="Report"-->
+<!--                  id="report_id"-->
+<!--                  parent="loan_root"-->
+<!--                  action="account.res_partner_action_customer"-->
+<!--                  sequence="4"-->
+<!--        />-->
+
+        <!--/home/ibrahim/Desktop/src/odoo_15.0+e.latest/odoo15/odoo/odoo-custom-addons/Loan/static-->
+
+        <!--        <menuitem name="Installment Summary"-->
+        <!--                  id="print_installment_summary"-->
+        <!--                  parent="report_id"-->
+        <!--                  action="action_report_installment"-->
+        <!--                  sequence="6"/>-->
+
+        <!--        <menuitem name="Interest Certificate"-->
+        <!--                  id="print_interest_certificate"-->
+        <!--                  parent="report_id"-->
+        <!--                  action="Loan.action_report_interest"-->
+        <!--                  sequence="8"/>-->
+
+        <!--        ***************************** Partner **********************************-->
+
+        <!--        <menuitem name="PRM"-->
+        <!--                  id="prm_id"-->
+        <!--                  parent="loan_root"-->
+        <!--                  action="crm.crm_lead_action_pipeline"-->
+        <!--                  sequence="6"/>-->
+
+    </data>
+</odoo>

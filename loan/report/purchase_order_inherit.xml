@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="purchase_order_inherit" inherit_id="purchase.report_purchaseorder_document">
+        <xpath expr="//t[@t-set='o']" position="before">
+            <h2 align="center">أمر الشراء</h2>
+        </xpath>
+        <xpath expr="//div[@class='page']" position="before">
+            <div class="oe_structure" id="po_inherit_before" style="text-align: right;">
+                <strong>:السلام عليكم ورحمة الله وبركاته ,, تحية طيبة وبعد</strong>
+                <br/>
+                <br/>
+                <strong>بالإشارة إلى عقد المبرم معكم بتاريخ, ولرغبة العميل الموضح بياناته أدناه , وبناء على عرض السعر
+                    الموضح في خطابكم المؤرخ بتاريخ نقدم لكم أمر الشراء التالي
+                </strong>
+                <br/>
+                <br/>
+            </div>
+        </xpath>
+<!--        <xpath expr="//table/tr" position="after">-->
+<!--            <th name="th_taxes"><strong>Taxes</strong></th>-->
+<!--        </xpath>-->
+        <xpath expr="//div[@class='row justify-content-end']" position="after">
+            <div class="oe_structure" id="po_inherit_after" style="text-align: right;">
+                <br/>
+                <br/>
+                <br/>
+                <strong>ونفيدكم بأن شركة فيول التمويل غير مسؤولة وغير ضامنة لجودة الخدمات الطبية ويجب إفهام العميل بذلك
+                    لذا بعد الاطلاع وإبداء العميل رغبته الأولية لشروط التمويل وبعد افهام العميل بحقوقه على شركة التمويل
+                    وعلى مزود الخدمة الطبية نرجو منكم التكرم بالرد على عرضنا بخطاب قبول أمر الشراء (التزامكم بتنفيذ
+                    الخدمة الطبية للعميل حسب المطلوب)
+                    <br/>
+                    (info@fuelfinance.sa) على البريد
+                    <br/>
+                    او بالتواصل معنا على الهاتف الموحد
+                </strong>
+                <br/>
+                <br/>
+                <br/>
+                <div style="text-align: center;">
+                    <h5>...ولكم جزيل الشكر</h5>
+                    <h5>شركة فيول للتمويل</h5>
+                    <h5>إدارة الشراكات</h5>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

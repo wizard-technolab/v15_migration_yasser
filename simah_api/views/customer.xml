@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="partner_fullname_inherit_form" model="ir.ui.view">
+            <field name="name">partner.inherit.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <header>
+                    <button name="action_split" string="split"
+                            class="btn-primary" type="object"  invisible="1"/>
+                </header>
+                <xpath expr="//field[@name='name']" position="before">
+                    <div class="o_row">
+                        <field name="family_name" placeholder="Family Name" class="oe_inline" groups="loan.group_admin" readonly="1"/>
+                        <field name="first_name" placeholder="First Name" class="oe_inline" groups="loan.group_admin" readonly="1"/>
+                        <field name="second_name" placeholder="Second Name" class="oe_inline"  invisible="1" readonly="1"/>
+                        <field name="third_name" placeholder="Third Name" class="oe_inline"  invisible="1" readonly="1"/>
+                    </div>
+                </xpath>
+                <xpath expr="//field[@name='name']" position="after">
+                    <div>
+                       <field name="english_name" placeholder="English Name" readonly="1"/>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

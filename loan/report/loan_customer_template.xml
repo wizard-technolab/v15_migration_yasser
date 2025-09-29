@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_customer" inherit_id="">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <header>
+                        <center>
+                            <h2>Exposure Report</h2>
+                        </center>
+                    </header>
+                    <div class="page" style="font-size: 10px !important;font-weight: bold;">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Application Number:</th>
+                                    <th>
+                                        <strong t-esc="o.seq_num"/>
+                                    </th>
+                                    <!--                                    <th></th>-->
+                                    <!--                                    <th>-->
+                                    <!--&lt;!&ndash;                                        <strong t-esc="o.name"/>&ndash;&gt;-->
+                                    <!--                                    </th>-->
+                                </tr>
+                            </thead>
+                        </table>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Branch Name:</th>
+                                    <th>
+                                        <strong t-esc="o.branch"/>
+                                    </th>
+                                    <th>Number of Previous Application:</th>
+                                    <th>
+                                        <strong t-esc="o.name"/>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>Customer Name:</th>
+                                    <th>
+                                        <strong t-esc="o.name.name"/>
+                                    </th>
+                                    <th>ID:</th>
+                                    <th>
+                                        <strong t-esc="o.identification_id"/>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>Principal Amount:</th>
+                                    <th>
+                                        <strong t-esc="o.loan_amount_positive"/>
+                                    </th>
+                                    <th>Total Income:</th>
+                                    <th>
+                                        <strong t-esc="o.name.total_income"/>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>Interest Amount:</th>
+                                    <th>
+                                        <strong t-esc="o.interest_amount"/>
+                                    </th>
+                                    <th>Amount to Finance:</th>
+                                    <th>
+                                        <strong t-esc="o.loan_sum"/>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>Down Payment:</th>
+                                    <th>
+                                        <strong t-esc="o.down_payment_loan"/>
+                                    </th>
+                                    <th>Down Payment%:</th>
+                                    <th>
+                                        <strong t-esc="o.down_payment_percent"/>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>Total Goods Value:</th>
+                                    <th>
+                                        <strong t-esc="o.total_loan"/>
+                                    </th>
+                                    <th>Number of Dependent:</th>
+                                    <th>
+                                        <strong t-esc="o.name.number_dependents"/>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>Age:</th>
+                                    <th>
+                                        <strong t-esc="o.name.age"/>
+                                    </th>
+                                    <th>Accommodation Status:</th>
+                                    <th>
+                                        <strong t-esc="o.name.home_type"/>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>Term:</th>
+                                    <th>
+                                        <strong t-esc="o.loan_term"/>
+                                    </th>
+                                    <th>Admin Fees:</th>
+                                    <th>
+                                        <strong t-esc="o.fees"/>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>OverDue:</th>
+                                    <th>
+                                        <strong t-esc="o.name"/>
+                                    </th>
+                                    <th>Outstanding:</th>
+                                    <th>
+                                        <strong t-esc="o.name"/>
+                                    </th>
+                                </tr>
+
+                            </thead>
+                        </table>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <!-- ///////////////-->
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Employed From:</th>
+                                    <th>
+                                        <strong t-esc="o.name.years_work"/>
+                                    </th>
+                                    <th>Years in Service:</th>
+                                    <th>
+                                        <strong t-esc="o.name.years_number"/>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>Employer Name:</th>
+                                    <th>
+                                        <strong t-esc="o.name.employer"/>
+                                    </th>
+                                    <th>Count:</th>
+                                    <th>
+                                        <strong t-esc="o.name"/>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>Job Title:</th>
+                                    <th>
+                                        <strong t-esc="o.name.position"/>
+                                    </th>
+                                    <th>Service Name:</th>
+                                    <th>
+                                        <strong t-esc="o.name.service_provider"/>
+                                    </th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Total Monthly Deduction:</th>
+                                    <th>
+                                        <strong t-esc="o.name.installment_comp"/>
+                                    </th>
+                                    <th>% of Total Simah Deduction:</th>
+                                    <th>
+                                        <strong t-esc="o.name.deduction_before"/>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>Total:</th>
+                                    <th>
+                                        <strong t-esc="o.total_installment"/>
+                                    </th>
+                                    <th>Current Monthly Deduction:</th>
+                                    <th>
+                                        <strong t-esc="o.installment_month"/>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>Total Limits:</th>
+                                    <th>
+                                        <strong t-esc="o.name.compare_limit"/>
+                                    </th>
+                                    <th>% of Total Deduction:</th>
+                                    <th>
+                                        <strong t-esc="o.deduction_after"/>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>Total Liabilities:</th>
+                                    <th>
+                                        <strong t-esc="o.name.number_liability"/>
+                                    </th>
+                                    <th>Total Defaults:</th>
+                                    <th>
+                                        <strong t-esc="o.name"/>
+                                    </th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+
+                        </tr>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <!--                        ///////////////////////////////TABLE////////////////////////////////////////////////-->
+                        <table class="table">
+                            <div>
+                                <strong>
+                                    <right>
+                                        <th>Guarantor</th>
+                                        <th></th>
+                                    </right>
+                                </strong>
+                            </div>
+                            <tr>
+                                <th>ID:</th>
+                                <th>
+                                    <strong t-esc="o.name.guarantor_id.identification_no"/>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Total Income:</th>
+                                <th>
+                                    <strong t-esc="o.name.guarantor_id.total_income"/>
+                                </th>
+                            </tr>
+                            <!--                            <tr>-->
+                            <!--                                <th>Current Monthly Deduction:</th>-->
+                            <!--                                <th>-->
+                            <!--                                    <strong t-esc="o.name.guarantor_id.installment_month"/>-->
+                            <!--                                </th>-->
+                            <!--                            </tr>-->
+                            <!--                            <tr>-->
+                            <!--                                <th>Total Monthly Deduction:</th>-->
+                            <!--                                <th>-->
+                            <!--                                    <strong t-esc="o.name.guarantor_id.installment_comp"/>-->
+                            <!--                                </th>-->
+                            <!--                            </tr>-->
+                            <!--                            <tr>-->
+                            <!--                                <th>Total:</th>-->
+                            <!--                                <th>-->
+                            <!--                                    <strong t-esc="o.name.guarantor_id.total_installment"/>-->
+                            <!--                                </th>-->
+                            <!--                            </tr>-->
+                            <!--                            <tr>-->
+                            <!--                                <th>% of Total Deduction:</th>-->
+                            <!--                                <th>-->
+                            <!--                                    <strong t-esc="o.name.guarantor_id.deduction_after"/>-->
+                            <!--                                </th>-->
+                            <!--                            </tr>-->
+                            <!--                            <tr>-->
+                            <!--                                <th>Total Limits:</th>-->
+                            <!--                                <th>-->
+                            <!--                                    <strong t-esc="o.guarantor_id.compare_limit"/>-->
+                            <!--                                </th>-->
+                            <!--                            </tr>-->
+                            <!--                            <tr>-->
+                            <!--                                <th>Total Liabilities:</th>-->
+                            <!--                                <th>-->
+                            <!--                                    <strong t-esc="o.guarantor_id.number_liability"/>-->
+                            <!--                                </th>-->
+                            <!--                            </tr>-->
+                        </table>
+                    </div>
+                    <br/>
+                    <br/>
+                    <table  class="table">
+                        <div>
+                            <right>
+                                <strong>User Name:</strong>
+                                <strong t-esc="o.user.name"/>
+                                <strong t-esc="o.name.comment"/>
+                            </right>
+                            <br/>
+                            <br/>
+                            <left>
+                                <strong>Employee Signature:</strong>
+                            </left>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <strong>Manager's Signature:</strong>
+                        </div>
+                    </table>
+                </t>
+            </t>
+        </t>
+    </template>
+    <record id="loan_customer_report" model="ir.actions.report">
+        <field name="name">Exposure Report</field>
+        <field name="model">loan.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">loan.report_customer</field>
+        <field name="report_file">loan.report_customer</field>
+        <field name="binding_model_id" ref="model_loan_order"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        <record id="loan_crm_form" model="ir.ui.view">
+            <field name="name">loan.crm.form</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="model">crm.lead</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_set_won_rainbowman']" position="before">
+                    <button name="assign_customer_to_self" string="Assign To Me" type="object"/>
+
+                </xpath>
+<!--                <xpath expr="//field[@name='application_date']" position="before">-->
+<!--                    <field name="id_number"/>-->
+<!--                </xpath>-->
+            </field>
+        </record>
+        <record id="loan_order_smart_button" model="ir.ui.view">
+            <field name="name">loan.order.buttons</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+                <div name="button_box" position="inside">
+                    <button class="oe_stat_button" type="object" name="get_loans"
+                            icon="fa-usd">
+                        <field string="Loans" name="loan_counts" widget="statinfo"/>
+                    </button>
+                </div>
+            </field>
+        </record>
+
+        <record id="res_partner_smart_button" model="ir.ui.view">
+            <field name="name">res.partner.buttons</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+                <div name="button_box" position="inside">
+                    <button class="oe_stat_button" type="object" name="get_contacts"
+                            icon="fa-user-o">
+                        <field string="Contact" name="contact_counts" widget="statinfo"/>
+                    </button>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>
+

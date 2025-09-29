@@ -1,0 +1,29 @@
+<odoo>
+    <data noupdate="1">
+        <record id="access_collection_admin" model="ir.model.access">
+            <field name="name">collection.collection</field>
+            <field name="model_id" ref="collection.model_collection_sms"/>
+            <field name="group_id" eval="False"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="group_collection_admin" model="res.groups">
+            <field name="name">Collection Admin</field>
+            <field name="category_id" ref="base.module_category_hidden"/>
+        </record>
+
+        <record id="group_collection_agent" model="res.groups">
+            <field name="name">Collection Agent</field>
+            <field name="category_id" ref="base.module_category_hidden"/>
+        </record>
+
+        <record id="group_sms_admin" model="res.groups">
+            <field name="name">SMS Admin</field>
+            <field name="category_id" ref="base.module_category_hidden"/>
+        </record>
+
+    </data>
+</odoo>

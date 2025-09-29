@@ -1,0 +1,57 @@
+<odoo>
+    <data>
+        <record id="nafaes_commodity_view_search" model="ir.ui.view">
+            <field name="name">nafaes.commodity.search</field>
+            <field name="model">nafaes.commodity</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name" string="Name"/>
+                </search>
+            </field>
+        </record>
+        <record id="nafaes_commodity_view_tree" model="ir.ui.view">
+            <field name="name">nafaes.commodity.tree</field>
+            <field name="model">nafaes.commodity</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record id="nafaes_commodity_view_form" model="ir.ui.view">
+            <field name="name">nafaes.commodity.form</field>
+            <field name="model">nafaes.commodity</field>
+            <field name="arch" type="xml">
+                <form edit="false" >
+                    <sheet>
+                        <div class="oe_title">
+                            <label class="oe_edit_only" for="name"/>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="nafaes_commodity_action_view_tree" model="ir.actions.act_window">
+            <field name="name">Commodities</field>
+            <field name="res_model">nafaes.commodity</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No Commodities found. Let's create one!
+                </p>
+                <p>
+                    Helps improving the business workflow.
+                </p>
+            </field>
+        </record>
+        <menuitem name="Commodities" action="nafaes_commodity_action_view_tree" id="nafaes_commodity_menu"
+                  parent="nafaes_root_menu" sequence="90"/>
+    </data>
+</odoo>

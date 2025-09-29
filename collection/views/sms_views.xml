@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="sms_form_view" model="ir.ui.view">
+            <field name="name">collection.sms.form</field>
+            <field name="model">collection.sms</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="action_send_massage"
+                                type="object"
+                                string="Send SMS Massage"
+                                class="btn-primary"
+                                icon="fa-commenting"
+                                attrs="{'invisible': [('status', '=', 'sent')]}"/>
+                        <field name="status" widget="statusbar" statusbar_visible="draft,sent"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" attrs="{'readonly': [('status', '=', 'sent')]}"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="massage" attrs="{'readonly': [('status', '=', 'sent')]}"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="sms_tree_view" model="ir.ui.view">
+            <field name="name">collection.sms.tree</field>
+            <field name="model">collection.sms</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="massage"/>
+                    <field name="status"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="collection_sms_action" model="ir.actions.act_window">
+            <field name="name">SMS Management</field>
+            <field name="res_model">collection.sms</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="sms_form_view"/>
+        </record>
+
+        <record id="collection_history_action" model="ir.actions.act_window">
+            <field name="name">History Massages</field>
+            <field name="res_model">collection.sms</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="sms_tree_view"/>
+        </record>
+
+        <menuitem name="SMS"
+                  id="sms_menu"
+                  parent="collection_root_menu"
+                  action="collection.collection_sms_action"
+                  sequence="3"
+        />
+        <menuitem name="Send One Massage"
+                  id="sms_id"
+                  parent="sms_menu"
+                  action="collection.collection_sms_action"
+                  sequence="11"
+        />
+        <menuitem name="Massages History"
+                  id="history_sms_id"
+                  parent="sms_menu"
+                  action="collection.collection_history_action"
+                  sequence="13"
+        />
+    </data>
+</odoo>

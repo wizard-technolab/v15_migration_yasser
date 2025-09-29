@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="wallet_tree_view" model="ir.ui.view">
+            <field name="name">Cash Wallet Management</field>
+            <field name="model">cash.wallet</field>
+            <field name="arch" type="xml">
+                <tree string="Cash Wallet Management">
+                    <field name="label"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="wallet_form_view" model="ir.ui.view">
+            <field name="name">Cash Wallet Management</field>
+            <field name="model">cash.wallet</field>
+            <field name="arch" type="xml">
+                <form string="Cash Wallet Managementt">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="label"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="cash_wallet_action" model="ir.actions.act_window">
+            <field name="name">Cash Wallet Management</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">cash.wallet</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                </p>
+            </field>
+        </record>
+        <menuitem name="Wallet"
+                  id="wallet_id"
+                  parent="wallet_root_menu"
+                  action="cash_wallet_action"
+                  sequence="3"
+        />
+    </data>
+</odoo>

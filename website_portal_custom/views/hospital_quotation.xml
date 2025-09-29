@@ -1,0 +1,104 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="hospital_quotation_list">
+            <field name="name">hospital.quotation list</field>
+            <field name="model">hospital.quotation</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <!--                    <field name="contract_name"/>-->
+                    <field name="seq"/>
+                    <field name="customer_name"/>
+                    <field name="customer_id"/>
+                    <field name="clinic_name"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- form -->
+        <record model="ir.ui.view" id="hospital_quotation_form">
+            <field name="name">hospital.quotation form</field>
+            <field name="model">hospital.quotation</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="action_approve" state="draft" string="Confirm"
+                                class="btn-primary" type="object"/>
+                        <field name="state" widget="statusbar"
+                               statusbar_visible="draft,approved"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="seq"/>
+                            </group>
+                        </group>
+                        <group string="Clinic Information">
+                            <group>
+                                <field name="clinic_name"/>
+                                <field name="phone"/>
+                                <field name="doctor_name"/>
+                            </group>
+                            <group>
+                                <field name="department_name"/>
+                                <field name="email"/>
+                                <field name="clinic_user_id"/>
+                            </group>
+                        </group>
+                        <group string="Customer Information">
+                            <group>
+                                <field name="customer_id"/>
+                                <field name="customer_phone"/>
+                            </group>
+                            <group>
+                                <field name="customer_name"/>
+                                <field name="customer_amount"/>
+                            </group>
+                        </group>
+<!--                        <notebook>-->
+<!--                            <page string="Products" name="products">-->
+<!--                                <field name="product_ids" mode="tree,kanban"-->
+<!--                                       attrs="{'readonly': [('state', '=', 'confirm')]}">-->
+<!--                                    <tree string="Purchase Order Lines" editable="bottom">-->
+<!--                                        <field name="product_id"/>-->
+<!--                                        <field name="quantity"/>-->
+<!--                                        <field name="price"/>-->
+<!--                                        <field name="amount"/>-->
+<!--                                    </tree>-->
+<!--                                </field>-->
+<!--                            </page>-->
+<!--                            <page string="Describtion" name="describtion">-->
+<!--                                <field name="description"/>-->
+<!--                            </page>-->
+<!--                        </notebook>-->
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids" options="{'post_refresh': 'recipients'}"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="hospital_quotation_action_window">
+            <field name="name">Hospital Quotation</field>
+            <field name="res_model">hospital.quotation</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Hospital Quotation" id="hospital_quotation_menu_root"
+                  sequence="10"
+                  web_icon="website_portal_custom,static/description/icon.png"/>
+
+        <menuitem name="Hospital Quotation List" id="hospital_quotation_menu" parent="hospital_quotation_menu_root"
+                  action="hospital_quotation_action_window"/>
+
+
+        <!--        <record id="partner_reports.quotation_form_action" model="ir.actions.report">-->
+        <!--            <field name="model">hospital.quotation</field>-->
+        <!--            <field name="binding_model_id" ref="website_portal_custom.model_hospital_quotation"/>-->
+        <!--        </record>-->
+
+    </data>
+</odoo>

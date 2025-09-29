@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle 
+ -->
+ 
+ <odoo>
+    <data>
+		<template id="assets_backend" name="dev_hide_delete assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/dev_hide_delete/static/src/js/hide_delete.js"></script>
+            </xpath>
+        </template>        
+    </data>
+</odoo>

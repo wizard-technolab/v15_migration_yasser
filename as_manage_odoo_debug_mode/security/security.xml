@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="res.groups" id="debug_mode_option_group">
+            <field name="name">Enable/Disable Debug Mode</field>
+        </record>
+    </data>
+</odoo>

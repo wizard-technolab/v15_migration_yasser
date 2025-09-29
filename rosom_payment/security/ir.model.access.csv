@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_rosom_api_log,rosom.api.log,model_rosom_api_log,loan.group_use_loan_user,1,1,1,0
+access_rosom_bill,rosom.bill,model_rosom_bill,loan.group_use_loan_user,1,1,1,0
+access_rosom_payment,rosom.payment,model_rosom_payment,loan.group_use_loan_user,1,0,1,0
+
+
+
+

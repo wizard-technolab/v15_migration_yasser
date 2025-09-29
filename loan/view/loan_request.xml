@@ -1,0 +1,1131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="request_form_view" model="ir.ui.view">
+            <field name="name">res.partner.view.inherit</field>
+            <field name="model">loan.order</field>
+            <field name="type">form</field>
+            <!--            <field name="inherit_id" ref="base.view_partner_form"/>-->
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <form delete="0">
+                    <header>
+                        <button name="action_archive" type="object" string="Archive"
+                                groups="loan.group_admin"
+                                attrs="{'invisible': [('active', '=', False)]}" class="btn-primary"/>
+                        <button name="action_unarchive" type="object" string="Unarchive"
+                                groups="loan.group_admin"
+                                attrs="{'invisible': [('active', '=', True)]}" class="btn-secondary"/>
+                        <!--                        <button name="confirmation_call_action" string="Confirmation Call" type="object" groups="loan.group_admin" class="btn btn-primary"/>-->
+                        <button name="assign_customer_to_self" string="Assign To Me" type="object"
+                                groups="loan.group_loan_credit"
+                                attrs="{'invisible':[('state','in',('l1','l2','approve','contract','pending','return','disburse','active','early','close','cancel','reject','buying','archive'))]}"/>
+                        <button name="compute_installment" string='Calculate' type="object"
+                                class="btn-primary" groups="loan.group_loan_credit"
+                                attrs="{'invisible':[('state','in',('l1','l2','approve','contract','pending','return','disburse','active','early','close','cancel','reject','buying','archive'))]}"/>
+                        <button name="send_to_l1" string='Submit' type="object"
+                                class="btn-primary" groups="loan.group_loan_credit"
+                                attrs="{'invisible':[('state','in',('l1','l2','approve','contract','pending','return','disburse','active','early','close','cancel','reject','buying','archive'))]}"/>
+                        <button name="action_confirm_loan" states="l1"
+                                string="Submit" class="btn-primary"
+                                type="object" confirm="Are you sure you want to do this?"
+                                groups="loan.group_credit_l1"
+                                attrs="{'invisible':[('state','in',('simah','l2','approve','contract','pending','return','disburse','active','early','close','cancel','reject','buying','archive')),('obligation_id', '!=', False)]}"/>
+                        <button name="action_set_to_reject" states="simah,l1,l2"
+                                string="Reject" type="object"
+                                confirm="Are you sure you want to do this?" style="color:Red;"
+                                groups="loan.group_function_credit"
+                                attrs="{'invisible':[('state','in',('approve','contract','pending','return','disburse','active','early','close','cancel','reject','buying','archive'))]}"/>
+                        <button name="action_incomplete" state="simah,l1,l2"
+                                string="Send Back to sales"
+                                class="btn-primary" type="object" confirm="Are you sure you want to do this?"
+                                groups="loan.group_function_credit"
+                                attrs="{'invisible':[('state','in',('approve','contract','pending','return','disburse','active','early','close','cancel','reject','buying','archive'))]}"/>
+                        <button name="action_send_back" type="object" states="l1,l2"
+                                string='Send Back to CV' confirm="Are you sure you want to do this?"
+                                groups="loan.group_function_credit"
+                                attrs="{'invisible':[('state','in',('simah','approve','contract','pending','return','disburse','active','early','close','cancel','reject','buying','archive'))]}"/>
+                        <button name="action_approve_loan" states="l2" string="Approve"
+                                class="btn-primary" type="object" confirm="Are you sure you want to do this?"
+                                groups="loan.group_loan_approval"
+                                attrs="{'invisible':[('state','in',('simah','l1','l2','contract','pending','return','disburse','active','early','close','cancel','reject','buying','archive')),('obligation_id', '!=', False)]}"/>
+                        <button name="assign_to_sales_user" string="Assign To Me" type="object"
+                                groups="loan.group_sales_exa_call"
+                                attrs="{'invisible':[('state','in',('simah','l1','l2','contract','disburse','active','early','close','cancel','buying','archive'))]}"/>
+                        <button name="action_sales_cancel" state="return" string="Cancel"
+                                class="btn-primary" type="object" confirm="Are you sure you want to do this?"
+                                groups="loan.group_sales_cancel"
+                                attrs="{'invisible':[('state','in',('simah','l1','l2','approve','contract','pending','disburse','active','early','close','cancel','reject','buying','archive'))]}"/>
+                        <button name="action_back" string="Send Back To CV" state="return"
+                                class="btn-primary" type="object" confirm="Are you sure you want to do this?"
+                                groups="loan.group_sales_return"
+                                attrs="{'invisible':[('state','in',('simah','l1','l2','approve','contract','pending','disburse','active','early','close','cancel','reject','buying','archive'))]}"/>
+                        <button name="confirmation_call_action" class="btn-primary" string="Confirmation Call"
+                                type="object" confirm="Are you sure you want to do this?"
+                                groups="loan.group_sales_exa_call"
+                                attrs="{'invisible':[('state','in',('simah','l1','l2','contract','return','disburse','active','early','close','cancel','reject','buying','archive'))]}"/>
+                        <!--                        <button name="action_submit_nafaes" class="btn-primary" string="Submit Nafaes" type="object"-->
+                        <!--                                groups="loan.group_sales_exa_call"-->
+                        <!--                                attrs="{'invisible': [('state', 'not in', ['pending', 'approve'])]}"/>-->
+                        <button name="submit_nafaes" class="btn-primary" string="Submit Nafaes" type="object"
+                                groups="loan.group_sales_exa_call"
+                                attrs="{'invisible': [('state', 'not in', ['pending', 'approve'])]}"/>
+                        <button name="action_disburse_loan" states="disburse" string="Disburse Loan"
+                                class="btn-primary" type="object" confirm="Are you sure you want to do this?"
+                                groups="loan.group_accounting_move"
+                                attrs="{'invisible':[('state','in',('simah','l1','l2','approve','contract','pending','return','active','early','close','cancel','reject','buying','archive'))]}"/>
+                        <button name="action_open_loan" states="active" string="Open Loan"
+                                class="btn-primary" type="object" confirm="Are you sure you want to do this?"
+                                groups="loan.group_accounting_move"
+                                attrs="{'invisible':[('state','in',('simah','l1','l2','approve','contract','return','pending','disburse','close','cancel','reject','buying','archive'))]}"/>
+                        <button name="action_early_payment"
+                                states="active" string="Early pay" class="btn-primary"
+                                type="object" confirm="Are you sure you want to do this?"
+                                groups="loan.group_accounting_move"
+                                attrs="{'invisible':[('state','in',('simah','l1','l2','approve','contract','pending','return','disburse','early','close','cancel','reject','buying','archive'))]}"/>
+                        <button name="action_back_to_nafaes" states="disburse" string="Back to Nafaes"
+                                class="btn-primary" type="object" confirm="Are you sure you want to do this?"
+                                groups="loan.group_accounting_move"
+                                style="color:Red;"
+                                attrs="{'invisible':[('state','in',('simah','l1','l2','approve','contract','pending','return','active','early','close','cancel','reject','buying','archive'))]}"/>
+                        <button name="set_loan_close"
+                                string="Close Loan"
+                                type="object"
+                                attrs="{'invisible': [('show_close_button', '=', False)]}"
+                                class="btn btn-info"
+                                groups="loan.group_accounting_move"/>
+                        <!--                        <button name="action_sms_reminder" states="active" string="Reminder"-->
+                        <!--                                class="btn-primary" type="object" confirm="Are you sure you want to do this?"-->
+                        <!--                                groups="loan.group_collection"/>-->
+                        <!--                        <button name="action_sms_warning" states="active" string="Warning"-->
+                        <!--                                class="btn-danger" type="object" confirm="Are you sure you want to do this?"-->
+                        <!--                                groups="loan.group_collection"/>-->
+                        <button name="action_send_credit" state="approve" string="Send Back To Credit"
+                                class="btn-primary" type="object"
+                                groups="loan.group_customer_operation" confirm="Are you sure you want to do this?"
+                                attrs="{'invisible':[('state','in',('simah','l1','l2','pending','return','disburse','active','early','close','cancel','reject','buying','archive'))]}"/>
+                        <button name="action_close_loan"
+                                states="active" string="Close" class="btn-primary"
+                                type="object" confirm="Are you sure you want to do this?"
+                                groups="loan.group_customer_operation_manager"
+                                attrs="{'invisible':[('state','in',('simah','l1','l2','approve','contract','pending','return','disburse','early','close','cancel','reject','buying','archive'))]}"/>
+                        <button name="action_nafaes" states="buying" string="Buying Done"
+                                class="btn-primary" type="object" confirm="Are you sure you want to do this?"
+                                groups="loan.group_customer_operation"
+                                attrs="{'invisible':[('state','in',('simah','l1','l2','approve','contract','pending','return','disburse','active','early','close','cancel','reject','archive'))]}"/>
+                        <button name="action_operation_cancel" states="pending,buying,disburse,active"
+                                string="Cancel Loan"
+                                class="btn-danger" type="object"
+                                groups="loan.group_customer_operation_manager"
+                                confirm="Are you sure you want to do this?"
+                                attrs="{'invisible':[('state','in',('simah','l1','l2','return','early','close','cancel','reject','archive'))]}"/>
+                        <button name="action_tele_sales_cancel" state="return" string="Cancel"
+                                class="btn-danger" type="object" confirm="Are you sure you want to do this?"
+                                groups="loan.group_user_tele_selas"
+                                attrs="{'invisible':[('state','in',('simah','l1','l2','contract','pending','disburse','active','early','close','cancel','reject','buying','archive'))]}"/>
+                        <button name="action_tele_sales_return" state="return" string="Send Back to CV"
+                                class="btn-primary" type="object" confirm="Are you sure you want to do this?"
+                                groups="loan.group_user_tele_selas"
+                                attrs="{'invisible':[('state','in',('simah','l1','l2','contract','pending','disburse','active','early','close','cancel','reject','buying','archive'))]}"/>
+                        <button name="action_tele_sales_protest" state="reject" string="Objection"
+                                type="object" confirm="Are you sure you want to do this?"
+                                groups="loan.group_user_tele_selas"
+                                attrs="{'invisible':[('state','in',('initial-approval','review_kyc','simah','l1','l2','contract','pending','disburse','early','close','cancel','return','buying','archive'))]}"/>
+                        <!--            Admin Control            -->
+                        <!--                        <button string="Get First Unpaid Date" type="object" name="get_first_unpaid_installment_date" groups="loan.group_collection"/>-->
+                        <!--                        <button
+                        btn-primary" groups="loan.group_admin"/>-->
+                        <button name="get_compute_irr" string='IRR' type="object"
+                                class="btn-primary" groups="loan.group_admin"/>
+                        <button name="remove_fees_amount" string='Fees' type="object"
+                                class="btn-primary" groups="loan.group_admin"/>
+                        <button name="control_admin" string='ReCalculate' type="object"
+                                class="btn-primary" groups="loan.group_admin"
+                                confirm="Are you sure you want to do this?"/>
+                        <button name="delete_installments" string='Delete' type="object"
+                                class="btn-primary" groups="loan.group_admin"
+                                confirm="Are you sure you want to do this?"/>
+                        <button name="send_po_status" string='SEND PO' type="object"
+                                class="btn-primary" groups="loan.group_admin"
+                                confirm="Are you sure you want to do this?"/>
+                        <button name="archive_admin" string='Admin Archive' type="object"
+                                class="btn-primary" groups="loan.group_admin"
+                                confirm="Are you sure you want to do this?"/>
+                        <button name="close_admin" string='Admin Close' type="object"
+                                class="btn-primary" groups="loan.group_admin"
+                                confirm="Are you sure you want to do this?"/>
+                        <button name="disburse_admin" string='Admin Disburse' type="object"
+                                class="btn-primary" groups="loan.group_admin"
+                                confirm="Are you sure you want to do this?"/>
+                        <button name="action_admin_done" string='Admin buy nafaes' type="object"
+                                class="btn-primary" groups="loan.group_admin"/>
+                        <button name="open_admin" string='active' type="object"
+                                class="btn-primary" groups="loan.group_admin"/>
+                        <button name="cancel_admin" string='Admin Cancel' type="object"
+                                class="btn-primary" groups="loan.group_admin"/>
+                        <!--           The Button Currently Not Used            -->
+                        <button name="action_set_to_reject_credit"
+                                string="Reject" type="object" groups="loan.group_loan_approval"
+                                confirm="Are you sure you want to do this?" invisible="1"/>
+                        <button name="action_call_done" state="buying" string="Call Done"
+                                class="btn-primary" type="object"
+                                groups="loan.group_sales_cancel"
+                                attrs="{'invisible':[('state','in',('new','review done','create','decision','contract','disburse','active','early','close','reject','cancel','archive'))]}"
+                                invisible="1"/>
+                        <!--                        <button name="action_archive" state="reject" string="Archive"-->
+                        <!--                                class="btn-primary" type="object"-->
+                        <!--                                groups="loan.group_archive"-->
+                        <!--                                attrs="{'invisible':[('state','in',('review done','create','decision','approve','contract','buying','disburse','active','early','close','cancel','archive'))]}"-->
+                        <!--                                invisible="1"/>-->
+                        <field name="state" widget="statusbar"
+                               statusbar_visible=" "/>
+                        <button name="calculate_new_apr" string="Calculate New APR" type="object"
+                                class="btn btn-warning" groups="loan.group_customer_operation_manager"
+                                state="active,buying"/>
+                        <!--                        <button name="calculate_new_apr" string="Calculate New APR" type="object" class="btn btn-warning" groups="loan.group_customer_operation_manager" state="active,buying"/>-->
+                    </header>
+                    <sheet>
+                        <!--                        <div t-if="record.is_reschedule">-->
+                        <!--                            <div class="diagonal-green-bar"></div>-->
+                        <!--                        </div>-->
+                        <field name="seq_num"/>
+                        <field name="active" invisible="1"/>
+                        <group>
+                            <div>
+                                <group>
+                                    <field name="name" readonly="1"/>
+                                    <field name="identification_id"/>
+                                    <field name="as_of_date" groups="loan.group_admin"/>
+                                    <field name="cycle_id" groups="loan.group_admin"/>
+                                    <field name="gender_loan" groups="loan.group_admin"/>
+                                    <field name="applicant_type" groups="loan.group_admin"/>
+                                    <field name="product_status" groups="loan.group_admin"/>
+                                    <field name="loan_type" readonly="0" force_save="1"
+                                           attrs="{'readonly': [('state', 'in', ['active', 'early','close'])]}"/>
+                                    <field name="trigger_loan_type"
+                                           groups="loan.group_simah_access,loan.group_credit_l1"
+                                           attrs="{'readonly': [('state', 'in', ['active', 'early','close'])]}"/>
+                                    <field name="quotation_id" attrs="{'invisible': [('loan_type', '=', 3)]}"
+                                           readonly="1"/>
+                                    <field name="loan_amount"/>
+                                    <field name="nationality_code" groups="loan.group_admin"/>
+                                    <field name="loan_amount_negative" invisible="1"/>
+                                    <field name="loan_amount_positive"/>
+                                    <field name="currency_id" invisible="1"/>
+                                </group>
+                            </div>
+                            <!--                            attrs="{'readonly':[('state','!=',('draft','review done','create','cancel','reject','archive'))]}"-->
+                            <div>
+                                <group>
+                                    <field name="request_date_date" readonly="1"/>
+                                    <field name="hijri_date"/>
+                                    <field name="approve_date"
+                                           attrs="{'invisible':[('state','in',('new','decision','cancel','review done'))]}"
+                                           readonly="1"/>
+                                    <field name="cancel_date"
+                                           attrs="{'invisible':[('state','in',('simah','l1','l2','contract','pending','disburse','active','early','close','return','reject','buying','archive'))]}"
+                                           readonly="1"
+                                           groups="loan.group_user_tele_selas"/>
+                                    <field name="disbursement_date"
+                                           attrs="{'invisible':[('state','in',('new','decision','cancel','simah','create','approve','buying', 'contract','early','reject'))]}"
+                                           readonly="1"
+                                           groups='loan.group_user_finance'/>
+                                    <field name="close_date"
+                                           attrs="{'invisible':[('state','in',('new','decision','cancel','review done','create','approve','contract','disburse','active','early','reject'))]}"
+                                           readonly="1"/>
+                                    <field name="credit_user" groups="loan.group_loan_credit"
+                                           attrs="{'required':[('state','in',('simah','decision','cancel','create','approve','contract','disburse','active','early','reject'))], 'readonly': [('state', 'in', ['active','early','close'])]}"
+                                    />
+                                    <field name="crm_user_id" groups="loan.group_sales_exa_call"
+                                           attrs="{'required':[('state','in',('decision','cancel','create','contract','disburse','early'))]}"
+                                           readonly="1"/>
+                                    <field name="account_analytic" groups='loan.group_user_finance'/>
+                                    <field name="account_analytic_line" widget="many2many_tags"
+                                           groups='loan.group_user_finance'/>
+                                    <field name="company" invisible="1"/>
+                                    <field name="offer_number" invisible="1"/>
+                                    <field name="installment_type" readonly="1"/>
+                                    <field name="installment_frequency" groups="loan.group_admin"/>
+                                    <field name="branch"
+                                           attrs="{'readonly':[('state','!=',('new','review done','cancel','create','reject','archive'))]}"/>
+                                    <field name="fees" readonly="1"/>
+                                    <field name="tax_id" readonly="1"/>
+                                </group>
+                            </div>
+                        </group>
+                        <dive/>
+                        <group>
+                            <div>
+                                <group groups="loan.group_use_loan_admin">
+                                    <field name="loan_term" attrs="{'readonly':[('state','!=','simah')]}"/>
+                                    <field name="interest_amount"/>
+                                    <field name="paid_amount" readonly="1"/>
+                                    <field name="remaining_amount" readonly="1" force_save="1"/>
+                                    <field name="remaining_interest" readonly="1" force_save="1"
+                                           groups="loan.group_collection"/>
+                                    <field name="remaining_principle" readonly="1" force_save="1"
+                                           groups="loan.group_collection"/>
+                                    <field name="payment_status" groups="loan.group_admin"/>
+                                    <field name="late_amount"/>
+                                    <field name="early_amount"/>
+                                    <field name="fixed_remaining_amount" invisible="1" readonly="1" force_save="1"/>
+                                    <field name="loan_sum"/>
+                                    <field name="tax_id_fees" readonly="1"/>
+                                    <field name="source" invisible="1"/>
+                                    <field name="total_loan" style="color:Red;"/>
+                                    <field name="installment_start_date"/>
+                                    <field name="installment_end_date"
+                                           attrs="{'invisible': [('state', 'in', ['review done'])], 'readonly': [('state', 'in', ['active', 'approve','close','early'])]}"/>
+                                    <field name="loan_record" readonly="1" groups="loan.group_admin"/>
+                                    <field name="nafaes_amount" invisible="1"/>
+                                    <field name="down_payment_percent" style="color:Red;" invisible="1"/>
+                                    <field name="sanad_number" invisible="1"/>
+                                </group>
+                            </div>
+                            <div>
+                                <group groups="loan.group_use_loan_admin">
+                                    <field name="rate_per_month" widget="percentage"
+                                           attrs="{'readonly': [('state', '!=', 'simah')],'invisible': [('loan_term', '&lt;', 2)]}"/>
+                                    <field name="rate" readonly="1" widget="percentage" invisible="1"/>
+                                    <!--                                    <field name="apr" force_save="1" widget="percentage" readonly="0"-->
+                                    <!--                                           groups="loan.group_customer_operation"/>-->
+
+                                    <label for="apr" string="APR"/>
+                                    <div>
+                                        <field name="apr"
+                                               attrs="{'readonly': [('state', 'in', ['active', 'early','close'])]}"
+                                               groups="loan.group_customer_operation"/>
+                                        %
+                                    </div>
+
+                                    <field name="irr" force_save="1" widget="percentage"/>
+                                    <label for="new_apr" string="New APR"/>
+                                    <div>
+                                        <field name="new_apr" force_save="1"/>
+                                        %
+                                    </div>
+                                    <field name="yearly_irr" force_save="1" widget="percentage"/>
+                                    <field name="loan_limit_month" attrs="{'readonly':[('state','!=','review done')]}"
+                                           groups="loan.group_use_loan_admin" invisible="1"/>
+                                    <field name="iban" groups="loan.group_use_loan_admin" invisible="1"/>
+                                    <field name="phone_customer" groups="loan.group_sales_return"/>
+                                    <!--                                    <field name="loan_limit"/>-->
+                                    <field name="down_payment_loan" style="color:Red;"/>
+                                    <field name="installment_amount_loan" invisible="1"/>
+                                    <!--                                    <field name="simah_ids" invisible="1"/>-->
+                                    <field name="date_loan" invisible="1"/>
+                                    <field name="birth_date" invisible="1"/>
+                                    <field name="salary_net"/>
+                                    <field name="installment_month"/>
+                                    <field name="dbr_installment"/>
+                                    <field name="old_installment" invisible="1"/>
+                                    <field name="total_installment"/>
+                                    <!--                                    <field name="deduction_simah_before" widget="percentage" invisible="1"/>-->
+                                    <field name="simah_dbr" widget="percentage"/>
+                                    <field name="deduction_after" widget="percentage"/>
+                                    <!--                                    <field name="first_unpaid_installment" groups="loan.group_collection"/>-->
+                                    <field name="days_since_first_unpaid" groups="loan.group_collection"/>
+                                    <field name="bkt" groups="loan.group_collection"/>
+                                    <field name="report_file" filename="file_name" invisible="1"/>
+                                    <field name="obligation_id" invisible="0"/>
+                                    <field name="file_name" invisible="1"/>
+                                    <field name="show_close_button" invisible="1"/>
+                                </group>
+                            </div>
+                        </group>
+                        <notebook>
+                            <page string="Fuel Score" groups="loan.group_admin">
+                                <form>
+                                    <sheet>
+                                        <group>
+                                            <group>
+                                                <field name="fuel_evaluate_mini_range"/>
+                                                <field name="fuel_evaluate_max_range"/>
+                                                <field name="fuel_evaluate_value"/>
+
+                                            </group>
+                                            <group>
+                                                <field name="fuel_evaluate_arabic_reasons"/>
+                                                <field name="fuel_evaluate_english_reasons"/>
+                                                <field name="fuel_credit_instruments"/>
+                                            </group>
+                                        </group>
+                                        <group string="Fuel Score Details">
+                                            <group>
+                                                <field name="fuel_defaults_count"/>
+                                                <field name="fuel_defaults_amount"/>
+                                                <field name="last_earliest_loan"/>
+                                                <field name="fuel_total_limits"/>
+                                            </group>
+                                            <group>
+                                                <field name="fuel_total_liabilities"/>
+                                                <field name="fuel_ava_defaults"/>
+                                                <field name="fuel_total_inquiries"/>
+                                                <field name="limit_avar_requested"/>
+                                            </group>
+                                        </group>
+                                    </sheet>
+                                    <notebook>
+                                        <page string="Default">
+                                            <field name="score_default_line" readonly="1">
+                                                <tree editable="bottom">
+                                                    <field name="year" readonly="1"/>
+                                                    <field name="product_type" readonly="1"/>
+                                                </tree>
+                                            </field>
+                                        </page>
+                                    </notebook>
+                                    <notebook>
+                                        <page string="Enquiries">
+                                            <field name="score_enquiries_line" readonly="1">
+                                                <tree editable="bottom">
+                                                    <field name="year" readonly="1"/>
+                                                    <field name="product_type" readonly="1"/>
+                                                </tree>
+                                            </field>
+                                        </page>
+                                    </notebook>
+                                    <notebook>
+                                        <page string="Instrument">
+                                            <field name="score_instrument_line" readonly="1">
+                                                <tree editable="bottom">
+                                                    <field name="Product_type_categorization" readonly="1"/>
+                                                    <field name="status" readonly="1"/>
+                                                    <field name="credit_limits" readonly="1"/>
+                                                    <field name="installment_amounts" readonly="1"/>
+                                                    <field name="tenure" readonly="1"/>
+                                                </tree>
+                                            </field>
+                                        </page>
+                                    </notebook>
+                                </form>
+                            </page>
+                            <page string='SIMAH' groups="loan.group_view_simah">
+                                <form>
+                                    <header>
+                                        <button name="action_simah_api" string="Simah"
+                                                class="btn-primary" type="object"
+                                                confirm="Are you sure you want to do this?"
+                                                attrs="{'invisible': [('bool_field', '=', True)]}"/>
+                                        <button name="action_reset" type="object" string="Reset"
+                                                groups="base.group_system"
+                                                confirm="Are you sure you want to do this?"/>
+                                        <button name="calculate_dbr_amount" type="object" string="calculate"
+                                                invisible="1"/>
+                                    </header>
+                                    <sheet>
+                                        <group>
+                                            <group>
+                                                <field name="bool_field" invisible="1"/>
+                                                <!--                                                <field name="name" options='{"no_open": True, "no_create": True}'/>-->
+                                                <field name="identification_id"/>
+                                                <field name="expiry_date" groups="loan.group_admin"/>
+                                                <field name="dbr_installment"/>
+                                                <field name="simah_dbr" style="color:#008040;"/>
+                                                <!--                                                <field name="salary_rate" groups="loan.group_admin"/>-->
+                                                <field name="mtg" widget="boolean_toggle"/>
+                                                <field name="mtg_installment"
+                                                       attrs="{'invisible':[('mtg','=',False)]}"/>
+                                                <!--                                                <field name="is_ind" widget="boolean_toggle"/>-->
+                                            </group>
+                                            <group>
+                                                <field name="simah_city_id"
+                                                       options='{"no_open": True, "no_create": True}'/>
+                                                <field name="city_id" groups="loan.group_admin"/>
+                                                <field name="hijri_birth_of_date" groups="loan.group_admin"/>
+                                                <field name="gender" groups="loan.group_admin"/>
+                                                <field name="loan_amount"/>
+                                            </group>
+                                        </group>
+                                        <group string="Data">
+                                            <div>
+                                                <group>
+                                                    <field name="reportDate" readonly="1"/>
+                                                    <field name="enquiryNumber" readonly="1"/>
+                                                    <field name="numberOfApplicants" readonly="1"/>
+                                                    <field name="referenceNumber" readonly="1"/>
+                                                    <field name="memberType_code" readonly="1"/>
+                                                </group>
+                                            </div>
+                                            <div>
+                                                <group>
+                                                    <field name="enquiryType" readonly="1"/>
+                                                    <field name="productType" readonly="1"/>
+                                                    <field name="accountType" readonly="1"/>
+                                                    <field name="amount" readonly="1"/>
+                                                    <field name="statusReport_code" readonly="1"/>
+                                                </group>
+                                            </div>
+                                        </group>
+                                        <!--                        <canvas width="800" height="150" style="border:1px solid grey"/>-->
+                                        <notebook>
+                                            <page string="Score and Narrative">
+                                                <field name="simahScore" readonly="1">
+                                                    <tree editable="bottom">
+                                                        <field name="score"/>
+                                                        <field name="minimumScore"/>
+                                                        <field name="maximumScore"/>
+                                                        <field name="simahScoreCodes"/>
+                                                    </tree>
+                                                </field>
+                                            </page>
+                                        </notebook>
+                                        <group string="Primary" style="text-align:center;"/>
+                                        <group>
+                                            <group string="Data Provided VS Available">
+                                                <field name="applicantTypeNameEN" readonly="1"/>
+                                                <field name="applicantTypeCode" readonly="1"/>
+                                                <field name="iDExpiryDate" readonly="1"/>
+                                                <field name="familyNameAr" readonly="1"/>
+                                                <field name="firstNameAr" readonly="1"/>
+                                                <field name="secondNameAr" readonly="1"/>
+                                                <field name="thirdNameAr" readonly="1"/>
+                                                <field name="customerNameAr" readonly="1"/>
+                                                <field name="dateOfBirth" readonly="1"/>
+                                                <field name="gender" readonly="1"/>
+                                            </group>
+                                            <group string="Summary">
+                                                <field name="summActiveCreditInstruments" readonly="1"/>
+                                                <field name="summEarliestIssueDate" readonly="1"/>
+                                                <field name="summTotalGuaranteedLimits" readonly="1"/>
+                                                <field name="summTotalGuaranteedLiablilites" readonly="1"/>
+                                                <field name="summCurrentDelinquentBalance" readonly="1"/>
+                                                <field name="summPreviousEnquiresThisMonth" readonly="1"/>
+                                                <field name="statusNameEN" readonly="1"/>
+                                            </group>
+                                        </group>
+                                        <notebook>
+                                            <page string='Enquiries'>
+                                                <field name="simahEnquiries" readonly="1">
+                                                    <tree editable="bottom">
+                                                        <field name="prevEnqDate"/>
+                                                        <field name="memberCode"/>
+                                                        <field name="enqTypeCode"/>
+                                                        <field name="code"/>
+                                                        <field name="prevEnqAmount"/>
+                                                        <field name="prevEnquirerNameAr"/>
+                                                    </tree>
+                                                </field>
+                                            </page>
+                                        </notebook>
+                                        <notebook>
+                                            <page string='Instrument'>
+                                                <field name="creditInstrument" readonly="1">
+                                                    <tree editable="bottom">
+                                                        <field name="memberCode"/>
+                                                        <field name="code"/>
+                                                        <field name="ciAccountNumber"/>
+                                                        <field name="ciLimit"/>
+                                                        <field name="ciTenure"/>
+                                                        <field name="ciInstallmentAmount" style="color:#008040;"
+                                                               sum="ciInstallmentAmount"/>
+                                                        <field name="ciOutstandingBalance"/>
+                                                        <field name="ciLastAmountPaid"/>
+                                                        <field name="ciAsOfDate"/>
+                                                        <field name="ciIssuedDate"/>
+                                                        <field name="ciExpirationDate"/>
+                                                        <field name="ciClosingDate"/>
+                                                        <field name="creditInstrumentStatusCode"/>
+                                                        <field name="ciPastDue"/>
+                                                        <field name="ciLastPaymentDate"/>
+                                                        <field name="ciSummary"/>
+                                                        <field name="ciNextDueDate"/>
+                                                        <field name="paymentFrequencyCodeName"/>
+                                                        <field name="salaryAssignmentFlagCode"/>
+                                                        <field name="total_installment" sum="total_installment"/>
+                                                    </tree>
+                                                </field>
+                                            </page>
+                                        </notebook>
+                                        <notebook>
+                                            <page string="Primary Default">
+                                                <field name="simahDefault" readonly="1">
+                                                    <tree editable="bottom">
+                                                        <field name="textAr"/>
+                                                        <field name="memberNameAR"/>
+                                                        <field name="pDefAccountNo"/>
+                                                        <field name="pDefDateLoaded"/>
+                                                        <field name="pDefOriginalAmount"/>
+                                                        <field name="pDefOutstandingBalance"/>
+                                                        <field name="defaultStatusDescAr"/>
+                                                        <field name="pDefSetteledDate"/>
+                                                    </tree>
+                                                </field>
+                                            </page>
+                                        </notebook>
+                                        <notebook>
+                                            <page string="Guarantor Default">
+                                                <field name="guarantorDefault" readonly="1">
+                                                    <tree editable="bottom">
+                                                        <field name="textAr"/>
+                                                        <field name="memberNameAR"/>
+                                                        <field name="gDefAccountNo"/>
+                                                        <field name="gDefDateLoaded"/>
+                                                        <field name="gDefOriginalAmount"/>
+                                                        <field name="gDefOutstandingBalance"/>
+                                                        <field name="defaultStatusDescAr"/>
+                                                        <field name="gDefSetteledDate"/>
+                                                    </tree>
+                                                </field>
+                                            </page>
+                                        </notebook>
+                                        <notebook>
+                                            <page string="simah Cheques">
+                                                <field name="simahCheques" readonly="1">
+                                                    <tree editable="bottom">
+                                                        <field name="textAr"/>
+                                                        <field name="memberNameAR"/>
+                                                        <field name="bcCheqDateLoaded"/>
+                                                        <field name="bcChequeNumber"/>
+                                                        <field name="bcBalance"/>
+                                                        <field name="bcOutstandingBalance"/>
+                                                        <field name="defaultStatusDescAr"/>
+                                                        <field name="bcSetteledDate"/>
+                                                    </tree>
+                                                </field>
+                                            </page>
+                                        </notebook>
+                                        <notebook>
+                                            <page string="simah judgement">
+                                                <field name="simahJudgement" readonly="1">
+                                                    <tree editable="bottom">
+                                                        <field name="executionDate"/>
+                                                        <field name="resolutionNumber"/>
+                                                        <field name="cityNameAr"/>
+                                                        <field name="courtNameAr"/>
+                                                        <field name="legalCaseNumber"/>
+                                                        <field name="loadedDate"/>
+                                                        <field name="originalClaimedAmount"/>
+                                                        <field name="outstandingBalance"/>
+                                                        <field name="settlementDate"/>
+                                                        <field name="statusNameAr"/>
+                                                    </tree>
+                                                </field>
+                                            </page>
+                                        </notebook>
+                                        <notebook>
+                                            <page string="Public Notices">
+                                                <field name="publicNotices" readonly="1">
+                                                    <tree editable="bottom">
+                                                        <field name="dataLoad"/>
+                                                        <field name="noticeType"/>
+                                                        <field name="publication"/>
+                                                        <field name="text"/>
+                                                    </tree>
+                                                </field>
+                                            </page>
+                                        </notebook>
+                                        <group string="Defaults">
+                                            <group>
+                                                <field name="summDefaults" readonly="1"/>
+                                                <field name="summTotalLimits" readonly="1"/>
+                                                <field name="summTotalLiablilites" readonly="1"/>
+                                            </group>
+                                            <group>
+                                                <field name="summTotalDefaults" readonly="1"/>
+                                                <field name="summPreviousEnquires" readonly="1"/>
+                                                <field name="summGuaranteedCreditInstruments" readonly="1"/>
+                                            </group>
+                                        </group>
+                                        <notebook>
+                                            <page string="Address">
+                                                <field name="simahAddress" readonly="1">
+                                                    <tree editable="bottom">
+                                                        <field name="addressTypeCode"/>
+                                                        <field name="districtAr"/>
+                                                        <field name="adrsAddressLineFirstDescAr"/>
+                                                        <field name="adrsPOBox"/>
+                                                        <field name="adrsCityDescAr"/>
+                                                        <field name="adrsPostalCode"/>
+                                                        <field name="buildingNumber"/>
+                                                        <field name="adrsDateLoaded"/>
+                                                    </tree>
+                                                </field>
+                                            </page>
+                                        </notebook>
+                                        <notebook>
+                                            <page string="Contact Numbers">
+                                                <field name="simahContact" readonly="1">
+                                                    <tree editable="bottom">
+                                                        <field name="conCode"/>
+                                                        <field name="contactNumberTypeDescriptionAr"/>
+                                                        <field name="conAreaCode"/>
+                                                        <field name="conPhoneNumber"/>
+                                                        <field name="conExtension"/>
+                                                    </tree>
+                                                </field>
+                                            </page>
+                                        </notebook>
+                                        <notebook>
+                                            <page string="Occupations and Employers">
+                                                <field name="simahEmployee" readonly="1">
+                                                    <tree editable="bottom">
+                                                        <field name="employerStatusTypeCode"/>
+                                                        <field name="empEmployerNameDescAr"/>
+                                                        <field name="empOccupationDescAr"/>
+                                                        <field name="empDateOfEmployment"/>
+                                                        <field name="adrsCityDescAr"/>
+                                                        <field name="empTotalIncome"/>
+                                                        <field name="empDateLoaded"/>
+                                                    </tree>
+                                                </field>
+                                            </page>
+                                        </notebook>
+                                        <group>
+                                            <!--                                            <field name="discTextDescAr" widget="textarea_ltr"/>-->
+                                            <!--                                            <field name="discTextDescAr" widget="textarea"/>-->
+                                        </group>
+                                        <group>
+                                            <field name="discTextDescEn"/>
+                                        </group>
+                                    </sheet>
+                                    <!--                                    <div class="oe_chatter">-->
+                                    <!--                                        <field name="message_follower_ids"/>-->
+                                    <!--                                        <field name="activity_ids"/>-->
+                                    <!--                                        <field name="message_ids"/>-->
+                                    <!--                                    </div>-->
+                                </form>
+                            </page>
+                            <page string='Installments' groups="loan.group_installment_access">
+                                <field name="installment_ids" readonly="1">
+                                    <tree editable="bottom">
+                                        <field name="identification" invisible="1"/>
+                                        <field name="i_num" invisible="1"/>
+                                        <field name="seq_name"/>
+                                        <field name="date"/>
+                                        <field name="principal_amount" sum="principal_amount"/>
+                                        <field name="interest_amount" sum="interest_amount"/>
+                                        <field name="installment_amount" string='Installment' sum="installment_amount"/>
+                                        <field name="total_ascending_installment" invisible="1"/>
+                                        <field name="ascending_installment" invisible="1"/>
+                                        <field name="installment_due" invisible="1"/>
+                                        <field name="amount_paid" invisible="0"/>
+                                        <field name="remaining_amount" invisible="0"/>
+                                        <field name="installment_amount_early" string='Early Installments'
+                                               invisible="1"/>
+                                        <field name="state" decoration-success="state == 'paid'"
+                                               decoration-warning="state == 'partial'"
+                                               decoration-danger="state == 'unpaid'"
+                                               widget="badge"/>
+                                        <field name="currency_id" invisible="1"/>
+                                        <field name="loan_state" invisible="1"/>
+                                        <button name="action_paid_installment"
+                                                attrs="{'invisible':['|', '|', ('loan_state', '!=', 'active'), ('state', '=', 'paid'), ('is_reschedule', '=', True)]}"
+                                                string="Pay"
+                                                class="btn-primary" type="object"
+                                                groups="account.group_account_invoice"/>
+                                        <field name="partial_payment_status" invisible="1"/>
+                                        <field name="is_reschedule" invisible="1"/>
+
+                                        <!-- <button name="action_early_installment"
+                                                attrs="{'invisible':['|',('loan_state','!=','early'),('state','=','paid')]}"
+                                                string="Early Pay"
+                                                class="btn-primary" type="object"
+                                                groups="account.group_account_invoice"/> -->
+                                    </tree>
+                                </field>
+                            </page>
+
+                            <page string='Reschedule'
+                                  attrs="{'invisible': [('state', '!=', 'active')]}"
+                                  groups="loan.group_reschedule_view">
+                                <group>
+                                    <group>
+                                        <button type="object" name="reschedule_installment" string="Reschedule"
+                                                class="btn-primary"
+                                                groups="loan.group_customer_operation_manager"
+                                                attrs="{'invisible': [('is_reschedule', '=', True)]}"
+                                        />
+                                        <button name="reschedule_action_reset" type="object" string="Reset"
+                                                groups="base.group_system"
+                                                confirm="Are you sure you want to do this?"
+                                                attrs="{'invisible': [('is_reschedule', '=', False)]}"/>
+                                    </group>
+                                    <group>
+                                        <field name="reschedule_date" readonly="1"/>
+                                    </group>
+                                </group>
+                                <group>
+                                    <group>
+                                        <field name="reschedule_installment_start_date" required="0"/>
+                                    </group>
+                                    <group>
+                                        <field name="reschedule_installment_end_date" readonly="1"/>
+                                    </group>
+                                </group>
+                                <br/>
+                                <br/>
+                                <group string="Reschedule Loan" colspan="3">
+                                    <group>
+                                        <group>
+                                            <field name="reschedule_loan_amount"/>
+                                            <field name="reschedule_loan_term" required="0"/>
+                                            <field name="reschedule_irr" widget="percentage" force_save="1"/>
+                                        </group>
+                                        <group>
+                                            <field name="reschedule_interest_amount"/>
+                                            <field name="reschedule_installment_amount" readonly="1"/>
+                                            <field name="reschedule_new_apr"/>
+                                        </group>
+                                    </group>
+                                    <group>
+                                        <group>
+                                            <field name="reschedule_total_loan"/>
+                                            <field name="reschedule_interest_rate" widget="percentage"/>
+                                            <field name="is_reschedule" readonly="1"/>
+                                        </group>
+                                    </group>
+                                </group>
+                                <group string="Remaining Reschedule Loan" colspan="3">
+                                    <group>
+                                        <group>
+                                            <field name="reschedule_remaining_principle_amount" force_save="1"/>
+                                            <field name="reschedule_paid_amount" force_save="1"/>
+                                        </group>
+                                        <group>
+                                            <field name="reschedule_remaining_interest_amount" force_save="1"/>
+                                            <field name="reschedule_late_amount" force_save="1"/>
+                                        </group>
+                                    </group>
+                                    <group>
+                                        <group>
+                                            <field name="reschedule_remaining_total_amount" force_save="1"/>
+                                            <field name="reschedule_early_amount" force_save="1"/>
+                                        </group>
+                                    </group>
+                                </group>
+
+                                <group>
+                                    <button type="object" name="get_remaining_amount" string="Remaining"
+                                            class="btn-primary" invisible="1"
+                                    />
+                                    <button type="object" name="reschedule_get_compute_irr"
+                                            string="Reschedule IRR" invisible="1"/>
+                                </group>
+                                <field name="reschedule_installment_ids" readonly="1">
+                                    <tree editable="bottom">
+                                        <field name="identification" invisible="1"/>
+                                        <field name="i_num" invisible="1"/>
+                                        <field name="seq_name"/>
+                                        <field name="date"/>
+                                        <field name="principal_amount" sum="principal_amount"/>
+                                        <field name="interest_amount" sum="interest_amount"/>
+                                        <field name="installment_amount" string='Installment' sum="installment_amount"/>
+                                        <field name="amount_paid" invisible="0"/>
+                                        <field name="remaining_amount" invisible="0"/>
+                                        <field name="total_ascending_installment" invisible="1"/>
+                                        <field name="ascending_installment" invisible="1"/>
+                                        <field name="installment_amount_early" string='Early Installments'
+                                               invisible="1"/>
+                                        <field name="state" decoration-success="state == 'paid'"
+                                               decoration-warning="state == 'partial'"
+                                               decoration-danger="state == 'unpaid'"
+                                               widget="badge"/>
+                                        <field name="currency_id" invisible="1"/>
+                                        <field name="loan_state" invisible="1"/>
+                                        <button name="action_paid_reschedule_installment"
+                                                attrs="{'invisible':[('state','=','paid')]}"
+                                                string="Pay"
+                                                class="btn-primary" type="object"
+                                                groups="account.group_account_invoice"/>
+                                    </tree>
+                                </field>
+                            </page>
+
+
+                            <page string='Accounting'
+                                  attrs="{'invisible':[('state','in',['new','review done','decision','cancel','reject'])]}"
+                                  groups="loan.group_accounting_move">
+                                <group>
+                                    <group>
+                                        <field name="disburse_account" attrs="{'readonly':[('state','!=','approve')]}"/>
+                                        <field name="disburse_journal"
+                                               attrs="{'readonly':[('state','!=','approve')]}"/>
+                                    </group>
+                                    <group>
+                                        <field name="disburse_journal_entry" readonly="1"
+                                               attrs="{'invisible': [('disburse_journal_entry', '=', False)]}"/>
+                                        <field name="disburse_payment_id" readonly="1"/>
+                                        <field name="early_payment_id" readonly="1"/>
+                                        <field name="early_move_id" readonly="1"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Terminate" groups="loan.group_loan_credit" invisible="1">
+                                <group>
+                                    <group>
+                                        <field name="terminate_user_id" readonly="1"/>
+                                        <field name="terminate_date" readonly="1"/>
+                                    </group>
+                                    <br/>
+                                    <group>
+                                        <field name="terminate_reason"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string='Reject Reason' attrs="{'invisible':[('state','=','active')]}">
+                                <group>
+                                    <field name="reject_user_id" readonly="0"/>
+                                    <field name="reject_date" readonly="1"/>
+                                </group>
+                                <br/>
+                                <group>
+                                    <field name="reject_reason" groups="loan.group_admin"/>
+                                    <field name="new_reject_reason"
+                                           attrs="{'readonly': [('state', 'not in', ['simah', 'l1', 'l2'])]}"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="request_tree_view" model="ir.ui.view">
+            <field name="name">res.partner.view.inherit</field>
+            <field name="model">loan.order</field>
+            <field name="type">tree</field>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <tree decoration-info="state in ['new', 'simah']" decoration-muted="state == 'cancel'"
+                      sample="1">
+                    <field name="seq_num"/>
+                    <field name="name"/>
+                    <field name="loan_type" width="1%" groups="loan.group_simah_access"/>
+                    <field name="request_date" width="5%" groups="loan.group_simah_access"/>
+                    <field name="loan_amount" sum="loan_amount" width="2%" groups="loan.group_simah_access"/>
+                    <field name="loan_sum" sum="loan_sum" width="2%" groups="loan.group_simah_access"/>
+                    <field name="rate" groups="loan.group_simah_access"/>
+                    <field name="state" decoration-success="state == 'active'"
+                           decoration-warning="state == 'contract'"
+                           decoration-info="state == 'simah'"/>
+                    <field name="credit_user" groups="loan.group_simah_access"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="request_kanban_view" model="ir.ui.view">
+            <field name="name">res.partner.view.inherit</field>
+            <field name="model">loan.order</field>
+            <field name="arch" type="xml">
+                <kanban class="o_res_partner_kanban">
+                    <field name="seq_num"/>
+                    <field name="name"/>
+                    <field name="request_date" width="5%"/>
+                    <field name="loan_amount" sum="loan_amount" width="2%"/>
+                    <field name="state"/>
+                    <field name="user"/>
+                    <field name="reject_date"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="oe_kanban_details">
+                                    <strong class="o_kanban_record_title">
+                                        <field name="seq_num"/>
+                                    </strong>
+                                </div>
+                                <div>
+                                    <field name="name"/>
+                                </div>
+                                <div>
+                                    <field name="loan_amount" sum="loan_amount" width="2%"/>
+                                </div>
+                                <div>
+                                    <field name="state" style="color:Red;"/>
+                                </div>
+                                <div>
+                                    <field name="credit_user"/>
+                                </div>
+                                <div>
+                                    <field name="request_date_date"/>
+                                </div>
+
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        <record id="customer_smart_button" model="ir.ui.view">
+            <field name="name">customer.buttons</field>
+            <field name="model">loan.order</field>
+            <field name="inherit_id" ref="loan.request_form_view"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='seq_num']" position="before">
+                    <div class="oe_button_box" name="button_box" position="inside">
+                        <button class="oe_stat_button" type="object" name="get_contact"
+                                icon="fa-user-o">
+                            <field string="Contact" name="contact_count" widget="statinfo"/>
+                        </button>
+                        <button class="oe_stat_button" type="object" name="get_crm"
+                                icon="fa-star">
+                            <field string="CRM" name="crm_count" widget="statinfo"/>
+                        </button>
+                        <button class="oe_stat_button" type="object" name="get_loan"
+                                icon="fa-usd">
+                            <field string="Loan" name="loan_count" widget="statinfo"/>
+                        </button>
+                        <button class="oe_stat_button" type="object" name="get_simah"
+                                icon="fa-credit-card">
+                            <field string="Simah" name="simah_count" widget="statinfo"/>
+                        </button>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <!--        <record id="action_loan_pipeline" model="ir.actions.server">-->
+        <!--            <field name="name">My Pipeline</field>-->
+        <!--            <field name="model_id" ref="crm.model_crm_team"/>-->
+        <!--            <field name="state">code</field>-->
+        <!--            <field name="groups_id" eval="[(4, ref('base.group_user'))]"/>-->
+        <!--            <field name="code">action = model.action_loan_pipeline()</field>-->
+        <!--        </record>-->
+
+        <record id="customer_request_search_view" model="ir.ui.view">
+            <field name="name">loan.order.search</field>
+            <field name="model">loan.order</field>
+            <field name="arch" type="xml">
+                <search>
+                    <filter name="filter_active" string="Active" domain="[('active','=',True)]"/>
+                    <filter name="filter_inactive" string="Archived" domain="[('active','=',False)]"/>
+                    <field name="seq_num"/>
+                    <field name="name"/>
+                    <field name="identification_id"/>
+                    <field name="state"/>
+                    <filter string="Credit V" name="state" domain="[('state' , '=' , 'simah')]"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Loan Request" name="state" context="{'group_by': 'state'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="request_action" model="ir.actions.act_window">
+            <field name="name">Loan Request</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">loan.order</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                </p>
+            </field>
+        </record>
+
+        <record id="action_loan_approve" model="ir.actions.act_window">
+            <field name="name">Loan Request Approval</field>
+            <field name="res_model">loan.order</field>
+            <field name="domain">[('state','in',['active'])]</field>
+            <field name="view_mode">kanban,tree,form</field>
+        </record>
+
+        <record id="action_loan_close" model="ir.actions.act_window">
+            <field name="name">Loan Request Close</field>
+            <field name="res_model">loan.order</field>
+            <field name="domain">[('state','in',['close'])]</field>
+            <field name="view_mode">kanban,tree,form</field>
+        </record>
+
+        <record id="action_server_send_massage_to_active_customer" model="ir.actions.server">
+            <field name="name">Send Message To Active Customer</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_loan_order"/>
+            <field name="binding_model_id" ref="model_loan_order"/>
+            <field name="state">code</field>
+            <field name="groups_id" eval="[(4, ref('loan.group_collection'))]"/>
+            <field name="code">records.send_message_to_active_customer()</field>
+        </record>
+
+
+        <!--        <record id="loan_request" model="ir.actions.act_window">-->
+        <!--            <field name="context">{'default_name': active_id}</field>-->
+        <!--            <field name="name">Loan Request</field>-->
+        <!--            <field name="type">ir.actions.act_window</field>-->
+        <!--            <field name="res_model">loan.order</field>-->
+        <!--            <field name="view_mode">form</field>-->
+        <!--        </record>-->
+
+        <!--        <record id="view_loan" model="ir.actions.act_window">-->
+        <!--            <field name="name">Loan Request</field>-->
+        <!--            <field name="type">ir.actions.act_window</field>-->
+        <!--            <field name="res_model">loan.order</field>-->
+        <!--            <field name="view_mode">tree</field>-->
+        <!--        </record>-->
+
+
+        <!--        <record id="action_delete_interest_amount" model="ir.actions.act_window">-->
+        <!--            <field name="name">Early Repayment</field>-->
+        <!--            <field name="type">ir.actions.act_window</field>-->
+        <!--            <field name="res_model">early.payment</field>-->
+        <!--            <field name="view_mode">form</field>-->
+        <!--            <field name="view_id" ref="loan.view_early_payment"/>-->
+        <!--            <field name="target">new</field>-->
+        <!--        </record>-->
+
+        <!--        <record model="ir.actions.server" id="total_deduction_after">-->
+        <!--            <field name="name">calculate DBR</field>-->
+        <!--            <field name="model_id" ref="loan.model_loan_order"/>-->
+        <!--            <field name="binding_model_id" ref="loan.model_loan_order"/>-->
+        <!--            <field name="binding_view_types">list,</field>-->
+        <!--            <field name="state">code</field>-->
+        <!--            <field name="code">-->
+        <!--                action = records.total_deduction_after()-->
+        <!--            </field>-->
+        <!--        </record>-->
+
+        <menuitem name="Loan"
+                  id="loan_root"
+                  sequence="11"
+                  action="loan.request_action"
+                  groups="loan.group_use_loan_admin,loan.group_use_loan_user"
+                  web_icon="loan,static/description/icon.png"/>
+
+        <menuitem name="Loan"
+                  id="loan_id"
+                  parent="loan_root"
+                  action="account.res_partner_action_customer"
+                  sequence="2"
+        />
+
+        <menuitem name="Loan Request"
+                  id="loan_request_id"
+                  parent="loan_id"
+                  action="loan.request_action"
+                  sequence="3"/>
+
+
+        <menuitem name="Loan Request Approval"
+                  id="loan_approval_id"
+                  parent="loan_id"
+                  action="loan.action_loan_approve"
+                  sequence="6"/>
+
+        <menuitem name="Loan Request Close"
+                  id="loan_close_id"
+                  parent="loan_id"
+                  action="loan.action_loan_close"
+                  sequence="8"/>
+
+        <menuitem name="Customer"
+                  id="customer_id"
+                  parent="helpdesk.menu_helpdesk_root"
+                  action="account.res_partner_action_customer"
+                  sequence="30"
+        />
+
+        <!--        <menuitem name="All Contracts"-->
+        <!--                  id="all_contracts"-->
+        <!--                  parent="loan_root"-->
+        <!--                  action="azm_contract.all_contracts_action"-->
+        <!--                  sequence="9"-->
+        <!--        />-->
+    </data>
+</odoo>

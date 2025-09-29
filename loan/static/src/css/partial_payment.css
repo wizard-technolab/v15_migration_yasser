@@ -1,0 +1,32 @@
+.o_data_row.decoration-info {
+    position: relative;
+}
+
+.o_data_row.decoration-info::before {
+    content: "PARTIAL";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #28a745;
+    color: white;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: bold;
+    transform: rotate(45deg);
+    transform-origin: top right;
+    width: 80px;
+    text-align: center;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.text-partial {
+    color: #3498db; /* Blue text for Partial */
+}
+
+.text-unpaid {
+    color: #e74c3c; /* Red text for Unpaid */
+}
+
+.text-paid {
+    color: #2ecc71; /* Green text for Paid */
+}

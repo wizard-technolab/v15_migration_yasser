@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <template id="health_declaration_template">
+
+            <t t-call="web.html_container">
+                <t t-call="partner_reports.generic_report_header_footer">
+                </t>
+                <t t-call="web.external_layout">
+                    <t t-foreach="docs" t-as="o">
+                        <t t-set="o" t-value="o.with_context(lang='en_US')" />
+                        <div class="page" dir="rtl">
+                            <!-- first row of tables -->
+                            <div class="row" style="font-size:16px!important;margin-top:60px;">
+                                <div class="col-7 text-right">
+                                    <table class="table table-bordered">
+                                        <tbody>
+                                            <tr style="border:1px solid #8ac286;background-color:white!important;">
+                                                <td style="border:1px solid #8ac286;" colspan="1" dir="rtl">
+                                                    <span style="font-size:18px;">الإسم الرباعي بالكامل، </span>
+                                                    <span style="font-size:18px;">full Name</span>
+                                                </td>
+                                                <td colspan="1" style="border:1px solid #8ac286;background-color:white!important;">
+                                                    <span style="font-size:18px;">
+                                                         <t t-esc="o.name"/>
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                            <tr style="border:1px solid #8ac286;background-color:#d1dec3!important;">
+                                                <td style="border:1px solid #8ac286;" colspan="1" dir="rtl">
+                                                    <span style="font-size:18px;">تاريخ الميلاد، </span>
+                                                    <span style="font-size:18px;">Date of Birth</span>
+                                                </td>
+                                                <td colspan="1" style="font-size:18px;border:1px solid #8ac286;background-color:#d1dec3!important;">
+                                                    <t t-esc="o.birth_date"/>
+                                                </td>
+                                            </tr>
+                                            <tr style="border:1px solid #8ac286;background-color:white!important;">
+                                                <td style="border:1px solid #8ac286;" colspan="1" dir="rtl">
+                                                    <span style="font-size:18px;">مكان الميلاد، </span>
+                                                    <span style="font-size:18px;">Place of Birth</span>
+                                                </td>
+                                                <td colspan="1" style="font-size:18px;border:1px solid #8ac286;background-color:white!important;">
+                                                    <t t-esc="o.place_of_birth"/>
+                                                </td>
+                                            </tr>
+                                            <tr style="border:1px solid #8ac286;background-color:#d1dec3!important;">
+                                                <td style="border:1px solid #8ac286;" colspan="1" dir="rtl">
+                                                    <span style="font-size:18px;">عنوان السكن الحالي، </span>
+                                                    <span style="font-size:18px;">Address</span>
+                                                </td>
+                                                <td colspan="1" style="font-size:18px;border:1px solid #8ac286;background-color:#d1dec3!important;">
+                                                    <t t-esc="o.address"/>
+                                                </td>
+                                            </tr>
+                                            <tr style="border:1px solid #8ac286;background-color:white!important;">
+                                                <td style="border:1px solid #8ac286;" colspan="1" dir="rtl">
+                                                    <span style="font-size:18px;">مبلغ القرض، </span>
+                                                    <span style="font-size:18px;">Loan Period</span>
+                                                </td>
+                                                <td colspan="1" style="font-size:18px;border:1px solid #8ac286;background-color:white!important;">
+                                                    <t t-esc="o.loan_amount"/>
+                                                </td>
+                                            </tr>
+                                            <tr style="border:1px solid #8ac286;background-color:#d1dec3!important;">
+                                                <td style="border:1px solid #8ac286;" colspan="1" dir="rtl">
+                                                    <span style="font-size:18px;">مدة الغرض، </span>
+                                                    <span style="font-size:18px;">Loan Period</span>
+                                                </td>
+                                                <td colspan="1" style="font-size:18px;border:1px solid #8ac286;background-color:#d1dec3!important;">
+                                                    <t t-esc="o.loan_period"/>
+                                                </td>
+                                            </tr>
+                                            <tr style="border:1px solid #8ac286;background-color:white!important;">
+                                                <td colspan="1" style="border:1px solid #8ac286;background-color:white!important;" dir="rtl">
+                                                    <span style="font-size:18px; color:black;">أرقام التواصل، </span>
+                                                    <span style="font-size:18px; color:black;">Contact info</span>
+                                                </td>
+                                                <td colspan="1" style="font-size:18px;border:1px solid #8ac286;background-color:white!important;color:black;">
+                                                    <t t-esc="o.phone"/>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-5" dir="rtl">
+                                    <div class="row">
+                                        <div class="col-1"></div>
+                                        <div class="col-10">
+                                            <div class="row">
+                                                <div class="col-6 text-center" style="border:1px solid #8ac286;">
+                                                    <span style="font-weight:bold;font-size:18px;">الوزن</span><br/>
+                                                    <span style="font-weight:bold;font-size:18px;">Weight</span>
+                                                </div>
+                                                <div class="col-6 text-center" style="border:1px solid #8ac286;">
+                                                    <span style="font-weight:bold;font-size:18px;">الطول</span><br/>
+                                                    <span style="font-weight:bold;font-size:18px;">Height</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6 text-center" style="border:1px solid #8ac286;height:50px;">
+                                                    <span style="font-weight:bold;font-size:18px;">
+                                                        <t t-esc="o.weight"/>
+                                                    </span><br/>
+                                                </div>
+                                                <div class="col-6 text-center" style="border:1px solid #8ac286;height:50px;">
+                                                    <span style="font-weight:bold;font-size:18px;">
+                                                        <t t-esc="o.Height"/>
+                                                    </span><br/>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12 text-center" style="border:1px solid #8ac286;height:50px;">
+                                                    <span style="font-weight:bold;font-size:18px;">
+                                                        الحالة الإجتماعية
+                                                    </span>
+                                                    <span style="font-weight:bold;font-size:18px;">
+                                                        Marital status
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6 text-center" style="border:1px solid #8ac286;height:50px;">
+                                                    <t t-if="o.martial_status == 'single'"> <input type="checkbox" style="margin-left:15px;" checked="True"/></t>
+                                                    <t t-else=""> <input type="checkbox" style="margin-left:15px;"/></t>
+                                                     <span style="font-weight:bold;font-size:18px;">اعزب</span>
+                                                </div>
+                                                <div class="col-6 text-center" style="border:1px solid #8ac286;height:50px;">
+                                                    <t t-if="o.martial_status == 'married'"> <input type="checkbox" style="margin-left:15px;" checked="True"/></t>
+                                                    <t t-else=""> <input type="checkbox" style="margin-left:15px;"/></t>
+                                                    <span style="font-weight:bold;font-size:18px;">متزوج</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12 text-center" style="border:1px solid #8ac286;height:50px;">
+                                                    <span style="font-weight:bold;font-size:18px;">
+                                                        طبيعة العمل
+                                                    </span>
+                                                    <span style="font-weight:bold;font-size:18px;">
+                                                        Work nature
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6 text-center" style="border:1px solid #8ac286;height:50px;">
+                                                    <t t-if="o.work_nature == 'civilian'"> <input type="checkbox" style="margin-left:15px;" checked="True"/></t>
+                                                    <t t-else=""> <input type="checkbox" style="margin-left:15px;"/></t>
+                                                    <span style="font-weight:bold;font-size:18px;">مدني</span>
+                                                </div>
+                                                <div class="col-6 text-center" style="border:1px solid #8ac286;height:50px;">
+                                                    <t t-if="o.work_nature == 'military'"> <input type="checkbox" style="margin-left:15px;" checked="True"/></t>
+                                                    <t t-else=""> <input type="checkbox" style="margin-left:15px;"/></t>
+                                                    <span style="font-weight:bold;font-size:18px;">عسكري</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12 text-center" style="border:1px solid #8ac286;">
+                                                    <t t-if="o.work_nature == 'other'"> <input type="checkbox" style="margin-left:15px;" checked="True"/></t>
+                                                    <t t-else=""> <input type="checkbox" style="margin-left:15px;"/></t>
+                                                    <span style="font-weight:bold;font-size:18px;">
+                                                        أخرى
+                                                    </span>
+                                                    <span style="font-weight:bold;font-size:18px;">
+                                                        ( <t t-esc="o.other_work_nature"/>)
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-1"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="font-size:16px;margin-top:30px;">
+                                <div class="col-6 text-right">
+                                    معلومات التاريخ الطبي:
+                                </div>
+                                <div class="col-6 text-left" dir="ltr">
+                                    Medical History Information:
+                                </div>
+                            </div>
+                            <div class="row" style="font-size:16px;margin-top:30px;">
+                                <div class="col-12">
+                                    <table class="table table-borderd" style="background-color:white!important;">
+                                        <tr class="text-center" style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;">
+                                            <td dir="rtl" style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;width:30%">
+                                                نرجو إجابة كل سؤال على حدى وفي كان الجواب نعم نرجو ذكر التفاصيل و التواريخ.
+                                            </td>
+                                            <td style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;width:20%">
+                                                نعم/لا
+                                                yes or No
+                                            </td>
+                                            <td style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;width:20%">
+                                                التفاصيل و التواريخ
+                                                details
+                                            </td>
+                                            <td dir="ltr" style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;width:30%">
+                                                Please answer each question individually if the answer is yes Please provide details and dates. 
+                                            </td>
+                                        </tr>
+                                        <!-- 1 -->
+                                        <tr style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;">
+                                            <td class="text-right" dir="rtl" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;">
+                                                1. هل أنت غير قادر على العمل الان ؟
+                                            </td>
+                                            <td class="text-center" dir="rtl" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;">
+                                                <t t-if="o.unable_to_work_now_flag">
+                                                    نعم
+                                                </t>
+                                                <t t-else="">
+                                                    لا
+                                                </t>
+                                            </td>
+                                            <td class="text-center" dir="rtl" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;">
+                                                <t t-esc="o.unable_to_work_now_text"/>
+                                            </td>
+                                            <td class="text-left" dir="ltr" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;">
+                                                1. Are you unable to work now?
+                                            </td>
+                                        </tr>
+                                        <!-- 2 -->
+                                        <tr style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;">
+                                            <td class="text-right" dir="rtl" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;">
+                                                2. هل خلال الخمس سنوات الماضية لم تتمكن من العمل لمدة 30 يوما متواصلة ؟
+                                            </td>
+                                            <td class="text-center" dir="rtl" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;">
+                                                <t t-if="o.unable_to_work_thirty_days_flag">
+                                                    نعم
+                                                </t>
+                                                <t t-else="">
+                                                    لا
+                                                </t>
+                                            </td>
+                                            <td class="text-center" dir="rtl" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;">
+                                                <t t-esc="o.unable_to_work_thirty_days_text"/>
+                                            </td>
+                                            <td class="text-left" dir="ltr" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;">
+                                                2. Have you been unable to wrok for 30 consecutive days during the last five years?
+                                            </td>
+                                        </tr>
+                                        <!-- 3 -->
+                                        <tr style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;">
+                                            <td class="text-right" dir="rtl" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;">
+                                                3. هل تعرضت لأي حاجث تسبب لك اضرار جسدية
+                                            </td>
+                                            <td class="text-center" dir="rtl" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;">
+                                                <t t-if="o.suffered_accident_serious_damage_flag">
+                                                    نعم
+                                                </t>
+                                                <t t-else="">
+                                                    لا
+                                                </t>
+                                            </td>
+                                            <td class="text-center" dir="rtl" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;">
+                                                <t t-esc="o.suffered_accident_serious_damage_text"/>
+                                            </td>
+                                            <td class="text-left" dir="ltr" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;">
+                                                3. Have you suffered any accident caused you serious damage
+                                            </td>
+                                        </tr>
+                                        <!-- 4 -->
+                                        <tr style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;">
+                                            <td class="text-right" dir="rtl" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;">
+                                                4. هل لديك أي إعاقة او عجز كلي او عجز جزئي ؟
+                                            </td>
+                                            <td class="text-center" dir="rtl" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;">
+                                                <t t-if="o.disability_total_or_partial_flag">
+                                                    نعم
+                                                </t>
+                                                <t t-else="">
+                                                    لا
+                                                </t>
+                                            </td>
+                                            <td class="text-center" dir="rtl" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;">
+                                                <t t-esc="o.disability_total_or_partial_text"/>
+                                            </td>
+                                            <td class="text-left" dir="ltr" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;">
+                                                4. Do you have any disability, total disability or partial disability ?
+                                            </td>
+                                        </tr>
+                                        <!-- 5 -->
+                                        <tr style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;">
+                                            <td class="text-right" dir="rtl" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;">
+                                                5. هل تناولت أي علاج او ادوية لمدة تزيد عن 24 يوما متتالية خلال السنتين الماضية لعلاج مرض ما (مثال لا للحصر ضغط، سكري، كولسترول، وغيرها من الأمراض).
+                                            </td>
+                                            <td class="text-center" dir="rtl" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;">
+                                                <t t-if="o.treatment_fourteen_days_past_two_years_flag">
+                                                    نعم
+                                                </t>
+                                                <t t-else="">
+                                                    لا
+                                                </t>
+                                            </td>
+                                            <td class="text-center" dir="rtl" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;">
+                                                <t t-esc="o.treatment_fourteen_days_past_two_years_text"/>
+                                            </td>
+                                            <td class="text-left" dir="ltr" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;">
+                                                 5. Have you taken any treatment or medication for more than 14 consecutive days during the past (2) years to treat a disease (leg for, blood pressure, diabetes, cholesterol, or other diesels).
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row" style="font-size:16px;margin-top:80px;">
+                                <div class="col-6 text-right" dir="rtl">
+                                    الحالة الصحية السابقة و الحالية: 
+                                </div>
+                                <div class="col-6 text-left" dir="ltr">
+                                    Previous and current health status:
+                                </div>
+                            </div>
+                            <div class="row" style="font-size:16px;margin-top:30px;">
+                                <div class="col-12">
+                                    <table class="table table-borderd" style="background-color:white!important;">
+                                        <tr class="text-center" style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;">
+                                            <td dir="rtl" style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;">
+                                                هل عانيت سابقا او تعاني الان من الامراض او الحالات التالية؟
+                                            </td>
+                                            <td style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;">
+                                                نعم/لا
+                                                yes or No
+                                            </td>
+                                            <td dir="ltr" style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;">
+                                                Have you suffered or are suffering from the following disease or conditions?
+                                            </td>
+                                        </tr>
+                                        <!-- 1 -->
+                                        <tr style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;">
+                                            <td class="text-right" dir="rtl" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;width:40%;">
+                                                1. أمراض القلب و الشرايين او جلطة أو ارتفاع ضغط الدم؟
+                                            </td>
+                                            <td class="text-center" dir="rtl" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;color:black;width:20%;">
+                                                <t t-if="o.heart_failure_flag">
+                                                    نعم
+                                                </t>
+                                                <t t-else="">
+                                                    لا
+                                                </t>
+                                            </td>
+                                            <td class="text-left" dir="ltr" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;width:40%;">
+                                                1. Have you previously suffered or are suffering from the following diseases or conditions?
+                                            </td>
+                                        </tr>
+                                        <!-- 2 -->
+                                        <tr style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;">
+                                            <td class="text-right" dir="rtl" style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;">
+                                                2. مرض السكري بأي نوع من أنواعه ؟
+                                            </td>
+                                            <td class="text-center" style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;">
+                                                <t t-if="o.diabetes_seven_kinds_flag">
+                                                    نعم
+                                                </t>
+                                                <t t-else="">
+                                                    لا
+                                                </t>
+                                            </td>
+                                            <td dir="ltr" style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;">
+                                                2. Diabetes of any kind ?
+                                            </td>
+                                        </tr>
+                                        <!-- 3 -->
+                                        <tr style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;">
+                                            <td class="text-right" dir="rtl" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;width:40%;">
+                                                3. أي نوع من امراض السرطان ؟
+                                            </td>
+                                            <td class="text-center" dir="rtl" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;color:black;width:20%;">
+                                                <t t-if="o.cancer_flag">
+                                                    نعم
+                                                </t>
+                                                <t t-else="">
+                                                    لا
+                                                </t>
+                                            </td>
+                                            <td class="text-left" dir="ltr" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;width:40%;">
+                                                3. Any kind of cancer disease ?
+                                            </td>
+                                        </tr>
+                                        <!-- 4 -->
+                                        <tr style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;">
+                                            <td class="text-right" dir="rtl" style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;">
+                                                4. الكبد الوبائي ؟ 
+                                            </td>
+                                            <td class="text-center" style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;">
+                                                <t t-if="o.hepatitis_flag">
+                                                    نعم
+                                                </t>
+                                                <t t-else="">
+                                                    لا
+                                                </t>
+                                            </td>
+                                            <td dir="ltr" style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;">
+                                                4. Hepatitis ? 
+                                            </td>
+                                        </tr>
+                                        <!-- 5 -->
+                                        <tr style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;">
+                                            <td class="text-right" dir="rtl" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;width:40%;">
+                                                5. الحمى الروماتيزمية او التهاب الشعب الهوائية او مشاكل أخرى في الصدر ؟ 
+                                            </td>
+                                            <td class="text-center" dir="rtl" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;color:black;width:20%;">
+                                                <t t-if="o.reheumatic_fever_umatoid_arthrits_flag">
+                                                    نعم
+                                                </t>
+                                                <t t-else="">
+                                                    لا
+                                                </t>
+                                            </td>
+                                            <td class="text-left" dir="ltr" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;width:40%;">
+                                                5. Rheumatic fever and the umatiod arthritis ? 
+                                            </td>
+                                        </tr>
+                                        <!-- 6 -->
+                                        <tr style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;">
+                                            <td class="text-right" dir="rtl" style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;">
+                                                6. كولسترول عالي ؟ 
+                                            </td>
+                                            <td class="text-center" style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;">
+                                                <t t-if="o.high_cholestrerol_flag">
+                                                    نعم
+                                                </t>
+                                                <t t-else="">
+                                                    لا
+                                                </t>
+                                            </td>
+                                            <td dir="ltr" style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;">
+                                                6. High cholesterol ? 
+                                            </td>
+                                        </tr>
+                                        <!-- 7 -->
+                                        <tr style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;">
+                                            <td class="text-right" dir="rtl" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;width:40%;">
+                                                7. الربو و التهاب الشعب الهوائية أو مشاكل أخرى في الصدر ؟ 
+                                            </td>
+                                            <td class="text-center" dir="rtl" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;color:black;width:20%;">
+                                                <t t-if="o.athma_bronchitis_flag">
+                                                    نعم
+                                                </t>
+                                                <t t-else="">
+                                                    لا
+                                                </t>
+                                            </td>
+                                            <td class="text-left" dir="ltr" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;width:40%;">
+                                                7. Asthma, bronchitis or other chest problem ? 
+                                            </td>
+                                        </tr>
+                                        <!-- 8 -->
+                                        <tr style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;">
+                                            <td class="text-right" dir="rtl" style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;">
+                                                8. صعوبة في الهضم مع أو بدون التهاب في القولون ؟ 
+                                            </td>
+                                            <td class="text-center" style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;">
+                                                <t t-if="o.difficult_digestion_colon_flag">
+                                                    نعم
+                                                </t>
+                                                <t t-else="">
+                                                    لا
+                                                </t>
+                                            </td>
+                                            <td dir="ltr" style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;">
+                                                8. Difficulty digestion with or without ulceration and inflammation in the colon ? 
+                                            </td>
+                                        </tr>
+                                        <!-- 9 -->
+                                        <tr style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;">
+                                            <td class="text-right" dir="rtl" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;width:40%;">
+                                                9. الغدة الدرقية، فقر الدم، الغدد المتضخمة ؟ 
+                                            </td>
+                                            <td class="text-center" dir="rtl" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;color:black;width:20%;">
+                                                <t t-if="o.thyroid_anemia_flag">
+                                                    نعم
+                                                </t>
+                                                <t t-else="">
+                                                    لا
+                                                </t>
+                                            </td>
+                                            <td class="text-left" dir="ltr" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;width:40%;">
+                                                9. Thyroid, anemia, bloated glands ? 
+                                            </td>
+                                        </tr>
+                                        <!-- 10 -->
+                                        <tr style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;">
+                                            <td class="text-right" dir="rtl" style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;">
+                                                10. مرض في الكلى او المثانة ؟ 
+                                            </td>
+                                            <td class="text-center" style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;">
+                                                <t t-if="o.long_medical_condition_flag">
+                                                    نعم
+                                                </t>
+                                                <t t-else="">
+                                                    لا
+                                                </t>
+                                            </td>
+                                            <td dir="ltr" style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;">
+                                                10. Has/Had long medical condition ? 
+                                            </td>
+                                        </tr>
+                                        <!-- 11 -->
+                                        <tr style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;">
+                                            <td class="text-right" dir="rtl" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;width:40%;">
+                                                11. مرض نقص المناعة او الايدز (فيروس نقص المناعية البشري) ؟ 
+                                            </td>
+                                            <td class="text-center" dir="rtl" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;color:black;width:20%;">
+                                                <t t-if="o.hiv_aids_flag">
+                                                    نعم
+                                                </t>
+                                                <t t-else="">
+                                                    لا
+                                                </t>
+                                            </td>
+                                            <td class="text-left" dir="ltr" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;width:40%;">
+                                                11. HIV/AIDS, ,AIDS ? 
+                                            </td>
+                                        </tr>
+                                        <!-- 12 -->
+                                        <tr style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;">
+                                            <td class="text-right" dir="rtl" style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;">
+                                                12. أي مرض نفسي ؟ 
+                                            </td>
+                                            <td class="text-center" style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;">
+                                                <t t-if="o.psychiatric_illness_flag">
+                                                    نعم
+                                                </t>
+                                                <t t-else="">
+                                                    لا
+                                                </t>
+                                            </td>
+                                            <td dir="ltr" style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;">
+                                                12. Any psychiatric illness ? 
+                                            </td>
+                                        </tr>
+                                        <!-- 13 -->
+                                        <tr style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;">
+                                            <td class="text-right" dir="rtl" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;width:40%;">
+                                                13. هل تم تشخيصك بأي من الأمراض المزمنة التالية فقط: التوحد، الأورام الحميدة، السرطان، أمراض القلب، الألتهاب الكبدي الفيروسي المزمن سي، 
+                                                حصوات المرارة، الفشل الكلوي، حصوات المسالك البولية، تضخم الغدة الدرقية، التكيسات، ورم ليفي بالرحم، الفتق، أمراض المناعة الذاتية أو التصلب المتعدد. 
+                                            </td>
+                                            <td class="text-center" dir="rtl" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;color:black;width:20%;">
+                                                <t t-if="o.chronic_diseases_flag">
+                                                    نعم
+                                                </t>
+                                                <t t-else="">
+                                                    لا
+                                                </t>
+                                            </td>
+                                            <td class="text-left" dir="ltr" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;width:40%;">
+                                                13. Have you been diagnosed with any of the following chronic diseases limited to: Autism, Benign Tumor, Cancer, Heart Diseases, Chronic Hepatitis C,
+                                                Gallstones, Kidney Failure, Urinary tract stones, thyroid goiter, Cysts, fibroid uterus, Hernias, autoimmune diseases or Multiple sclerosis. ? 
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row" style="font-size:16px;margin-top:80px;">
+                                <div class="col-6 text-right" dir="rtl" style="font-weight:bold;">
+                                    الإقرار و التفويض
+                                </div>
+                            </div>
+                            <div class="row" style="font-size:16px;margin-top:30px;">
+                                <div class="col-12" style="text-align:justify" dir="rtl">
+                                    1. أقر أن البيانات و المعلومات المذكورة أعلاه كاملة و صحيحة و بناء عليه فإن قبول الطلب سيتم على 
+                                    اساس هذه البيانات وأن شركة فيول للتمويل لها الحق في الاتصال بالمستشفيات التي أتعامل معها
+                                    لتزويدها بأي معلومات طبية قد تحتاج إليها لتقيم المخاطر. <br/>
+                                    2. أوافق على أحقية فيول للتمويل في رفض المطالبة أو التغطية كلياَ عند عدم الافصاح عن وجود
+                                    أاي من الحالات المذكورة اعلاه التي نشأت قبل تاريخ التعاقد أو قبل تسجيل أو إضافة مؤمن له خلال فترة
+                                    سريان العقد. <br/>
+                                    3. أقر بأني قد قرأت و فهمت جميع ما جاء في هذا النموذج كما أتعهد بأن عدم إشارتي أمام أي من الحالات
+                                    المذكورة اعلاه يعتبر بمثابة نفي وجود ما يستحق الإفصاح عنه و عليه أوقع. <br/>
+                                    4. عدم متعبئة بيانات الطول و الوزن سيؤدي إلى رفض تغطية تكاليف عملية جراحة السمنة المفرطة. 
+                                </div>
+                            </div>
+                            <div class="row" dir="ltr" style="font-size:16px;">
+                                <div class="col-6 text-left" style="font-weight:bold;">
+                                    Undertakings: 
+                                </div>
+                            </div>
+                            <div class="row" style="font-size:16px;margin-top:30px;" dir="ltr">
+                                <div class="col-12 text-left" style="text-align:justify" dir="ltr">
+                                    1. I hereby undertake that all above information are correct and the acceptance of my 
+                                    enrolment will be on the basis of such information and that fuel finance company has the right to contact the 
+                                    hospital(s) I deal with to collect any medical information needed to assess the risk(s). <br/>
+                                    2. I agree that fuel finance has the right to reject the coverage/claims in full in case of no declaration of
+                                    any cases prior to the contractual date or before enrolling or adding a new insured during the contract. <br/>
+                                    3. I hereby confirm reading and understanding all points presented in this form and I agree that not 
+                                    marking any case is understood as "Nothing requires declaration" and I sign on these basis. <br/>
+                                    4. Failure to fill the weight and height information will result in refusal to cover the cost of obesity surge.
+                                </div>
+                            </div>
+                            <div class="row" style="font-size:16px;margin-top:250px;">
+                                <div class="col-12">
+                                    <table class="table table-borderd">
+                                        <tr class="text-center" style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;">
+                                            <td dir="rtl" style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;">
+                                                التاريخ
+                                            </td>
+                                            <td style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;">
+                                                التوقيع
+                                            </td>
+                                            <td dir="rtl" style="border:1px solid #8ac286;background-color:#e3f0df!important;color:black;font-size:17px;">
+                                                الاسم الرباعي
+                                            </td>
+                                        </tr>
+                                        <!-- 1 -->
+                                        <tr style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;height:50px;">
+                                            <td class="text-right" dir="rtl" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;width:33%;">
+                                            </td>
+                                            <td dir="rtl" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;color:#d1dec3;width:34%;">
+                                            </td>
+                                            <td class="text-left" dir="ltr" style="border:1px solid #8ac286;background-color:#d1dec3!important;color:black;font-size:17px;width:33%;">
+                                            </td>
+                                        </tr>
+                                        
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+
+        
+        <record id="health_declaration_paperformat" model="report.paperformat">
+            <field name="name">Custom Paperformat for Health Declaration</field>
+            <field name="default" eval="False"/>
+            <field name="disable_shrinking" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">40</field>
+            <field name="margin_bottom">15</field>
+            <field name="margin_left">8</field>
+            <field name="margin_right">10</field>
+            <field name="dpi">130</field>
+        </record>
+
+        <record id="health_declaration_action" model="ir.actions.report">
+            <field name="name">Health Declaration</field>
+            <field name="model">res.partner</field>
+            <field name="binding_model_id" ref="base.model_res_partner"/>
+            <field name="binding_type">report</field>
+            <field name="multi">True</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">partner_reports.health_declaration_template</field>
+            <field name="report_file">partner_reports.health_declaration_template</field>
+            <field name="paperformat_id" ref="health_declaration_paperformat"/>
+        </record>  
+    </data>
+</odoo>

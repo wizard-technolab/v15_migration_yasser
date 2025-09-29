@@ -1,0 +1,903 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="consumer_credit_document">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <div class="oe_structure"/>
+                    <h1 class="mt16">
+                        <strong>Consumer Credit Report</strong>
+                    </h1>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>Report Date</strong>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <span t-field="doc.reportDate"/>
+                                </td>
+                                <td>
+                                    <strong>Enquiry Type</strong>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <span t-field="doc.enquiryType"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Enquiry Number</strong>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <span t-field="doc.enquiryNumber"/>
+                                </td>
+                                <td>
+                                    <strong>Product Type</strong>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <span t-field="doc.productType"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Number of Applicants</strong>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <span t-field="doc.numberOfApplicants"/>
+                                </td>
+                                <td>
+                                    <strong>Account Type</strong>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <span t-field="doc.accountType"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Reference Number</strong>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <span t-field="doc.referenceNumber"/>
+                                </td>
+                                <td>
+                                    <strong>Amount</strong>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <span t-field="doc.amount"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Member Type</strong>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <span t-field="doc.memberType_name"/>
+                                </td>
+                                <td>
+                                    <strong>Member Account Status</strong>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <span t-field="doc.statusReport_name"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>Score and Narrative</strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <t t-foreach="doc.simahScore" t-as="simahScore">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <strong>Scorecard</strong>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span t-field="simahScore.scoreCardDescEn"/>/
+                                        <span t-field="simahScore.scoreCardDescAr"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Score Contributing Factors</strong>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Score</strong>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span t-field="simahScore.score"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Minimum Score</strong>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span t-field="simahScore.minimumScore"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Maximum Score</strong>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span t-field="simahScore.maximumScore"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </t>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <strong>Primary</strong>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table">
+                        <thead style="display: table-row-group">
+                            <tr>
+                                <th class="text-left">Data Provided VS Available</th>
+                                <th class="text-right"></th>
+                                <th class="text-right"></th>
+                                <th class="text-left">Summary</th>
+                                <th class="text-right"></th>
+                                <th class="text-right"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>Applicant Type</strong>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <span t-field="doc.applicantTypeNameEN"/>/
+                                    <span t-field="doc.applicantTypeNameAR"/>
+                                </td>
+                                <td>
+                                    <strong>Previous Enquiries</strong>
+                                </td>
+                                <td></td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>ID Type</strong>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <span t-field="doc.typeID"/>
+                                </td>
+                                <td>
+                                    <strong>Enquiries for Previous 30 Days</strong>
+                                </td>
+                                <td></td>
+                                <td>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>ID Expiry Date</strong>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <span t-field="doc.iDExpiryDate"/>
+                                </td>
+                                <td>
+                                    <strong>Credit Instruments</strong>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <span t-field="doc.summActiveCreditInstruments"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Family Name</strong>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <span t-field="doc.familyName"/>
+                                </td>
+                                <td>
+                                    <strong>Guaranteed Credit Instruments</strong>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <span t-field="doc.summGuaranteedCreditInstruments"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Second Name</strong>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <span t-field="doc.secondName"/>
+                                </td>
+                                <td>
+                                    <strong>Total Limits</strong>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <span t-field="doc.summTotalLimits"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Third Name</strong>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <span t-field="doc.thirdName"/>
+                                </td>
+                                <td>
+                                    <strong>Total Guaranteed Limits</strong>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <span t-field="doc.summTotalGuaranteedLimits"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Unformatted Name</strong>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <span t-field="doc.customerNameAr"/>
+                                </td>
+                                <td>
+                                    <strong>Total Liabilities</strong>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <span t-field="doc.summTotalLiablilites"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Date of Birth</strong>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <span t-field="doc.dateOfBirth"/>
+                                </td>
+                                <td>
+                                    <strong>Total Guaranteed Liabilities</strong>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <span t-field="doc.summTotalGuaranteedLiablilites"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Gender</strong>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <span t-field="doc.gender"/>
+                                </td>
+                                <td>
+                                    <strong>Total Defaults</strong>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <span t-field="doc.summTotalDefaults"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Marital Status</strong>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <span t-field="doc.statusNameEN"/>
+                                </td>
+                                <td>
+                                    <strong>Current Delinquent Balance</strong>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <span t-field="doc.summCurrentDelinquentBalance"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Nationality</strong>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <span t-field="doc.nationality_textAr"/>
+                                </td>
+                                <td>
+                                </td>
+                                <td></td>
+                                <td>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>Previous Enquiries</strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table">
+                        <thead style="display: table-row-group">
+                            <tr>
+                                <th class="text-left">Date of Enquiry</th>
+                                <th class="text-left">Enquirer</th>
+                                <th class="text-left">Enquiry Type</th>
+                                <th class="text-left">Member Reference</th>
+                                <th class="text-left">Product Type</th>
+                                <th class="text-left">Amount</th>
+                                <th class="text-left">Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="doc.simahEnquiries" t-as="previous_enquirie">
+                                <tr>
+                                    <td>
+                                        <span t-field="previous_enquirie.prevEnqDate"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="previous_enquirie.memberNameEN"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="previous_enquirie.enqTypeCode"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="previous_enquirie.prevEnqMemberRef"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="previous_enquirie.code"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="previous_enquirie.prevEnqAmount"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="previous_enquirie.memberNameAR"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>Credit Instrument Details</strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="table">
+                        <tbody>
+                            <t t-foreach="doc.creditInstrument" t-as="credit_instrument">
+                                <tr>
+                                    <td>
+                                        <strong>Creditor</strong>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span t-field="credit_instrument.memberNameEN"/>
+                                    </td>
+                                    <td>
+                                        <strong>Issue Date</strong>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span t-field="credit_instrument.ciIssuedDate"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Product Type</strong>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span t-field="credit_instrument.textEn"/>
+                                    </td>
+                                    <td>
+                                        <strong>Expiry Date</strong>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span t-field="credit_instrument.ciExpirationDate"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Account Number</strong>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span t-field="credit_instrument.ciAccountNumber"/>
+                                    </td>
+                                    <td>
+                                        <strong>Closed Date</strong>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span t-field="credit_instrument.ciClosingDate"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Limit</strong>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span t-field="credit_instrument.ciLimit"/>
+                                    </td>
+                                    <td>
+                                        <strong>Status</strong>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span t-field="credit_instrument.creditInstrumentStatusDescEn"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Tenure</strong>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span t-field="credit_instrument.ciTenure"/>
+                                    </td>
+                                    <td>
+                                        <strong>Payment Frequency</strong>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span t-field="credit_instrument.paymentFrequencyCodeDescEn"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Installment Amount</strong>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span t-field="credit_instrument.ciInstallmentAmount"/>
+                                    </td>
+                                    <td>
+                                        <strong>Salary Flag</strong>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span t-field="credit_instrument.salaryAssignmentFlagCode"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Security Type</strong>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span t-field="credit_instrument.consumerSecurityTypeCode"/>
+                                    </td>
+                                    <td>
+                                        <strong>Past Due</strong>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span t-field="credit_instrument.ciPastDue"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Outstanding Balance</strong>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span t-field="credit_instrument.ciOutstandingBalance"/>
+                                    </td>
+                                    <td>
+                                        <strong>Last Payment Date</strong>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span t-field="credit_instrument.ciLastPaymentDate"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Last Amount Paid</strong>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span t-field="credit_instrument.ciLastAmountPaid"/>
+                                    </td>
+                                    <td>
+                                        <strong>Next Due Date</strong>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span t-field="credit_instrument.ciNextDueDate"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>As of Date</strong>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span t-field="credit_instrument.ciLastAmountPaid"/>
+                                    </td>
+                                    <td>
+                                        <strong>Last 24 Cycles</strong>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                        <span t-field="credit_instrument.ciLastPaymentDate"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                    </td>
+                                    <td>
+                                    </td>
+                                    <td></td>
+                                    <td>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>Defaults</strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table">
+                        <thead style="display: table-row-group">
+                            <tr>
+                                <th class="text-left">Product Type</th>
+                                <th class="text-left">Creditor</th>
+                                <th class="text-left">Account Number</th>
+                                <th class="text-left">Date Loaded</th>
+                                <th class="text-left">Original Amount Type</th>
+                                <th class="text-left">Outstanding Balance</th>
+                                <th class="text-left">Status</th>
+                                <th class="text-left">Settlement Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!--                        <t t-foreach="doc.creditInstrument" t-as="creditInstrument">-->
+                            <tr>
+                                <td>
+                                    <!--                                    <span t-field="creditInstrument.code"/>-->
+                                </td>
+                                <td>
+                                    <!--                                    <span t-field="creditInstrument.memberNameEN"/>-->
+                                </td>
+                                <td>
+                                    <!--                                    <span t-field="creditInstrument.ciAccountNumber"/>-->
+                                </td>
+                                <td>
+                                    <!--                                    <span t-field="previous_enquirie.prevEnqMemberRef"/>-->
+                                </td>
+                                <td>
+                                    <!--                                    <span t-field="previous_enquirie.code"/>-->
+                                </td>
+                                <td>
+                                    <!--                                    <span t-field="previous_enquirie.prevEnqAmount"/>-->
+                                </td>
+                                <td>
+                                    <!--                                    <span t-field="previous_enquirie.memberNameAR"/>-->
+                                </td>
+                                <td>
+                                    <!--                                    <span t-field="previous_enquirie.memberNameAR"/>-->
+                                </td>
+                            </tr>
+                            <!--                        </t>-->
+                        </tbody>
+                    </table>
+
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>BOUNCED_CHECKS</strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table">
+                        <thead style="display: table-row-group">
+                            <tr>
+                                <th class="text-left">Product Type</th>
+                                <th class="text-left">Creditor</th>
+                                <th class="text-left">Check Number</th>
+                                <th class="text-left">Date Loaded</th>
+                                <th class="text-left">Original Amount Type</th>
+                                <th class="text-left">Outstanding Balance</th>
+                                <th class="text-left">Status</th>
+                                <th class="text-left">Settlement Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!--                        <t t-foreach="doc.creditInstrument" t-as="creditInstrument">-->
+                            <tr>
+                                <td>
+                                    <!--                                    <span t-field="creditInstrument.code"/>-->
+                                </td>
+                                <td>
+                                    <!--                                    <span t-field="creditInstrument.memberNameEN"/>-->
+                                </td>
+                                <td>
+                                    <!--                                    <span t-field="creditInstrument.ciAccountNumber"/>-->
+                                </td>
+                                <td>
+                                    <!--                                    <span t-field="previous_enquirie.prevEnqMemberRef"/>-->
+                                </td>
+                                <td>
+                                    <!--                                    <span t-field="previous_enquirie.code"/>-->
+                                </td>
+                                <td>
+                                    <!--                                    <span t-field="previous_enquirie.prevEnqAmount"/>-->
+                                </td>
+                                <td>
+                                    <!--                                    <span t-field="previous_enquirie.memberNameAR"/>-->
+                                </td>
+                                <td>
+                                    <!--                                    <span t-field="previous_enquirie.memberNameAR"/>-->
+                                </td>
+                            </tr>
+                            <!--                        </t>-->
+                        </tbody>
+                    </table>
+
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>Addresses</strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table">
+                        <thead style="display: table-row-group">
+                            <tr>
+                                <th class="text-left">Address Type</th>
+                                <th class="text-left">Address Line 1</th>
+                                <th class="text-left">Address Line 2</th>
+                                <th class="text-left">PO Box</th>
+                                <th class="text-left">City</th>
+                                <th class="text-left">Postal Code</th>
+                                <th class="text-left">Country</th>
+                                <th class="text-left">Date Loaded</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="doc.simahAddress" t-as="simahAddress">
+                                <tr>
+                                    <td>
+                                        <span t-field="simahAddress.addressTypeCode"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="simahAddress.adrsAddressLineFirstDescAr"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="simahAddress.adrsAddressLineSecondDescAr"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="simahAddress.adrsPOBox"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="simahAddress.adrsCityDescAr"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="simahAddress.adrsPostalCode"/>
+                                    </td>
+                                    <td>
+                                        <span>SAU</span>
+                                    </td>
+                                    <td>
+                                        <span t-field="simahAddress.adrsDateLoaded"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>Contact Numbers</strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table">
+                        <thead style="display: table-row-group">
+                            <tr>
+                                <th class="text-left">Phone Number Type</th>
+                                <th class="text-left">Country</th>
+                                <th class="text-left">Area Code</th>
+                                <th class="text-left">Phone Number</th>
+                                <th class="text-left">Extension</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="doc.simahContact" t-as="simahContact">
+                                <tr>
+                                    <td>
+                                        <span t-field="simahContact.contactNumberTypeDescriptionAr"/>
+                                    </td>
+                                    <td>
+                                        <!--                                    <span t-field="simahContact.conAreaCode"/>-->
+                                    </td>
+                                    <td>
+                                        <span t-field="simahContact.conAreaCode"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="simahContact.conPhoneNumber"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="simahContact.conExtension"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>Occupations and Employers</strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table">
+                        <thead style="display: table-row-group">
+                            <tr>
+                                <th class="text-left">Employer</th>
+                                <th class="text-left">Occupation</th>
+                                <th class="text-left">Length of Service</th>
+                                <th class="text-left">Date of Employment</th>
+                                <th class="text-left">Contract Expiry Date</th>
+                                <th class="text-left">Date Loaded</th>
+                                <th class="text-left">Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="doc.simahEmployee" t-as="simahEmployee">
+                                <tr>
+                                    <td>
+                                        <span t-field="simahEmployee.employerStatusTypeCode"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="simahEmployee.empEmployerNameDescAr"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="simahEmployee.empOccupationDescEn"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="simahEmployee.empDateOfEmployment"/>
+                                    </td>
+                                    <td>
+                                        <!--                                    <span t-field="simahEmployee.empDateOfEmployment"/>-->
+                                    </td>
+                                    <td>
+                                        <!--                                    <span t-field="simahEmployee.conExtension"/>-->
+                                    </td>
+                                    <td>
+                                        <span t-field="simahEmployee.empDateLoaded"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>Disclaimer</strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span t-field="doc.discTextDescEn"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>تنویه</strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span t-field="doc.discTextDescAr"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="oe_structure"/>
+                </div>
+            </t>
+        </template>
+        <template id="report_consumer_credit">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="simah_api.consumer_credit_document"/>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

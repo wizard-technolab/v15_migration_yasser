@@ -1,0 +1,151 @@
+<odoo>
+    <data>
+        <record id="nafaes_purchase_order_view_search" model="ir.ui.view">
+            <field name="name">nafaes.purchase.order.search</field>
+            <field name="model">nafaes.purchase.order</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="partner_id" string="Partner"/>
+                </search>
+            </field>
+        </record>
+        <record id="nafaes_purchase_order_view_tree" model="ir.ui.view">
+            <field name="name">nafaes.purchase.order.tree</field>
+            <field name="model">nafaes.purchase.order</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="transactionReference"/>
+                    <field name="date"/>
+                    <field name="partner_id"/>
+                    <field name="currency_id" invisible="1"/>
+                    <field name="amount"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <record id="nafaes_purchase_order_view_form" model="ir.ui.view">
+            <field name="name">nafaes.purchase.order.form</field>
+            <field name="model">nafaes.purchase.order</field>
+            <field name="arch" type="xml">
+                <form edit="false" >
+                    <header>
+                        <!-- These should not be used, already integrated in loan.order -->
+                        <button name="action_submit" type="object" string="Submit to Nafaes" states="draft"
+                                confirm="Are you sure?"/>
+                        <button name="action_transfer" type="object" string="Transfer" states="po"
+                                confirm="Are you sure?"/>
+                        <button name="action_sell" type="object" string="Sell" states="to" confirm="Are you sure?"/>
+
+                        <!-- These buttons are for manually changing the state of the order in case the webhook did not work -->
+                        <button name="action_order_result" type="object" string="Get Order Result"
+                                groups="base.group_system" states="waiting_po,waiting_to,waiting_so"/>
+
+                        <!-- Cancel Button -->
+                        <button name="action_cancel" type="object" string="Cancel" class="btn btn-danger"
+                                confirm="Are you sure, you want to cancel?"/>
+                        <button name="action_draft" type="object" string="Draft" class="btn"
+                                confirm="Are you sure, you want to draft?" groups="nafaes_order.group_admin"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,po,so,to"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <label class="oe_edit_only" for="transactionReference"/>
+                            <h1>
+                                <field name="transactionReference"/>
+                            </h1>
+                        </div>
+                        <div role="alert" class="alert-danger" attrs="{'invisible': [('error_invisible', '=', True)]}">
+                            <field name="api_error"/>
+                        </div>
+                        <group string="Request">
+                            <group>
+                                <field name="error_invisible" invisible="1"/>
+                                <field name="partner_id"/>
+                                <field name="currency_id" invisible="1"/>
+                                <field name="amount"/>
+                                <field name="date"/>
+                            </group>
+                            <group>
+                                <field name="counterPartyAccount"/>
+                                <field name="counterPartyName"/>
+                                <field name="counterPartyTelephone"/>
+                            </group>
+                        </group>
+                        <group string="Result">
+                            <group string="Commodity">
+                                <field name="referenceNo"/>
+                                <field name="commodityName" string="Name"/>
+                                <label for="quantity"/>
+                                <div>
+                                    <field name="quantity" class="oe_inline"/>
+                                    <field name="unit" class="oe_inline" style="margin-left: 5px;"/>
+                                </div>
+                                <field name="executingUnit" string="Executing Unit"/>
+                                <field name="result_amount" string="Amount"/>
+                                <field name="commission"/>
+                                <field name="comm_currency_id" invisible="1"/>
+                                <!-- <field name="secretToken"/> -->
+                                <field name="certificateNo"/>
+                                <field name="result_date"/>
+                            </group>
+                            <group string="Attributes">
+                                <field name="attribute1"/>
+                                <field name="attribute2"/>
+                                <field name="attribute3"/>
+                            </group>
+                            <group string="Users">
+                                <field name="po_user_id"/>
+                                <field name="so_user_id"/>
+                            </group>
+                            <group string="Technical Info">
+                                <field name="uuid_po" reaodnly="1"/>
+                                <field name="uuid_to" reaodnly="1"/>
+                                <field name="uuid_so" reaodnly="1"/>
+                                <field name="purchaser" readonly="1" force_save="1"/>
+                                <field name="currency"/>
+                                <field name="valueDate"/>
+                            </group>
+                        </group>
+                        <notebook groups="base.group_system">
+                            <page string="Results">
+                                <field name="order_result_ids"/>
+                            </page>
+                            <page string="API Logs">
+                                <field name="api_log_ids">
+                                    <tree>
+                                        <field name="create_date"/>
+                                        <field name="url"/>
+                                        <field name="request"/>
+                                        <field name="response"/>
+                                        <field name="type"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="nafaes_purchase_order_action_view_tree" model="ir.actions.act_window">
+            <field name="name">Nafaes Orders</field>
+            <field name="res_model">nafaes.purchase.order</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No Nafaes Orer found. Let's create one!
+                </p>
+                <p>
+                    Nafes Orer helps improving the business workflow.
+                </p>
+            </field>
+        </record>
+        <menuitem name="Nafaes API" id="nafaes_root_menu" sequence="900" web_icon="nafaes_order,static/description/icon.png"/>
+        <menuitem name="Nafaes Order" action="nafaes_purchase_order_action_view_tree" id="nafaes_purchase_order_menu"
+                  parent="nafaes_root_menu" sequence="10"/>
+    </data>
+</odoo>

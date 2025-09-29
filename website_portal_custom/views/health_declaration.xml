@@ -1,0 +1,34 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="health_declaration_list">
+      <field name="name">health.declaration list</field>
+      <field name="model">health.declaration</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="birth_date"/>
+          <field name="weight"/>
+          <field name="Height"/>
+          <field name="work_nature"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="health_declaration_action_window">
+      <field name="name">Health Declaration</field>
+      <field name="res_model">health.declaration</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Health Declaration" id="health_declaration_menu_root"/>
+
+    <menuitem name="Health Declaration List" id="health_declaration_menu" parent="health_declaration_menu_root"
+              action="health_declaration_action_window"/>
+
+    <record id="partner_reports.health_declaration_action" model="ir.actions.report">
+        <field name="model">health.declaration</field>
+        <field name="binding_model_id" ref="website_portal_custom.model_health_declaration"/>
+    </record>
+
+  </data>
+</odoo>

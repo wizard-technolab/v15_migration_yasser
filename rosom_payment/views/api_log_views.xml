@@ -1,0 +1,82 @@
+<odoo>
+    <data>
+        <record id="rosom_api_log_view_search" model="ir.ui.view">
+            <field name="name">rosom.api.log.search</field>
+            <field name="model">rosom.api.log</field>
+            <field name="arch" type="xml">
+                <search>
+                    <filter name="not_auth" string="Not Auth" domain="[('type', '!=', 'auth')]"/>
+                </search>
+            </field>
+        </record>
+        <record id="rosom_api_log_view_tree" model="ir.ui.view">
+            <field name="name">rosom.api.log.tree</field>
+            <field name="model">rosom.api.log</field>
+            <field name="arch" type="xml">
+                <tree edit="false" delete="false">
+                    <field name="create_date"/>
+                    <field name="url"/>
+                    <field name="type"/>
+                    <field name="res_model"/>
+                    <field name="res_id"/>
+                </tree>
+            </field>
+        </record>
+        <record id="rosom_api_log_view_form" model="ir.ui.view">
+            <field name="name">rosom.api.log.form</field>
+            <field name="model">rosom.api.log</field>
+            <field name="arch" type="xml">
+                <form edit="false" delete="false">
+                    <header>
+                        <button name="action_retry_webhook" type="object" string="Retry Webhook"
+                                attrs="{'invisible': [('type', '!=', 'webhook')]}"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group string="General">
+                                <field name="create_date"/>
+                                <field name="create_uid"/>
+                            </group>
+                            <group string="Request Info">
+                                <field name="url"/>
+                                <field name="type"/>
+                            </group>
+                            <group string="Related Object">
+                                <field name="res_model"/>
+                                <field name="res_id"/>
+                                <field name="reference" widget="reference" string="Record"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Request &amp; Response">
+                                <separator string="Request"/>
+                                <field name="request" nolabel="1"/>
+                                <separator string="Response"/>
+                                <field name="response" nolabel="1" widget="html"/>
+                            </page>
+                        </notebook>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="rosom_api_log_action_view_tree" model="ir.actions.act_window">
+            <field name="name">API Log</field>
+            <field name="res_model">rosom.api.log</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_not_auth': '1'}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No Logs found. Let's create one!
+                </p>
+                <p>
+                    Helps improving the business workflow.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Rosom API Log" action="rosom_api_log_action_view_tree" id="rosom_api_log_menu"
+                  parent="root_menu" sequence="900" groups="base.group_system"/>
+    </data>
+</odoo>

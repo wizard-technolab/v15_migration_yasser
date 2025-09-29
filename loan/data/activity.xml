@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="mail_activity_partner_complete" model="mail.activity.type">
+            <field name="name">Customer Data Complete</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">10</field>
+            <field name="res_model">loan.order</field>
+        </record>
+
+        <record id="mail_activity_partner_incomplete" model="mail.activity.type">
+            <field name="name">Customer Data InComplete</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">15</field>
+            <field name="res_model">loan.order</field>
+        </record>
+
+        <record id="mail_activity_partner_done" model="mail.activity.type">
+            <field name="name">Customer Done</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">20</field>
+            <field name="res_model">loan.order</field>
+        </record>
+
+        <record id="mail_activity_return_date" model="mail.activity.type">
+            <field name="name">Return Process</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">25</field>
+            <field name="res_model">loan.order</field>
+        </record>
+
+        <record id="mail_activity_loan_approval" model="mail.activity.type">
+            <field name="name">Loan Approval</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">30</field>
+            <field name="res_model">loan.order</field>
+        </record>
+
+        <record id="mail_activity_loan_done" model="mail.activity.type">
+            <field name="name">Loan Done</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">35</field>
+            <field name="res_model">helpdesk.team</field>
+        </record>
+
+        <record id="mail_activity_call_done" model="mail.activity.type">
+            <field name="name">Call Done</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">40</field>
+            <field name="res_model">loan.order</field>
+        </record>
+
+        <record id="mail_activity_call_reject" model="mail.activity.type">
+            <field name="name">Call Reject</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">70</field>
+            <field name="res_model">loan.order</field>
+        </record>
+
+        <record id="mail_activity_reject_done" model="mail.activity.type">
+            <field name="name">Request Reject</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">45</field>
+            <field name="res_model">loan.order</field>
+        </record>
+
+        <record id="mail_activity_apply_done" model="mail.activity.type">
+            <field name="name">Accepted Request</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">50</field>
+            <field name="res_model">loan.order</field>
+        </record>
+
+        <record id="mail_activity_apply_reject" model="mail.activity.type">
+            <field name="name">Request Reject</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">70</field>
+            <field name="res_model">loan.order</field>
+        </record>
+
+        <record id="mail_activity_purchase_confirm" model="mail.activity.type">
+            <field name="name">Offer Price</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">55</field>
+            <field name="res_model">purchase.order</field>
+        </record>
+
+        <record id="mail_activity_send_back" model="mail.activity.type">
+            <field name="name">Send Back</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">60</field>
+            <field name="res_model">loan.order</field>
+        </record>
+
+        <record id="mail_activity_reject_credit" model="mail.activity.type">
+            <field name="name">Request Reject</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">65</field>
+            <field name="res_model">loan.order</field>
+        </record>
+
+        <record id="mail_activity_create_archive" model="mail.activity.type">
+            <field name="name">The Request Archiving</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">75</field>
+            <field name="res_model">loan.order</field>
+        </record>
+
+        <record id="mail_activity_not_apply" model="mail.activity.type">
+            <field name="name">Sales</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">80</field>
+            <field name="res_model">loan.order</field>
+        </record>
+
+        <record id="mail_activity_sales" model="mail.activity.type">
+            <field name="name">Accept Sales</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">85</field>
+            <field name="res_model">loan.order</field>
+        </record>
+
+        <record id="mail_activity_credit" model="mail.activity.type">
+            <field name="name">Send Back to Credit</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">90</field>
+            <field name="res_model">loan.order</field>
+        </record>
+
+        <record id="mail_activity_action_move" model="mail.activity.type">
+            <field name="name">The Request accepted</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">95</field>
+            <field name="res_model">loan.order</field>
+        </record>
+
+        <record id="mail_activity_activity_create_cancel" model="mail.activity.type">
+            <field name="name">The Request Canceled</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">100</field>
+            <field name="res_model">loan.order</field>
+        </record>
+
+        <record id="mail_activity_activity_create_review" model="mail.activity.type">
+            <field name="name">The Request RE-Review</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">105</field>
+            <field name="res_model">loan.order</field>
+        </record>
+
+        <record id="mail_activity_create_set_draft" model="mail.activity.type">
+            <field name="name">The Request SET To Draft</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">110</field>
+            <field name="res_model">loan.order</field>
+        </record>
+
+        <record id="mail_activity_nafaes" model="mail.activity.type">
+            <field name="name">A Nafaes item was purchased</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">115</field>
+            <field name="res_model">loan.order</field>
+        </record>
+
+        <record id="mail_activity_create_loan" model="mail.activity.type">
+            <field name="name">Create loan with Credit User</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">120</field>
+            <field name="res_model">loan.order</field>
+        </record>
+
+        <record id="mail_activity_back" model="mail.activity.type">
+            <field name="name">Send Back To Credit</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">125</field>
+            <field name="res_model">res.partner</field>
+        </record>
+
+        <record id="mail_activity_reject" model="mail.activity.type">
+            <field name="name">Customer Reject</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">130</field>
+            <field name="res_model">res.partner</field>
+        </record>
+
+        <record id="mail_activity_Initial_approval" model="mail.activity.type">
+            <field name="name">Initial Approval</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">135</field>
+            <field name="res_model">loan.order</field>
+        </record>
+
+        <record id="mail_activity_action_contract_success" model="mail.activity.type">
+            <field name="name">Contract Success</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">140</field>
+            <field name="res_model">loan.order</field>
+        </record>
+
+        <record id="mail_activity_legal" model="mail.activity.type">
+            <field name="name">Collection Activity</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">145</field>
+            <field name="res_model">loan.order</field>
+        </record>
+
+        <record id="mail_activity_close" model="mail.activity.type">
+            <field name="name">Close Loan</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">150</field>
+            <field name="res_model">loan.order</field>
+        </record>
+
+        <record id="mail_activity_create_request" model="mail.activity.type">
+            <field name="name">Early Payment Request</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">155</field>
+            <field name="res_model">loan.order</field>
+        </record>
+
+        <record id="mail_activity_credit_l1" model="mail.activity.type">
+            <field name="name">Send to L1</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">160</field>
+            <field name="res_model">loan.order</field>
+        </record>
+
+        <record id="mail_activity_amount_difference" model="mail.activity.type">
+            <field name="name">Paid Amount</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">165</field>
+            <field name="res_model">loan.order</field>
+        </record>
+
+
+        <record id="action_server_limit" model="ir.actions.server">
+            <field name="name">Loan Limit</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_res_partner"/>
+            <field name="binding_model_id" ref="model_res_partner"/>
+            <field name="state">code</field>
+            <field name="code">records.net_limit()</field>
+        </record>
+
+        <record id="action_server_dbr" model="ir.actions.server">
+            <field name="name">Calculate Simah DBR</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_res_partner"/>
+            <field name="binding_model_id" ref="model_res_partner"/>
+            <field name="state">code</field>
+            <field name="code">records.total_deduction_before()</field>
+        </record>
+
+        <record id="action_server_calculate_dbr" model="ir.actions.server">
+            <field name="name">Calculate DBR</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_loan_order"/>
+            <field name="binding_model_id" ref="model_loan_order"/>
+            <field name="state">code</field>
+            <field name="code">records.total_deduction_after()</field>
+        </record>
+
+        <record id="action_send_sadad_message" model="ir.actions.server">
+            <field name="name">Send Sadad Massage</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_loan_order"/>
+            <field name="binding_model_id" ref="model_loan_order"/>
+            <field name="state">code</field>
+            <field name="code">records.send_sadad_message()</field>
+        </record>
+ <!--
+        <record id="action_cron_rosom_monthly" model="ir.actions.server">
+            <field name="name">Create Rosom Monthly Bills</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_loan_order"/>
+            <field name="binding_model_id" ref="model_loan_order"/>
+            <field name="state">code</field>
+            <field name="groups_id" eval="[(4, ref('loan.group_admin'))]"/>
+            <field name="code">records.rosom_monthly_invoice()</field>
+        </record>
+-->
+        <!--////////////////////////////////////////////////////////////////////////////-->
+        <record id="action_server_get_hijri_birth_of_date" model="ir.actions.server">
+            <field name="name">Get Hijri Birth Of Date</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_res_partner"/>
+            <field name="binding_model_id" ref="model_res_partner"/>
+            <field name="state">code</field>
+            <field name="code">records.get_hijri_birth_of_date()</field>
+        </record>
+        <!--////////////////////////////////////////////////////////////////////////////-->
+
+        <record id="action_server_send_message_iban_account" model="ir.actions.server">
+            <field name="name">Send Message IBAN Account Customers</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_loan_order"/>
+            <field name="binding_model_id" ref="model_loan_order"/>
+            <field name="state">code</field>
+            <field name="groups_id" eval="[(4, ref('loan.group_collection'))]"/>
+            <field name="code">records.send_message_iban_account()</field>
+        </record>
+
+        <!--        <record id="action_server_send_message_non_started_b1_2" model="ir.actions.server">-->
+        <!--            <field name="name">Send Message Non Started B1+2</field>-->
+        <!--            <field name="type">ir.actions.server</field>-->
+        <!--            <field name="model_id" ref="model_loan_order"/>-->
+        <!--            <field name="binding_model_id" ref="model_loan_order"/>-->
+        <!--            <field name="state">code</field>-->
+        <!--            <field name="groups_id" eval="[(4, ref('loan.group_collection'))]"/>-->
+        <!--            <field name="code">records.send_message_non_started_b1_2()</field>-->
+        <!--        </record>-->
+
+        <record id="action_server_send_sms" model="ir.actions.server">
+            <field name="name">Send Reminder</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_loan_order"/>
+            <field name="binding_model_id" ref="model_loan_order"/>
+            <field name="state">code</field>
+            <field name="groups_id" eval="[(4, ref('loan.group_collection'))]"/>
+            <field name="code">records.action_auto_reminder()</field>
+        </record>
+
+
+        <!--        <record id="action_server_send_installment_reminder_messages" model="ir.actions.server">-->
+        <!--            <field name="name">Send Massage To BKT-1-2-3-4</field>-->
+        <!--            <field name="type">ir.actions.server</field>-->
+        <!--            <field name="model_id" ref="model_loan_order"/>-->
+        <!--            <field name="binding_model_id" ref="model_loan_order"/>-->
+        <!--            <field name="state">code</field>-->
+        <!--            <field name="groups_id" eval="[(4, ref('loan.group_collection'))]"/>-->
+        <!--            <field name="code">records.send_installment_reminder_messages()</field>-->
+        <!--        </record>-->
+
+        <!--        <record id="action_server_send_installment_message_to_bkt_4" model="ir.actions.server">-->
+        <!--            <field name="name">Send Massage To BKT-4 Legal</field>-->
+        <!--            <field name="type">ir.actions.server</field>-->
+        <!--            <field name="model_id" ref="model_loan_order"/>-->
+        <!--            <field name="binding_model_id" ref="model_loan_order"/>-->
+        <!--            <field name="state">code</field>-->
+        <!--            <field name="groups_id" eval="[(4, ref('loan.group_collection'))]"/>-->
+        <!--            <field name="code">records.send_installment_message_to_bkt_4()</field>-->
+        <!--        </record>-->
+
+        <!--        <record id="action_server_send_installment_message_to_bkt_5" model="ir.actions.server">-->
+        <!--            <field name="name">Send Massage To BKT-5</field>-->
+        <!--            <field name="type">ir.actions.server</field>-->
+        <!--            <field name="model_id" ref="model_loan_order"/>-->
+        <!--            <field name="binding_model_id" ref="model_loan_order"/>-->
+        <!--            <field name="state">code</field>-->
+        <!--            <field name="groups_id" eval="[(4, ref('loan.group_collection'))]"/>-->
+        <!--            <field name="code">records.send_installment_message_to_bkt_5()</field>-->
+        <!--        </record>-->
+        <!--        Collection BKT Messages Section       -->
+        <record id="action_server_send_message_installment_payment_date" model="ir.actions.server">
+            <field name="name">Current - in 26</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_loan_order"/>
+            <field name="binding_model_id" ref="model_loan_order"/>
+            <field name="state">code</field>
+            <field name="groups_id" eval="[(4, ref('loan.group_collection'))]"/>
+            <field name="code">records.send_message_installment_payment_date()</field>
+        </record>
+
+        <record id="action_server_send_installment_message_to_bkt_1" model="ir.actions.server">
+            <field name="name">BKT - 1</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_loan_order"/>
+            <field name="binding_model_id" ref="model_loan_order"/>
+            <field name="state">code</field>
+            <field name="groups_id" eval="[(4, ref('loan.group_collection'))]"/>
+            <field name="code">records.send_installment_message_to_bkt_1()</field>
+        </record>
+
+        <record id="action_server_send_installment_message_to_bkt_2" model="ir.actions.server">
+            <field name="name">BKT - 2</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_loan_order"/>
+            <field name="binding_model_id" ref="model_loan_order"/>
+            <field name="state">code</field>
+            <field name="groups_id" eval="[(4, ref('loan.group_collection'))]"/>
+            <field name="code">records.send_installment_message_to_bkt_2()</field>
+        </record>
+
+        <record id="action_server_send_installment_message_to_non_started_bkt_2" model="ir.actions.server">
+            <field name="name">Non Started BKT - 2</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_loan_order"/>
+            <field name="binding_model_id" ref="model_loan_order"/>
+            <field name="state">code</field>
+            <field name="groups_id" eval="[(4, ref('loan.group_collection'))]"/>
+            <field name="code">records.send_installment_message_to_non_started_bkt_2()</field>
+        </record>
+
+        <record id="action_server_send_installment_message_to_bkt_3_28" model="ir.actions.server">
+            <field name="name">BKT - 3 - 28</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_loan_order"/>
+            <field name="binding_model_id" ref="model_loan_order"/>
+            <field name="state">code</field>
+            <field name="groups_id" eval="[(4, ref('loan.group_collection'))]"/>
+            <field name="code">records.send_installment_message_to_bkt_3_28()</field>
+        </record>
+
+        <record id="action_server_send_installment_message_to_bkt_3" model="ir.actions.server">
+            <field name="name">BKT - 3</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_loan_order"/>
+            <field name="binding_model_id" ref="model_loan_order"/>
+            <field name="state">code</field>
+            <field name="groups_id" eval="[(4, ref('loan.group_collection'))]"/>
+            <field name="code">records.send_installment_message_to_bkt_3()</field>
+        </record>
+
+        <record id="action_server_send_installment_message_to_bkt_4_legal" model="ir.actions.server">
+            <field name="name">BKT - 4 - Legal</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_loan_order"/>
+            <field name="binding_model_id" ref="model_loan_order"/>
+            <field name="state">code</field>
+            <field name="groups_id" eval="[(4, ref('loan.group_collection'))]"/>
+            <field name="code">records.send_installment_message_to_bkt_4_legal()</field>
+        </record>
+
+        <record id="action_server_send_installment_message_to_bkt_4_normal" model="ir.actions.server">
+            <field name="name">BKT - 4</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_loan_order"/>
+            <field name="binding_model_id" ref="model_loan_order"/>
+            <field name="state">code</field>
+            <field name="groups_id" eval="[(4, ref('loan.group_collection'))]"/>
+            <field name="code">records.send_installment_message_to_bkt_4_normal()</field>
+        </record>
+
+        <record id="action_server_send_installment_message_to_bkt_5_legal" model="ir.actions.server">
+            <field name="name">BKT - 5 - Legal +</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_loan_order"/>
+            <field name="binding_model_id" ref="model_loan_order"/>
+            <field name="state">code</field>
+            <field name="groups_id" eval="[(4, ref('loan.group_collection'))]"/>
+            <field name="code">records.send_installment_message_to_bkt_5_legal()</field>
+        </record>
+
+        <record id="action_server_send_installment_message_to_bkt_5_plus" model="ir.actions.server">
+            <field name="name">BKT - 5 +</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_loan_order"/>
+            <field name="binding_model_id" ref="model_loan_order"/>
+            <field name="state">code</field>
+            <field name="groups_id" eval="[(4, ref('loan.group_collection'))]"/>
+            <field name="code">records.send_installment_message_to_bkt_5_plus()</field>
+        </record>
+        <!--        Collection BKT Messages End Section       -->
+
+        <!--        <record id="action_server_get_total_interest" model="ir.actions.server">-->
+        <!--            <field name="name">Calculate Paid Amount</field>-->
+        <!--            <field name="type">ir.actions.server</field>-->
+        <!--            <field name="model_id" ref="model_loan_order"/>-->
+        <!--            <field name="binding_model_id" ref="model_loan_order"/>-->
+        <!--            <field name="state">code</field>-->
+        <!--            <field name="code">records.get_total_interest()</field>-->
+        <!--        </record>-->
+
+        <record id="action_server_update_total_paid_and_remaining" model="ir.actions.server">
+            <field name="name">Calculate Paid/Remaining Amount</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_loan_order"/>
+            <field name="binding_model_id" ref="model_loan_order"/>
+            <field name="state">code</field>
+            <field name="groups_id" eval="[(4, ref('loan.group_admin'))]"/>
+            <field name="code">records.update_total_paid_and_remaining()</field>
+        </record>
+
+        <record id="action_server_update_installment_month" model="ir.actions.server">
+            <field name="name">Update installment Amount</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_loan_order"/>
+            <field name="binding_model_id" ref="model_loan_order"/>
+            <field name="state">code</field>
+            <field name="groups_id" eval="[(4, ref('loan.group_admin'))]"/>
+            <field name="code">records.update_installment_month()</field>
+        </record>
+
+        <record id="action_server_update_remaining_amount" model="ir.actions.server">
+            <field name="name">Update interest/principle Amount</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_loan_order"/>
+            <field name="binding_model_id" ref="model_loan_order"/>
+            <field name="state">code</field>
+            <field name="groups_id" eval="[(4, ref('loan.group_admin'))]"/>
+            <field name="code">records.update_remaining_amount()</field>
+        </record>
+
+        <record id="action_server_update_bkt" model="ir.actions.server">
+            <field name="name">Update BKT</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_loan_order"/>
+            <field name="binding_model_id" ref="model_loan_order"/>
+            <field name="state">code</field>
+            <field name="groups_id" eval="[(4, ref('loan.group_admin'))]"/>
+            <field name="code">records.update_bkt()</field>
+        </record>
+
+        <record id="action_server_custom_calculate_new_apr" model="ir.actions.server">
+            <field name="name">New Calculate APR</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_loan_order"/>
+            <field name="binding_model_id" ref="model_loan_order"/>
+            <field name="state">code</field>
+            <field name="groups_id" eval="[(4, ref('loan.group_admin'))]"/>
+            <field name="code">records.custom_calculate_new_apr()</field>
+        </record>
+
+        <record id="action_server_update_tax_fees" model="ir.actions.server">
+            <field name="name">Update Fees and Tax</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_loan_order"/>
+            <field name="binding_model_id" ref="model_loan_order"/>
+            <field name="state">code</field>
+            <field name="groups_id" eval="[(4, ref('loan.group_admin'))]"/>
+            <field name="code">records.update_tax_fees()</field>
+        </record>
+
+        <record id="action_server_update_remaining_amounts" model="ir.actions.server">
+            <field name="name">Update Remaining Amounts</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_loan_order"/>
+            <field name="binding_model_id" ref="model_loan_order"/>
+            <field name="state">code</field>
+            <field name="groups_id" eval="[(4, ref('loan.group_admin'))]"/>
+            <field name="code">records.update_remaining_amounts()</field>
+        </record>
+
+<!--        <record id="action_server_auto_fazaa" model="ir.actions.server">-->
+<!--            <field name="name">Run Fazaa Loan</field>-->
+<!--            <field name="type">ir.actions.server</field>-->
+<!--            <field name="model_id" ref="model_loan_order"/>-->
+<!--            <field name="binding_model_id" ref="model_loan_order"/>-->
+<!--            <field name="state">code</field>-->
+<!--            <field name="groups_id" eval="[(4, ref('loan.group_admin'))]"/>-->
+<!--            <field name="code">records.auto_fazaa()</field>-->
+<!--        </record>-->
+
+        <record id="auto_action_monthly_move" model="ir.actions.server">
+            <field name="name">Monthly Installment Entry</field>
+            <field name="model_id" ref="model_loan_installment"/>
+            <field name="binding_model_id" ref="model_loan_installment"/>
+            <field name="state">code</field>
+            <field name="groups_id" eval="[(4, ref('loan.group_admin'))]"/>
+            <field name="code">
+                model.auto_action_monthly_move()
+            </field>
+        </record>
+
+    </data>
+</odoo>

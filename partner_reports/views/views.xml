@@ -1,0 +1,26 @@
+<odoo>
+  <data>
+      <record id="add_applicationn_date_and_seq_to_crm_lead" model="ir.ui.view">
+          <field name="name">add_applicationn_date_and_seq_to_crm_lead</field>
+          <field name="model">crm.lead</field>
+          <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+          <field name="arch" type="xml">
+              <field name="date_deadline" position="before">
+                <field name="application_date"/>
+                <field name="seq" readonly="1"/>
+              </field>
+          </field>
+      </record>
+
+      <record id="add_guarandtor_res_partner" model="ir.ui.view">
+          <field name="name">add_guarandtor_res_partner</field>
+          <field name="model">res.partner</field>
+          <field name="inherit_id" ref="base.view_partner_form"/>
+          <field name="arch" type="xml">
+              <field name="function" position="before">
+<!--                <field name="guarantor_id"/>-->
+              </field>
+          </field>
+      </record>
+  </data>
+</odoo>

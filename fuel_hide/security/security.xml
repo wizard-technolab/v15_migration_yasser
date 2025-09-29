@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+     <!--  Hide Menu Action Permission  -->
+    <record id="group_hide_action_menu_button" model="res.groups">
+        <field name="name">Show Action Menu Buttons</field>
+        <field name="comment">Show Action Menu Buttons</field>
+        <field name="category_id" ref="base.module_category_hidden"/>
+    </record>
+</odoo>

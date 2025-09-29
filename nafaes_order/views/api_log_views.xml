@@ -1,0 +1,88 @@
+<odoo>
+    <data>
+        <record id="nafaes_api_log_view_search" model="ir.ui.view">
+            <field name="name">nafaes.api.log.search</field>
+            <field name="model">nafaes.api.log</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="partner_id" string="Partner"/>
+                    <filter name="not_auth" string="Not Auth" domain="[('type', '!=', 'auth')]"/>
+                </search>
+            </field>
+        </record>
+        <record id="nafaes_api_log_view_tree" model="ir.ui.view">
+            <field name="name">nafaes.api.log.tree</field>
+            <field name="model">nafaes.api.log</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="create_date"/>
+                    <field name="type"/>
+                    <field name="partner_id"/>
+                    <field name="url"/>
+                    <field name="res_model"/>
+                    <field name="res_id"/>
+                    <field name="response_status"/>
+                </tree>
+            </field>
+        </record>
+        <record id="nafaes_api_log_view_form" model="ir.ui.view">
+            <field name="name">nafaes.api.log.form</field>
+            <field name="model">nafaes.api.log</field>
+            <field name="arch" type="xml">
+                <form edit="false" >
+                    <header>
+                        <button name="action_retry_webhook" attrs="{'invisible': [('type', '!=', 'webhook')]}"
+                                string="Retry Webhook" type="object"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group string="General">
+                                <field name="create_date"/>
+                                <field name="create_uid"/>
+                                <field name="header"/>
+                                <field name="note"/>
+                            </group>
+                            <group string="Request Info">
+                                <field name="url"/>
+                                <field name="type"/>
+                                <field name="response_status"/>
+                            </group>
+                            <group string="Related Object">
+                                <field name="partner_id"/>
+                                <field name="res_model"/>
+                                <field name="res_id"/>
+                                <field name="reference" widget="reference" string="Record"/>
+                                <field name="res_ids" attrs="{'invisible': [('res_ids', '=', False)]}"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Request &amp; Response">
+                                <separator string="Request"/>
+                                <field name="request" nolabel="1"/>
+                                <separator string="Response"/>
+                                <field name="response" nolabel="1"/>
+                            </page>
+                        </notebook>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="nafaes_api_log_action_view_tree" model="ir.actions.act_window">
+            <field name="name">API Log</field>
+            <field name="res_model">nafaes.api.log</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No Logs found. Let's create one!
+                </p>
+                <p>
+                    Helps improving the business workflow.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="API Log" action="nafaes_api_log_action_view_tree" id="nafaes_api_log_menu"
+                  parent="nafaes_root_menu" sequence="900" groups="base.group_system"/>
+    </data>
+</odoo>

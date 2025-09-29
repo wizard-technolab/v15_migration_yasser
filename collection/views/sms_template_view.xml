@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="massage_template_form_view" model="ir.ui.view">
+            <field name="name">massage.template.form</field>
+            <field name="model">massage.template</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="text"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="massage_template_tree_view" model="ir.ui.view">
+            <field name="name">massage.template.tree</field>
+            <field name="model">massage.template</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="text"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="collection_template_action" model="ir.actions.act_window">
+            <field name="name">Massages Template</field>
+            <field name="res_model">massage.template</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="massage_template_tree_view"/>
+        </record>
+
+        <menuitem name="Massages Template"
+                  id="massage_template_id"
+                  parent="sms_menu"
+                  action="collection.collection_template_action"
+                  sequence="15"
+        />
+    </data>
+</odoo>

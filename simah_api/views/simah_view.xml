@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="simah_form_view" model="ir.ui.view">
+            <field name="name">simah.view.form</field>
+            <field name="model">simah.simah</field>
+            <field name="type">form</field>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <form edit="false" create="false" delete="false">
+                    <header>
+                        <button name="action_simah_api" string="Simah"
+                                class="btn-primary" type="object"
+                                confirm="Are you sure you want to do this?"
+                                attrs="{'invisible': [('bool_field', '=', True)]}"/>
+                        <button name="action_salary_certificate_data" string="Salary Certificate"
+                                class="btn-primary" type="object" attrs="{'invisible': [('bool_field', '=', True)]}"
+                                confirm="Are you sure you want to do this?" invisible="1"/>
+                        <button name="action_reset" type="object" string="Reset" groups="base.group_system"
+                                confirm="Are you sure you want to do this?"/>
+                        <button name="calculate_dbr_amount" type="object" string="calculate"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="bool_field" invisible="1"/>
+                                <field name="name" options='{"no_open": True, "no_create": True}'/>
+                                <field name="id_number"/>
+                                <field name="expiry_date" groups="loan.group_admin"/>
+                                <field name="dbr_installment"/>
+                                <field name="salary_rate" groups="loan.group_admin"/>
+                                <field name="mtg" widget="boolean_toggle"/>
+                                <field name="mtg_installment" attrs="{'invisible':[('mtg','=',False)]}"/>
+                            </group>
+                            <group>
+                                <field name="simah_city_id" options='{"no_open": True, "no_create": True}'/>
+                                <field name="city_id" groups="loan.group_admin"/>
+                                <field name="birth_of_date" groups="loan.group_admin"/>
+                                <field name="gender" groups="loan.group_admin"/>
+                                <field name="loan_amount"/>
+                                <field name="simah_dbr" style="color:#008040;"/>
+                            </group>
+                        </group>
+                        <group string="Data">
+                            <div>
+                                <group>
+                                    <field name="reportDate" readonly="1"/>
+                                    <field name="enquiryNumber" readonly="1"/>
+                                    <field name="numberOfApplicants" readonly="1"/>
+                                    <field name="referenceNumber" readonly="1"/>
+                                    <field name="memberType_code" readonly="1"/>
+                                </group>
+                            </div>
+                            <div>
+                                <group>
+                                    <field name="enquiryType" readonly="1"/>
+                                    <field name="productType" readonly="1"/>
+                                    <field name="accountType" readonly="1"/>
+                                    <field name="amount" readonly="1"/>
+                                    <field name="statusReport_code" readonly="1"/>
+                                </group>
+                            </div>
+                        </group>
+                        <notebook>
+                            <page string="Score and Narrative">
+                                <field name="simahScore" readonly="1">
+                                    <tree editable="bottom">
+                                        <field name="score"/>
+                                        <field name="minimumScore"/>
+                                        <field name="maximumScore"/>
+                                        <field name="simahScoreCodes"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                        <group string="Primary" style="text-align:center;"/>
+                        <group>
+                            <group string="Data Provided VS Available">
+                                <field name="applicantTypeNameEN" readonly="1"/>
+                                <field name="applicantTypeCode" readonly="1"/>
+                                <field name="iDExpiryDate" readonly="1"/>
+                                <field name="familyNameAr" readonly="1"/>
+                                <field name="firstNameAr" readonly="1"/>
+                                <field name="secondNameAr" readonly="1"/>
+                                <field name="thirdNameAr" readonly="1"/>
+                                <field name="customerNameAr" readonly="1"/>
+                                <field name="dateOfBirth" readonly="1"/>
+                                <field name="gender" readonly="1"/>
+                            </group>
+                            <group string="Summary">
+                                <field name="summActiveCreditInstruments" readonly="1"/>
+                                <field name="summEarliestIssueDate" readonly="1"/>
+                                <field name="summTotalGuaranteedLimits" readonly="1"/>
+                                <field name="summTotalGuaranteedLiablilites" readonly="1"/>
+                                <field name="summCurrentDelinquentBalance" readonly="1"/>
+                                <field name="summPreviousEnquiresThisMonth" readonly="1"/>
+                                <field name="statusNameEN" readonly="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string='Enquiries'>
+                                <field name="simahEnquiries" readonly="1">
+                                    <tree editable="bottom">
+                                        <field name="prevEnqDate"/>
+                                        <field name="memberCode"/>
+                                        <field name="enqTypeCode"/>
+                                        <field name="code"/>
+                                        <field name="prevEnqAmount"/>
+                                        <field name="prevEnquirerNameAr"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                        <notebook>
+                            <page string='Instrument'>
+                                <field name="creditInstrument" readonly="1">
+                                    <tree editable="bottom">
+                                        <field name="memberCode"/>
+                                        <field name="code"/>
+                                        <field name="ciAccountNumber"/>
+                                        <field name="ciLimit"/>
+                                        <field name="ciTenure"/>
+                                        <field name="ciInstallmentAmount" style="color:#008040;"
+                                               sum="ciInstallmentAmount"/>
+                                        <field name="ciOutstandingBalance"/>
+                                        <field name="ciLastAmountPaid"/>
+                                        <field name="ciAsOfDate"/>
+                                        <field name="ciIssuedDate"/>
+                                        <field name="ciExpirationDate"/>
+                                        <field name="ciClosingDate"/>
+                                        <field name="creditInstrumentStatusCode"/>
+                                        <field name="ciPastDue"/>
+                                        <field name="ciLastPaymentDate"/>
+                                        <field name="ciSummary"/>
+                                        <field name="ciNextDueDate"/>
+                                        <field name="paymentFrequencyCodeName"/>
+                                        <field name="salaryAssignmentFlagCode"/>
+                                        <field name="total_installment" sum="total_installment"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                        <notebook>
+                            <page string="Primary Default">
+                                <field name="simahDefault" readonly="1">
+                                    <tree editable="bottom">
+                                        <field name="textAr"/>
+                                        <field name="memberNameAR"/>
+                                        <field name="pDefAccountNo"/>
+                                        <field name="pDefDateLoaded"/>
+                                        <field name="pDefOriginalAmount"/>
+                                        <field name="pDefOutstandingBalance"/>
+                                        <field name="defaultStatusDescAr"/>
+                                        <field name="pDefSetteledDate"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                        <notebook>
+                            <page string="Guarantor Default">
+                                <field name="guarantorDefault" readonly="1">
+                                    <tree editable="bottom">
+                                        <field name="textAr"/>
+                                        <field name="memberNameAR"/>
+                                        <field name="gDefAccountNo"/>
+                                        <field name="gDefDateLoaded"/>
+                                        <field name="gDefOriginalAmount"/>
+                                        <field name="gDefOutstandingBalance"/>
+                                        <field name="defaultStatusDescAr"/>
+                                        <field name="gDefSetteledDate"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                        <notebook>
+                            <page string="simah Cheques">
+                                <field name="simahCheques" readonly="1">
+                                    <tree editable="bottom">
+                                        <field name="textAr"/>
+                                        <field name="memberNameAR"/>
+                                        <field name="bcCheqDateLoaded"/>
+                                        <field name="bcChequeNumber"/>
+                                        <field name="bcBalance"/>
+                                        <field name="bcOutstandingBalance"/>
+                                        <field name="defaultStatusDescAr"/>
+                                        <field name="bcSetteledDate"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                        <notebook>
+                            <page string="simah judgement">
+                                <field name="simahJudgement" readonly="1">
+                                    <tree editable="bottom">
+                                        <field name="executionDate"/>
+                                        <field name="resolutionNumber"/>
+                                        <field name="cityNameAr"/>
+                                        <field name="courtNameAr"/>
+                                        <field name="legalCaseNumber"/>
+                                        <field name="loadedDate"/>
+                                        <field name="originalClaimedAmount"/>
+                                        <field name="outstandingBalance"/>
+                                        <field name="settlementDate"/>
+                                        <field name="statusNameAr"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                        <notebook>
+                            <page string="Public Notices">
+                                <field name="publicNotices" readonly="1">
+                                    <tree editable="bottom">
+                                        <field name="dataLoad"/>
+                                        <field name="noticeType"/>
+                                        <field name="publication"/>
+                                        <field name="text"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                        <group string="Defaults">
+                            <group>
+                                <field name="summDefaults" readonly="1"/>
+                                <field name="summTotalLimits" readonly="1"/>
+                                <field name="summTotalLiablilites" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="summTotalDefaults" readonly="1"/>
+                                <field name="summPreviousEnquires" readonly="1"/>
+                                <field name="summGuaranteedCreditInstruments" readonly="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Address">
+                                <field name="simahAddress" readonly="1">
+                                    <tree editable="bottom">
+                                        <field name="addressTypeCode"/>
+                                        <field name="districtAr"/>
+                                        <field name="adrsAddressLineFirstDescAr"/>
+                                        <field name="adrsPOBox"/>
+                                        <field name="adrsCityDescAr"/>
+                                        <field name="adrsPostalCode"/>
+                                        <field name="buildingNumber"/>
+                                        <field name="adrsDateLoaded"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                        <notebook>
+                            <page string="Contact Numbers">
+                                <field name="simahContact" readonly="1">
+                                    <tree editable="bottom">
+                                        <field name="conCode"/>
+                                        <field name="contactNumberTypeDescriptionAr"/>
+                                        <field name="conAreaCode"/>
+                                        <field name="conPhoneNumber"/>
+                                        <field name="conExtension"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                        <notebook>
+                            <page string="Occupations and Employers">
+                                <field name="simahEmployee" readonly="1">
+                                    <tree editable="bottom">
+                                        <field name="employerStatusTypeCode"/>
+                                        <field name="empEmployerNameDescAr"/>
+                                        <field name="empOccupationDescAr"/>
+                                        <field name="empDateOfEmployment"/>
+                                        <field name="adrsCityDescAr"/>
+                                        <field name="empTotalIncome"/>
+                                        <field name="empDateLoaded"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                        <group>
+                            <field name="discTextDescAr" widget="textarea_ltr"/>
+                        </group>
+                        <group>
+                            <field name="discTextDescEn"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="simah_tree_view" model="ir.ui.view">
+            <field name="name">simah.view.tree</field>
+            <field name="model">simah.simah</field>
+            <field name="type">tree</field>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <tree sample="1" delete="false">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="simah_action" model="ir.actions.act_window">
+            <field name="name">Simah API</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">simah.simah</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                </p>
+            </field>
+        </record>
+        <menuitem name="SIMAH"
+                  id="simah_root"
+                  sequence="10"
+                  action="simah_api.simah_action"
+                  groups="simah_api.group_use_simah_admin,simah_api.group_use_simah_user"
+                  web_icon="simah_api,static/description/icon.png"/>
+
+        <menuitem name="Simah Data"
+                  id="simah_id"
+                  parent="simah_root"
+                  action="simah_api.simah_action"
+                  sequence="2"/>
+    </data>
+</odoo>

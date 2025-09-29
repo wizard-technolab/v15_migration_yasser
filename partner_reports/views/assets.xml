@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+        <template id="report_assets_common_custom_stylesheet" name="Custom QWeb stylesheet" inherit_id="web.report_layout">
+            <xpath expr="//head" position="inside">
+                <link href="/partner_reports/static/src/css/medical_service_financing_request.css" rel="stylesheet" type="text/less"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>

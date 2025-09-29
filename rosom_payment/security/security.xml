@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.module.category" id="module_category_rosom">
+            <field name="name">Rosom Management</field>
+            <field name="description">Category For Rosom</field>
+            <field name="sequence">40</field>
+        </record>
+
+        <record id="group_use_rosom_user" model="res.groups">
+            <field name="name">User</field>
+            <field name="category_id" ref="module_category_rosom"/>
+            <!--        <field name="implied_ids" eval="[(4, ref('group_user'))]"/>-->
+        </record>
+
+        <record id="group_use_rosom_admin" model="res.groups">
+            <field name="name">Administrator</field>
+            <field name="category_id" ref="module_category_rosom"/>
+            <field name="implied_ids" eval="[(4, ref('group_use_rosom_user'))]"/>
+        </record>
+
+        <record id="group_resom_manager" model="res.groups">
+            <field name="name">Resom Manager</field>
+            <field name="implied_ids" eval="[(4, ref('loan.group_use_loan_user'))]"/>
+        </record>
+    </data>
+</odoo>

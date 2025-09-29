@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem name="Compliance Management"
+              id="aml_root_menu"
+              sequence="13"
+              web_icon="aml,static/description/icon.png"/>
+</odoo>

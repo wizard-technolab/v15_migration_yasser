@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_pre_enquiry_form" model="ir.ui.view">
+            <field name="name">view.simah.enquiries.form</field>
+            <field name="model">simah.enquiries</field>
+            <field name="arch" type="xml">
+                <form string="Enquiries">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="prevEnqDate"/>
+                                <field name="prevEnqMemberRef"/>
+                                <field name="prevEnquirerName"/>
+                            </group>
+                            <group>
+                                <field name="prevEnquirerNameAr"/>
+                                <field name="prevEnqAmount"/>
+                                <field name="otherReason"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <group string="Pre Enq Type">
+                                    <field name="enqTypeCode" class="oe_inline"/>
+                                    <field name="enqTypeDescriptionAr" class="oe_inline"/>
+                                    <field name="enqTypeDescriptionEn" class="oe_inline"/>
+                                </group>
+                                <group string="Pre Enquirer">
+                                    <field name="memberCode" class="oe_inline"/>
+                                    <field name="memberNameEN" class="oe_inline"/>
+                                    <field name="memberNameAR" class="oe_inline"/>
+                                </group>
+                            </group>
+                            <group string="Pre Product Type">
+                                <field name="productId" class="oe_inline"/>
+                                <field name="code" class="oe_inline"/>
+                                <field name="textEn" class="oe_inline"/>
+                                <field name="textAr" class="oe_inline"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="action_pre_enquiry" model="ir.actions.act_window">
+            <field name="name">Simah Enquiries</field>
+            <field name="res_model">simah.enquiries</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

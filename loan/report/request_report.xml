@@ -1,0 +1,1247 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <template id="financing_template">
+            <t t-call="web.external_layout">
+                <div class="page" dir="rtl">
+                    <div class="row text-center">
+                        <!-- first column removed class:  main-column-right -->
+                        <div class="col-6 main-column">
+                            <div class="row">
+                                <!-- <br/> -->
+                                <img src="/loan/static/src/img/logo.png" class="img_fuel_icon"/>
+                                <br/>
+                            </div>
+                            <div class="row" style="margin-top: 8px;">
+                                <!-- <span class="orang_text ffc_code">FFC-MKT-SD-008</span> -->
+                            </div>
+                            <!-- request information -->
+                            <div class="row">
+                                <span class="purple_text">
+                                    معلومات الطلب
+                                </span>
+                            </div>
+                            <!-- request information -->
+                            <div class="row" style="margin-top:7px;" dir="rtl">
+                                <!-- new -->
+                                <div class="check_box_div">
+                                    <div class="custom_checkbox">
+                                        <i class="fa fa-check" style="font-size:12px;margin:auto;"></i>
+                                    </div>
+                                </div>
+                                <div class="text-right check_box_text check_box_request_information">
+                                    <span class="black_bold_text">جديد</span>
+                                    <br/>
+                                    <span class="black_bold_text">new</span>
+                                </div>
+                            </div>
+                            <!-- current -->
+                            <!-- <div class="check_box_div">
+                                <div class="custom_checkbox">
+                                    <i class="fa fa-check" style="font-size:12px;margin:auto;"></i>
+                                </div>
+                            </div>
+                            <div class="text-right check_box_text check_box_request_information">
+                                <span class="black_bold_text">قائم</span><br/>
+                                <span class="black_bold_text">Current</span>
+                            </div> -->
+
+                            <!-- former -->
+                            <!-- <div class="check_box_div">
+                                <div class="custom_checkbox">
+                                    <i class="fa fa-check" style="font-size:12px;margin:auto;"></i>
+                                </div>
+                            </div>
+                            <div class="text-right check_box_text check_box_request_information">
+                                <span class="black_bold_text">سابق</span><br/>
+                                <span class="black_bold_text">Former</span>
+                            </div> -->
+
+                            <!-- date and number of application -->
+                            <div class="row" style="margin-top:10px;">
+                                <div class="check_box_text text-right">
+                                    <span class="black_bold_text">تاريخ الطلب</span>
+                                    <br/>
+                                    <span class="black_bold_text">Application Date</span>
+                                </div>
+                                <div class="text_field_div" style="width:108px;margin-left:5px;">
+                                    <t t-esc="o.request_date"/>
+                                </div>
+                                <!-- <div class="check_box_text text-right">
+                                    <span class="black_bold_text">رقم الطلب</span><br/>
+                                    <span class="black_bold_text">Application number</span>
+                                </div>
+                                <div class="text_field_div" style="width:178px;">
+                                    <t t-esc=""/>
+                                </div> -->
+                            </div>
+                            <!-- customer details -->
+                            <div class="row" style="margin-top:8px;">
+                                <div class="col-6 text-right" style="padding-right:0px">
+                                    <div class="purple_text">البيانات الشخصية</div>
+                                </div>
+                                <div class="col-6 text-left">
+                                    <div class="purple_text"><span class="empty_box">d</span>Customer Details
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- arabic name -->
+                            <div class="row">
+                                <div class="check_box_text text-right">
+                                    <span class="black_bold_text">الإسم بالعربي</span>
+                                    <br/>
+                                    <span class="black_bold_text">Name in Arabic</span>
+                                </div>
+                                <div class="col-8">
+                                    <div class="text_field_div text-center" style="width:347px;margin-right:-10px;">
+                                        <t t-esc="o.name.name"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top:-3px;font-size:9px;">
+                                <div class="col-6 text-left" style="padding-left:7px;">
+                                    حسب جواز السفر
+                                </div>
+                                <div class="col-6 text-right" style="padding-right:42px;">
+                                    As per passport
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top:1px;">
+                                <div class="col-4" style="padding-right:0px;">
+                                    <div class="check_box_text text-right">
+                                        <span class="black_bold_text">رقم الهوية الوطنية/الإقامة</span>
+                                        <br/>
+                                        <span class="black_bold_text">Saudi ID/Iqama</span>
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <div class="text_field_div text-center" style="width:347px;margin-right:-60px;">
+                                        <t t-esc="o.identification_id"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top:5px;">
+                                <!-- birthdate -->
+                                <div class="check_box_text text-right" style="margin-left:12px !important;">
+                                    <span class="black_bold_text">تاريخ الميلاد الميلادي</span>
+                                    <br/>
+                                    <span class="black_bold_text">Date Birth</span>
+                                </div>
+                                <t t-if="o.name.birth_of_date">
+                                    <div class="text_field_div text-center"
+                                         style="font-size:11px;width:33px;border-radius:0px 6px 6px 0px;">
+                                        <t t-esc="o.get_divided_date(o.name.birth_of_date)[2]"/>
+                                    </div>
+                                    <div class="text_field_div text-center"
+                                         style="font-size:11px;width:34px;border-radius:0px;">
+                                        <t t-esc="o.get_divided_date(o.name.birth_of_date)[1]"/>
+                                    </div>
+                                    <div class="text_field_div text-center"
+                                         style="font-size:11px;width:33px;border-radius:6px 0px 0px 6px;margin-left:135px;">
+                                        <t t-esc="o.get_divided_date(o.name.birth_of_date)[0]"/>
+                                    </div>
+                                </t>
+                                <t t-else="">
+                                    <div class="text_field_div text-center"
+                                         style="width:33px;border-radius:0px 6px 6px 0px;"></div>
+                                    <div class="text_field_div text-center" style="width:34px;border-radius:0px;"></div>
+                                    <div class="text_field_div text-center"
+                                         style="width:33px;border-radius:6px 0px 0px 6px;margin-left:135px;"></div>
+                                </t>
+                            </div>
+<!--                            <div class="row" style="margin-top:5px;">-->
+<!--                                <div class="check_box_text text-right" style="margin-left:12px !important;">-->
+<!--                                    <span class="black_bold_text">تاريخ الميلاد الهجري</span>-->
+<!--                                    <br/>-->
+<!--                                    <span class="black_bold_text">Hijri Date Birth</span>-->
+<!--                                </div>-->
+<!--                                <div class="col-8">-->
+<!--                                    <div class="text_field_div text-center" style="width:347px;margin-right:-10px;">-->
+<!--                                        <t t-esc="o.name.birth_of_date_hijri"/>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+                            <!--                                <t t-if="o.name.birth_of_date">-->
+                            <!--                                    <div class="text_field_div text-center" style="width:347px;margin-right:-60px;">-->
+                            <!--                                        <t t-esc="o.name.birth_of_date_hijri"/>-->
+                            <!--                                    </div>-->
+                            <!--                                    <div class="text_field_div text-center"-->
+                            <!--                                         style="font-size:11px;width:34px;border-radius:0px;">-->
+                            <!--                                        <t t-esc="o.get_divided_date(o.name.birth_of_date_hijri)[1]"/>-->
+                            <!--                                    </div>-->
+                            <!--                                    <div class="text_field_div text-center"-->
+                            <!--                                         style="font-size:11px;width:33px;border-radius:6px 0px 0px 6px;margin-left:135px;">-->
+                            <!--                                        <t t-esc="o.get_divided_date(o.name.birth_of_date_hijri)[0]"/>-->
+                            <!--                                    </div>-->
+                            <!--                                </t>-->
+
+                            <!--                                <t t-else="">-->
+                            <!--                                    <div class="text_field_div text-center"-->
+                            <!--                                         style="width:33px;border-radius:0px 6px 6px 0px;"></div>-->
+                            <!--                                    <div class="text_field_div text-center" style="width:34px;border-radius:0px;"></div>-->
+                            <!--                                    <div class="text_field_div text-center"-->
+                            <!--                                         style="width:33px;border-radius:6px 0px 0px 6px;margin-left:135px;"></div>-->
+                            <!--                                </t>-->
+                            <!-- expiration date -->
+                            <div class="row" style="margin-top:5px;">
+                                <div class="check_box_text text-right" style="margin-left:3px !important;">
+                                    <span class="black_bold_text">تاريخ الإنتهاء</span>
+                                    <br/>
+                                    <span class="black_bold_text">Date Of Expiry</span>
+                                </div>
+                                <t t-if="o.name.expiry_of_date">
+                                    <div class="text_field_div text-center"
+                                         style="font-size:11px;width:33px;border-radius:0px 6px 6px 0px;">
+                                        <t t-esc="o.get_divided_date(o.name.expiry_of_date)[2]"/>
+                                    </div>
+                                    <div class="text_field_div text-center"
+                                         style="font-size:11px;width:34px;border-radius:0px;">
+                                        <t t-esc="o.get_divided_date(o.name.expiry_of_date)[1]"/>
+                                    </div>
+                                    <div class="text_field_div text-center"
+                                         style="font-size:11px;width:33px;border-radius:6px 0px 0px 6px;">
+                                        <t t-esc="o.get_divided_date(o.name.expiry_of_date)[0]"/>
+                                    </div>
+                                </t>
+                                <t t-else="">
+                                    <div class="text_field_div text-center"
+                                         style="width:33px;border-radius:0px 6px 6px 0px;"></div>
+                                    <div class="text_field_div text-center"
+                                         style="width:34px;border-radius:0px;"></div>
+                                    <div class="text_field_div text-center"
+                                         style="width:33px;border-radius:6px 0px 0px 6px;"></div>
+                                </t>
+                            </div>
+                            <!-- Mobile Number -->
+                            <div class="row" style="margin-top:5px;">
+                                <div class="col-4" style="padding-right:0px;">
+                                    <div class="check_box_text text-right">
+                                        <span class="black_bold_text">الجوال</span>
+                                        <br/>
+                                        <span class="black_bold_text">Mobile Number</span>
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <div class="text_field_div text-center" style="width:387px;margin-right:-100px;">
+                                        <t t-esc="o.name.phone"/>
+                                    </div>
+                                </div>
+                            </div>
+<!--                            <div class="row" style="margin-top:5px;">-->
+<!--                                <div class="col-4" style="padding-right:0px;">-->
+<!--                                </div>-->
+<!--                                <div class="col-8">-->
+<!--                                    <div class="text_field_div text-center" style="width:387px;margin-right:-100px;">-->
+<!--                                        <t t-esc="o.name.mobile"/>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+                            <!-- E-mail -->
+                            <div class="row" style="margin-top:5px;">
+                                <div class="col-4" style="padding-right:0px;">
+                                    <div class="check_box_text text-right">
+                                        <span class="black_bold_text">البريد الإلكتروني</span>
+                                        <br/>
+                                        <span class="black_bold_text">E-mail</span>
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <div class="text_field_div text-center" style="width:347px;margin-right:-60px;">
+                                        <t t-esc="o.name.email"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top:5px;">
+                                <div class="col-4" style="padding-right:0px;">
+                                    <div class="check_box_text text-right">
+                                        <span class="black_bold_text">الغرض من التمويل</span>
+                                        <br/>
+                                        <span class="black_bold_text">Loan Purpose</span>
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <div class="text_field_div text-center" style="width:347px;margin-right:-60px;">
+                                        <t t-esc="o.name.loan_purpose"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Net Salary -->
+                            <div class="row" style="margin-top:5px;">
+                                <div class="col-4" style="padding-right:0px;">
+                                    <div class="check_box_text text-right">
+                                        <span class="black_bold_text">صافي الراتب</span>
+                                        <br/>
+                                        <span class="black_bold_text">Net Salary</span>
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <div class="text_field_div text-center" style="width:347px;margin-right:-60px;">
+                                        <t t-esc="o.name.salary_rate"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Education -->
+                            <div class="row" style="margin-top:5px;">
+                                <div class="col-4" style="padding-right:0px;">
+                                    <div class="check_box_text text-right">
+                                        <span class="black_bold_text">المستوى الدراسي</span>
+                                        <br/>
+                                        <span class="black_bold_text">Education</span>
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                </div>
+                            </div>
+                            <!-- Education Level -->
+                            <div class="row" style="margin-top:7px;" dir="rtl">
+                                <!-- Secondary -->
+                                <div class="check_box_div">
+                                    <div class="custom_checkbox">
+                                        <t t-if="o.name.certificate == 'Secondary'">
+                                            <i class="fa fa-check" style="font-size:12px;margin:auto;"></i>
+                                        </t>
+                                    </div>
+                                </div>
+                                <div class="text-right check_box_text check_box_request_information"
+                                     style="margin-left:10px;">
+                                    <span class="black_bold_text">ثانوي</span>
+                                    <br/>
+                                    <span class="black_bold_text">Secondary</span>
+                                </div>
+
+                                <!-- Under-graduate -->
+                                <div class="check_box_div">
+                                    <div class="custom_checkbox">
+                                        <t t-if="o.name.certificate == 'Bachelor'">
+                                            <i class="fa fa-check" style="font-size:12px;margin:auto;"></i>
+                                        </t>
+                                    </div>
+                                </div>
+                                <div class="text-right check_box_text check_box_request_information"
+                                     style="margin-left:10px;">
+                                    <span class="black_bold_text">جامعي</span>
+                                    <br/>
+                                    <span class="black_bold_text">Under-graduate</span>
+                                </div>
+
+                                <!-- Post-graduate -->
+                                <div class="check_box_div">
+                                    <div class="custom_checkbox">
+                                        <t t-if="o.name.certificate == 'Masters'">
+                                            <i class="fa fa-check" style="font-size:12px;margin:auto;"></i>
+                                        </t>
+                                    </div>
+                                </div>
+                                <div class="text-right check_box_text check_box_request_information"
+                                     style="margin-left:10px;">
+                                    <span class="black_bold_text">دراسات عليا</span>
+                                    <br/>
+                                    <span class="black_bold_text">Post-graduate</span>
+                                </div>
+
+                                <!-- other -->
+                                <div class="check_box_div">
+                                    <div class="custom_checkbox">
+                                        <t t-if="o.name.certificate == 'Other'">
+                                            <i class="fa fa-check" style="font-size:12px;margin:auto;"></i>
+                                        </t>
+                                    </div>
+                                </div>
+                                <div class="text-right check_box_text check_box_request_information">
+                                    <span class="black_bold_text">اخرى</span>
+                                    <br/>
+                                    <span class="black_bold_text">Other</span>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top:7px;" dir="rtl">
+
+                                <!-- Status -->
+                                <div class="check_box_text text-right">
+                                    <span class="black_bold_text">نوع السكن</span>
+                                    <br/>
+                                    <span class="black_bold_text">Residencial Status</span>
+                                </div>
+                                <!-- Owner -->
+                                <div class="check_box_div" style="margin-left:8px!important;">
+                                    <div class="custom_checkbox">
+                                        <t t-if="o.name.home_type == 'Own place'">
+                                            <i class="fa fa-check" style="font-size:12px;margin:auto;"></i>
+                                        </t>
+                                    </div>
+                                </div>
+                                <div class="check_box_text" style="margin-left:20px;">
+                                    <span class="black_bold_text">ملك</span>
+                                    <br/>
+                                    <span class="black_bold_text">Owner</span>
+                                </div>
+
+                                <!-- Rent -->
+                                <div class="check_box_div" style="margin-left:8px!important;">
+                                    <div class="custom_checkbox">
+                                        <t t-if="o.name.home_type == 'Rental'">
+                                            <i class="fa fa-check" style="font-size:12px;margin:auto;"></i>
+                                        </t>
+                                    </div>
+                                </div>
+                                <div class="check_box_text" style="margin-left:55px;">
+                                    <span class="black_bold_text">إيجار</span>
+                                    <br/>
+                                    <span class="black_bold_text">Rent</span>
+                                </div>
+
+                                <!-- Company Provided -->
+                                <div class="check_box_div" style="margin-left:8px!important;">
+                                    <div class="custom_checkbox">
+                                        <t t-if="o.name.home_type == 'Provided through work'">
+                                            <i class="fa fa-check" style="font-size:12px;margin:auto;"></i>
+                                        </t>
+                                    </div>
+                                </div>
+                                <div class="check_box_text" style="margin-left:20px;">
+                                    <span class="black_bold_text">مؤمن عن طريق العمل</span>
+                                    <br/>
+                                    <span class="black_bold_text">Company Provided</span>
+                                </div>
+
+
+                            </div>
+                            <!-- Livin with parents -->
+                            <div class="row" style="margin-top:10px;">
+                                <!-- with parents -->
+                                <div class="check_box_div">
+                                    <div class="custom_checkbox">
+                                        <t t-if="o.name.home_type == 'Living with parents'">
+                                            <i class="fa fa-check" style="font-size:12px;margin:auto;"></i>
+                                        </t>
+                                    </div>
+                                </div>
+                                <div class="text-right check_box_text check_box_request_information"
+                                     style="width:140px;margin-left:70px;">
+                                    <span class="black_bold_text">مقيم مع الوالدين / العائلة</span>
+                                    <br/>
+                                    <span class="black_bold_text">Living Wiith Parents/Family</span>
+                                </div>
+                                <!-- Annual Rent -->
+                                <!--                                <div class="check_box_text text-right" style="width:101px;">-->
+                                <!--                                    <span class="black_bold_text">قيمة الإيجار السنوي</span>-->
+                                <!--                                    <br/>-->
+                                <!--                                    <span class="black_bold_text">Annual Rent</span>-->
+                                <!--                                </div>-->
+                                <!--                                <div class="text_field_div text-center" style="width:140px;margin-right:-10px;">-->
+                                <!--                                    <t t-esc="'{:,.2f}'.format(o.annual_rent)"/>-->
+                                <!--                                </div>-->
+                            </div>
+                            <!-- Financing Plan -->
+                            <div class="row" style="margin-top:10px;">
+                                <div class="col-6 text-right" style="padding-right:0px">
+                                    <div class="purple_text">البرنامج التمويلي و إبداء الرغبة لطلب التمويل</div>
+                                </div>
+                                <div class="col-6 text-left">
+                                    <div class="purple_text"><span class="empty_box">d</span>The financing plan and
+                                        expressing a
+                                    </div>
+                                    <div class="purple_text"><span class="empty_box">d</span>desire to request funding
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Medical Services Lable -->
+                            <!--                            <div class="row" style="margin-top:8px;" dir="rtl">-->
+                            <!--                                <div class="check_box_div">-->
+                            <!--                                    <div class="custom_checkbox">-->
+                            <!--                                        <t t-if="o.service">-->
+                            <!--                                            <i class="fa fa-check" style="font-size:12px;margin:auto;"></i>-->
+                            <!--                                        </t>-->
+                            <!--                                    </div>-->
+                            <!--                                </div>-->
+                            <!--                                &lt;!&ndash;                                <div class="text-right check_box_text check_box_request_information" style="margin-left:62px;">&ndash;&gt;-->
+                            <!--                                &lt;!&ndash;                                    <span class="black_bold_text">خدمات طبية</span><br/>&ndash;&gt;-->
+                            <!--                                &lt;!&ndash;                                    <span class="black_bold_text">Medical Services</span>&ndash;&gt;-->
+                            <!--                                &lt;!&ndash;                                </div>&ndash;&gt;-->
+                            <!--                            </div>-->
+                            <!-- Authorized Service provider -->
+                            <div class="row" style="margin-top:5px;">
+                                <div class="col-3" style="padding-right:0px;">
+                                    <div class="check_box_text text-center" style="width:150px;">
+                                        <span class="black_bold_text">اسم الخدمة</span>
+                                        <br/>
+                                        <span class="black_bold_text">Name Authorized Service provider</span>
+                                    </div>
+                                </div>
+                                <div class="col-9">
+                                    <div class="text_field_div text-center" style="width:282px;margin-right:10px;">
+                                        <t t-esc="o.name.service_provider"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Financed Amount (Medical Fees) -->
+                            <div class="row" style="margin-top:5px;">
+                                <div class="col-3" style="padding-right:0px;margin-right:-20px;">
+                                    <div class="check_box_text text-center" style="width:200px;">
+                                        <span class="black_bold_text" dir="rtl">مبلغ التمويل (رسوم العلاج)</span>
+                                        <br/>
+                                        <span class="black_bold_text" dir="ltr">Financed Amount (Medical Fees)</span>
+                                    </div>
+                                </div>
+                                <div class="col-9">
+                                    <div class="text_field_div text-center" style="width:242px;margin-right:45px;">
+                                        <t t-esc="'{:,.2f}'.format(o.loan_amount)"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Financed Period -->
+                            <!--                            <div class="row" style="margin-top:5px;">-->
+                            <!--                                <div class="col-6" style="padding-right:0px; font-size:11px;margin-left:-20px;">-->
+                            <!--                                    <div class="check_box_text text-right">-->
+                            <!--                                        <span class="black_bold_text">مدة التمويل-->
+                            <!--                                            <span class="orang_text">(كحد أدنى 3 أشهر، كحد أقصى 24 شهر)</span>-->
+                            <!--                                        </span>-->
+                            <!--                                    </div>-->
+                            <!--                                </div>-->
+                            <!--                                <div class="col-6">-->
+                            <!--                                    <div class="check_box_text text-right">-->
+                            <!--                                        <span class="black_bold_text">Financed Period-->
+                            <!--                                            <span class="orang_text">*min 3 months, max 24 months</span>-->
+                            <!--                                        </span>-->
+                            <!--                                    </div>-->
+                            <!--                                </div>-->
+                            <!--                            </div>-->
+                            <!-- Financed Period Months -->
+                            <!--                            <div class="row" style="margin-top:3px;margin-right:-15px;font-size:9px;" dir="rtl">-->
+                            <!--                                &lt;!&ndash; 3 &ndash;&gt;-->
+                            <!--                                <div class="check_box_div check_box_div_employe_type" style="margin-left:1px;">-->
+                            <!--                                    <div class="custom_checkbox">-->
+                            <!--                                        <t t-if="o.period_loan == 'three'">-->
+                            <!--                                            <i class="fa fa-check" style="font-size:12px;margin:auto;"></i>-->
+                            <!--                                        </t>-->
+                            <!--                                    </div>-->
+                            <!--                                </div>-->
+                            <!--                                <div class="text-right check_box_text">-->
+                            <!--                                    <span class="black_bold_text" dir="rtl" style="font-size:10px!important;">3 اشهر-->
+                            <!--                                    </span>-->
+                            <!--                                    <br/>-->
+                            <!--                                    <span class="black_bold_text" style="font-size:10px!important;">3Months</span>-->
+                            <!--                                </div>-->
+
+                            <!--                                &lt;!&ndash; 6 &ndash;&gt;-->
+                            <!--                                <div class="check_box_div check_box_div_employe_type" style="margin-left:1px;">-->
+                            <!--                                    <div class="custom_checkbox">-->
+                            <!--                                        <t t-if="o.period_loan == 'six'">-->
+                            <!--                                            <i class="fa fa-check" style="font-size:12px;margin:auto;"></i>-->
+                            <!--                                        </t>-->
+                            <!--                                    </div>-->
+                            <!--                                </div>-->
+                            <!--                                <div class="text-right check_box_text">-->
+                            <!--                                    <span class="black_bold_text" dir="rtl" style="font-size:10px!important;">6 اشهر-->
+                            <!--                                    </span>-->
+                            <!--                                    <br/>-->
+                            <!--                                    <span class="black_bold_text" style="font-size:10px!important;">6Months</span>-->
+                            <!--                                </div>-->
+
+                            <!--                                &lt;!&ndash; 12 &ndash;&gt;-->
+                            <!--                                <div class="check_box_div check_box_div_employe_type" style="margin-left:1px;">-->
+                            <!--                                    <div class="custom_checkbox">-->
+                            <!--                                        <t t-if="o.period_loan == 'tow'">-->
+                            <!--                                            <i class="fa fa-check" style="font-size:12px;margin:auto;"></i>-->
+                            <!--                                        </t>-->
+                            <!--                                    </div>-->
+                            <!--                                </div>-->
+                            <!--                                <div class="text-right check_box_text">-->
+                            <!--                                    <span class="black_bold_text" dir="rtl" style="font-size:10px!important;">12 اشهر-->
+                            <!--                                    </span>-->
+                            <!--                                    <br/>-->
+                            <!--                                    <span class="black_bold_text" style="font-size:10px!important;">12Months</span>-->
+                            <!--                                </div>-->
+
+                            <!--                                &lt;!&ndash; 18 &ndash;&gt;-->
+                            <!--                                <div class="check_box_div check_box_div_employe_type" style="margin-left:1px;">-->
+                            <!--                                    <div class="custom_checkbox">-->
+                            <!--                                        <t t-if="o.period_loan == 'eighteen'">-->
+                            <!--                                            <i class="fa fa-check" style="font-size:12px;margin:auto;"></i>-->
+                            <!--                                        </t>-->
+                            <!--                                    </div>-->
+                            <!--                                </div>-->
+                            <!--                                <div class="text-right check_box_text">-->
+                            <!--                                    <span class="black_bold_text" dir="rtl" style="font-size:10px!important;">18 اشهر-->
+                            <!--                                    </span>-->
+                            <!--                                    <br/>-->
+                            <!--                                    <span class="black_bold_text" style="font-size:10px!important;">18Months</span>-->
+                            <!--                                </div>-->
+
+                            <!--                                &lt;!&ndash; 24 &ndash;&gt;-->
+                            <!--                                <div class="check_box_div check_box_div_employe_type" style="margin-left:1px;">-->
+                            <!--                                    <div class="custom_checkbox">-->
+                            <!--                                        <t t-if="o.period_loan == '2four'">-->
+                            <!--                                            <i class="fa fa-check" style="font-size:12px;margin:auto;"></i>-->
+                            <!--                                        </t>-->
+                            <!--                                    </div>-->
+                            <!--                                </div>-->
+                            <!--                                <div class="text-right check_box_text">-->
+                            <!--                                    <span class="black_bold_text" dir="rtl" style="font-size:10px!important;">24 اشهر-->
+                            <!--                                    </span>-->
+                            <!--                                    <br/>-->
+                            <!--                                    <span class="black_bold_text" style="font-size:10px!important;">24Months</span>-->
+                            <!--                                </div>-->
+
+                            <!--                                &lt;!&ndash; other &ndash;&gt;-->
+                            <!--                                <div class="check_box_div check_box_div_employe_type" style="margin-left:1px;">-->
+                            <!--                                    <div class="custom_checkbox">-->
+                            <!--                                        <t t-if="o.period_loan == 'other'">-->
+                            <!--                                            <i class="fa fa-check" style="font-size:12px;margin:auto;"></i>-->
+                            <!--                                        </t>-->
+                            <!--                                    </div>-->
+                            <!--                                </div>-->
+                            <!--                                <div class="text-right check_box_text">-->
+                            <!--                                    <span class="black_bold_text" dir="rtl" style="font-size:10px!important;">اخرى-->
+                            <!--                                    </span>-->
+                            <!--                                    <br/>-->
+                            <!--                                    <span class="black_bold_text" style="font-size:10px!important;">Other</span>-->
+                            <!--                                </div>-->
+                            <!--                            </div>-->
+                            <div class="row" style="margin-top:5px;">
+                                <div class="col-6 text-right">
+                                    <div class="purple_text">بيانات الوظيفة</div>
+                                </div>
+                                <div class="col-6 text-left">
+                                    <div class="purple_text">Employment Details</div>
+                                </div>
+                            </div>
+                            <!-- Employer type -->
+                            <div class="row" style="margin-top:3px;">
+                                <div class="col-4 text-right" style="line-height:12px;">
+                                    <span class="black_bold_text">نوع القطاع</span>
+                                    <br/>
+                                    <span class="black_bold_text">Employer Type</span>
+                                </div>
+                                <div class="check_box_div check_box_div_employe_type">
+                                    <div class="custom_checkbox">
+                                        <t t-if="o.name.sectors == 'Government Sector'">
+                                            <i class="fa fa-check" style="font-size:12px;margin:auto;"></i>
+                                        </t>
+                                    </div>
+                                </div>
+                                <div class="text-right check_box_text">
+                                    <span class="black_bold_text">حكومي</span>
+                                    <br/>
+                                    <span class="black_bold_text">Government</span>
+                                </div>
+
+                                <!-- Private Sector -->
+                                <div class="check_box_div check_box_div_employe_type">
+                                    <div class="custom_checkbox">
+                                        <t t-if="o.name.sectors == 'Private Sector'">
+                                            <i class="fa fa-check" style="font-size:12px;margin:auto;"></i>
+                                        </t>
+                                    </div>
+                                </div>
+                                <div class="text-right check_box_text">
+                                    <span class="black_bold_text">خاص</span>
+                                    <br/>
+                                    <span class="black_bold_text">Private Sector</span>
+                                </div>
+                                <!-- Soldier -->
+                                <div class="check_box_div check_box_div_employe_type">
+                                    <div class="custom_checkbox">
+                                        <t t-if="o.name.sectors == 'Soldier'">
+                                            <i class="fa fa-check" style="font-size:12px;margin:auto;"></i>
+                                        </t>
+                                    </div>
+                                </div>
+                                <div class="text-right check_box_text">
+                                    <span class="black_bold_text">عسكري</span>
+                                    <br/>
+                                    <span class="black_bold_text">Soldier</span>
+                                </div>
+                                <!-- Retail -->
+                                <div class="check_box_div check_box_div_employe_type">
+                                    <div class="custom_checkbox">
+                                        <t t-if="o.name.sectors == 'Retired'">
+                                            <i class="fa fa-check" style="font-size:12px;margin:auto;"></i>
+                                        </t>
+                                    </div>
+                                </div>
+                                <div class="text-right check_box_text">
+                                    <span class="black_bold_text">متقاعد</span>
+                                    <br/>
+                                    <span class="black_bold_text">Retired</span>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top:7px;">
+                                <div class="col-3">
+                                    <div class="check_box_text text-right" style="margin-left:5px !important;">
+                                        <span class="black_bold_text">جهة العمل</span>
+                                        <br/>
+                                        <span class="black_bold_text">Name of Employer</span>
+                                    </div>
+                                </div>
+                                <div class="col-9">
+                                    <div class="text_field_div text-center"
+                                         style="width:372px;;margin-right:-22px;">
+                                        <t t-esc="o.name.employer"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Employer types -->
+                            <!--                            <div class="row" style="margin-top:3px;margin-right:10px;" dir="rtl">-->
+                            <!-- Government -->
+
+                            <!--  Name of employer -->
+
+                            <!--                            <div class="row" style="margin-top:8px;">-->
+                            <!--                                <div class="check_box_text text-right" style="margin-left:44px !important;">-->
+                            <!--                                    <span class="black_bold_text">مصاريف التعليم</span>-->
+                            <!--                                    <br/>-->
+                            <!--                                    <span class="black_bold_text">Education expenses</span>-->
+                            <!--                                </div>-->
+                            <!--                                <div class="row" dir="rtl"-->
+                            <!--                                     style="width:111px;border:1px solid #7a2f91;border-radius:5px;padding:0px;margin-left:10px;">-->
+                            <!--                                    <div class="text-center"-->
+                            <!--                                         style="height:25px;width:89px;background-color:#dee5ff;border-radius:0px 4px 4px 0px;padding:0px;">-->
+                            <!--                                        <t t-esc="'{:,.2f}'.format(o.education_exp)"/>-->
+                            <!--                                    </div>-->
+                            <!--                                    <div class="text-center"-->
+                            <!--                                         style="font-size:9px;height:22px;width:20px;border-radius:5px 0px 0px 5px;padding:0px;line-height:12px;">-->
+                            <!--                                        <span>ر.س</span>-->
+                            <!--                                        <br/>-->
+                            <!--                                        <span>SAR</span>-->
+                            <!--                                    </div>-->
+                            <!--                                </div>-->
+
+                            <!--                                <div class="check_box_text text-right" style="margin-left:43px !important;">-->
+                            <!--                                    <span class="black_bold_text">أجور العمالة المنزلية</span>-->
+                            <!--                                    <br/>-->
+                            <!--                                    <span class="black_bold_text">Domestic labor wages</span>-->
+                            <!--                                </div>-->
+                            <!--                                <div class="row" dir="rtl"-->
+                            <!--                                     style="width:111px;border:1px solid #7a2f91;border-radius:5px;padding:0px;">-->
+                            <!--                                    &lt;!&ndash;                                    <div class="text-center"&ndash;&gt;-->
+                            <!--                                    &lt;!&ndash;                                         style="height:25px;width:89px;background-color:#dee5ff;border-radius:0px 4px 4px 0px;padding:0px;">&ndash;&gt;-->
+                            <!--                                    &lt;!&ndash;                                        <t t-esc="o.name.cost_labor"/>&ndash;&gt;-->
+                            <!--                                    &lt;!&ndash;                                    </div>&ndash;&gt;-->
+                            <!--                                    <div class="text-center"-->
+                            <!--                                         style="font-size:9px;height:22px;width:20px;border-radius:5px 0px 0px 5px;padding:0px;line-height:12px;">-->
+                            <!--                                        <span>ر.س</span>-->
+                            <!--                                        <br/>-->
+                            <!--                                        <span>SAR</span>-->
+                            <!--                                    </div>-->
+                            <!--                                </div>-->
+                            <!--                            </div>-->
+                            <!-- Health Care and phone -->
+                            <div class="row" style="margin-top:8px;">
+                                <div class="check_box_text text-right" style="margin-left:20px !important;">
+                                    <span class="black_bold_text">مصاريف النقل</span>
+                                    <br/>
+                                    <span class="black_bold_text">Transportation expenses</span>
+                                </div>
+                                <div class="row" dir="rtl"
+                                     style="width:111px;border:1px solid #7a2f91;border-radius:5px;padding:0px;margin-left:10px;">
+                                    <div class="text-center"
+                                         style="height:25px;width:89px;background-color:#dee5ff;border-radius:0px 4px 4px 0px;padding:0px;">
+                                        <t t-esc="'{:,.2f}'.format(o.name.tran_exp)"/>
+                                    </div>
+                                    <div class="text-center"
+                                         style="font-size:9px;height:22px;width:20px;border-radius:5px 0px 0px 5px;padding:0px;line-height:12px;">
+                                        <span>ر.س</span>
+                                        <br/>
+                                        <span>SAR</span>
+                                    </div>
+                                </div>
+
+                                <div class="check_box_text text-right" style="margin-left:60px !important;">
+                                    <span class="black_bold_text">مصاريف الإتصالات</span>
+                                    <br/>
+                                    <span class="black_bold_text">Phone expenses</span>
+                                </div>
+                                <div class="row" dir="rtl"
+                                     style="width:111px;border:1px solid #7a2f91;border-radius:5px;padding:0px;">
+                                    <div class="text-center"
+                                         style="height:25px;width:89px;background-color:#dee5ff;border-radius:0px 4px 4px 0px;padding:0px;">
+                                        <t t-esc="o.name.cost_telecom"/>
+                                    </div>
+                                    <div class="text-center"
+                                         style="font-size:9px;height:22px;width:20px;border-radius:5px 0px 0px 5px;padding:0px;line-height:12px;">
+                                        <span>ر.س</span>
+                                        <br/>
+                                        <span>SAR</span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- Food and Other obligations -->
+                            <div class="row" style="margin-top:8px;">
+                                <div class="check_box_text text-right" style="margin-left:66px !important;">
+                                    <span class="black_bold_text">مصاريف الأغذية</span>
+                                    <br/>
+                                    <span class="black_bold_text">Food expenses</span>
+                                </div>
+                                <div class="row" dir="rtl"
+                                     style="width:111px;border:1px solid #7a2f91;border-radius:5px;padding:0px;margin-left:10px;">
+                                    <div class="text-center"
+                                         style="height:25px;width:89px;background-color:#dee5ff;border-radius:0px 4px 4px 0px;padding:0px;">
+                                        <t t-esc="'{:,.2f}'.format(o.name.food_exp)"/>
+                                    </div>
+                                    <div class="text-center"
+                                         style="font-size:9px;height:22px;width:20px;border-radius:5px 0px 0px 5px;padding:0px;line-height:12px;">
+                                        <span>ر.س</span>
+                                        <br/>
+                                        <span>SAR</span>
+                                    </div>
+                                </div>
+
+                                <div class="check_box_text text-right" style="margin-left:63px !important;">
+                                    <span class="black_bold_text">التزامات أخرى</span>
+                                    <br/>
+                                    <span class="black_bold_text">Other Obligations</span>
+                                </div>
+                                <div class="row" dir="rtl"
+                                     style="width:111px;border:1px solid #7a2f91;border-radius:5px;padding:0px;">
+                                    <div class="text-center"
+                                         style="height:25px;width:89px;background-color:#dee5ff;border-radius:0px 4px 4px 0px;padding:0px;">
+                                        <t t-esc="o.name.other_liability"/>
+                                    </div>
+                                    <div class="text-center"
+                                         style="font-size:9px;height:22px;width:20px;border-radius:5px 0px 0px 5px;padding:0px;line-height:12px;">
+                                        <span>ر.س</span>
+                                        <br/>
+                                        <span>SAR</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Transportation and Expected future expenses -->
+                            <div class="row" style="margin-top:8px;">
+                                <div class="check_box_text text-right" style="margin-left:25px !important;">
+                                    <span class="black_bold_text">مصاريف مستقبلية متوقعة</span>
+                                    <br/>
+                                    <span class="black_bold_text">Expected future expenses</span>
+                                </div>
+                                <div class="row" dir="rtl"
+                                     style="width:111px;border:1px solid #7a2f91;border-radius:5px;padding:0px;">
+                                    <div class="text-center"
+                                         style="height:25px;width:89px;background-color:#dee5ff;border-radius:0px 4px 4px 0px;padding:0px;">
+                                        <t t-esc="o.name.cost_future"/>
+                                    </div>
+                                    <div class="text-center"
+                                         style="font-size:9px;height:22px;width:20px;border-radius:5px 0px 0px 5px;padding:0px;line-height:12px;">
+                                        <span>ر.س</span>
+                                        <br/>
+                                        <span>SAR</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- second column -->
+                        <div class="col-6 main-column main-column-left">
+                            <div class="row">
+                                <div class="check_box_text text-right" style="margin-right:85px;">
+                                    <span class="black_bold_text">رقم الطلب</span>
+                                    <br/>
+                                    <span class="black_bold_text">Application number</span>
+                                </div>
+                                <div class="text_field_div" style="width:178px;">
+                                    <t t-esc="o.seq_num"/>
+                                </div>
+                            </div>
+                            <br/>
+                            <br/>
+                            <div class="row">
+                                <div class="col-12">
+                                    <span class="orang_text title_msfa">طلب تمويل</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <span class="orang_text title_msfa">Finance Application</span>
+                                </div>
+                            </div>
+                            <br/>
+                            <!-- Terms and Conditions For Customer -->
+                            <div class="row" style="margin-top:9px;">
+                                <div class="col-6 text-right">
+                                    <div class="purple_text">الأحكام و الشروط للعميل</div>
+                                </div>
+                                <div class="col-6 text-left">
+                                    <div class="purple_text">Terms and Conditions For Customer</div>
+                                </div>
+                            </div>
+                            <!-- Arabic Terms -->
+                            <div class="row" style="margin-top:5px;padding-right:10px;padding-left:30px;">
+                                <p style="text-align:justify;font-size:11px;" dir="rtl">
+                                    بهذا أنا الموقع أدناه أوافق على تـزويد شركة فيول للتمويل بـأي معلومات أو
+                                    بـيـانـات
+                                    تطلبها مني
+                                    لتأسيس حسابي لدى الشركة و / أو لمراجعته و / أو لإدارته وأفوض الشركة بأن تحصل على
+                                    ما
+                                    يلزم
+                                    أو تحتاج إليه من معلومات: تخصني أو تخص حسابي المذكور أو أي حساب آخـر يـكون لدى
+                                    الشركة:
+                                    من الشركة السعودية الائتمانية ) سمة ( . كما أوافق على أن تفصح الشركة عن
+                                    المعلومات
+                                    الخاصة
+                                    بـي وبحسابي الـمـذكـور او أي حـساب آخـر يكون لدى المفوض للشركة السعودية
+                                    للمعلومات
+                                    الإئتمانية ) سمة (
+                                    مـن خلال اتفاقية العضوية الـمـبـرمـة وقواعد العمل المقرة والخاصة بتبادل
+                                    المعلومات و
+                                    / أو لأي
+                                    جهة أخرى يوافق عليها البنك المركزي السعودي ) ساما ( ، و أقر أن البيانات المذكورة
+                                    في
+                                    كشف
+                                    الحساب البنكي دقيقة وصحيحة كما أقر بموافقتي التامة على تسجيل عقدي لدى الشركة
+                                    السعودية
+                                    لتسجيل عقود التمويل والإفصاح لبيانات العقد وتبادلها لدى الجهات ذات العلاقة
+                                </p>
+                            </div>
+                            <!-- English Terms -->
+                            <div class="row" style="margin-top:-15px;padding-right:10px;padding-left:30px;">
+                                <p style="text-align:justify;font-size:11px;" dir="ltr">
+                                    Hereby, I the undersigned agree to provide Fuel Finance Company. with any
+                                    information that it requires for the establishing and/or auditing and/or
+                                    administering my accounts and facilities therewith and I authorize it to obtain
+                                    and
+                                    collect any information as it deems necessary or in need for regarding me, my
+                                    accounts and facilities therewith, from the Saudi Credit Bureau (SIMAH) and to
+                                    disclose and share (Inclusive of Date Pooling) that information to the said
+                                    company
+                                    (SIMAH) in accordance with the Membership Agreement and Code of Conduct
+                                    approved or to any other agency approved by Saudi Central Bank (SAMA). I confirm
+                                    that the data mentioned in the bank statement is accurate and correct I also
+                                    fully
+                                    agree to register the finance lease contract with the Saudi Company fo the
+                                    registration of financial leases contracts and to disclose the data of the
+                                    contract
+                                    and exchange win the relevant parties
+                                </p>
+                            </div>
+                            <div class="row" style="margin-top:7px;" dir="rtl">
+                                <!-- new -->
+                                <div class="check_box_div">
+                                    <div class="custom_checkbox">
+                                        <i class="fa fa-check" style="font-size:12px;margin:auto;"></i>
+                                    </div>
+                                </div>
+                                <div class="text-right check_box_text check_box_request_information">
+                                    <!--                                    <span class="black_bold_text">جديد</span>-->
+                                    <!--                                    <br/>-->
+                                    <!--                                    <span class="black_bold_text">new</span>-->
+                                </div>
+                            </div>
+                            <!-- The Real User Indemnity -->
+                            <div class="row" style="margin-top:-14px;">
+                                <div class="col-6 text-right">
+                                    <div class="purple_text">تعهد المستخدم الحقيقي</div>
+                                </div>
+                                <div class="col-6 text-left">
+                                    <div class="purple_text">The Real User Indemnity</div>
+                                </div>
+                            </div>
+                            <!-- Arabic Indemnity -->
+                            <div class="row" style="margin-top:5px;padding-right:10px;padding-left:30px;">
+                                <p style="text-align:justify;font-size:11px;" dir="rtl">
+                                    أقر أنا بأني مستخدم حقيقي لعقد التمويل الممنوح من شركة فيول للتمويل ولم أقم
+                                    بتقديم
+                                    الطلب نيابة
+                                    عن أي شخص أو شركة وأتعهد كذلك بعدم تحويل أو استخدام الأصل محل عقد التمويل الان
+                                    او
+                                    لاحقا لأي
+                                    شخص أو شركة بدون موافقة شركة فيول للتمويل
+                                </p>
+                            </div>
+                            <!-- English Indemnity -->
+                            <div class="row" style="margin-top:-15px;padding-right:10px;padding-left:30px;">
+                                <p style="text-align:justify;font-size:11px;" dir="ltr">
+                                    I confirm that I am the real user of thefinancing contract granted by Fuel
+                                    Finance
+                                    Co,
+                                    and I did not apply on behalf of any person or company. And I undertake not to
+                                    transfer or authorize to use the asset of thefinancing contract now or Later to
+                                    any
+                                    person or company without taking the required approvals from Fuel Finance
+                                </p>
+                            </div>
+
+                            <!-- moved to here (fuel users only) -->
+                            <!-- For fuel -->
+                            <div class="row" style="margin-top:-14px;font-size:11px;">
+                                <div class="col-6 text-right">
+                                    <div class="orang_text">لإستخدام شركة فيول للتمويل فقط</div>
+                                </div>
+                                <div class="col-6 text-left">
+                                    <div class="orang_text">For FUEL use only</div>
+                                </div>
+                            </div>
+                            <!-- name of employer -->
+                            <div class="row" style="margin-top:7px;">
+                                <div class="col-3">
+                                    <div class="check_box_text text-right" style="margin-left:5px !important;">
+                                        <span class="black_bold_text">اسم الموظف</span>
+                                        <br/>
+                                        <span class="black_bold_text">Employee Name</span>
+                                    </div>
+                                </div>
+                                <div class="col-9">
+                                    <div class="text_field_div text-right"
+                                         style="width:397px;;margin-right:-47px;">
+                                        <t t-esc="o.user.name"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Signature information fuel -->
+                            <div class="row" style="margin-top:6px;">
+                                <div class="check_box_text text-right" style="padding-right:14px;">
+                                    <span class="black_bold_text">التوقيع</span>
+                                    <br/>
+                                    <span class="black_bold_text">Signature</span>
+                                </div>
+                                <div class="check_box_div check_box_div_employe_type" style="margin-left:8px;">
+                                    <div class="custom_checkbox">
+                                        <i class="fa fa-check" style="font-size:12px;margin:auto;"></i>
+                                    </div>
+                                </div>
+                                <div class="check_box_text text-right" style="padding-right:10px;">
+                                    <span class="black_bold_text">اسم الفرع</span>
+                                    <br/>
+                                    <span class="black_bold_text">Branch NAME</span>
+                                </div>
+                                <div class="text_field_div" style="width:163px;">
+                                    <!-- <t t-esc=""/> -->
+                                </div>
+                            </div>
+                            <!-- Initial Acceptance -->
+                            <div class="row" style="margin-top:10px;">
+                                <div class="col-4 text-right" style="line-height:12px;">
+                                    <span class="black_bold_text">نتيجة الموافقة المبدئية</span>
+                                </div>
+                            </div>
+                            <!-- Initial Acceptance types -->
+                            <div class="row" style="margin-top:8px;margin-right:0px;" dir="rtl">
+                                <!-- Accepted -->
+                                <div class="check_box_div check_box_div_employe_type" style="margin-left:8px;">
+                                    <div class="custom_checkbox">
+                                        <i class="fa fa-check" style="font-size:12px;margin:auto;"></i>
+                                    </div>
+                                </div>
+                                <div class="text-right check_box_text" style="margin-left:25px;">
+                                    <span class="black_bold_text">موافقة</span>
+                                    <br/>
+                                    <span class="black_bold_text">Accepted</span>
+                                </div>
+
+                                <!-- Rejected -->
+                                <!--                                <div class="check_box_div check_box_div_employe_type" style="margin-left:8px;">-->
+                                <!--                                    <div class="custom_checkbox">-->
+                                <!--                                        <i class="fa fa-check" style="font-size:12px;margin:auto;"></i>-->
+                                <!--                                    </div>-->
+                                <!--                                </div>-->
+                                <!--                                <div class="text-right check_box_text" style="margin-left:55px;">-->
+                                <!--                                    <span class="black_bold_text">رفـض</span>-->
+                                <!--                                    <br/>-->
+                                <!--                                    <span class="black_bold_text">Rejected</span>-->
+                                <!--                                </div>-->
+
+                                <!-- Without -->
+                                <!--                                <div class="check_box_div check_box_div_employe_type" style="margin-left:8px;">-->
+                                <!--                                    <div class="custom_checkbox">-->
+                                <!--                                        <i class="fa fa-check" style="font-size:12px;margin:auto;"></i>-->
+                                <!--                                    </div>-->
+                                <!--                                </div>-->
+                                <!--                                <div class="text-right check_box_text" style="margin-left:25px;">-->
+                                <!--                                    <span class="black_bold_text">موافقة مشروطة</span>-->
+                                <!--                                    <br/>-->
+                                <!--                                    <span class="black_bold_text">Conditional Acceptance</span>-->
+                                <!--                                </div>-->
+                            </div>
+                            <!-- Down Payment -->
+                            <div class="row" style="margin-top:6px;">
+                                <div class="check_box_text text-right" style="margin-right:14px;">
+                                    <span class="black_bold_text">المدة بالاشهر</span>
+                                    <br/>
+                                    <span class="black_bold_text">Duration</span>
+                                </div>
+                                <div class="text_field_div" style="width:136px;margin-right:7px;">
+                                    <t t-esc="o.loan_term"/>
+                                </div>
+                                <div class="check_box_text text-right" style="margin-right:40px;">
+                                    <span class="black_bold_text">دفعة أولى</span>
+                                    <br/>
+                                    <span class="black_bold_text">Down Payment</span>
+                                </div>
+                                <div class="text_field_div" style="width:168px;">
+                                    <t t-esc="o.down_payment_loan"/>
+                                </div>
+                            </div>
+                            <!-- end of it -->
+
+                            <!-- Purpose of finance -->
+                            <!-- <div class="row" style="margin-top:4px;">
+                                <div class="col-6 text-right">
+                                        <div class="purple_text" style="color:#aa4055">الغرض من التمويل</div>
+                                </div>
+                                <div class="col-6 text-left">
+                                        <div class="purple_text" style="color:#aa4055">Purpose of finance</div>
+                                </div>
+                            </div> -->
+                            <!-- first dash -->
+                            <!-- <div class="row" style="margin-top:2px;">
+                                <div class="col-12">
+                                    <div class="text_field_under_div text-right" style="width:485px;"></div>
+                                </div>
+                            </div> -->
+                            <!-- second dash -->
+                            <!-- <div class="row" style="margin-top:5px;">
+                                <div class="col-12">
+                                    <div class="text_field_under_div text-right" style="width:485px;"></div>
+                                </div>
+                            </div> -->
+                            <!-- Customer Signature -->
+                            <div class="row" style="margin-top:8px;">
+                                <div class="col-12">
+                                    <div class="check_box_text text-right" style="margin-left:5px !important;">
+                                        <span class="purple_text">توقيع العميل</span>
+                                        <br/>
+                                        <span class="purple_text">Customer Signature</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Customer Signature -->
+                            <div class="row" style="margin-top:6px;">
+                                <div class="text_field_div"
+                                     style="width:240px;margin-right:15px;background-color:white;">
+                                    <!-- <t t-esc=""/> -->
+                                </div>
+                                <div class="check_box_text text-right" style="padding-right:10px;">
+                                    <span class="black_bold_text">التاريخ</span>
+                                    <br/>
+                                    <span class="black_bold_text">Date</span>
+                                </div>
+                                <div class="text_field_div" style="width:195px;">
+                                    <!-- <t t-esc=""/> -->
+                                </div>
+                            </div>
+                            <!-- if he is employee or employed -->
+                            <div class="row" style="margin-top:8px;">
+                                <div style="margin-right:22px;">
+                                    <div class="check_box_text text-right" style="margin-left:5px !important;">
+                                        <span class="black_bold_text">المستندات المطلوبة</span>
+                                        <br/>
+                                        <span class="black_bold_text">Requirements</span>
+                                    </div>
+                                </div>
+                                <div style="margin-top:-8px;line-height: 10px;display:inline!important;">
+                                    <div style="clear:both;">
+                                        <span class="text_field_tag_div">طلب تمويل</span>
+                                        <br/>
+                                        <span style="font-size:9px;">Loan Request</span>
+                                    </div>
+                                </div>
+                                <!--                                <div style="margin-top:-8px;line-height: 10px;display:inline!important;">-->
+                                <!--                                    <div style="clear:both;">-->
+                                <!--                                        <span class="text_field_tag_div">صورة الهوية الوطنية موقعة من العمل</span><br/>-->
+                                <!--                                        <span style="font-size:9px;">photo ID</span><br/>-->
+                                <!--                                    </div>-->
+                                <!--                                </div>-->
+                                <!--                                <div style="margin-top:-8px;line-height: 10px;display:inline!important;">-->
+                                <!--                                    <div style="clear:both;">-->
+                                <!--                                        <span class="text_field_tag_div">خطاب تعريف بالراتب</span><br/>-->
+                                <!--                                        <span style="font-size:9px;">Salary Definition</span>-->
+                                <!--                                    </div>-->
+                                <!--                                </div>-->
+                            </div>
+                            <div class="row" style="margin-top:-2px;">
+                                <div style="margin-right:22px;">
+                                    <div class="check_box_text text-right" style="margin-left:5px !important;">
+                                        <span class="black_bold_text" style="color:white;">المستندات المطلوبة</span>
+                                        <br/>
+                                        <span class="black_bold_text" style="color:white;">Requirements</span>
+                                    </div>
+                                </div>
+                                <div style="line-height: 10px;display:inline!important;">
+                                    <div style="clear:both;">
+                                        <span class="text_field_tag_div">شهادة بنكية</span>
+                                        <br/>
+                                        <span style="font-size:9px;">Bank Certificate</span>
+                                    </div>
+                                </div>
+
+                                <div style="line-height: 10px;display:inline!important;">
+                                    <div style="clear:both;">
+                                        <span class="text_field_tag_div">كشف حساب أصلي لثلاث أشهر موضح به الراتب
+                                        </span>
+                                        <br/>
+                                        <span style="font-size:9px;">3months account statement</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- second page -->
+                            <br/>
+                            <br/>
+                            <br/>
+                            <div class="row" style="margin-top:25px;">
+                                <div class="col-12 check_box_text text-center">
+                                    <span class="black_bold_text" dir="rtl">* أي كشط أو شطب أو مسح بعتبر هذا النموذج
+                                        ملغي
+                                    </span>
+                                    <br/>
+                                    <span class="black_bold_text" dir="ltr">* Any abrasion, write-off or wipe in
+                                        this
+                                        form shall be deemed rejected
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- for quick -->
+                            <div class="row" style="margin-top:10px;">
+                                <div class="col-12 check_box_text text-center">
+                                    <span class="black_bold_text" dir="rtl">* يرجى التأكـد من تعبئة كامل الخانات
+                                        أعلاه
+                                        ليتم الرد على الطلب بسرعة
+                                    </span>
+                                    <br/>
+                                    <span class="black_bold_text" dir="ltr">* For quick response,please fill out all
+                                        above details
+                                    </span>
+                                </div>
+                            </div>
+                            <br/>
+
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </template>
+
+        <template id="financing_request_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-set="o" t-value="o.with_context(lang='en_US')"/>
+                    <t t-call="loan.financing_template" t-lang="en_US"/>
+                </t>
+            </t>
+        </template>
+
+
+        <record id="medical_service_request_paperformat" model="report.paperformat">
+            <field name="name">Custom Paperformat for Medical Services Financing</field>
+            <field name="default" eval="False"/>
+            <field name="disable_shrinking" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">0</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">10</field>
+            <field name="margin_right">12</field>
+            <field name="dpi">150</field>
+        </record>
+
+        <record id="financing_request_action" model="ir.actions.report">
+            <field name="name">Financing Request</field>
+            <field name="model">loan.order</field>
+            <field name="binding_model_id" ref="model_loan_order"/>
+            <field name="binding_type">report</field>
+            <field name="multi">True</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">loan.financing_request_template</field>
+            <field name="report_file">loan.financing_request_template</field>
+            <field name="paperformat_id" ref="medical_service_request_paperformat"/>
+        </record>
+    </data>
+</odoo>

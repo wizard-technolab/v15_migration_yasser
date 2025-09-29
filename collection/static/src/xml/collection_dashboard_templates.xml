@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template t-name="CollectionDashboardMain">
+        <div class="o_collection_dashboard container mt16">
+            <t t-if="data and data.cards and data.cards.length">
+                <div class="row">
+                    <t t-foreach="data.cards" t-as="card">
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="card mb-3 collection-box" t-att-data-action="card.action_id" style="cursor:pointer;">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">
+                                    <t t-esc="card.title"/>
+                                </h5>
+                                <p class="card-text display-4">
+                                    <t t-esc="card.count"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+                </div>
+            </t>
+            <t t-else="">
+                <div class="alert alert-warning text-center">
+                    <strong>لا توجد بيانات لعرضها في لوحة التحصيل.</strong>
+                </div>
+            </t>
+        </div>
+    </template>
+</odoo>

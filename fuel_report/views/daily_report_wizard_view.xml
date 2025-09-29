@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--  View -->
+       <record id="view_daily_report_wizard_form" model="ir.ui.view">
+        <field name="name">daily.report.wizard.form</field>
+        <field name="model">daily.report.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Daily Report Wizard">
+                <group>
+                    <group><field name="date_start"/></group>
+                    <group><field name="date_end"/></group>
+                    <group><field name="module_type"/></group>
+                </group>
+                <footer>
+                    <button name="generate_report" string="Print Report" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!--    Action  -->
+    <record id="action_daily_report_wizard" model="ir.actions.act_window">
+        <field name="name">Generate Daily Report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">daily.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <!--    Menu   -->
+    <record id="menu_generate_daily_report" model="ir.ui.menu">
+        <field name="name">Daily Report</field>
+        <field name="action" ref="action_daily_report_wizard"/>
+        <field name="sequence" type="int">10</field>
+        <field name="parent_id" ref="fuel_report_root_menu"/>
+    </record>
+</odoo>

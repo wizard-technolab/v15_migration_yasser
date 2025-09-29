@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+         <record id="collection_loan_order_form_inherit" model="ir.ui.view">
+            <field name="name">loan.order.form.collection</field>
+            <field name="model">loan.order</field>
+            <field name="inherit_id" ref="loan.request_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='loan_record']" position="after">
+                    <field name="late_installment"/>
+                </xpath>
+            </field>
+         </record>
+    </data>
+</odoo>

@@ -1,0 +1,6 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+access_crm_lead_admin,crm.lead,model_crm_lead,group_use_prm_admin,1,1,1,1
+access_crm_lead_user,crm.lead,model_crm_lead,group_use_prm_user,1,1,1,1
+access_crm_iap_lead_mining_request,crm.iap.lead.mining.request,model_crm_iap_lead_mining_request,,1,1,1,1
+
+

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_simah_score_form" model="ir.ui.view">
+            <field name="name">view.simah.score.form</field>
+            <field name="model">simah.score</field>
+            <field name="arch" type="xml">
+                <form string="Simah Score">
+                    <sheet>
+                        <group string="Product Affordability">
+                            <field name="score"/>
+                            <field name="minimumScore"/>
+                            <field name="maximumScore"/>
+                        </group>
+                        <group>
+                            <field name="simahScoreCodes" readonly="1">
+                                <tree editable="bottom">
+                                    <field name="scoreReasonCodeName"/>
+                                    <field name="scoreReasonCodeDescAr"/>
+                                    <field name="scoreReasonCodeDescEn"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="action_simah_score" model="ir.actions.act_window">
+            <field name="name">simah Score</field>
+            <field name="res_model">simah.score</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

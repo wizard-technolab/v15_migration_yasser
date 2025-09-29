@@ -1,0 +1,5 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+access_api_access_token,access_api_access_token,model_api_access_token,,1,1,1,1
+access_financial_evaluation,financial.evaluation,malaa.model_financial_evaluation,,1,1,1,1
+access_financial_obligation,financial.obligation,malaa.model_financial_obligation,,1,1,1,1
+access_occupation_history,occupation.history,malaa.model_occupation_history,,1,1,1,1

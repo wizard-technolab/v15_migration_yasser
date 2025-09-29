@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="form3" name="Health Declaration">
+        <t t-call="website.layout">
+            <!-- Custom Style CSS -->
+            <link rel="stylesheet" href="/financing_services/static/src/css/style.css" type="text/css"/>
+
+            <section class="form-main col-lg-12">
+                <section class="col-md-12 form-container">
+                    <div class="container">
+                        <div class="card">
+                            <div class="form">
+                                <div class="left-side col-12">
+                                    <div class="left-heading text-center">
+                                        <h3>Health Declaration</h3>
+                                    </div>
+                                    <div class="steps-content">
+                                        <h3>Step <span class="step-number">1</span>
+                                        </h3>
+                                        <p class="step-number-content active">Enter your personal information to get closer to companies.</p>
+                                        <p class="step-number-content d-none">Get to know better by adding your diploma,certificate and education life.</p>
+                                        <p class="step-number-content d-none">Help companies get to know you better by telling then about your past experiences.</p>
+                                        <p class="step-number-content d-none">Add your profile piccture and let companies find youy fast.</p>
+                                    </div>
+                                    <ul class="progress-bar">
+                                        <li class="active">Basic Information</li>
+                                        <li>Medical History Information</li>
+                                        <li>Previous and current health status</li>
+                                        <li>Undertakings</li>
+                                    </ul>
+                                </div>
+                                <div class="right-side col-12">
+                                    <form id="health-form">
+
+                                        <div class="main active">
+                                            <div class="co-12">
+                                                <div class="row">
+                                                    <div class="col-md-6 col-12 fields-group">
+                                                        <div class="col-12 group-container">
+                                                            <div class="form-group">
+                                                                <label for="full_name">Full Name</label>
+                                                                <input type="text" class="form-control required name_v" id="full_name" name="full_name" placeholder="Full Name" />
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="birth_date">Date of Birth</label>
+                                                                <input type="date" required="" class="form-control required" id="birth_date" name="birth_date" />
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="birth_place">Place of Birth</label>
+                                                                <input type="text" class="form-control required name_v" id="birth_place" name="birth_place" placeholder="Place of Birth" />
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="address">Address</label>
+                                                                <input type="text" class="form-control required name_v" id="address" name="address" placeholder="Address" />
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="loan_amount">Loan Amount</label>
+                                                                <input type="text" class="form-control required amount_v" id="loan_amount" name="loan_amount" placeholder="Loan Amount" />
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-md-6 col-12">
+                                                                    <label for="loan_period">Loan Period</label>
+                                                                    <input type="text" class="form-control required amount_v" id="loan_period" name="loan_period" placeholder="Loan Period" />
+                                                                </div>
+                                                                <div class="col-md-6 col-12">
+                                                                    <label for="phone">Phone</label>
+                                                                    <input type="text" class="form-control required phone_input" id="phone" name="phone" placeholder="Phone" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 col-12 fields-group">
+                                                        <div class="col-12 group-container">
+                                                            <div class="form-group">
+                                                                <label for="weight">Weight</label>
+                                                                <input type="text" class="form-control required amount_v" id="weight" name="weight" placeholder="Weight" />
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="height">Height</label>
+                                                                <input type="text" class="form-control required amount_v" id="height" name="height" placeholder="Height" />
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="martial_status">Martial Status</label>
+                                                                <select id="martial_status" name="martial_status" class="form-control">
+                                                                    <option value="single">Single</option>
+                                                                    <option value="married">Married</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="work_nuture">Work Nature</label>
+                                                                <select id="work_nuture" name="work_nuture" class="form-control">
+                                                                    <option value="civilian">Civilian</option>
+                                                                    <option value="military">Military</option>
+                                                                    <option value="other">Other</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="buttons">
+                                                    <button type="button" class="next_button">Next Step</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="main">
+                                            <div class="co-12">
+                                                <div class="row">
+                                                    <div class="col-12 fields-group">
+                                                        <div class="col-12 group-container">
+                                                            <table class="table">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>Are you unable to work now ?</td>
+                                                                        <td>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="q1-check" name="q1-check" value="True" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="q1-check">Yes</label>
+                                                                            </div>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="q1-check2" name="q1-check" value="False" checked="true" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="q1-check2">No</label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <textarea class="form-control" name="q1-deatils" id="q1-deatils" rows="3"></textarea>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Have you been unable to work for 30 consecutive days during the last five years?</td>
+                                                                        <td>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="q2-check" name="q2-check" value="True" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="q2-check">Yes</label>
+                                                                            </div>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="q2-check2" name="q2-check" value="False" checked="true" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="q2-check2">No</label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <textarea class="form-control" name="q2-deatils" id="q2-deatils" rows="3"></textarea>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Have you suffered any accident caused you serious damage</td>
+                                                                        <td>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="q3-check" name="q3-check" value="True" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="q3-check">Yes</label>
+                                                                            </div>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="q3-check2" name="q3-check" value="False" checked="true" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="q3-check2">No</label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <textarea class="form-control" name="q3-deatils" id="q3-deatils" rows="3"></textarea>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Do you have any disability , total disability or partial disability?</td>
+                                                                        <td>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="q4-check" name="q4-check" value="True" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="q4-check">Yes</label>
+                                                                            </div>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="q4-check2" name="q4-check" value="False" checked="true" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="q4-check2">No</label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <textarea class="form-control" name="q4-deatils" id="q4-deatils" rows="3"></textarea>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>Have you taken any treatment or medication for more than 14 consecutive days during the past (2) years to treat a disease (leg for, blood pressure, diabetes, cholesterol, or other diesels</td>
+                                                                        <td>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="q5-check" name="q5-check" value="True" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="q5-check">Yes</label>
+                                                                            </div>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="q5-check2" name="q5-check" value="False" checked="true" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="q5-check2">No</label>
+                                                                            </div>
+                                                                        </td>
+                                                                        <td>
+                                                                            <textarea class="form-control" name="q5-deatils" id="q5-deatils" rows="3"></textarea>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="buttons button_space">
+                                                <button type="button" class="back_button">Back</button>
+                                                <button type="button" class="next_button">Next Step</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="main">
+                                            <div class="co-12">
+                                                <div class="row">
+
+                                                    <div class="col-md-6 col-12 fields-group">
+                                                        <div class="col-12 group-container">
+                                                            <table class="table">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <p>Have you suffered or are suffering from the following diseases or conditions?</p>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="b-q1-check" name="b-q1-check" value="True" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="b-q1-check">Yes</label>
+                                                                            </div>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="b-q1-check2" name="b-q1-check" value="False" checked="true" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="b-q1-check2">No</label>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <p>Diabetes of any kind 7</p>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="b-q2-check" name="b-q2-check" value="True" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="b-q2-check">Yes</label>
+                                                                            </div>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="b-q2-check2" name="b-q2-check" value="False" checked="true" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="b-q2-check2">No</label>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <p>Any kind of cancer disease?</p>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="b-q3-check" name="b-q3-check" value="True" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="b-q3-check">Yes</label>
+                                                                            </div>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="b-q3-check2" name="b-q3-check" value="False" checked="true" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="b-q3-check2">No</label>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <p>Hepatitis?</p>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="b-q4-check" name="b-q4-check" value="True" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="b-q4-check">Yes</label>
+                                                                            </div>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="b-q4-check2" name="b-q4-check" value="False" checked="true" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="b-q4-check2">No</label>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <p>Rheumatic fever and the umatoid arthritis?</p>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="b-q5-check" name="b-q5-check" value="True" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="b-q5-check">Yes</label>
+                                                                            </div>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="b-q5-check2" name="b-q5-check" value="False" checked="true" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="b-q5-check2">No</label>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <p>Have you been diagnosed with any of the following chronic diseases limited to: Autism, Benign Tumor, Cancer, Heart Diseases, Chronic Hepatitis C, Gallstones, Kidney failure, Urinary tract
+                                                                        stones, thyroid goiter, Cysts, fibroid uterus, Hernias, autoimmune diseases or Multiple sclerosis.</p>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="b-q6-check" name="b-q6-check" value="True" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="b-q6-check">Yes</label>
+                                                                            </div>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="b-q6-check2" name="b-q6-check" value="False" checked="true" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="b-q6-check2">No</label>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6 col-12 fields-group">
+                                                        <div class="col-12 group-container">
+                                                            <table class="table">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <p>High cholesterol?</p>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="b-q7-check" name="b-q7-check" value="True" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="b-q7-check">Yes</label>
+                                                                            </div>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="b-q7-check2" name="b-q7-check" value="False" checked="true" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="b-q7-check2">No</label>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <p>Asthma, bronchitis or other chest problems?</p>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="b-q8-check" name="b-q8-check" value="True" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="b-q8-check">Yes</label>
+                                                                            </div>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="b-q8-check2" name="b-q8-check" value="False" checked="true" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="b-q8-check2">No</label>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <p>Difficulty digestion with or without ulceration and inflammation In the colon?</p>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="b-q9-check" name="b-q9-check" value="True" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="b-q9-check">Yes</label>
+                                                                            </div>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="b-q9-check2" name="b-q9-check" value="False" checked="true" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="b-q9-check2">No</label>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <p>Thyroid, anemia, bloated glands?</p>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="b-q10-check" name="b-q10-check" value="True" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="b-q10-check">Yes</label>
+                                                                            </div>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="b-q10-check2" name="b-q10-check" value="False" checked="true" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="b-q10-check2">No</label>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <p>Has/Had long medical condition?</p>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="b-q11-check" name="b-q11-check" value="True" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="b-q11-check">Yes</label>
+                                                                            </div>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="b-q11-check2" name="b-q11-check" value="False" checked="true" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="b-q11-check2">No</label>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <p>HIV/ AIDS, AIDS?</p>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="b-q12-check" name="b-q12-check" value="True" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="b-q12-check">Yes</label>
+                                                                            </div>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="b-q12-check2" name="b-q12-check" value="False" checked="true" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="b-q12-check2">No</label>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <p>Any psychiatric illness?</p>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="b-q13-check" name="b-q13-check" value="True" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="b-q13-check">Yes</label>
+                                                                            </div>
+                                                                            <div class="custom-control custom-radio">
+                                                                                <input type="radio" id="b-q13-check2" name="b-q13-check" value="False" checked="true" class="custom-control-input"/>
+                                                                                <label class="custom-control-label" for="b-q13-check2">No</label>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="buttons button_space">
+                                                <button type="button" class="back_button">Back</button>
+                                                <button type="button" class="next_button">Next Step</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="main">
+
+                                            <div class="co-12">
+                                                <div class="col-12 fields-group" id="terms-section">
+                                                    <div class="col-12 group-container">
+                                                        <div class="col-md-12 p-0">
+                                                            <h4>4.1 Undertakings</h4>
+                                                        </div>
+                                                        <div class="col-md-12 terms-box">
+                                                            <ol>
+                                                                <li>I hereby undertake that all above information are correct and the acceptance of my enrolment will be on the basis of such information and that fuel finance company has the right to contact the hospital(s)
+                                                            I deal with to collect any medical information needed to assess the risk(s).</li>
+                                                                <li>I agree that fuel finance has the right to reject the coverage/claims in full in case of no declaration of any cases prior to the contractual date or before enrolling or adding a new Insured during
+                                                            the contract. </li>
+                                                                <li>I hereby confirm reading and understanding all points presented in this form and I agree that not marking any case is understood as “Nothing requires declaration” and I sign on these basis.</li>
+                                                                <li>Failure to fill the weight and height information will result in refusal to cover the cost of obesity surge</li>
+                                                            </ol>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="custom-control custom-checkbox pt-2 pb-2">
+                                                        <input type="checkbox" id="terms_agree" required="" name="terms_agree" value="yes" class="custom-control-input"/>
+                                                        <label class="custom-control-label" for="terms_agree">I agree to the <a href="#terms-section">terms and conditions</a>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="buttons button_space">
+                                                <button type="button" class="back_button">Back</button>
+                                                <button type="submit">Submit Form</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="main">
+                                            <svg class="checkmark"
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                                                <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+                                                <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                                            </svg>
+                                            <div class="text congrats">
+                                                <h2>Congratulations!</h2>
+                                                <p>Thanks Mr./Mrs. <span class="shown_name"></span> your information have been submitted successfully for the future reference we will contact you soon.</p>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+        </t>
+    </template>
+
+</odoo>

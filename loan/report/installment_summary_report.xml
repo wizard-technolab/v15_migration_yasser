@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+<!--    <record id="action_report_vehicle_order" model="ir.actions.report">-->
+<!--        <field name="name">Installment Summary</field>-->
+<!--        <field name="model">Installment.report</field>-->
+<!--        <field name="report_type">qweb-pdf</field>-->
+<!--        <field name="report_name">vehicle.report_vehicle_order</field>-->
+<!--        <field name="report_file">vehicle.report_vehicle_order</field>-->
+<!--        <field name="print_report_name">’Vehicle Report - %s' % (object.name))</field>-->
+<!--        <field name="binding_model_id" ref="model_vehcicle_report"/>-->
+<!--        <field name="binding_type">report</field>-->
+<!--    </record>-->
+</odoo>

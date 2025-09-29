@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="my_document_submit" name="Health Declaration">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure oe_empty h-100">
+                <div class="container d-flex flex-column justify-content-center h-100">
+                    <div class="row justify-content-center">
+                        <t t-if="request.session.get('form_builder_model_model', '') == 'health.declaration'">
+                            <t t-set="ticket" t-value="request.website._website_form_last_record().sudo()"/>
+                        </t>
+                        <h1 class="text-center">Thank you for submitting your application</h1>
+                        <h1 class="text-center">
+                            <i class="fa fa-check-circle fa-1x text-success mr-2" role="img" aria-label="Success" title="Success"/>
+                            <t t-if="ticket">
+                                <span>Your Document is <a t-if="request.session.uid" t-attf-href="ticket.get_portal_url(report_type='pdf', download=True)">#<span t-field="ticket.id"/></a><t t-if="not request.session.get('uid')">#<span t-field="ticket.id"/></t>.</span>
+                            </t>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+         </t>
+    </template>
+
+    <record id="aboutus_page" model="website.page">
+        <field name="is_published">True</field>
+        <field name="url">/your-document-has-been-submitted</field>
+        <field name="website_indexed" eval="False"/>
+        <field name="view_id" ref="my_document_submit" />
+    </record>
+
+    <record id="website_menu_form1" model="website.menu">
+        <field name="name">Expression of Desire</field>
+        <field name="url" eval="'/form1'"/>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence" type="int">50</field>
+    </record>
+
+    <record id="website_menu_form2" model="website.menu">
+        <field name="name">Medical Services Finance Application</field>
+        <field name="url" eval="'/form2'"/>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence" type="int">50</field>
+    </record>
+
+    <record id="website_menu_form3" model="website.menu">
+        <field name="name">Health Declaration</field>
+        <field name="url" eval="'/form3'"/>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence" type="int">50</field>
+    </record>
+
+    <record id="website_menu_form4" model="website.menu">
+        <field name="name">Hospital Quotation</field>
+        <field name="url" eval="'/form4'"/>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence" type="int">50</field>
+    </record>
+
+
+</odoo>

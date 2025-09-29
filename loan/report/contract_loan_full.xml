@@ -1,0 +1,1835 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="contract_loan_full_report" model="ir.actions.report">
+            <field name="name">Financing Contract (TAWARUQ)</field>
+            <field name="model">loan.order</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">loan.report_full_contract</field>
+            <field name="report_file">loan.report_full_contract</field>
+            <field name="binding_model_id" ref="model_loan_order"/>
+            <field name="binding_type">report</field>
+        </record>
+        <template id="report_full_contract">
+            <t t-call="web.html_container">
+                <link rel="stylesheet" href="/loan/static/src/css/style.css" type="text/css"/>
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <style type="text/css">
+                                @font-face {
+                                font-family: SST Arabic ;
+                                src: url(/loan/static/src/fonts/SST Arabic Bold.ttf);
+                                }
+                                h2 {font-family: SST Arabic;}
+                                td {font-family: SST Arabic;}
+                                th { font-family: SST Arabic;}
+                                h5 { font-family: SST Arabic;}
+                                h4 { font-family: SST Arabic;}
+                                p { font-family: SST Arabic;}
+                                div { font-family: SST Arabic;}
+
+
+                                span, table, th, td, b, p {
+                                text-align: center;
+                                }
+
+                                .newh {
+                                font-size: 16px;
+                                text-align: center;
+                                background-color:#138086;
+                                }
+
+                                table, tr, th,td {
+                                border:1px solid #000000 !important;
+                                }
+
+
+                                .con{float:right;padding-left: 10px;padding-right: 10px;margin:3px;}
+                                .bor{border: 1px solid black;padding: 5px;}
+                                .fon{font-size: 10px;}
+                                .nob{border: no-border !important}
+                            </style>
+                            <div style="color:white;font-size: 16px; background-color:rgb(28, 105, 10);"
+                                 class="text-center">توكيل
+                            </div>
+                            <br/>
+                            <br/>
+                            <div style="text-align: center">
+                                <span>بسم الله الرحمن الرحيم، والصلاة والسلام على سيدنا
+                                    ونبينا محمد وبعد
+                                </span>
+                            </div>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <div style="color:#000;font-size: 14px; text-align: right;direction: rtl;">
+                                <span>أقر أنا /
+                                    <strong t-esc="doc.name.name"/>
+                                    - هوية وطنية:
+                                    <strong t-esc="doc.identification_id"/>
+                                    ، وأنا بكامل ارادتي الحرة بدون إكراه أو إجبار وبالحالة المعتبرة شرعاً ونظاماً، بأنني
+                                    وكلت نيابة
+                                    عني شركة فيول للتمويل في بيع (الحديد) المملوكة لي بالشراء من طرف آخر
+                                    (غير مورد السلعة) وكالة نافذة وباتة غير قابله للإلغاء، وللشركة حق تزويد المشتري
+                                    بالمعلومات الخاصة بي لإتمام البيع، والتزم بعدم الاعتراض على البيع في حال تغيرت
+                                    الأسعار، وهذه الوكالة صادرة مني وفق عقد التمويل المبرم بيني وبين الشركة برقم (
+                                    <strong t-esc="doc.seq_num"/>)
+                                    وحسب رغبتي ومحصورة في ما يشمله هذا العقد. تنتهي صلاحية هذا التوكيل بإتمام
+                                    إجراءات العقد واتمام البيع وقبض ثمنه وإيداعه في حسابي لدى بنك
+                                    <strong t-esc="doc.name.bank_name"/>
+                                     <br/>
+                                     <br/>
+                                    رقم
+                                    <strong t-esc="doc.name.iban_number"/>
+                                    <br/>
+                                    <br/>
+                                    وهذا إقرار مني بتوكيل شركة فيول للتمويل فيما ذكر بعاليه.
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                </span>
+                            </div>
+                            <div style="text-align: center">
+                                <span style="font-size: 16px;">فهرس المحتويات</span>
+                            </div>
+                            <br/>
+                            <table class="table" style="text-align: right;direction: rtl;">
+                                <tr>
+                                    <th style="color:white;font-size: 14px; background-color:rgb(28, 105, 10);">
+                                        المحتوى
+                                    </th>
+                                    <th style="color:white;font-size: 14px; background-color:rgb(28, 105, 10);">رقم
+                                        الصفحة
+                                    </th>
+                                </tr>
+                                <tr style="color:#000;font-size: 12px;">
+                                    <th style="text-align: right">ملخص عقد التمويل</th>
+                                    <th style="text-align: center">4</th>
+                                </tr>
+                                <tr style="color:#000;font-size: 12px;">
+                                    <th style="text-align: right">الأطراف</th>
+                                    <th style="text-align: center">6-5</th>
+                                </tr>
+                                <tr style="color:#000;font-size: 12px;">
+                                    <th style="text-align: right">تمهيد</th>
+                                    <th style="text-align: center">6</th>
+                                </tr>
+                                <tr style="color:#000;font-size: 12px;">
+                                    <th style="text-align: right">المادة (1): نطاق
+                                        العقد
+                                    </th>
+                                    <th style="text-align: center">6</th>
+                                </tr>
+                                <tr style="color:#000;font-size: 12px;">
+                                    <th style="text-align: right">المادة (2):
+                                        التعريفات والتفسير
+                                    </th>
+                                    <th style="text-align: center">7-6</th>
+                                </tr>
+                                <tr style="color:#000;font-size: 12px;">
+                                    <th style="text-align: right">المادة (3): إبرام
+                                        العقد ونفاذه ومدته
+                                    </th>
+                                    <th style="text-align: center">8</th>
+                                </tr>
+                                <tr style="color:#000;font-size: 12px;">
+                                    <th style="text-align: right">المادة (4): الأصل
+                                        الممول
+                                    </th>
+                                    <th style="text-align: center">8</th>
+                                </tr>
+                                <tr style="color:#000;font-size: 12px;">
+                                    <th style="text-align: right">المادة (5):
+                                        الالتزامات المالية
+                                    </th>
+                                    <th style="text-align: center">8</th>
+                                </tr>
+                                <tr style="color:#000;font-size: 12px;">
+                                    <th style="text-align: right">المادة (6):
+                                        الأقساط
+                                    </th>
+                                    <th style="text-align: center">9-8</th>
+                                </tr>
+                                <tr style="color:#000;font-size: 12px;">
+                                    <th style="text-align: right">المادة (7): طرق
+                                        السداد
+                                    </th>
+                                    <th style="text-align: center">9</th>
+                                </tr>
+                                <tr style="color:#000;font-size: 12px;">
+                                    <th style="text-align: right">المادة (8):
+                                        التأخر أو التعثر عن السداد
+
+                                    </th>
+                                    <th style="text-align: center">9</th>
+                                </tr>
+                                <tr style="color:#000;font-size: 12px;">
+                                    <th style="text-align: right">المادة (9): إجراءات
+                                        ممارسة حق إنتهاء العقد
+
+                                    </th>
+                                    <th style="text-align: center">9</th>
+                                </tr>
+                                <tr style="color:#000;font-size: 12px;">
+                                    <th style="text-align: right">المادة (10): أحكام
+                                        السداد المبكر
+
+                                    </th>
+                                    <th style="text-align: center">10</th>
+                                </tr>
+                                <tr style="color:#000;font-size: 12px;">
+                                    <th style="text-align: right">المادة (11):
+                                        التكاليف والرسوم الإدارية
+
+                                    </th>
+                                    <th style="text-align: center">10</th>
+                                </tr>
+                                <tr style="color:#000;font-size: 12px;">
+                                    <th style="text-align: right">المادة (12):
+                                        الضمانات وما يقوم مقامها
+
+                                    </th>
+                                    <th style="text-align: center">10</th>
+                                </tr>
+                                <tr style="color:#000;font-size: 12px;">
+                                    <th style="text-align: right">المادة (13): تعهدات
+                                        وإقرارات المستفيد
+
+                                    </th>
+                                    <th style="text-align: center">10</th>
+                                </tr>
+                                <tr style="color:#000;font-size: 12px;">
+                                    <th style="text-align: right">المادة (14): تعهدات
+                                        وإقرارات الممول
+
+                                    </th>
+                                    <th style="text-align: center">11</th>
+                                </tr>
+                                <tr style="color:#000;font-size: 12px;">
+                                    <th style="text-align: right">المادة (15): أحكام
+                                        الإخلال بالعقد
+
+                                    </th>
+                                    <th style="text-align: center">11</th>
+                                </tr>
+                                <tr style="color:#000;font-size: 12px;">
+                                    <th style="text-align: right">المادة (16): وفاة
+                                        المستفيد أو عجزه
+
+                                    </th>
+                                    <th style="text-align: center">11</th>
+                                </tr>
+                                <tr style="color:#000;font-size: 12px;">
+                                    <th style="text-align: right">المادة (17): توثيق
+                                        العقد
+
+                                    </th>
+                                    <th style="text-align: center">11</th>
+                                </tr>
+                                <tr style="color:#000;font-size: 12px;">
+                                    <th style="text-align: right">المادة (18): تعديل
+                                        العقد
+
+                                    </th>
+                                    <th style="text-align: center">11</th>
+                                </tr>
+                                <tr style="color:#000;font-size: 12px;">
+                                    <th style="text-align: right">المادة (19):
+                                        الإخطارات
+
+                                    </th>
+                                    <th style="text-align: center">12</th>
+                                </tr>
+                                <tr style="color:#000;font-size: 12px;">
+                                    <th style="text-align: right">المادة (20): أحكام
+                                        متفرقة
+
+                                    </th>
+                                    <th style="text-align: center">12</th>
+                                </tr>
+                                <tr style="color:#000;font-size: 12px;">
+                                    <th style="text-align: right">المادة (21): النظام
+                                        واجب التطبيق والاختصاص القضائي
+
+                                    </th>
+                                    <th style="text-align: center">12</th>
+                                </tr>
+                                <tr style="color:#000;font-size: 12px;">
+                                    <th style="text-align: right">الملحق رقم (1):
+                                        جدول سداد الأقساط
+
+                                    </th>
+                                    <th style="text-align: center">13</th>
+                                </tr>
+                            </table>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <div style="width:100%; margin: 50px auto;text-align: right;direction: rtl;"
+                                 class="col-md-12">
+                                <div style="text-align: center">
+                                    <div style="color:white;font-size: 16px; background-color:rgb(28, 105, 10);"
+                                         class="text-center">ملخص عقد التمويل
+                                    </div>
+                                    <div style="color:white;font-size: 16px; background-color:rgb(28, 105, 10);"
+                                         class="text-center">بيانات المستفيد
+                                    </div>
+                                </div>
+                                <span>
+                                    <table class="table">
+                                        <tr>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">الاسم الرباعي
+                                                للمستفيد
+                                            </th>
+                                            <td style="color:#000;font-size: 14px;">
+                                                <strong t-esc="doc.name.name"/>
+                                            </td>
+                                            <th style="color:#000;font-size: 14px; text-align: right;">رقم العقد</th>
+                                            <td style="color:#000;font-size: 14px;">
+                                                <strong t-esc="doc.seq_num"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">رقم الهوية الوطنية
+                                                / هوية المقيم
+                                            </th>
+                                            <td style="color:#000;font-size: 14px;">
+                                                <strong t-esc="doc.identification_id"/>
+                                            </td>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">تاريخ العقد
+                                            </th>
+                                            <td style="color:#000;font-size: 14px;">
+                                                <strong t-esc="doc.approve_date"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </span>
+                                <div style="text-align: center">
+                                    <div style="color:white;font-size: 16px; background-color:rgb(28, 105, 10);"
+                                         class="text-center">بيانات التمويل
+                                    </div>
+                                </div>
+                                <span>
+                                    <table class="table">
+                                        <tr>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">تفاصيل المبلغ
+                                                المستحق سداده
+                                            </th>
+                                            <td style="color:#000;font-size: 14px;">
+                                                <strong t-esc="doc.loan_sum"/>
+                                                ريال سعودي
+                                            </td>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">صيغة التمويل</th>
+                                            <td style="color:#000;font-size: 14px;">
+                                                تورق
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">مبلغ التمويل</th>
+                                            <td style="color:#000;font-size: 14px;">
+                                                <strong t-esc="doc.loan_amount_positive"/>
+                                                ريال سعودي
+                                            </td>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">معدل النسبة السنوي
+                                                APR
+                                            </th>
+                                            <td style="color:#000;font-size: 14px;">
+                                                <strong t-esc=" doc.apr"/>
+                                                <span>%</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">إجمالي مبلغ كلفة
+                                                التمويل (+)
+                                            </th>
+                                            <td style="color:#000;font-size: 14px;">
+                                                <strong t-esc="doc.loan_sum"/>
+                                                ريال سعودي
+                                            </td>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">مدة عقد التمويل
+                                                (بالأشهر)
+                                            </th>
+                                            <td style="color:#000;font-size: 14px;">
+                                                <strong t-esc="doc.loan_term"/>
+                                                شهر
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">نسبة كلفة الأجل
+                                                (الربح)
+                                            </th>
+                                            <td style="color:#000;font-size: 14px;">
+                                                <strong t-esc="doc.rate_per_month * 100"/>
+                                                <span>%</span>
+                                            </td>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">عدد الأقساط</th>
+                                            <td style="color:#000;font-size: 14px;">
+                                                <strong t-esc="doc.loan_term"/>
+                                                قسط
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">مبلغ كلفة الأجل
+                                                (الربح)
+                                            </th>
+                                            <td style="color:#000;font-size: 14px;">
+                                                <strong t-esc="doc.interest_amount"/>
+                                                ريال سعودي
+                                            </td>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">مبلغ القسط الشهري
+                                                (ريال سعودي)
+                                            </th>
+                                            <td style="color:#000;font-size: 14px;">
+                                                <strong t-esc=" '%.2f'%  doc.installment_month"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">مبلغ الرسوم
+                                                الإدارية(لا تشمل الضرائب
+                                                الحكومية)*
+                                            </th>
+                                            <td style="color:#000;font-size: 14px;">
+                                                <strong t-esc="doc.fees"/>
+                                            </td>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">تاريخ استحقاق
+                                                القسط الأول
+                                            </th>
+                                            <td style="color:#000;font-size: 14px;text-align: right;">
+                                                <strong t-esc="doc.installment_start_date"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">إجمالي المبلغ
+                                                المستحق سداده (=)
+                                            </th>
+                                            <td style="color:#000;font-size: 14px;">
+                                                <strong t-esc="doc.loan_sum"/>
+                                                ريال سعودي
+                                            </td>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">تاريخ استحقاق
+                                                القسط الأخير
+                                            </th>
+                                            <td style="color:#000;font-size: 14px;">
+                                                <strong t-esc="doc.installment_end_date"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">الملاحظات الإضافية
+                                                *
+                                            </th>
+                                            <td style="color:#000;font-size: 14px;">
+                                                <!--                                                <strong t-esc="doc."/>-->
+                                            </td>
+                                            <th style="color:#000;font-size: 14px;"></th>
+                                            <td style="color:#000;font-size: 14px;">
+                                                <!--                                                <strong t-esc="doc."/>-->
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </span>
+                                <span>
+                                    <strong style="color:#000;font-size: 14px;text-align: right;">
+                                        * تندرج عبارة (لا ينطبق) إذا كان البند المعني لا ينطبق على العقد
+                                    </strong>
+                                </span>
+                                <br/>
+                                <div style="text-align: center">
+                                    <div style="color:white;font-size: 16px; background-color:rgb(28, 105, 10);"
+                                         class="text-center">أبرز أحكام عقد التمويل
+                                    </div>
+                                </div>
+                                <span>
+                                    <table class="table">
+                                        <tr>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">بيانات الأصل
+                                                الممول
+                                            </th>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">المادة (4)</th>
+                                        </tr>
+                                        <tr>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">جدول سداد
+                                                الأقساط
+                                            </th>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">المادة (6) +
+                                                الملحق رقم (1)
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">الأثار المترتبة
+                                                على التأخر في سداد الأقساط
+                                            </th>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">المادة (8)</th>
+                                        </tr>
+                                        <tr>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">إجراءات إنهاء عقد
+                                                التمويل
+                                            </th>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">المادة (9)</th>
+                                        </tr>
+                                        <tr>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">أحكام السداد
+                                                المبكر
+                                            </th>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">المادة (10)</th>
+                                        </tr>
+                                        <tr>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">وفاة المستفيد أو
+                                                عجزه
+                                            </th>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">المادة (16)</th>
+                                        </tr>
+                                    </table>
+                                    <span style="color:#000;font-size: 14px; text-align: right">
+                                        <li/>
+                                        تنويه : يتعين قراءة عقد التمويل وملحقاته وفهم الشروط والأحكام كاملة، ولا يغني
+                                        الاطلاع على هذا الملخص عن العقد، ولا يعفي من الالتزامات الواردة فيه .
+                                    </span>
+                                </span>
+                                <br/>
+                                <div>
+                                    <strong>توقيع المستفيد بالاطلاع والاستلام</strong>
+                                    <![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]]>
+                                    <strong>توقيع الشخص المفوض بالتوقيع من الممول والختم</strong>
+                                </div>
+                                <div style="text-align: center">
+                                    <div style="color:white;font-size: 16px; background-color:rgb(28, 105, 10);"
+                                         class="text-center">عقد تمويل استهلاكي
+                                    </div>
+                                </div>
+                                <span>
+                                    <table class="table">
+                                        <tr>
+                                            <th style="color:#000;font-size: 14px;">رقم العقد</th>
+                                            <th style="color:#000;font-size: 14px;">
+                                                <strong t-esc="doc.seq_num"/>
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th style="color:#000;font-size: 14px;">تاريخ العقد</th>
+                                            <th style="color:#000;font-size: 14px;">
+                                                <strong t-esc="doc.approve_date"/>م
+                                            </th>
+                                        </tr>
+                                    </table>
+                                    <span style="color:#000;font-size: 14px; text-align: right">
+                                        <li/>
+                                        تم إبرام هذا العقد عبر القنوات الإلكترونية باستخدام التصديق الرقمي، بتاريخ
+                                        <strong t-esc="doc.hijri_date"/>
+                                        هـ الموافق
+                                        <strong t-esc="doc.approve_date"/>
+                                        م بين كل من
+                                    </span>
+                                </span>
+                                <br/>
+                                <br/>
+                                <span style="color:#000;font-size: 14px;">اولاً: الطرف الاول:</span>
+                                <table class="table" style="color:#000;font-size: 14px;">
+                                    <tr>
+                                        <th style="text-align: right">اسم الممول</th>
+                                        <th style="text-align: right">شركة فيول للتمويل ويشار له في هذا العقد ب (الطرف
+                                            الأول أو الممول)
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align: right">مرخص بموجب</th>
+                                        <th style="text-align: right">ترخيص رقم 68/ أ ش /202302 بتاريخ 14/07/1444
+                                            هـ،وخاضع
+                                            لرقابة وإشراف البنك
+                                            المركزي
+                                            السعودي
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align: right">الرقم الموحد للمنشآت غير الحكومية</th>
+                                        <th style="text-align: right">7025856597</th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align: right">تاريخ إصدار السجل التجاري</th>
+                                        <th style="text-align: right">15/2/1443 هــ</th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align: right">مكان إصدار السجل التجاري</th>
+                                        <th style="text-align: right">الرياض</th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align: right">العنوان الوطني</th>
+                                        <th style="text-align: right">الرياض،حي الندى،طريق الثمامة،رقم المبنى 3385،الرمز
+                                            البريدي 13317،الرقم
+                                            الإضافي 8398
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align: right">بيانات الاتصال لغرض الإشعارات</th>
+                                        <th style="text-align: right">0114210003</th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align: right">بيانات الاتصال لغرض الشكاوى والإعتراضات</th>
+                                        <th style="text-align: right">8001184000</th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align: right">يمثله في التوقيع</th>
+                                        <th style="text-align: right">السيد/ عبدالله محمد العساف (الرئيس التنفيذي)</th>
+                                    </tr>
+                                </table>
+                                <span style="color:#000;font-size: 14px;">ثانياً: الطرف الثاني:</span>
+                                <table class="table" style="color:#000;font-size: 12px;">
+                                    <tr>
+                                        <th style="text-align: right">اسم المستفيد الرباعي</th>
+                                        <th style="text-align: right">
+                                            <strong t-esc="doc.name.name"/>
+                                            ويشار له في هذا العقد ب (الطرف الثاني
+                                            أوالمستفيد)
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align: right">الجنسية</th>
+                                        <th style="text-align: right">
+                                            <strong t-esc="doc.name.nationality"/>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align: right">تاريخ الميلاد</th>
+                                        <th style="text-align: right">
+                                            <strong t-esc="doc.name.birth_of_date_hijri"/>
+                                            هــ
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align: right">نوع الهوية</th>
+                                        <th style="text-align: right">الهوية الوطنية</th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align: right">رقم الهوية الوطنية /هوية المقيم</th>
+                                        <th style="text-align: right">
+                                            <strong t-esc="doc.name.identification_no"/>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align: right">تاريخ انتهاء الهوية الوطنية / هوية المقيم</th>
+                                        <th style="text-align: right">
+                                            <strong t-esc="doc.name.expiry_of_date"/>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align: right">بيانات الأتصال لغرض الإشعارات</th>
+                                        <th style="text-align: right">العنوان الوطني :
+                                            <t t-foreach='doc.name.elm_address_line_ids' t-as='line'>
+                                                <span t-esc="line.street_name"/>,
+                                                <span t-esc="line.district"/>,
+                                                <span t-esc="line.city"/>,
+                                            </t>
+                                            <br/>
+                                            هاتف المنزل (إن وجد) :
+                                            <strong t-esc="doc.name.mobile"/>
+                                            <br/>
+                                            الجوال :
+                                            <strong t-esc="doc.name.phone"/>
+                                            <br/>
+                                            البريد الالكتروني (إن وجد) :
+                                            <strong t-esc="doc.name.email"/>
+                                            <br/>
+
+                                        </th>
+                                    </tr>
+                                </table>
+                                <br/>
+                                <span style="color:#000;font-size: 14px;">ثالثاً: الطرف الثالث:</span>
+                                <table class="table" style="color:#000;font-size: 12px;">
+                                    <tr>
+                                        <th style="text-align: right">اسم الكفيل</th>
+                                        <th style="text-align: right"></th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align: right">مقدار مبلغ الكفالة</th>
+                                        <th style="text-align: right"></th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align: right">رقم عقد الكفالة</th>
+                                        <th style="text-align: right"></th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align: right">الجنسية</th>
+                                        <th style="text-align: right"></th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align: right">تاريخ الميلاد</th>
+                                        <th style="text-align: right"></th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align: right">نوع الهوية</th>
+                                        <th style="text-align: right"></th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align: right">رقم الهوية الوطنية /هوية المقيم</th>
+                                        <th style="text-align: right"></th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align: right">تاريخ انتهاء الهوية الوطنية / هوية المقيم</th>
+                                        <th style="text-align: right"></th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align: right">بيانات الأتصال لغرض الإشعارات</th>
+                                        <th style="text-align: right">العنوان الوطني :
+                                            <!--                                                <strong t-esc="doc.name.street"/>,<strong t-esc="doc.name.street2"/>,-->
+                                            <!--                                                <strong-->
+                                            <!--                                                        t-esc="doc.name.city"/>,-->
+                                            <!--                                                <strong t-esc="doc.name.zip"/>-->
+                                            <br/>
+                                            هاتف المنزل (إن وجد) :
+                                            <!--                                                <strong t-esc="doc.name.mobile"/>-->
+                                            <br/>
+                                            الجوال :
+                                            <!--                                                <strong t-esc="doc.name.phone"/>-->
+                                            <br/>
+                                            البريد الالكتروني (إن وجد) :
+                                            <!--                                                <strong t-esc="doc.name.email"/>-->
+                                            <br/>
+
+                                        </th>
+                                    </tr>
+                                </table>
+                                <br/>
+                                <div style="text-align: center">
+                                    <div style="color:white;font-size: 16px; background-color:rgb(28, 105, 10);"
+                                         class="text-center">تمهيد
+                                    </div>
+                                </div>
+                                <div style="color:#000;font-size: 12px;">
+                                    حيث أن الطرف الثاني تقدم للطرف الأول في تاريخ :<strong t-esc="doc.hijri_date"/>هـ
+                                    الموافق
+                                    <strong t-esc="doc.request_date"/>
+                                    م بطلب للحصول على
+                                    تمويل بصيغة
+                                    (تورق)
+                                    وفق الخطوات التنفيذية لإجراء
+                                    معاملة
+                                    (تورق)
+                                    المرفقة بهذا العقد والتي اطلع عليها الطرف الثاني ووافق
+                                    عليها،وقد قبل الطرف الأول تلبية طلب الطرف الثاني، وحيث أن الطرف الأول قد تمّلك
+                                    السلعة
+                                    المبينة تفاصيلها في كتاب (حديد) المرفق بهذا العقد، وقد وافق الطرف الثاني
+                                    على شراء تلك السلعة بالتقسيط وفق ما ورد في بنود الخطوات التنفيذية لإجراء معاملة تورق
+                                    ،لذا فقد اتفق الطرفان برضى واختيار كل منهما
+                                    وهما
+                                    بالحالة المعتبرة شرعاً
+                                    ونظاماً على إبرام هذا العقد
+                                </div>
+                                <br/>
+                                <div style="text-align: center">
+                                    <div style="color:white;font-size: 16px; background-color:rgb(28, 105, 10);"
+                                         class="text-center">المادة (1): نطاق العقد
+                                    </div>
+                                </div>
+                                <div style="color:#000;font-size: 12px;">
+                                    1.1 يعد التمهيد المذكور اعلاه في هذا العقد،وملخص عقد التمويل، وملاحق العقد،وأية
+                                    بيانات
+                                    أو
+                                    شروط أو إقرارات يتفق الطرفان على
+                                    إلحاقها بهذا العقد، جزءًا لا يتجزأ من العقد.
+                                    <br/>
+                                    1.2 مع مراعاة طبيعة الترخيص والأنشطة التي يزاولها الممول،تطبق أحكام نظام مراقبة
+                                    البنوك وقواعده، ونظام مراقبة شركات التمويل
+                                    ولائحته التنفيذية، والتعليمات الصادرة عن بنك المركزي السعودي،على كل مالم ينص عليه
+                                    هذا العقد وفي حال وجود تعارض بين
+                                    احكام العقد وأحكام الإنظمة والتعليمات؛ فإن أحكام الإنظمة والتعليمات تسود على غيرها
+                                </div>
+                                <br/>
+                                <div style="text-align: center">
+                                    <div style="color:white;font-size: 16px; background-color:rgb(28, 105, 10);"
+                                         class="text-center">المادة (2): التعريفات والتفسير
+                                    </div>
+                                </div>
+                                <div style="color:#000;font-size: 12px;">
+                                    2.1 يقصد بالالفاظ والعبارات اﻷتية _أينما وردت في هذا العقد _المعاني الموضحة أمام كل
+                                    منها مالم يقتض السياق خلاف ذلك:
+                                    <table class="table" style="color:#000;font-size: 12px;">
+                                        <tr>
+                                            <th>العقد</th>
+                                            <th style="text-align: right">عقد التمويل الإستهالكي، ويقصد به هذا
+                                                العقد،ويشمل الأحكام والشروط
+                                                والإستثناءات والملاحق ووثائق الضمان (إن وجدت)
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>الأطراف</th>
+                                            <th style="text-align: right">الممول والمستفيد، والكفيل (إن وجد)</th>
+                                        </tr>
+                                        <tr>
+                                            <th>الكفيل (إن وجد)</th>
+                                            <th style="text-align: right">الطرف الثالث الذي تعهد بأداء كل أو بعض
+                                                التزامات المستفيد الناشئة عن
+                                                العقد وفقًا لأحكام عقد الكفالة
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>الأصل الممول</th>
+                                            <th style="text-align: right">الأصل الواردة بياناته ومواصفاته في المادة (4)
+                                                من العقد.
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>الأقساط</th>
+                                            <th style="text-align: right">المبالغ الواجب دفعها وفقًا للأحكام المنصوص
+                                                عليها في المادة (6) والملحق
+                                                رقم (1) من العقد.
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>كلفة الأجل (الربح)</th>
+                                            <th style="text-align: right">قيمة الأجل (الربح)المقررة على المستفيد بموجب
+                                                العقد ويجب التعبير عنها
+                                                بنسبة
+                                                مئوية سنوية ثابتة من مبلغ التمويل المقدم
+                                                للمستفيد.
+                                            </th>
+                                        </tr>
+                                        <br/>
+                                        <br/>
+                                        <tr>
+                                            <th>إجمالي كلفة التمويل</th>
+                                            <th style="text-align: right">كل ما يلتزم المستفيد بأدائه من تكاليف خلاف
+                                                مبلغ
+                                                التمويل وفق أحكام العقد
+                                                وتشمل كلفة الأجل (الربح)،والرسوم والعمولات
+                                                وتكاليف الخدمات الإدارية وأي نفقات لازمة للحصول على التمويل.
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>مبلغ التمويل</th>
+                                            <th style="text-align: right">الحد الأقصى أو إجمالي المبالغ المتاحة للمستفيد
+                                                بموجب العقد
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>إجمالي المبلغ المستحق سداده من المستفيد</th>
+                                            <th style="text-align: right">مبلغ التمويل مضافًا إلية إجمالي كلفة
+                                                التمويل.
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>معدل النسبة السنوي (APR)</th>
+                                            <th style="text-align: right">معدل الخصم الذي تكون فيه القيمة الحالية لجميع
+                                                الأقساط والدفعات الأخرى
+                                                المستحقة على المستفيد،التي تمثل إجمالي المبلغ
+                                                المستحق سداده من المستفيد مساويةً للقيمة الحالية لأقساط مبلغ التمويل
+                                                المتاحة للمستفيد وذلك في التاريخ الذي يكون فيه مبلغ
+                                                التمويل (أو أول دفعة منه) ًمتاحا للمستفيد محسوبا وفق المعادلة المنصوص
+                                                عليها
+                                                في تعليمات البنك المركزي السعودي.
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>إشعار التأخر</th>
+                                            <th style="text-align: right">إشعار موثق من الممول للمستفيد يفيد بتأخر
+                                                المستفيد عن سداد أي قسط مستحق
+                                                في تاريخ استحقاقه لمدة معينة ويتم إرساله إلى
+                                                المستفيد وفقًا للآلية المبينة في المادة (19) من العقد
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>إشعار التعثر</th>
+                                            <th style="text-align: right">إشعار موثق من الممول للمستفيد يُفيد بتخلف
+                                                المستفيد عن سداد عدد معين
+                                                من الأقساط،ويتم إرساله إلى المستفيد وفقُا للألية
+                                                المبينة في المادة (19) من العقد
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>وثائق الضمان (إن وجدت)</th>
+                                            <th style="text-align: right">الوثائق التي قدمها المستفيد للممول لضمان حقوق
+                                                الممول بموجب العقد والتي
+                                                تم
+                                                التأشير عليها في المادة (12) الخاصة
+                                                بالضمانات وما يقوم مقامها
+                                            </th>
+                                        </tr>
+                                        <tr>
+                                            <th>يوم عمل</th>
+                                            <th style="text-align: right">اليوم الذي تعمل فيه البنوك والمصارف وشركات
+                                                التمويل في المملكة
+                                                العربية السعودية أو اليوم الذي تعمل فيه الجهات
+                                                الحكومية وذلك فيما يتعلق بأمور التسجيل والتوثيق وغيرها من الأعمال التي
+                                                تقوم بها الجهات الحكومية،ولا يشمل ذلك أيام
+                                                العمل التي تكون خلال فترة الإجازات والعطل الرسمية
+                                            </th>
+                                        </tr>
+                                        <br/>
+                                    </table>
+                                    <br/>
+                                    <span style="color:#000;font-size: 16px;">2.2 التفسير:</span>
+                                    <br/>
+                                    <span style="color:#000;font-size: 14px;">في هذا العقد ومالم يتطلب السياق خلاف
+                                        ذلك:
+                                    </span>
+                                    <br/>
+                                    <span style="color:#000;font-size: 14px;">1- الغرض من عناوين المواد تسهيل الرجوع إلى
+                                        تلك المواد فقط.
+                                        <br/>
+                                        2- الإشارة إلى "مادة" أو "ملحق " هي إشارة إلى المادة أو الملحق في هذا العقد.
+                                        <br/>
+                                        3- الكلمات التي يشار فيها إلى المفرد يقصد بها أيضًا الإشارة إلى الجمع،والعكس
+                                        صحيح
+                                    </span>
+                                </div>
+                                <br/>
+                                <div style="text-align: center">
+                                    <div style="color:white;font-size: 16px; background-color:rgb(28, 105, 10);"
+                                         class="text-center">المادة (3): إبرام العقد ونفاذه ومدته
+                                    </div>
+                                </div>
+                                <br/>
+                                <div style="color:#000;font-size: 14px;">
+                                    <span>3.1 يدخل العقد حيز النفاذ وتبدأ مدته اعتباراً
+                                        من تاريخ
+                                        <strong t-esc="doc.installment_start_date"/>
+                                        هـ الموافق
+                                        <strong t-esc="doc.installment_start_date_hijri"/>
+                                        م , ويستمر حتى
+                                        الوفاء
+                                        بإجمالي المبلغ
+                                        المستحق سداده من المستفيد أو اتفاق الطرفين على خلاف ذلك.
+                                        <br/>
+                                        3.2 تبقى التزامات كل طرف بموجب هذا العقد سارية وذلك حتى يتم الوفاء بها أو يفسخ
+                                        العقد أو يُقل أحد الطرفين الأخر.
+                                    </span>
+                                </div>
+                                <br/>
+                                <div style="text-align: center">
+                                    <div style="color:white;font-size: 16px; background-color:rgb(28, 105, 10);"
+                                         class="text-center">المادة (4): الأصل الممول
+                                    </div>
+                                </div>
+                                <table class="table" style="color:#000;font-size: 12px;">
+                                    <tr>
+                                        <th style="text-align: right">النوع</th>
+                                        <th style="text-align: right">حديد
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align: right">الكمية</th>
+                                        <th style="text-align: right">
+                                            <strong t-esc="doc.nafaes_quantity"/>
+                                            طن
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align: right">تكاليف ورسوم الشراء</th>
+                                        <th style="text-align: right">35 ريال</th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align: right">طريقة التسليم</th>
+                                        <th style="text-align: right">توكيل بيع الأصل
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align: right">طريقة البيع</th>
+                                        <th style="text-align: right">توكيل الطرف
+                                            الأول ببيع السلعة بحسب رغبة
+                                            الطرف الثاني
+                                        </th>
+                                    </tr>
+                                    <!--                                    <tr>-->
+                                    <!--                                        <th style="text-align: right">طريقة سداد محصلة البيع</th>-->
+                                    <!--                                        <th style="text-align: right">يتم إضافة طريقة السداد بحسب نوع المعاملة</th>-->
+                                    <!--                                    </tr>-->
+                                </table>
+                                <br/>
+                                <div style="text-align: center">
+                                    <div style="color:white;font-size: 16px; background-color:rgb(28, 105, 10);"
+                                         class="text-center">المادة (5): الألتزامات المالية
+                                    </div>
+                                </div>
+                                <table class="table" style="color:#000;font-size: 12px;">
+                                    <tr>
+                                        <th style="text-align: right">مبلغ التمويل</th>
+                                        <th style="text-align: right">
+                                            <strong t-esc="doc.loan_amount_positive"/>
+                                            ريال سعودي
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align: right">كلفة الأجل (الربح)</th>
+                                        <th style="text-align: right">كلفة الأجل (الربح) ثابتة طوال مدة العقد بنسبة
+                                            <strong t-esc="doc.rate"/>
+
+                                            من
+                                            مبلغ التمويل والتي تساوي
+                                            <strong t-esc="doc.interest_amount"/>
+                                            ريال سعودي
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align: right">الرسوم الإدارية (لا تشمل الضرائب الحكومية) 1%</th>
+                                        <th style="text-align: right">
+                                            <strong t-esc="doc.fees"/>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align: right">معدل النسبة السنوي (APR)</th>
+                                        <th style="text-align: right">
+                                            <strong t-esc=" doc.apr"/>
+                                            <span>%</span>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th style="text-align: right">إجمالي المبلغ المستحق سداده من العميل</th>
+                                        <th style="text-align: right">
+                                            <strong t-esc="doc.loan_sum"/>
+                                            ريال سعودي
+                                        </th>
+                                    </tr>
+                                </table>
+                                <div style="text-align: center">
+                                    <div style="color:white;font-size: 16px; background-color:rgb(28, 105, 10);"
+                                         class="text-center">المادة (6): الأقساط
+                                    </div>
+                                </div>
+                                <div style="color:#000;font-size: 14px;">
+                                    <span>6.1 يُستحق كل قسط من إجمالي المبلغ المستحق سداده من المستفيد في اليوم [27
+                                        ] من كل شهر ميلادي أو ما يعادله بالتاريخ الهجري.
+                                    </span>
+                                    <br/>
+                                    <span>6.2 تتمثل بيانات الأقساط في الاتي:
+                                        <br/>
+                                        مبلغ القسط:
+                                        <strong t-esc=" '%.2f'%  doc.installment_month"/>
+                                        ريال سعودي
+                                        <br/>
+                                        تاريخ استحقاق القسط الاول
+                                        <strong
+                                                t-esc="doc.installment_start_date_hijri"/>
+                                        هـ (الموافق<strong
+                                                t-esc="doc.installment_start_date"/>)م ..
+                                        <br/>
+                                        تاريخ استحقاق القسط الاخير
+                                        <strong
+                                                t-esc="doc.installment_end_date_hijri"/>
+                                        هـ (الموافق
+                                        <strong t-esc="doc.installment_end_date"/>
+                                        )م ..
+                                        <br/>
+                                        <br/>
+                                        ويتضمن الملحق رقم (1) من العقد بيان كامل الأقساط الشهرية المستحق على المستفيد.
+                                    </span>
+                                    <br/>
+                                    <span>6.3 يلتزم المستفيد بأن يسدد للممول الأقساط بشكل منتظم وفي أوقاتها المتفق عليها
+                                        وفقًا لجدول سداد الأقساط الواردة في الملحق رقم (1) من العقد
+                                    </span>
+                                    <br/>
+                                    <span>6.4 دون الإخلال بالبند (6.3) من هذه المادة للممول تذكير المستفيد بتاريخ سداد
+                                        القسط الشهري قبل حلوله عن طريق الرسائل النصية أو البريد الإلكتروني المبينة في
+                                        بيانات الإتصال لغرض الإشعارات الموضحة في مقدمة العقد،مع تذكيره مجددًا بعد
+                                        استحقاق القسط.
+                                    </span>
+                                    <br/>
+                                    <br/>
+                                    <span>6.5 إذا أستحق أي مبلغ من المستفيد بموجب هذا العقد في غير يوم عمل فيجوز
+                                        للمستفيد دفع هذا المبلغ في يوم العمل اللاحق له مباشرة.
+                                    </span>
+                                    <br/>
+                                    <span>6.6 يجوز للممول استقطاع مبلغ القسط الشهري _في حال تفويض المستفيد له بذلك في
+                                        موعد استحقاقه ولو كان ذلك في غير يوم عمل.
+                                    </span>
+                                </div>
+                                <br/>
+                                <div style="text-align: center">
+                                    <div style="color:white;font-size: 16px; background-color:rgb(28, 105, 10);"
+                                         class="text-center">المادة (7): طرق السداد
+                                    </div>
+                                </div>
+                                <div style="color:#000;font-size: 14px;">
+                                    <span>يلتزم المستفيد بسداد الأقساط للممول في تاريخ استحقاقها عبر واحد أو أكثر من
+                                        الطرق الآتية:
+                                        <br/>
+                                        * عن طريق نظام سداد إلى حساب [<strong t-esc="doc.rosom_number"/>].
+                                        <br/>
+                                        * تفويض المستفيد للممول بالإستقطاع المباشر من حسابه رقم [<strong
+                                                t-esc="doc.name.iban_number"/>] لدى مصرف [<strong
+                                                t-esc="doc.name.bank_name"/>]
+                                        في تاريخ استحقاق الأقساط.
+                                        <br/>
+                                        <!--                                        * تفويض المستفيد للممول بالإستقطاع المباشر من حسابه رقم [<strong-->
+                                        <!--                                                t-esc="doc.name.iban_number"/>]لدى بنك [] لدى مصرف [<strong-->
+                                        <!--                                                t-esc="doc.name.bank_name"/>]-->
+                                        <!--                                        في تاريخ نزول الراتب الشهري.-->
+                                        <br/>
+                                        * إيداع في حساب الممول الواردة بياناته أدناه:
+                                    </span>
+                                    <br/>
+                                    <table class="table" style="color:#000;font-size: 12px;">
+                                        <tr>
+                                            <th style="text-align: right">البنك</th>
+                                            <th style="text-align: right">البنك العربي</th>
+                                        </tr>
+                                        <tr>
+                                            <th style="text-align: right">إسم الحساب</th>
+                                            <th style="text-align: right">شركة فيول للتمويل مساهمة مقفلة</th>
+                                        </tr>
+                                        <tr>
+                                            <th style="text-align: right">رقم الحساب (الأيبان)</th>
+                                            <th style="text-align: right">
+                                                <strong
+                                                        t-esc="doc.name.v_account.iban_num"/>
+                                            </th>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <br/>
+                                <div style="text-align: center">
+                                    <div style="color:white;font-size: 16px; background-color:rgb(28, 105, 10);"
+                                         class="text-center">المادة (8): التأخر أو التعثر عن السداد
+                                    </div>
+                                </div>
+                                <div style="color:#000;font-size: 14px;">
+                                    <span>8.1 في حال تأخر المستفيد (7) أيام عمل عن سداد أي قسط مستحق في تاريخ سداده بشكل
+                                        كلي أو جزئي،يقوم الممول بإرسال إشعار التأخر إلى أي من العناوين المبينة
+                                        في بيانات الإتصال لغرض الإشعارات الموضحة في مقدمة العقد للمستفيد (وللكفيل إن
+                                        وجد) يبين فيه تأخر المستفيد عن السداد مع إعلامه بوجوب السداد الفوري
+                                    </span>
+                                    <br/>
+                                    <span>8.2 مع مراعاة ما ورد في البند (6.5)و(8.1) من العقد ,يعد المستفيد متعثرًا في
+                                        حال
+                                        تأخره بشكل كلي أو جزئي عن سداد (5) أقساط متتالية أو متفرقة ، كما يعد متعثرا
+                                        في حال تخلفه بشكل كلي أو جزئي عن سداد (3) أقساط متتالية أو (5) أقساط متفرقة في
+                                        تواريخ استحقاقها ، وحينها ًيحق للممول اعتبار المستفيد متعثرا ويقوم بإرسال اشعار
+                                        تعثر للمستفيد و( الكفيل إن وجد ) إلى أي من العناوين المبينة في بيانات الإتصال
+                                        لغرض الإشعارات الموضحة في مقدمة العقد مع منحه مهلة للسداد لا تزيد عن (30)
+                                        يومًا تقويميًا من تاريخ الإشعار .
+                                    </span>
+                                    <br/>
+                                    <span>8.3 في حال عدم قيام المستفيد (أو الكفيل إن وجد) بتصحيح التعثر خلال المدة
+                                        الممنوحة في إشعار التعثر فإنه يجوز للممول ُحينها اعتبار هذه الحالة إخلال بالعقد
+                                        وتعامل وفقا للمادة (15)من العقد.
+                                    </span>
+                                    <br/>
+                                    <span>8.4 يحق للممول عند تعثر المستفيد عن السداد عدم إرسال إشعار التعثر إلى المستفيد
+                                        في حال تحقق إحدى الحالتين الآتيتين:
+                                    </span>
+                                    <br/>
+                                    <span>8.4.1 في حال الأنشطة الإحتيالية من قبل المستفيد (أو الكفيل إن وجد)، والتي يجب
+                                        على الممول إثباتها.
+                                    </span>
+                                    <br/>
+                                    <span>8.4.2 إجراءات المستفيد في بيع أو محاولة بيع السلع التي تم تمويلها والتي احتفظ
+                                        الممول بملكيتها أو الضمان المرهون دون الحصول على تفويض من الممول
+                                    </span>
+                                    <br/>
+                                    <span>8.5 لا يعني عدم ممارسة الممول أي حق من حقوقه المقرة له بموجب هذا العقد أو ما
+                                        أقرته الأنظمة والتعليمات ذات العلاقة؛ التنازل عنها
+                                    </span>
+                                </div>
+                                <br/>
+                                <div style="text-align: center">
+                                    <div style="color:white;font-size: 16px; background-color:rgb(28, 105, 10);"
+                                         class="text-center">المادة (9): إجراءات ممارسة حق إنهاء العقد
+                                    </div>
+                                </div>
+                                <div style="color:#000;font-size: 14px;">
+                                    <span>9.1 مع مراعاة ما ورد في المادة (10) من العقد يجوز للمستفيد إنهاء العقد عن طريق
+                                        تزويد الممول بإشعار مكتوب (ورقياً أو إلكترونياً)إلى أي من العناوين المبينة في
+                                        بيانات الإتصال لغرض الإشعارات الموضحة في مقدمة العقد للممول في غضون مدة (10)
+                                        أيام
+                                        من تاريخ إبرام العقد، وللمول طلب المستندات التي تثبت عدم تحقق الشروط
+                                        الواردة في البند (9.2)من هذه المادة على المستفيد.
+                                    </span>
+                                    <br/>
+                                    <span>9.2 لا يحق للمستفيد ممارسة حق إنهاء العقد في حال تحقق أحد الشروط الآتية:
+                                    </span>
+                                    <br/>
+                                    <span>9.2.1 إذا قام المستفيد بسحب أي جزء من مبلغ التمويل</span>
+                                    <br/>
+                                    <span>9.2.2 إذا قام المستفيد باستخدام أي وسيلة من وسائل الحصول على التمويل المقدمة
+                                        له
+                                        من الممول للحصول على السلع أو الخدمات ويشمل ذلك إيداع
+                                        الأسهم في محفظة المستفيد، وتملك أو استخدام المستفيد للأصل الممول.
+                                    </span>
+                                    <br/>
+                                    <span>9.3 في حالة إنهاء العقد بموجب البند (9.1) من هذه المادة لا يجوز للممول فرض أي
+                                        كلفة
+                                        أجل (ربح) أو رسوم، أو المطالبة بأي عمولات من
+                                        المستفيد
+                                    </span>
+                                </div>
+                                <br/>
+                                <div style="text-align: center">
+                                    <div style="color:white;font-size: 16px; background-color:rgb(28, 105, 10);"
+                                         class="text-center">المادة (10): أحكام السداد المبكر
+                                    </div>
+                                </div>
+                                <div style="color:#000;font-size: 14px;">
+                                    <span>10.1 يجوز للمستفيد التقدم في أي وقت بطلب السداد المبكر.</span>
+                                    <br/>
+                                    <span>10.2 يحق للممول مطالبة المستفيد بالمبالغ المذكورة أدناه لتمكينه من السداد
+                                        الكلي المبكر وهي على النحو الاتي:
+                                    </span>
+                                    <br/>
+                                    <span>أ- المبلغ المتبقي من مبلغ التمويل</span>
+                                    <br/>
+                                    <span>ب- كلفة إعادة الإستثمار (الربح) بما لا يتجاوز كلفة الأجل (الربح) لأقساط الأشهر
+                                        الثلاثة اللاحقة لآخر قسط استحق قبل تقديم المستفيد بطلب السداد الكلي المبكر حسب
+                                        جدول الأقساط الوارد في الملحق رقم (1)
+                                    </span>
+                                    <br/>
+                                    <span>ج–ما يدفعه الممول لطرف ثالث بسبب العقد من نفقات غير قابلة للإسترداد والتي يجب
+                                        على الممول إثباتها.
+                                    </span>
+                                    <br/>
+                                    <span>10.3 يلتزم المستفيد بدفع مبلغ السداد الكلي المبكر المستحق خلال (7) أيام عمل من
+                                        تاريخ إعلامه به، ويلتزم الممول بإصدار خطاب مخالصة للمستفيد خلال مدة لا تتجاوز
+                                        يوم عمل واحد، وسبعة أيام عمل للعميل الحاصل على البطاقة الائتمانية أو بطاقة الحسم
+                                        الشهري، وفق مانصت عليه تعليمات المدد الزمنية لإصدار خطاب إخلاء الطرف
+                                        وتحويل المديونية، وتحديث سجله الإئتماني لدى شركات المعلومات الإئتمانية
+                                    </span>
+                                </div>
+                                <br/>
+                                <div style="text-align: center">
+                                    <div style="color:white;font-size: 16px; background-color:rgb(28, 105, 10);"
+                                         class="text-center">المادة (11): التكاليف والرسوم الإدارية
+                                    </div>
+                                </div>
+                                <div style="color:#000;font-size: 14px;">
+                                    <span>11.1 يلتزم المستفيد بدفع التكاليف والرسوم الإدارية المتفق عليها في المادة (5)
+                                        من العقد على ألا يتجاوز مجموع هذه التكاليف والرسوم الإدارية مبلغ (5000)ريال أو
+                                        (1%) من التمويل، أيهما أقل ولا يشمل ذلك الضرائب الحكومية.
+                                    </span>
+                                    <br/>
+                                    <span>11.2 يتحمل الممول التكاليف والرسوم التي تنص العقد على مسؤوليته عنها أو
+                                        نصت الأنظمة والتعليمات ذات العلاقة على تحمله لها.
+                                    </span>
+                                </div>
+                                <br/>
+                                <div style="text-align: center">
+                                    <div style="color:white;font-size: 16px; background-color:rgb(28, 105, 10);"
+                                         class="text-center">المادة (12): الضمانات وما يقوم مقامها
+                                    </div>
+                                </div>
+                                <div style="color:#000;font-size: 14px;">
+                                    <span>12.1 يتعهد المستفيد بأن يقدم للممول واحد أو أكثر من الضمانات أو ما يقوم
+                                        مقامها الآتية:
+                                    </span>
+                                    <br/>
+                                    <span>* الكفالة (وفقًا للنموذج المعتمد لدى الممول)</span>
+                                    <br/>
+                                    <span>* عدد [1] سند الأمر</span>
+                                    <br/>
+                                    <span>* أخرى (إن وجدت), وهي .....................</span>
+                                    <br/>
+                                    <span>12.2 يقدم المستفيد جميع وثائق الضمان (إن وجدت) إلى الممول في التاريخ المحدد في
+                                        المادة (3) من العقد
+                                    </span>
+                                </div>
+                                <br/>
+                                <div style="text-align: center">
+                                    <div style="color:white;font-size: 16px; background-color:rgb(28, 105, 10);"
+                                         class="text-center">المادة (13): تعهدات وإقرارات للمستفيد
+                                    </div>
+                                </div>
+                                <div style="color:#000;font-size: 14px;">
+                                    <span>13.1 يتعهد ويقر المستفيد بأن المعلومات أو المستندات أو الوثائق التي قدمها
+                                        للممول
+                                        لغرض إجراء أي عمليات بحث أو تقييم من أجل الدخول في العقد هي معلومات
+                                        حقيقية وصحيحة ودقيقة وغير مضللة
+                                    </span>
+                                    <br/>
+                                    <span>13.2 يتعهد ويقر المستفيد ًفي حال كان العقد مبرما عبر القنوات الإلكترونية
+                                        باستخدام
+                                        التصديق الرقمي ًبأن العقد موقع إلكترونيا باستخدام التصديق الرقمي ولا يجوز له
+                                        الطعن أو الإعتراض على العقد أو صحة إبرامه استنادًا إلى أن ً تنفيذه كان
+                                        إلكترونيًا
+                                        .كما يقر المستفيد بعلمه بالمخاطر المرتبطة بذلك
+                                    </span>
+                                    <br/>
+                                    <span>13.3 يتعهد ويقر المستفيد بأن الإلتزامات الواردة في العقد تعد التزامات سارية
+                                        وملزمة
+                                        له
+                                        ويتعهد بالإلتزام بها , كما يقر أن دفاتر الممول وقيوده تعتبر حجة قاطعة ونهائية
+                                        على صحة المبالغ المقيدة في سجلات الممول , وتعتبر حجة قانونية يعتد بها في أي وقت
+                                        أو
+                                        في
+                                        حال حدوث نزاع بين الطرفين ,ما لم يعترض المستفيد عليها خلال (7) أيام
+                                        عمل من تاريخ إشعاره بقيدها في سجلات الممول
+                                    </span>
+                                    <br/>
+                                    <span>13.4 يتعهد ويقر المستفيد باستمرار وسريان جميع الضمانات أو ما يقوم مقامها (إن
+                                        وجدت)
+                                        التي قدمها للممول حتى يفي بجميع التزاماته وفقًا للعقد ,كما يتعهد حال
+                                        انخفاض قيمة الضمانات المقامة من قبله بشكل جوهري أو بما يؤثر على حقوق
+                                        الممول المترتب عليها ؛ تقديم ضمانات إضافية يرتضيها الممول على أن يراعى فيها
+                                        الأقساط
+                                        التي قام المستفيد بدفعها حتى وقت انخفاض قيمة الضمانات
+                                    </span>
+                                    <br/>
+                                    <span>13.5 يتعهد ويقر المستفيد بخلو ذمته المالية من أي التزامات أو مطالبات لم يفصح
+                                        عنها
+                                        للممول عند طلبه للتمويل قد تؤثر بصورة مباشرة وجوهرية على قدرته على
+                                        الوفاء بالتزاماته المالية الناشئة عن هذا العقد, كما يؤكد قبوله بمبلغ الأقساط
+                                        المتفق
+                                        عليها,ويتعهد بإخطار الممول بأي تغيير قد يطرأ مستقبلا ً ويؤثر بشكل جوهري على
+                                        قدرته
+                                        المالية للوفاء بالتزاماته وفقًا للعقد .
+                                    </span>
+                                    <br/>
+                                    <span>13.6 يتعهد ويقر المستفيد بأنه لم يقم باتخاذ أي إجراُء لإعلان إفلاسه أو إعساره
+                                        ولم تتًخذ أي إجراءات نظامية ضده لإعلان إفلاسه أو إعساره
+                                    </span>
+                                    <br/>
+                                    <span>13.7 يلتزم المستفيد بإخطار الممول حال علمه بأية ظروف قد تؤدي إلى الإخلال بهذا
+                                        العقد
+                                        أو فسخه , بالإضافة إلى الخطوات التي تم اتخاذها لتصحيح الوضع
+                                    </span>
+                                    <br/>
+                                    <span>13.8 تعد الإقرارات والتعهدات السابقة سارية طوال مدة العقد, ولا يجوز للمستفيد
+                                        الدفع بكونها مقتصرة على وقت توقيع العقد
+                                    </span>
+                                </div>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <div style="text-align: center">
+                                    <div style="color:white;font-size: 16px; background-color:rgb(28, 105, 10);"
+                                         class="text-center">المادة (14): تعهدات وإقرارات الممول
+                                    </div>
+                                </div>
+                                <div style="color:#000;font-size: 14px;">
+                                    <span>14.1 يتعهد ويقر الممول بأن الإلتزامات في العقد تعد التزامات سارية وملزمة له
+                                        ويتعهد
+                                        بالإلتزام بها
+                                    </span>
+                                    <br/>
+                                    <span>14.2 يتعهد ويقر الممول بأنه لم يقم باتخاذ أي إجراء لإعلان إفلاسه أو إعساره ولم
+                                        تتّخذ
+                                        أي
+                                        إجراءات نظامية ضده لإعلان إفلاسه أو إعساره.
+                                    </span>
+                                    <br/>
+                                    <span>14.3 -يتعهد ويقر الممول بقيامة قبل إبرام العقد بدراسة وضع المستفيد الإئتماني
+                                        بشكل
+                                        دقيق وواضح وقدرة المستفيد على تحمل الإلتزامات الإئتمانية المترتبة على هذا
+                                        العقد
+                                    </span>
+                                    <br/>
+                                    <span>14.4 -يؤكد الممول تعامله بعدل وأمانة وإنصاف مع المستفيد في جميع مراحل العلاقة
+                                        بينهما
+                                        وتطبيق الممول أفضل الممارسات المتبعة للحفاظ على حقوق المستفيد كمايلتزم
+                                        الممول بتطبيق الأنظمة والتعليمات ذات العلاقة بهذا العقد
+                                    </span>
+                                    <br/>
+                                    <span>14.5 يلتزم الممول بحماية معلومات المستفيد المالية والشخصية والحفاظ على
+                                        خصوصيتها
+                                        وعدم استخدامها إلا لأغراض محددة مهنية وتشغيلية ويستثنى من ذلك ما يفصح
+                                        عنه الممول للجهات الحكومية المختصة أو الجهات غير الحكومية المرخص لها وذلك بالقدر
+                                        الالزم
+                                        لإستيفاء حقه وفقًا للأنظمة والضوابط ذات العلاقة
+                                    </span>
+                                    <br/>
+                                    <span>14.6 تعد الإقرارات والتعهدات السابقة سارية طوال مدة العقد، ولا يجوز للممول
+                                        الدفع
+                                        بكونها
+                                        مقتصرة على وقت توقيع العقد.
+                                    </span>
+                                </div>
+                                <br/>
+                                <div style="text-align: center">
+                                    <div style="color:white;font-size: 16px; background-color:rgb(28, 105, 10);"
+                                         class="text-center">المادة (15): أحكام الإخلال بالعقد
+                                    </div>
+                                </div>
+                                <div style="color:#000;font-size: 14px;">
+                                    <span>15.1 يعد المستفيد مخلا ً بالتزاماته المترتبة عليه بموجب هذا العقد في أي من
+                                        الحالات
+                                        الآتية (والتي يشار إلى كل حالة منها ب "حالةإخلال"):
+                                    </span>
+                                    <br/>
+                                    <span>15.1.1 عند إخفاق المستفيد في سداد الأقساط المستحقة وعدم تصحيح التعثر خلال
+                                        المدة
+                                        الممنوحة في إشعار التعثر وفقا لأحكام التأخير أو التعثر عن السداد الواردة في
+                                        المادة (8) من العقد
+                                    </span>
+                                    <br/>
+                                    <span>15.1.2 عند إخلال المستفيد بالشروط والأحكام الواردة في العقد بشكل جوهري وعدم
+                                        تصحيح
+                                        ذلك
+                                        الإخلال خلال المدة المنصوص عليها في هذا العقد، أو خلال (30)
+                                        يومًا من تاريخ إخطار الممول للمستفيد بهذا الإخلال (في حال عدم النص على مدة أخرى
+                                        في
+                                        هذا
+                                        العقد ).
+                                    </span>
+                                    <br/>
+                                    <span>15.1.3 عند ثبوت عدم صحة أي تعهدات أو إقرارات أو ضمانات تم تقديمها بموجب هذا
+                                        العقد بشكل جوهري
+                                    </span>
+                                    <br/>
+                                    <span>15.1.4 عند إعلان المستفيد إعساره أو إفلاسه أو عند تعيين مصف، أو حارس إداري،
+                                        أوقضائي أو
+                                        أمين تفليسة أو أي منصب يقوم مقام هذه المهام على كل أو بعض
+                                        أصول أو أعمال إفلاسه الأصل الممول
+                                    </span>
+                                    <br/>
+                                    <span>15.2 دون الإخلال بأحكام الأنظمة و التعليمات ذات العلاقة،عند حدوث حالة إخلال
+                                        يجوز
+                                        للممول اتخاذ أي من الآتي:
+                                    </span>
+                                    <br/>
+                                    <span>15.2.1 مناقشة المستفيد والإتفاق معه على تعديل مدة العقد أو مواعيد السداد أو
+                                        مقدار
+                                        الأقساط أو غير ذلك عند الحاجة لمنح المستفيد فرصة لتصحيح وضعه
+                                    </span>
+                                    <br/>
+                                    <span>15.2.2 الإتفاق مع المستفيد على تقديمه طلباً للسداد الكلي المبكر وفقًا لإحكام
+                                        السداد
+                                        المبكر الواردة في المادة (10) من العقد
+                                    </span>
+                                    <br/>
+                                    <span>15.2.3 إستيفاء حقوقه بموجب أي من وثائق الضمان وفقًا للضوابط المرعية</span>
+                                    <br/>
+                                    <span>15.3 يستحق المستفيد كافة المبالغ التي تزيد عن المبلغ المستحق للممول في حال
+                                        تنفيذ
+                                        الممول على الضمانات وما يقوم مقامها (إن وجدت)
+                                    </span>
+                                </div>
+                                <br/>
+                                <div style="text-align: center">
+                                    <div style="color:white;font-size: 16px; background-color:rgb(28, 105, 10);"
+                                         class="text-center">المادة (16): وفاة المستفيد أو عجزه
+                                    </div>
+                                </div>
+                                <div style="color:#000;font-size: 14px;">
+                                    <span>16.1 يعفى المستفيد من التزاماته بموجب هذا العقد في حالة الوفاة أو العجز الكلي
+                                        وفقًا
+                                        لضوابط وإجراءات التحصيل للعملاء الأفراد الصادرة عن البنك المركزي السعودي,
+                                        ويعد المستفيد عندها مؤديًا لكامل التزاماته وفقًا للعقد, ويلتزم الممول بإصدار
+                                        خطاب
+                                        مخالصة للمستفيد أو ورثته وفق ما نصت عليه مبادئ وقواعد حماية عملاء المؤسسات
+                                        المالية الصادرة عن البنك المركزي السعودي, وتحديث سجلة الإئتماني لدى شركة
+                                        المعلومات
+                                        الإئتمانية خلال المدة المحددة بموجب الأنظمة و التعليمات ذات العلاقة
+                                    </span>
+                                    <br/>
+                                    <span>16.2 في حال كانت الوفاة أو العجز الكلي من الأمور المستثناة من الإعفاء وفقاً
+                                        لضوابط
+                                        وإجراءات التحصيل للعملاء الأفراد الصادرة عن البنك المركزي السعودي ,فعندها
+                                        يتم فسخ العقد و التعامل مع هذه الحالة وفقًا لإحكام الإخلال بالعقد الواردة في
+                                        المادة
+                                        (15)من العقد أو ما يقرره الممول
+                                    </span>
+                                </div>
+                                <br/>
+                                <div style="text-align: center">
+                                    <div style="color:white;font-size: 16px; background-color:rgb(28, 105, 10);"
+                                         class="text-center">المادة (17): توثيق العقد
+                                    </div>
+                                </div>
+                                <div style="color:#000;font-size: 14px;">
+                                    <span>17.1 يحق للممول توثيق هذا العقد وأي من ملاحقة أو ضماناته وما يقوم مقامها (إن
+                                        وجدت
+                                        )
+                                        لدى الجهات المختصة لضمان حقوقه, ويمنح المستفيد موافقته وما يلزم لإنفاذ
+                                        هذا الحق
+                                    </span>
+                                    <br/>
+                                    <span>17.2 يتحمل الممول رسوم توثيق العقد (إن وجدت ),ولا يجوز تحميلها على المستفيد
+                                    </span>
+                                </div>
+                                <br/>
+                                <div style="text-align: center">
+                                    <div style="color:white;font-size: 16px; background-color:rgb(28, 105, 10);"
+                                         class="text-center">المادة (18): تعديل العقد
+                                    </div>
+                                </div>
+                                <div style="color:#000;font-size: 14px;">
+                                    <span>لا يجوز تعديل العقد أو أي من مواده بعد إبرامه</span>
+                                </div>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <div style="text-align: center">
+                                    <div style="color:white;font-size: 16px; background-color:rgb(28, 105, 10);"
+                                         class="text-center">المادة (19): الإخطارات
+                                    </div>
+                                </div>
+                                <div style="color:#000;font-size: 14px;">
+                                    <span>19.1 تكون كافة الإشعارات المرسلة من الممول إلى المستفيد مكتوبة (ورقياً أو
+                                        إلكترونيًا) وتعد نافذة وملزمة, ويتم إرسالها خلال أيام العمل و أوقاته إلى أي من
+                                        العناوين
+                                        المبينة في بيانات الاتصال لغرض الإشعارات الموضحة في مقدمة العقد , ولايفترض وصول
+                                        إشعار التأخر أو إشعار التعثر أو إشعار الإخلال أو علم من وجهت إليه
+                                        بمضمونها إلا بعد مرور يومي عمل من تاريخ إرسالها, وبشرط إرسالها إلى الكفيل (إن
+                                        وجد)
+                                    </span>
+                                    <br/>
+                                    <span>19.2 يفترض وصول الإشعارات المرسلة من المستفيد(أو الكفيل إن وجد )إلى الممول
+                                        وعلمه
+                                        بمضمونهابشرط أن يكون خلال أيام العمل وأوقاته وبإحدى العناوين المبينة
+                                        في بيانات الإتصال لغرض الإشعارات الموضحة في مقدمة العقد , وإذا أرسل البريد
+                                        الإلكتروني في غير يوم عمل, أو بعد الساعة (17:00) من يوم عمل, فيفترض وصوله
+                                        إلى الممول وعلمه بمضمونه في يوم العمل الذي يليه .
+                                    </span>
+                                    <br/>
+                                    <span>19.3 يجب على كل طرف إخطار الآخر فوراً بإي تغييرات تطرأ على عناوين الإتصال
+                                        الخاصة
+                                        به ,ولا يجوز للطرف الذي قصر أو أهمل في إخطار الطرف الآخر
+                                        بتغيير عناوين تواصله أو أحدها التعذر بعدم علمه بالإخطار أو عدم وصوله إليه
+                                    </span>
+                                </div>
+                                <br/>
+                                <div style="text-align: center">
+                                    <div style="color:white;font-size: 16px; background-color:rgb(28, 105, 10);"
+                                         class="text-center">المادة (20): أحكام متفرقة
+                                    </div>
+                                </div>
+                                <div style="color:#000;font-size: 14px;">
+                                    <span>20.1 يمنح المستفيد موافقته للممول لأغراض هذا العقد ووفق ماتقضي به أحكام
+                                        الإنظمة و
+                                        التعليمات ذات العلاقة - على جمع ومعالجة المعلومات و البيانات ,ويشمل
+                                        ذلك المعلومات الإئتمانية وجمعها لفحص السجل الإئتماني للمستفيد و التحقق من ملاءته
+                                        المالية وقدرته على الوفاء وسلوكه الإئتماني, كما يمنح المستفيد موافقته على تأسيس
+                                        سجل ائتماني له إذا لم يكن لديه سجل ائتماني, و إدراج بياناته الإئتمانية فيه لدى
+                                        أي
+                                        من الجهات المرخصة بمزاولة نشاط المعلومات الإئتمانية كما يوافق المستفيد على قيام
+                                        الممول بتزويد وتبادل المعلومات الإئتمانية المرتبطة بهذا العقد مع أي من الجهات
+                                        المرخصة بمزاولة نشاط المعلومات الإئتمانية.
+                                    </span>
+                                    <br/>
+                                    <span>20.2 يلتزم الممول بتزويد المستفيد بملخص السداد لهذا العقد – عند طلبه – إلى أي
+                                        من
+                                        العناوين المبينة في بيانات الإتصال لغرض الإشعارات الموضحة في مقدمة العقد
+                                    </span>
+                                    <br/>
+                                    <span>20.3 يلتزم الممول بناء على طلب المستفيد – بإعادة جدولة المديونية فيّ حال ثبوت
+                                        تغير ظروف المستفيد (إجباريًا أواختياريًا),وذلك وفق ما
+                                        تقضي به التعليمات الصادرة عن البنك المركزي السعودي
+                                    </span>
+                                    <br/>
+                                    <span>20.4 لا يؤدي بطلان أي مادة من مواد العقد أو عدم نظاميتها أو عدم قابليتها
+                                        للتنفيذ إلى
+                                        بطلان أو عدم قابلية تنفيذ المواد الأخرى في العقد ويعمل
+                                        الممول و المستفيد على تصحيح البطلان
+                                    </span>
+                                    <br/>
+                                    <span>20.5 في حال وجود استفسار أو نزاع أو شكوى لدى المستفيد فإنه يقوم بتقديم طلب
+                                        بذلك
+                                        عن طريق بيانات الإتصال لغرض الشكاوى والإعتراضات الموضحة في مقدمة
+                                        العقد , ويقوم الممول بدراسة الطلب و الرد عليه حسب الإجراءات المتبعة في مثل هذه
+                                        الحالات خلال الفترة المحددة في تعليمات البنك المركزي السعودي
+                                    </span>
+                                    <br/>
+                                    <span>20.6 يحق للمستفيد طلب نسخة من العقد باللغة الإنجليزية.</span>
+                                    <br/>
+                                    <span>20.7 تعد اللغة العربية هي اللغة المعتمدة للعقد، وفي حال وجود تعارض بين النص
+                                        العربي و النص الإنجليزي لأي من الوثائق،فيعتمد النص العربي
+                                    </span>
+                                </div>
+                                <br/>
+                                <div style="text-align: center">
+                                    <div style="color:white;font-size: 16px; background-color:rgb(28, 105, 10);"
+                                         class="text-center">المادة (21): النظام واجب التطبيق والإختصاص القضائي
+                                    </div>
+                                </div>
+                                <div style="color:#000;font-size: 14px;">
+                                    <span>21.1 يخضع هذا العقد للأنظمة النافذة في المملكة العربية السعودية ,ويٌجرى تفسيره
+                                        وتنفيذه و الفصل فيما ينشأ عنه من دعاوى بموجبها
+                                    </span>
+                                    <br/>
+                                    <span>21.2 تتم تسوية أي نزاع ينشأ بين الأطراف وديًا ,وإذا أخفق الأطراف في حل النزاع
+                                        وديا خلال (15) يوم عمل من تاريخ نشوئه, فيحق لأي طرف من الأطراف التقدٌم
+                                        إلى الجهة القضائية المختصة للفصل في النزاع
+                                    </span>
+                                    <br/>
+                                    <span>
+                                        وإثباتاً لما تقدم، وقع كل من الممول والمستفيد(والكفيل إن وجد) هذا العقد في اليوم
+                                        المبين في مستهله:
+                                    </span>
+                                </div>
+                                <br/>
+                                <div class="w-100 row justify-content-between"
+                                     style="text-align: right;direction: rtl; font-size: 16px;">
+                                    <div class="col-4 ">
+                                        <span>المستفيد</span>
+                                        <br></br>
+                                        <span>الاسم :
+                                            <strong t-esc="doc.name.name"/>
+                                        </span>
+                                        <br></br>
+                                        <span>الصفة : الطرف الثاني</span>
+                                        <br></br>
+                                        <span>التوقيع :</span>
+                                    </div>
+                                    <td>
+                                        <![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]]>
+                                    </td>
+                                    <div class="col-4 ">
+                                        <span>شركة فيول للتمويل</span>
+                                        <br></br>
+                                        <span>الاسم : عبدالله محمد العساف</span>
+                                        <br></br>
+                                        <span>الصفة : الرئيس التنفيذي</span>
+                                        <br></br>
+                                        <span>التوقيع :</span>
+                                    </div>
+                                </div>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <br/>
+                                <div>
+                                    <div class="w-100 row justify-content-between"
+                                         style="text-align: right;direction: rtl; font-size: 16px;">
+                                        <div class="col-4 ">
+                                            <span>الكفيل (إن وجد)</span>
+                                            <br></br>
+                                            <span>الاسم:</span>
+                                            <br></br>
+                                            <span>الصفة:</span>
+                                            <br></br>
+                                            <span>التوقيع:</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br/>
+                                <br/>
+                                <div style="text-align: center">
+                                    <div style="color:white;font-size: 16px; background-color:rgb(28, 105, 10);"
+                                         class="text-center">جدول سداد الأقساط
+                                    </div>
+                                </div>
+                                <span>
+                                    <table class="table">
+                                        <tr>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">
+                                                رقم العقد
+                                            </th>
+                                            <td style="color:#000;font-size: 14px;">
+                                                <strong t-esc="doc.seq_num"/>
+                                            </td>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">عدد الأقساط</th>
+                                            <td style="color:#000;font-size: 14px;">
+                                                <strong t-esc="doc.loan_term"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">مدة العقد
+                                                بالأشهر
+                                            </th>
+                                            <td style="color:#000;font-size: 14px;">
+                                                <strong t-esc="doc.loan_term"/>
+                                                شهر
+                                            </td>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">مبلغ التمويل
+                                            </th>
+                                            <td style="color:#000;font-size: 14px;">
+                                                <strong t-esc="doc.loan_amount_positive"/>
+                                            </td>
+                                        </tr>
+<!--                                        <tr>-->
+<!--                                            <th style="color:#000;font-size: 14px;text-align: right;">إجمالي مبلغ كلفة-->
+<!--                                                التمويل (+)-->
+<!--                                            </th>-->
+<!--                                            <td style="color:#000;font-size: 14px;">-->
+<!--                                                <strong t-esc="doc.loan_sum"/>-->
+<!--                                                ريال سعودي-->
+<!--                                            </td>-->
+<!--                                            <th style="color:#000;font-size: 14px;text-align: right;">مدة عقد التمويل-->
+<!--                                                (بالأشهر)-->
+<!--                                            </th>-->
+<!--                                            <td style="color:#000;font-size: 14px;">-->
+<!--                                                <strong t-esc="doc.loan_term"/>-->
+<!--                                                شهر-->
+<!--                                            </td>-->
+<!--                                        </tr>-->
+                                        <tr>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">تاريخ إبتداء العقد
+                                            </th>
+                                            <td style="color:#000;font-size: 14px;">
+                                                 <strong t-esc="doc.approve_date"/>
+                                            </td>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">نسبة كلفة الأجل
+                                                (الربح)
+                                            </th>
+                                            <td style="color:#000;font-size: 14px;">
+                                                <strong t-esc="doc.rate_per_month * 100"/>
+                                                <span>%</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">تاريخ إنتهاء العقد
+                                            </th>
+                                            <td style="color:#000;font-size: 14px;">
+                                                <strong t-esc="doc.installment_end_date"/>
+                                            </td>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">مبلغ كلفة الأجل
+                                                (الربح)
+                                            </th>
+                                            <td style="color:#000;font-size: 14px;">
+                                                <strong t-esc="doc.interest_amount"/>
+                                                ريال سعودي
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">الرسوم
+                                                الإدارية
+                                            </th>
+                                            <td style="color:#000;font-size: 14px;">
+                                                <strong t-esc="doc.fees"/>
+                                            </td>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">معدل النسبة السنوي
+                                                APR
+                                            </th>
+                                            <td style="color:#000;font-size: 14px;">
+                                                <strong t-esc=" doc.apr"/>
+                                                <span>%</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">إجمالي المبلغ
+                                                المستحق سداده (=)
+                                            </th>
+                                            <td style="color:#000;font-size: 14px;">
+                                                <strong t-esc="doc.loan_sum"/>
+                                                ريال سعودي
+                                            </td>
+                                            <th style="color:#000;font-size: 14px;text-align: right;">مبلغ القسط الشهري
+                                                (ريال سعودي)
+                                            </th>
+                                            <td style="color:#000;font-size: 14px;">
+                                                <strong t-esc=" '%.2f'%  doc.installment_month"/>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <br/>
+                                    <br/>
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>رقم القسط الشهري</th>
+                                                <th>تاريخ استحقاق القسط</th>
+                                                <th>مبلغ القسط الشهري (ر.س)</th>
+                                                <th>مبلغ الأصل الممول من القسط الشهري (ر.س)</th>
+                                                <th>كلفة الأجل(الربح) من القسط الشهري (ر.س)</th>
+                                                <th>المتبقي من مبغ التمويل</th>
+                                                <th>المتبقي من إجمالي المبلغ المستحق سداده</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <t t-set="total" t-value="0"/>
+                                            <tr t-foreach='doc.installment_ids' t-as='line'>
+                                                <td>
+                                                    <span t-esc="line.i_num"/>
+                                                </td>
+                                                <td>
+                                                    <span t-esc="line.date"/>
+                                                </td>
+                                                <td>
+                                                    <span t-esc="'%.2f'% line.installment_amount"/>
+                                                    <span t-field="doc.currency_id.symbol"/>
+                                                </td>
+                                                <td>
+                                                    <span t-esc="line.principal_amount"/>
+                                                    <span t-field="doc.currency_id.symbol"/>
+                                                </td>
+                                                <td>
+                                                    <span t-esc="line.interest_amount"/>
+                                                    <span t-field="doc.currency_id.symbol"/>
+                                                </td>
+                                                <td>
+                                                    <span t-esc="line.ascending_installment"/>
+                                                    <span t-field="doc.currency_id.symbol"/>
+                                                </td>
+                                                <td>
+                                                    <span t-esc="line.total_ascending_installment"/>
+                                                    <span t-field="doc.currency_id.symbol"/>
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                                <th>
+                                                    <h6>المجموع</h6>
+                                                </th>
+                                                <th></th>
+                                                <th>
+                                                    <span t-esc="doc.loan_sum" style="color:Red;"/>
+                                                    <!--                                                    <span t-esc="doc.installment_amount_loan * doc.loan_term" style="color:Red;"/>-->
+                                                    <span t-field="doc.currency_id.symbol"/>
+                                                </th>
+                                                <th>
+                                                    <span t-esc="'%.2f'% doc.loan_amount_positive" style="color:Red;"/>
+                                                    <span t-field="doc.currency_id.symbol"/>
+                                                </th>
+                                                <th>
+                                                    <span t-esc="'%.2f'% doc.interest_amount" style="color:Red;"/>
+                                                    <span t-field="doc.currency_id.symbol"/>
+                                                </th>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </span>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

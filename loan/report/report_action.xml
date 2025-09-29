@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_installment_report" model="ir.actions.report">
+            <field name="name">installment.report.wizard</field>
+            <field name="model">installment.report.wizard</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">loan.installment_summary_template</field>
+            <field name="report_file">loan.installment_summary_template</field>
+            <field name="binding_model_id" eval="False"/>
+            <field name="binding_type">report</field>
+        </record>
+        <!-- <report id="action_installment_report" 
+        model="installment.report.wizard" 
+        report_type="qweb-pdf" 
+        string="Installment Report" 
+        name="loan.installment_summary_template"
+         file="loan.installment_summary_template" /> -->
+    </data>
+</odoo>

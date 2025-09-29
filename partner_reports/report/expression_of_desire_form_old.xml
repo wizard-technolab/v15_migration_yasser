@@ -1,0 +1,830 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <template id="expression_of_desire_form_template">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <t t-foreach="docs" t-as="o">
+                        <div class="page" dir="rtl">
+                            <!-- code -->
+                            <div class="row" dir="ltr">
+                                <div class="col-6" style="margin-top:-20px;font-size:18px;">
+                                    <span>Shari,a certificate Ref#:FFC-10-01-01-03-22-CAM</span>
+                                </div>
+                                <div class="col-6" style="font-size:18px;">
+                                </div>
+                            </div>
+                            <!-- header -->
+                            <div class="row" dir="ltr">
+                                <div class="col-3" style="margin-top:10px;font-size:21px;">
+                                        <img src="/partner_reports/static/src/img/fuel_exposior_icon.png" class="icon_fuel" /><br/>
+                                </div>
+                                <div class="col-9 text-center" style="color:#0c8000;font-size:28px;margin-top:47px;margin-left:-130px;">
+                                    <span style="line-height:20px;">
+                                        استمارة ابداء رغبة   شراء غير ملزم للطرفين - أفراد<br/>
+                                         نموذج اعرف عميلكَKYC
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- first page -->
+                            <div class="row text-center" style="margin-top:80px;">
+                                <!-- first col -->
+                                <div class="col-6 main-column">
+                                    <!-- معلومات الطلب -->
+                                    <div class="row text-right" dir="rtl" style="margin-top:20px;">
+                                        <h5 style="color:#0c8000;">معلومات شخصية عن مقدم الطلب: </h5>
+                                    </div>
+                                    <!-- الاسم الرباعي -->
+                                    <div class="row my-row-right text-right" dir="rtl" style="margin-top:20px;">
+                                        <div class="col-6">
+                                            الاسم الرباعي: 
+                                        </div>
+                                    </div>
+                                    <!-- الجنسية -->
+                                    <div class="row my-row-right text-right" dir="rtl" style="margin-top:20px;">
+                                        <div class="col-6">
+                                            الجنسية: 
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="row">
+                                                <!-- Male -->
+                                                <div class="check_box_div2" style="margin-right:30px;">
+                                                    <div class="custom_checkbox2">
+                                                        <i class="fas fa-check"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="text-right check_box_text2" style="width:30px;">
+                                                    <span>ذكر</span><br/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="row">
+                                                <!-- Female -->
+                                                <div class="check_box_div2" style="margin-right:30px;">
+                                                    <div class="custom_checkbox2">
+                                                        <i class="fas fa-check"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="text-right check_box_text2">
+                                                    <span>انثى</span><br/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- رقم الهوية -->
+                                    <div class="row my-row-right text-right" dir="rtl" style="margin-top:20px;">
+                                        <div class="col-6">
+                                            رقم الهوية: 
+                                        </div>
+                                    </div>
+                                    <!-- تاريخ الاصدار و مكانه -->
+                                    <div class="row my-row-right text-right" dir="rtl" style="margin-top:20px;">
+                                        <div class="col-6">
+                                            تاريخ الإصدار:  
+                                        </div>
+                                        <div class="col-6">
+                                            مكان الإصدار:  
+                                        </div>
+                                    </div>
+                                    <!-- تاريخ الميلاد مكان الميلاد -->
+                                    <div class="row my-row-right text-right" dir="rtl" style="margin-top:20px;">
+                                        <div class="col-6">
+                                            تاريخ الميلاد:  
+                                        </div>
+                                        <div class="col-6">
+                                            مكان الميلاد:  
+                                        </div>
+                                    </div>
+                                    <!-- تاريخ الانتهاء و العمر -->
+                                    <div class="row my-row-right text-right" dir="rtl" style="margin-top:20px;">
+                                        <div class="col-6">
+                                            تاريخ الانتهاء:  
+                                        </div>
+                                        <div class="col-6">
+                                            العمر:   
+                                        </div>
+                                    </div>
+                                    <!-- الحالة الاجتماعية و  عدد المعولين -->
+                                    <div class="row my-row-right text-right" dir="rtl" style="margin-top:20px;">
+                                        <div class="col-6">
+                                            الحالة الاجتماعية:   
+                                        </div>
+                                        <div class="col-6">
+                                            عدد المعولين:    
+                                        </div>
+                                    </div>
+                                    <!-- المستوى التعليمي -->
+                                    <div class="row my-row-right text-right" dir="rtl" style="margin-top:20px;">
+                                        <div class="col-6">
+                                            المستوى التعليمي:    
+                                        </div>
+                                    </div>
+                                    <!-- رقم المبنى و الحي -->
+                                    <div class="row my-row-right text-right" dir="rtl" style="margin-top:20px;">
+                                        <div class="col-6">
+                                            رقم المبنى:    
+                                        </div>
+                                        <div class="col-6">
+                                            الحي:     
+                                        </div>
+                                    </div>
+                                    <!-- الشارع و المدينة -->
+                                    <div class="row my-row-right text-right" dir="rtl" style="margin-top:20px;">
+                                        <div class="col-6">
+                                            الشارع:     
+                                        </div>
+                                        <div class="col-6">
+                                            المدينة:      
+                                        </div>
+                                    </div>
+                                    <!-- الرمز البريدي و الرقم الإضافي -->
+                                    <div class="row my-row-right text-right" dir="rtl" style="margin-top:20px;">
+                                        <div class="col-6">
+                                            الرمز البريدي:      
+                                        </div>
+                                        <div class="col-6">
+                                            الرقم الإضافي:       
+                                        </div>
+                                    </div>
+                                    <!-- نوع السكن -->
+                                    <div class="row my-row-right text-right" dir="rtl" style="margin-top:20px;">
+                                        <div class="col-6">
+                                            نوع السكن: 
+                                        </div>
+                                    </div>
+                                    <!-- اختيار نوع السكن -->
+                                    <div class="row my-row-right text-right" dir="rtl" style="margin-top:20px;">
+                                        <div class="col-3">
+                                            <div class="row">
+                                                <!-- ملك شخصي -->
+                                                <div class="check_box_div2">
+                                                    <div class="custom_checkbox2">
+                                                        <i class="fas fa-check"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="text-right check_box_text2" style="font-size:14px;width:80px;border:1px solid black;">
+                                                    <span>ملك شخصي</span><br/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="row">
+                                                <!-- ملك مع الاهل -->
+                                                <div class="check_box_div2">
+                                                    <div class="custom_checkbox2">
+                                                        <i class="fas fa-check"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="text-right check_box_text2" style="font-size:14px;width:80px;border:1px solid black;">
+                                                    <span>ملك مع الاهل</span><br/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="row">
+                                                <!-- ايجار -->
+                                                <div class="check_box_div2">
+                                                    <div class="custom_checkbox2">
+                                                        <i class="fas fa-check"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="text-right check_box_text2" style="font-size:14px;width:80px;border:1px solid black;">
+                                                    <span>ايجار</span><br/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="row">
+                                                <!-- حكومي -->
+                                                <div class="check_box_div2">
+                                                    <div class="custom_checkbox2">
+                                                        <i class="fas fa-check"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="text-right check_box_text2" style="font-size:14px;width:80px;border:1px solid black;">
+                                                    <span>حكومي</span><br/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- لغير السعوديين -->
+                                    <div class="row text-right" dir="rtl" style="margin-top:50px;">
+                                        <h5 style="color:#0c8000;">لغير السعوديين: </h5>
+                                    </div>
+                                    <!-- العنوان في البلد الام: -->
+                                    <div class="row my-row-right text-right" dir="rtl" style="margin-top:20px;">
+                                        <div class="col-6">
+                                            العنوان في البلد الام:  
+                                        </div>
+                                    </div>
+                                    <!-- المهنة في البلد الام: -->
+                                    <div class="row my-row-right text-right" dir="rtl" style="margin-top:20px;">
+                                        <div class="col-6">
+                                            المهنة في البلد الام:  
+                                        </div>
+                                    </div>
+                                    <!-- اقرب شخص في البلد الام، الجوال -->
+                                    <div class="row my-row-right text-right" dir="rtl" style="margin-top:20px;">
+                                        <div class="col-6">
+                                            أقرب شخص في البلد الام:      
+                                        </div>
+                                        <div class="col-6">
+                                            الجوال:       
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- معلومات العمل -->
+                                <div class="col-6 main-column main-column-left">
+                                    <div class="row text-right" dir="rtl" style="margin-top:20px;">
+                                        <h5 style="color:#0c8000;">معلومات العمل: </h5>
+                                    </div>
+                                    <!-- تصنيف القطاع -->
+                                    <div class="row text-right" dir="rtl" style="margin-top:20px;">
+                                        <div class="col-6">
+                                            تصنيف القطاع: 
+                                        </div>
+                                    </div>
+                                    <!-- اختيار تصنيف القطاع -->
+                                    <div class="row text-right" dir="rtl" style="margin-top:20px;">
+                                        <div class="col-3">
+                                            <div class="row">
+                                                <!-- حكومي و عام -->
+                                                <div class="check_box_div2">
+                                                    <div class="custom_checkbox2">
+                                                        <i class="fas fa-check"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="text-right check_box_text2" style="font-size:14px;width:80px;border:1px solid black;">
+                                                    <span>حكومي و عام</span><br/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="row">
+                                                <!-- خاص -->
+                                                <div class="check_box_div2">
+                                                    <div class="custom_checkbox2">
+                                                        <i class="fas fa-check"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="text-right check_box_text2" style="font-size:14px;width:80px;border:1px solid black;">
+                                                    <span>خاص</span><br/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="row">
+                                                <!-- صاحب -->
+                                                <div class="check_box_div2">
+                                                    <div class="custom_checkbox2">
+                                                        <i class="fas fa-check"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="text-right check_box_text2" style="font-size:14px;width:80px;border:1px solid black;">
+                                                    <span>صاحب</span><br/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="row">
+                                                <!-- متقاعد -->
+                                                <div class="check_box_div2">
+                                                    <div class="custom_checkbox2">
+                                                        <i class="fas fa-check"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="text-right check_box_text2" style="font-size:14px;width:80px;border:1px solid black;">
+                                                    <span>متقاعد</span><br/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- نوع النشاط (الغير موظفي الحكومي و العام)-->
+                                    <div class="row text-right" dir="rtl" style="margin-top:20px;">
+                                        <div class="col-6">
+                                            نوع النشاط (الغير موظفي الحكومي و العام) 
+                                        </div>
+                                    </div>
+                                    <!-- جهة العمل: -->
+                                    <div class="row text-right" dir="rtl" style="margin-top:20px;">
+                                        <div class="col-6">
+                                            جهة العمل:  
+                                        </div>
+                                    </div>
+                                    <!-- الإدارة (الجهة الفرعية)-->
+                                    <div class="row text-right" dir="rtl" style="margin-top:20px;">
+                                        <div class="col-6">
+                                            الإدارة (الجهة الفرعية) 
+                                        </div>
+                                    </div>
+                                    <!-- المسمى الوظيفي (المهنة)-->
+                                    <div class="row text-right" dir="rtl" style="margin-top:20px;">
+                                        <div class="col-6">
+                                            المسمى الوظيفي (المهنة) 
+                                        </div>
+                                    </div>
+                                    <!-- اختيار نوع القطاع -->
+                                    <div class="row text-right" dir="rtl" style="margin-top:20px;">
+                                        <div class="col-3">
+                                            نوع القطاع: 
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="row">
+                                                <!-- مدني -->
+                                                <div class="check_box_div2">
+                                                    <div class="custom_checkbox2">
+                                                        <i class="fas fa-check"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="text-right check_box_text2" style="font-size:14px;width:80px;border:1px solid black;">
+                                                    <span>مدني</span><br/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="row">
+                                                <!-- عسكري -->
+                                                <div class="check_box_div2">
+                                                    <div class="custom_checkbox2">
+                                                        <i class="fas fa-check"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="text-right check_box_text2" style="font-size:14px;width:80px;border:1px solid black;">
+                                                    <span>عسكري</span><br/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div class="row">
+                                                <!-- المرتبة \ الرتبة -->
+                                                <div class="check_box_div2">
+                                                    <div class="custom_checkbox2">
+                                                        <i class="fas fa-check"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="text-right check_box_text2" style="font-size:14px;width:80px;border:1px solid black;">
+                                                    <span>المرتبة \ الرتبة</span><br/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- تاريخ التقاعد-->
+                                    <div class="row text-right" dir="rtl" style="margin-top:20px;">
+                                        <div class="col-6">
+                                            تاريخ التقاعد: 
+                                        </div>
+                                    </div>
+                                    <!-- المعلومات المالية -->
+                                    <div class="row text-right" dir="rtl" style="margin-top:20px;">
+                                        <div class="col-6">
+                                            <h6>المعلومات المالية : </h6>
+                                        </div>
+                                    </div>
+                                    <!-- البنك المحول عليه الراتب و الفرع -->
+                                    <div class="row text-right" dir="rtl" style="margin-top:20px;">
+                                        <div class="col-6">
+                                            البنك المحول عليه الراتب: 
+                                        </div>
+                                        <div class="col-6">
+                                            الفرع: 
+                                        </div>
+                                    </div>
+                                    <!-- رقم الحساب-->
+                                    <div class="row text-right" dir="rtl" style="margin-top:20px;">
+                                        <div class="col-6">
+                                            رقم الحساب: 
+                                        </div>
+                                    </div>
+                                    <!-- تاريخ نزول الراتب-->
+                                    <div class="row text-right" dir="rtl" style="margin-top:20px;">
+                                        <div class="col-6">
+                                            تاريخ نزول الراتب: 
+                                        </div>
+                                    </div>
+                                    <!-- الراتب و مصدر دخل اخر -->
+                                    <div class="row text-right" dir="rtl" style="margin-top:20px;">
+                                        <div class="col-6">
+                                            الراتب: 
+                                        </div>
+                                        <div class="col-6">
+                                            مصدر دخل اخر: 
+                                        </div>
+                                    </div>
+                                    <!-- التزامات و قسط بنك و اقساط اخرى -->
+                                    <div class="row text-right" dir="rtl" style="margin-top:20px;">
+                                        <div class="col-4">
+                                            التزامات: 
+                                        </div>
+                                        <div class="col-4">
+                                            قسط بنك: 
+                                        </div>
+                                        <div class="col-4">
+                                            اقساط اخرى: 
+                                        </div>
+                                    </div>
+                                    <!-- معلومات الاتصال -->
+                                    <div class="row text-right" dir="rtl" style="margin-top:20px;">
+                                        <div class="col-6">
+                                            <h6>معلومات الاتصال : </h6>
+                                        </div>
+                                    </div>
+                                    <!--    جوال: -->
+                                    <div class="row text-right" dir="rtl" style="margin-top:20px;">
+                                        <div class="col-6">
+                                            جوال: 
+                                        </div>
+                                    </div>
+                                    <!-- هاتف عمل: تحويل: فاكس -->
+                                    <div class="row text-right" dir="rtl" style="margin-top:20px;">
+                                        <div class="col-4">
+                                            هاتف عمل: 
+                                        </div>
+                                        <div class="col-4">
+                                            تحويل: 
+                                        </div>
+                                        <div class="col-4">
+                                            فاكس: 
+                                        </div>
+                                    </div>
+                                    <!-- البريد الالكتروني: -->
+                                    <div class="row text-right" dir="rtl" style="margin-top:20px;">
+                                        <div class="col-6">
+                                            البريد الالكتروني: 
+                                        </div>
+                                    </div>
+                                    <!-- صندوق بريدي و الرمز البريدي -->
+                                    <div class="row text-right" dir="rtl" style="margin-top:20px;margin-bottom:20px;">
+                                        <div class="col-6">
+                                            صندوق بريدي: 
+                                        </div>
+                                        <div class="col-6">
+                                            الرمز البريدي: 
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- footer -->
+                            <div class="row" style="margin-top:300px;" dir="ltr">
+                                <div class="col-3 text-center" style="margin-right:100px;">
+                                    <img src="/partner_reports/static/src/img/footer_logo.png" style="width:130px;" /><br/>
+                                </div>
+                                <div class="col-3" style="margin-top:10px;">
+                                    <div class="text-left check_box_text check_box_request_information">
+                                        <span class="black_bold_text">Fuel Finance Company</span><br/>
+                                        <span class="black_bold_text">3385 Al Thumama Rd - Al Nada</span>
+                                    </div>
+                                </div>
+                                <div class="col-3" style="margin-top:10px;">
+                                    <div class="text-left check_box_text check_box_request_information">
+                                        <span class="black_bold_text">شركة فيول للتمويل</span><br/>
+                                        <span class="black_bold_text">طريق الثمامة - حي الندى 3385</span>
+                                    </div>
+                                </div>
+                                <div class="col-3" style="margin-top:10px;margin-left:-20px;">
+                                    <div class="text-left check_box_text check_box_request_information">
+                                        <span class="black_bold_text">fuelfinance.sa</span><br/>
+                                        <span class="black_bold_text">get@fuelfinance.sa</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- second page -->
+                            <!-- header -->
+                            <div class="row" dir="ltr">
+                                <div class="col-3" style="margin-top:115px;font-size:21px;">
+                                        <img src="/partner_reports/static/src/img/fuel_exposior_icon.png" class="icon_fuel" /><br/>
+                                </div>
+                                <div class="col-9 text-center" style="color:#0c8000;font-size:28px;margin-top:47px;margin-left:-130px;">
+                                </div>
+                            </div>
+                            <!-- first div -->
+                            <div class="row" style="margin-top:50px;padding:20px;" dir="rtl">
+                                <div class="col-12" style="border:1px solid black;padding-right:40px;">
+                                    <div class="row">
+                                        <h5 style="color:#0c8000;margin-right:0px!important;font-weight:bold;">معلومات عامة: </h5>
+                                    </div>
+                                    <!-- هل لديك تعامل سابق مع الشركة -->
+                                    <div class="row">
+                                        <div class="col-5 text-right">
+                                            <!-- اختيار نوع القطاع -->
+                                            <div class="row text-right" dir="rtl">
+                                                <div class="col-8" style="width:400px;">
+                                                    هل لديك تعامل سابق مع الشركة؟
+                                                </div>
+                                                <div class="col-2">
+                                                    <div class="row">
+                                                        <!-- نعم -->
+                                                        <div class="check_box_div2">
+                                                            <div class="custom_checkbox2">
+                                                                <i class="fas fa-check"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-right check_box_text2" style="font-size:14px;width:40px;">
+                                                            <span>نعم</span><br/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-2">
+                                                    <div class="row">
+                                                        <!-- لا -->
+                                                        <div class="check_box_div2">
+                                                            <div class="custom_checkbox2">
+                                                                <i class="fas fa-check"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-right check_box_text2" style="font-size:14px;width:40px;">
+                                                            <span>لا</span><br/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-7 text-right">
+                                            <!-- اختيار نوع القطاع -->
+                                            <div class="row text-right" dir="rtl">
+                                                <div class="col-6">
+                                                    في حال الإجابة (نعم) يجب تحديد نوع
+                                                </div>
+                                                <div class="col-2">
+                                                    <div class="row">
+                                                        <!-- عميل -->
+                                                        <div class="check_box_div2">
+                                                            <div class="custom_checkbox2">
+                                                                <i class="fas fa-check"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-right check_box_text2" style="font-size:14px;width:40px;">
+                                                            <span>عميل</span><br/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-2">
+                                                    <div class="row">
+                                                        <!-- كفيل -->
+                                                        <div class="check_box_div2">
+                                                            <div class="custom_checkbox2">
+                                                                <i class="fas fa-check"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-right check_box_text2" style="font-size:14px;width:40px;">
+                                                            <span>كفيل</span><br/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- اقرب شخصين -->
+                                    <div class="row" style="margin-top:40px;">
+                                        <span>
+                                            أقرب شخصين: 
+                                        </span>
+                                        <span>1\الإسم: </span>
+                                        <span class="col-3" style="width:220px"></span>
+                                        <span>جهة العمل: </span>
+                                        <span class="col-3" style="width:220px"></span>
+                                        <span>جوال: </span>
+                                        <span class="col-3" style="width:220px"></span>
+                                    </div>
+                                    <!-- الشخص الثاني -->
+                                    <div class="row" style="margin-top:-10px;">
+                                        <span style="margin-right:88px;">1\الإسم: </span>
+                                        <span class="col-3" style="width:220px"></span>
+                                        <span>جهة العمل: </span>
+                                        <span class="col-3" style="width:220px"></span>
+                                        <span>جوال: </span>
+                                        <span class="col-3" style="width:220px"></span>
+                                    </div>
+                                    <!-- هل يعمل العميل عضو مجلس ادارة -->
+                                    <div class="row" style="margin-top:-10px;">
+                                        <div class="col-10 text-right">
+                                            <!-- اختيار نوع القطاع -->
+                                            <div class="row text-right" dir="rtl">
+                                                <div class="col-6">
+                                                    هي يعمل العميل عضو مجلس إدارة أو مسؤول في الشركة مدرجة؟
+                                                </div>
+                                                <div class="col-2">
+                                                    <div class="row">
+                                                        <!-- نعم -->
+                                                        <div class="check_box_div2">
+                                                            <div class="custom_checkbox2">
+                                                                <i class="fas fa-check"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-right check_box_text2" style="font-size:14px;width:40px;">
+                                                            <span>نعم</span><br/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-2">
+                                                    <div class="row">
+                                                        <!-- لا -->
+                                                        <div class="check_box_div2">
+                                                            <div class="custom_checkbox2">
+                                                                <i class="fas fa-check"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-right check_box_text2" style="font-size:14px;width:40px;">
+                                                            <span>لا</span><br/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- في حال الإجابة ب نعم  -->
+                                    <div class="row" style="margin-top:15px;" dir="rtl">
+                                        <div class="col-7 text-right">
+                                            في حال الإجابة بـ(نعم) يرجى توضيع أسم الشركة
+                                        </div>
+                                    </div>
+                                    <!-- هل العميل او احد اقربائه يشغل او كان يشغل -->
+                                    <div class="row" style="margin-top:15px;">
+                                        <div class="col-10 text-right">
+                                            <!-- اختيار نوع القطاع -->
+                                            <div class="row text-right" dir="rtl">
+                                                <div class="col-8">
+                                                    هل العميل أو احد أقربائه من الدرجة الأولى يشغل أو كان يشغل منصب حكومي أو عسكري رفيع؟
+                                                </div>
+                                                <div class="col-2">
+                                                    <div class="row">
+                                                        <!-- نعم -->
+                                                        <div class="check_box_div2">
+                                                            <div class="custom_checkbox2">
+                                                                <i class="fas fa-check"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-right check_box_text2" style="font-size:14px;width:40px;">
+                                                            <span>نعم</span><br/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-2">
+                                                    <div class="row">
+                                                        <!-- لا -->
+                                                        <div class="check_box_div2">
+                                                            <div class="custom_checkbox2">
+                                                                <i class="fas fa-check"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-right check_box_text2" style="font-size:14px;width:40px;">
+                                                            <span>لا</span><br/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- القرابة الدرجة الأولى: القرابة)  -->
+                                    <div class="row" style="margin-top:15px;" dir="rtl">
+                                        <div class="col-7 text-right">
+                                            ( القرابة الدرجة الأولى: القرابة(الأب، الأم، الأخوة، الأخوات، الأبناء))
+                                        </div>
+                                    </div>
+                                    <!-- الرجاء تحديد المنصب  -->
+                                    <div class="row" style="margin-top:15px;margin-bottom:20px;" dir="rtl">
+                                        <div class="col-7 text-right">
+                                            في حال الإجابة بـ(نعم) الرجاء تحديد المنصب (في حال الإجابة (نعم) يجب تعبئة الفراغ )
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- second div -->
+                            <div class="row" style="margin-top:50px;padding:20px;" dir="rtl">
+                                <div class="col-12" style="border:1px solid black;padding-right:15px;">
+                                    <!-- نوع التمويل -->
+                                    <div class="row text-right" style="margin-top:10px;">
+                                        <h5 style="color:#0c8000;margin-left:80px!important;margin-right:10px!important;font-weight:bold;">نوع التمويل: </h5>
+                                        <div class="col-2" style="margin-top:6px;">
+                                            <div class="row">
+                                                <!-- فرد -->
+                                                <div class="check_box_div2">
+                                                    <div class="custom_checkbox2">
+                                                        <i class="fas fa-check"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="text-right check_box_text2" style="font-size:14px;width:40px;">
+                                                    <span>فرد</span><br/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-4" style="margin-top:6px;">
+                                            <div class="row">
+                                                <!-- نسبة البيع -->
+                                                <div class="check_box_div2">
+                                                    <div class="custom_checkbox2">
+                                                        <i class="fas fa-check"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="text-right check_box_text2" style="font-size:14px;width:90px;">
+                                                    <span>نسبة البيع</span><br/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- مبلغ التمويل -->
+                                    <div class="row text-right" style="margin-top:50px;" dir="rtl">
+                                        <div class="col-4">
+                                            مبلغ التمويل: <!--<t t-esc=""/>-->
+                                        </div>
+                                        <div class="col-4">
+                                            الغرض من التمويل: <!--<t t-esc=""/>-->
+                                        </div>
+                                        <div class="col-4">
+                                            المستفيد الحقيقي: <!--<t t-esc=""/>-->
+                                        </div>
+                                    </div>
+                                    <!-- الدفعة المقدمة -->
+                                    <div class="row text-right" style="margin-top:30px;" dir="rtl">
+                                        <div class="col-3">
+                                            الدفعة المقدمة:  <!--<t t-esc=""/>-->
+                                        </div>
+                                        <div class="col-3">
+                                            القسط الشهري:  <!--<t t-esc=""/>-->
+                                        </div>
+                                        <div class="col-3">
+                                            المدة:  <!--<t t-esc=""/>-->
+                                        </div>
+                                        <div class="col-3">
+                                            الرسوم الإدارية:  <!--<t t-esc=""/>-->
+                                        </div>
+                                    </div>
+                                    <!-- ملحوظة -->
+                                    <div class="row text-right" style="margin-top:30px;" dir="rtl">
+                                        <div class="col-12">
+                                            ملحوظة: <!-- <br/> <t t-esc=""/>-->
+                                        </div>
+                                    </div>
+                                    <!-- للشركة الحق -->
+                                    <div class="row text-right" style="margin-top:30px;" dir="rtl">
+                                        <div class="col-8">
+                                            1\للشركة الحق في قبول أو رفض أي طلب (مع توضيع الأسباب)
+                                        </div>
+                                    </div>
+                                    <!-- في حال رفض الطلب -->
+                                    <div class="row text-right" style="margin-top:30px;margin-bottom:60px;" dir="rtl">
+                                        <div class="col-8">
+                                            2\ في حال رفض الطلب يحق للمشتري استلام أوراقه في مدة أقصاها شهرين من تاريخ الطلب
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- footer -->
+                            <div class="row" style="margin-top:360px;" dir="ltr">
+                                <div class="col-3 text-center" style="margin-right:100px;">
+                                    <img src="/partner_reports/static/src/img/footer_logo.png" style="width:130px;" /><br/>
+                                </div>
+                                <div class="col-3" style="margin-top:10px;">
+                                    <div class="text-left check_box_text check_box_request_information">
+                                        <span class="black_bold_text">Fuel Finance Company</span><br/>
+                                        <span class="black_bold_text">3385 Al Thumama Rd - Al Nada</span>
+                                    </div>
+                                </div>
+                                <div class="col-3" style="margin-top:10px;">
+                                    <div class="text-left check_box_text check_box_request_information">
+                                        <span class="black_bold_text">شركة فيول للتمويل</span><br/>
+                                        <span class="black_bold_text">طريق الثمامة - حي الندى 3385</span>
+                                    </div>
+                                </div>
+                                <div class="col-3" style="margin-top:10px;margin-left:-20px;">
+                                    <div class="text-left check_box_text check_box_request_information">
+                                        <span class="black_bold_text">fuelfinance.sa</span><br/>
+                                        <span class="black_bold_text">get@fuelfinance.sa</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <record id="expression_of_desire_form_paperformat" model="report.paperformat">
+            <field name="name">Custom Paperformat for Expression of desire form</field>
+            <field name="default" eval="False"/>
+            <field name="disable_shrinking" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">0</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">8</field>
+            <field name="margin_right">10</field>
+            <field name="dpi">130</field>
+        </record>
+
+        <record id="expression_of_desire_form_action" model="ir.actions.report">
+            <field name="name">Expression of desire form</field>
+            <field name="model">res.partner</field>
+            <field name="binding_model_id" ref="base.model_res_partner"/>
+            <field name="binding_type">report</field>
+            <field name="multi">True</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">partner_reports.expression_of_desire_form_template</field>
+            <field name="report_file">partner_reports.expression_of_desire_form_template</field>
+            <field name="paperformat_id" ref="expression_of_desire_form_paperformat"/>
+        </record>  
+    </data>
+</odoo>

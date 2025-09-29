@@ -1,0 +1,73 @@
+<odoo>
+    <data>
+        <record id="salary_certificate_form_view" model="ir.ui.view">
+            <field name="name">salary.certificate.view.form</field>
+            <field name="model">salary.certificate</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="action_salary_certificate_data" string="Get Data"
+                                class="btn-primary" type="object"
+                                confirm="Are you sure you want to do this?"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" options='{"no_open": True, "no_create": True}'/>
+                            </group>
+                            <group>
+                                <field name="id_number"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="private_sector" string="Private Sector">
+                                <field name="private_sector_ids" readonly="1">
+                                    <tree editable="bottom">
+                                        <field name="employerName"/>
+                                        <field name="dateOfJoining"/>
+                                        <field name="fullName"/>
+                                        <field name="basicWage"/>
+                                        <field name="housingAllowance"/>
+                                        <field name="otherAllowance"/>
+                                        <field name="fullWage"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="government_sector" string="Government Sector">
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="salary_certificate_tree_view" model="ir.ui.view">
+            <field name="name">salary.certificate.tree</field>
+            <field name="model">salary.certificate</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="id_number"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="salary_certificate_action" model="ir.actions.act_window">
+            <field name="name">Salary Certificate</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">salary.certificate</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

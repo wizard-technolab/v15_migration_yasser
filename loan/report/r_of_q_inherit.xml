@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="r_of_q_inherit" inherit_id="purchase.report_purchasequotation_document">
+<!--        <xpath expr="//div[@class='page']" position="before">-->
+<!--            <div class="oe_structure" id="po_inherit_after" style="text-align:left">-->
+<!--                <field name="name" invisible="0"/>-->
+<!--            </div>-->
+<!--        </xpath>-->
+        <!--        <xpath expr="//div[@class='page']" position="attributes">-->
+        <!--            <div class="oe_structure" id="po_inherit_attributes"/>-->
+        <!--            <attr field="order_line.product_qty" groups="uom.group_uom"/>-->
+        <!--        </xpath>-->
+        <xpath expr="//div[@class='page']" position="after">
+            <div class="oe_structure" id="po_inherit_before" style="text-align:left">
+                <strong>Customer:</strong>
+                <br/>
+                <strong>ID Number:</strong>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <strong>User:
+                    <span t-esc="user.name"></span>
+                </strong>
+                <br/>
+                <br/>
+                <br/>
+                <strong>Signature:</strong>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <strong>Approved by the authorized director:</strong>
+                <br/>
+                <strong>Signature:</strong>
+            </div>
+        </xpath>
+    </template>
+</odoo>
+
+        <!--     <table class="table table-sm">-->
+        <!--                    <thead style="display: table-row-group">-->
+        <!--                        <tr>-->
+        <!--                            <th name="th_quantity" invisible="1"/>-->
+        <!--                        </tr>-->
+        <!--                    </thead>-->
+        <!--                </table>-->

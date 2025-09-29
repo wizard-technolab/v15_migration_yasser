@@ -1,0 +1,673 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Paper Format -->
+    <record id="daily_report_paperformat" model="report.paperformat">
+        <field name="name">Custom Paper Format</field>
+        <field name="default" eval="True"/>
+        <field name="orientation">Landscape</field>
+        <field name="margin_top">30</field>
+        <field name="margin_right">5</field>
+        <field name="margin_bottom">10</field>
+        <field name="margin_left">5</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">20</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <!--  Report -->
+    <record id="action_daily_report" model="ir.actions.report">
+        <field name="name">Daily Report</field>
+        <field name="type">ir.actions.report</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="model">daily.report.wizard</field>
+        <field name="report_name">fuel_report.report_daily_template</field>
+        <field name="paperformat_id" ref="daily_report_paperformat"/>
+    </record>
+
+    <!--  Template -->
+    <template id="report_daily_template">
+        <t t-call="web.html_container">
+            <t t-set="title">Daily Report</t>
+            <t t-call="web.external_layout">
+                <link rel="stylesheet" href="/fuel_report/static/src/css/daily_report_custom_styles.css"
+                      type="text/css"/>
+                <div class="page">
+                    <center>
+                        <h1>
+                            <t t-esc="title"/>
+                        </h1>
+                    </center>
+                    <center>
+                        <div class="date-info">
+                            <p>
+                                <strong>Start Date:</strong>
+                                <t t-esc="start_date"/>
+                                <strong style="padding-left: 40px;">End Date:</strong>
+                                <t t-esc="end_date"/>
+                            </p>
+                        </div>
+                    </center>
+                    <t t-if="module_type == 'crm'">
+                        <!-- CRM Table -->
+                        <div class="table-container">
+                            <center>
+                                <h4 class="custom-medium-title">CRM / Number of Client</h4>
+                            </center>
+                            <table class="tabel custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>Sales Person</th>
+                                        <th>Monday</th>
+                                        <th>Tuesday</th>
+                                        <th>Wednesday</th>
+                                        <th>Thursday</th>
+                                        <th>Friday</th>
+                                        <th>Saturday</th>
+                                        <th>Sunday</th>
+                                        <th>Previous Week</th>
+                                        <th>Previous Month</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="salesperson_data" t-as="salesperson">
+                                        <tr>
+                                            <td>
+                                                <t t-esc="salesperson"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="salesperson_data[salesperson]['Monday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="salesperson_data[salesperson]['Tuesday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="salesperson_data[salesperson]['Wednesday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="salesperson_data[salesperson]['Thursday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="salesperson_data[salesperson]['Friday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="salesperson_data[salesperson]['Saturday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="salesperson_data[salesperson]['Sunday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="salesperson_data[salesperson]['Previous Week Total']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="salesperson_data[salesperson]['Previous Month Total']"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                    </t>
+
+                    <t t-elif="module_type == 'loan'">
+                        <!-- Loan Table -->
+                        <div class="table-container">
+                            <center>
+                                <h4 class="custom-medium-title">Loan / Number of study</h4>
+                            </center>
+                            <table class="tabel custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>Credit User</th>
+                                        <th>Monday</th>
+                                        <th>Tuesday</th>
+                                        <th>Wednesday</th>
+                                        <th>Thursday</th>
+                                        <th>Friday</th>
+                                        <th>Saturday</th>
+                                        <th>Sunday</th>
+                                        <th>Previous Week</th>
+                                        <th>Previous Month</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="credit_user_data" t-as="credit_user">
+                                        <tr>
+                                            <td>
+                                                <t t-esc="credit_user"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="credit_user_data[credit_user]['Monday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="credit_user_data[credit_user]['Tuesday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="credit_user_data[credit_user]['Wednesday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="credit_user_data[credit_user]['Thursday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="credit_user_data[credit_user]['Friday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="credit_user_data[credit_user]['Saturday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="credit_user_data[credit_user]['Sunday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="credit_user_data[credit_user]['Previous Week Total']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="credit_user_data[credit_user]['Previous Month Total']"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- Status Table -->
+                        <div class="table-container">
+                            <center>
+                                <h4 class="custom-medium-title">Loan Status</h4>
+                            </center>
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2">State</th>
+                                        <th colspan="2">Monday</th>
+                                        <th colspan="2">Tuesday</th>
+                                        <th colspan="2">Wednesday</th>
+                                        <th colspan="2">Thursday</th>
+                                        <th colspan="2">Friday</th>
+                                        <th colspan="2">Saturday</th>
+                                        <th colspan="2">Sunday</th>
+                                        <th colspan="2">Previous Week</th>
+                                        <th colspan="2">Previous Month</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Amount</td>
+                                        <td>Count</td>
+
+                                        <td>Amount</td>
+                                        <td>Count</td>
+
+                                        <td>Amount</td>
+                                        <td>Count</td>
+
+                                        <td>Amount</td>
+                                        <td>Count</td>
+
+                                        <td>Amount</td>
+                                        <td>Count</td>
+
+                                        <td>Amount</td>
+                                        <td>Count</td>
+
+                                        <td>Amount</td>
+                                        <td>Count</td>
+
+                                        <td>Amount</td>
+                                        <td>Count</td>
+
+                                        <td>Amount</td>
+                                        <td>Count</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="status_data" t-as="status">
+                                        <tr>
+                                            <td>
+                                                <t t-esc="status"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="total_loan_amount_by_status[status]['Monday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="status_data[status]['Monday']"/>
+                                            </td>
+
+                                            <td>
+                                                <t t-esc="total_loan_amount_by_status[status]['Tuesday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="status_data[status]['Tuesday']"/>
+                                            </td>
+
+                                            <td>
+                                                <t t-esc="total_loan_amount_by_status[status]['Wednesday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="status_data[status]['Wednesday']"/>
+                                            </td>
+
+                                            <td>
+                                                <t t-esc="total_loan_amount_by_status[status]['Thursday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="status_data[status]['Thursday']"/>
+                                            </td>
+
+                                            <td>
+                                                <t t-esc="total_loan_amount_by_status[status]['Friday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="status_data[status]['Friday']"/>
+                                            </td>
+
+                                            <td>
+                                                <t t-esc="total_loan_amount_by_status[status]['Saturday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="status_data[status]['Saturday']"/>
+                                            </td>
+
+                                            <td>
+                                                <t t-esc="total_loan_amount_by_status[status]['Sunday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="status_data[status]['Sunday']"/>
+                                            </td>
+
+                                            <td>
+                                                <t t-esc="total_loan_amount_by_status[status]['Previous Week Total']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="status_data[status]['Previous Week Total']"/>
+                                            </td>
+
+                                            <td>
+                                                <t t-esc="total_loan_amount_by_status[status]['Previous Month Total']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="status_data[status]['Previous Month Total']"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td>
+                                            <h3>Total</h3>
+                                        </td>
+                                        <td>
+                                            <t t-esc="'%.2f'% total_amount_by_day['Monday']"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="total_counts_by_day['Monday']"/>
+                                        </td>
+
+                                        <td>
+                                            <t t-esc="'%.2f'% total_amount_by_day['Tuesday']"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="total_counts_by_day['Tuesday']"/>
+                                        </td>
+
+                                        <td>
+                                            <t t-esc="'%.2f'% total_amount_by_day['Wednesday']"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="total_counts_by_day['Wednesday']"/>
+                                        </td>
+
+                                        <td>
+                                            <t t-esc="'%.2f'% total_amount_by_day['Thursday']"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="total_counts_by_day['Thursday']"/>
+                                        </td>
+
+                                        <td>
+                                            <t t-esc="'%.2f'% total_amount_by_day['Friday']"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="total_counts_by_day['Friday']"/>
+                                        </td>
+
+                                        <td>
+                                            <t t-esc="'%.2f'% total_amount_by_day['Saturday']"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="total_counts_by_day['Saturday']"/>
+                                        </td>
+
+                                        <td>
+                                            <t t-esc="'%.2f'% total_amount_by_day['Sunday']"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="total_counts_by_day['Sunday']"/>
+                                        </td>
+
+                                        <td>
+                                            <t t-esc="'%.2f'% total_amount_by_day['Previous Week Total Amount']"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="total_counts_by_day['Previous Week Total']"/>
+                                        </td>
+
+                                        <td>
+                                            <t t-esc="'%.2f'% total_amount_by_day['Previous Month Total Amount']"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="total_counts_by_day['Previous Month Total']"/>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </t>
+                    <t t-elif="module_type == 'all'">
+                        <!-- CRM Table -->
+                        <div class="table-container">
+                            <center>
+                                <h4 class="custom-medium-title">CRM / Number of Client</h4>
+                            </center>
+                            <table class="tabel custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>Sales Person</th>
+                                        <th>Monday</th>
+                                        <th>Tuesday</th>
+                                        <th>Wednesday</th>
+                                        <th>Thursday</th>
+                                        <th>Friday</th>
+                                        <th>Saturday</th>
+                                        <th>Sunday</th>
+                                        <th>Previous Week</th>
+                                        <th>Previous Month</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="salesperson_data" t-as="salesperson">
+                                        <tr>
+                                            <td>
+                                                <t t-esc="salesperson"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="salesperson_data[salesperson]['Monday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="salesperson_data[salesperson]['Tuesday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="salesperson_data[salesperson]['Wednesday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="salesperson_data[salesperson]['Thursday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="salesperson_data[salesperson]['Friday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="salesperson_data[salesperson]['Saturday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="salesperson_data[salesperson]['Sunday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="salesperson_data[salesperson]['Previous Week Total']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="salesperson_data[salesperson]['Previous Month Total']"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- Loan Table -->
+                        <div class="table-container">
+                            <center>
+                                <h4 class="custom-medium-title">Loan / Number of study</h4>
+                            </center>
+                            <table class="tabel custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>Credit User</th>
+                                        <th>Monday</th>
+                                        <th>Tuesday</th>
+                                        <th>Wednesday</th>
+                                        <th>Thursday</th>
+                                        <th>Friday</th>
+                                        <th>Saturday</th>
+                                        <th>Sunday</th>
+                                        <th>Previous Week</th>
+                                        <th>Previous Month</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="credit_user_data" t-as="credit_user">
+                                        <tr>
+                                            <td>
+                                                <t t-esc="credit_user"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="credit_user_data[credit_user]['Monday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="credit_user_data[credit_user]['Tuesday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="credit_user_data[credit_user]['Wednesday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="credit_user_data[credit_user]['Thursday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="credit_user_data[credit_user]['Friday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="credit_user_data[credit_user]['Saturday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="credit_user_data[credit_user]['Sunday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="credit_user_data[credit_user]['Previous Week Total']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="credit_user_data[credit_user]['Previous Month Total']"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- Status Table -->
+                        <div class="table-container">
+                            <center>
+                                <h4 class="custom-medium-title">Loan Status</h4>
+                            </center>
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2">State</th>
+                                        <th colspan="2">Monday</th>
+                                        <th colspan="2">Tuesday</th>
+                                        <th colspan="2">Wednesday</th>
+                                        <th colspan="2">Thursday</th>
+                                        <th colspan="2">Friday</th>
+                                        <th colspan="2">Saturday</th>
+                                        <th colspan="2">Sunday</th>
+                                        <th colspan="2">Previous Week</th>
+                                        <th colspan="2">Previous Month</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Amount</td>
+                                        <td>Count</td>
+
+                                        <td>Amount</td>
+                                        <td>Count</td>
+
+                                        <td>Amount</td>
+                                        <td>Count</td>
+
+                                        <td>Amount</td>
+                                        <td>Count</td>
+
+                                        <td>Amount</td>
+                                        <td>Count</td>
+
+                                        <td>Amount</td>
+                                        <td>Count</td>
+
+                                        <td>Amount</td>
+                                        <td>Count</td>
+
+                                        <td>Amount</td>
+                                        <td>Count</td>
+
+                                        <td>Amount</td>
+                                        <td>Count</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="status_data" t-as="status">
+                                        <tr>
+                                            <td>
+                                                <t t-esc="status"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="total_loan_amount_by_status[status]['Monday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="status_data[status]['Monday']"/>
+                                            </td>
+
+                                            <td>
+                                                <t t-esc="total_loan_amount_by_status[status]['Tuesday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="status_data[status]['Tuesday']"/>
+                                            </td>
+
+                                            <td>
+                                                <t t-esc="total_loan_amount_by_status[status]['Wednesday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="status_data[status]['Wednesday']"/>
+                                            </td>
+
+                                            <td>
+                                                <t t-esc="total_loan_amount_by_status[status]['Thursday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="status_data[status]['Thursday']"/>
+                                            </td>
+
+                                            <td>
+                                                <t t-esc="total_loan_amount_by_status[status]['Friday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="status_data[status]['Friday']"/>
+                                            </td>
+
+                                            <td>
+                                                <t t-esc="total_loan_amount_by_status[status]['Saturday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="status_data[status]['Saturday']"/>
+                                            </td>
+
+                                            <td>
+                                                <t t-esc="total_loan_amount_by_status[status]['Sunday']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="status_data[status]['Sunday']"/>
+                                            </td>
+
+                                            <td>
+                                                <t t-esc="total_loan_amount_by_status[status]['Previous Week Total']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="status_data[status]['Previous Week Total']"/>
+                                            </td>
+
+                                            <td>
+                                                <t t-esc="total_loan_amount_by_status[status]['Previous Month Total']"/>
+                                            </td>
+                                            <td>
+                                                <t t-esc="status_data[status]['Previous Month Total']"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td>
+                                            <h3>Total</h3>
+                                        </td>
+                                        <td>
+                                            <t t-esc="'%.2f'% total_amount_by_day['Monday']"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="total_counts_by_day['Monday']"/>
+                                        </td>
+
+                                        <td>
+                                            <t t-esc="'%.2f'% total_amount_by_day['Tuesday']"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="total_counts_by_day['Tuesday']"/>
+                                        </td>
+
+                                        <td>
+                                            <t t-esc="'%.2f'% total_amount_by_day['Wednesday']"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="total_counts_by_day['Wednesday']"/>
+                                        </td>
+
+                                        <td>
+                                            <t t-esc="'%.2f'% total_amount_by_day['Thursday']"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="total_counts_by_day['Thursday']"/>
+                                        </td>
+
+                                        <td>
+                                            <t t-esc="'%.2f'% total_amount_by_day['Friday']"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="total_counts_by_day['Friday']"/>
+                                        </td>
+
+                                        <td>
+                                            <t t-esc="'%.2f'% total_amount_by_day['Saturday']"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="total_counts_by_day['Saturday']"/>
+                                        </td>
+
+                                        <td>
+                                            <t t-esc="'%.2f'% total_amount_by_day['Sunday']"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="total_counts_by_day['Sunday']"/>
+                                        </td>
+
+                                        <td>
+                                            <t t-esc="'%.2f'% total_amount_by_day['Previous Week Total Amount']"/>
+                                        </td>
+                                        <td>
+                                            <t t-esc="total_counts_by_day['Previous Week Total']"/>
+                                        </td>
+
+                                        <td>
+                                            <t t-esc="'%.2f'% total_amount_by_day['Previous Month Total Amount']"/>̣
+                                        </td>
+                                        <td>
+                                            <t t-esc="total_counts_by_day['Previous Month Total']"/>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </t>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

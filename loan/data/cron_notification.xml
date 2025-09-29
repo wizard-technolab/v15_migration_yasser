@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<odoo>
+    <data noupdate="1">
+        <record id="ir_cron_monthly_entry" model="ir.cron">
+            <field name='name'>Monthly Installment Entry</field>
+            <field name='interval_number'>1</field>
+            <field name='interval_type'>hours</field>
+            <field name="numbercall">-1</field>
+            <field name="active" eval="True"/>
+            <field name="doall" eval="False"/>
+            <field name="code">model._cron_monthly_move()</field>
+            <field name="state">code</field>
+            <field name="model_id" ref="model_loan_installment"/>
+        </record>
+
+        <record id="ir_cron_auto_post_draft_payments" model="ir.cron">
+            <field name="name">Auto Post Draft Payments</field>
+            <field name="model_id" ref="account.model_account_payment"/>
+            <field name="state">code</field>
+            <field name="code">model.auto_post_draft_payments()</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field name="active">True</field>
+        </record>
+
+<!--        <record id="ir_cron_auto_paid_installment" model="ir.cron">-->
+<!--            <field name="name">Auto send paid sms</field>-->
+<!--            <field name="model_id" ref="loan.model_loan_installment"/>-->
+<!--            <field name="state">code</field>-->
+<!--            <field name="code">model.auto_paid_installment()</field>-->
+<!--            <field name="user_id" ref="base.user_root"/>-->
+<!--            <field name="interval_number">1</field>-->
+<!--            <field name="interval_type">minutes</field>-->
+<!--            <field name="numbercall">-1</field>-->
+<!--            <field name="active">True</field>-->
+<!--        </record>-->
+
+        <record id="ir_cron_update_installment_states" model="ir.cron">
+            <field name="name">Auto check installment</field>
+            <field name="model_id" ref="loan.model_loan_installment"/>
+            <field name="state">code</field>
+            <field name="code">model.update_installment_states()</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field name="active">True</field>
+        </record>
+
+        
+
+<!--        <record id="ir_cron_auto_call" model="ir.cron">-->
+<!--            <field name="name">API Call Scheduler</field>-->
+<!--            <field name="model_id" ref="model_loan_order"/>-->
+<!--            <field name="state">code</field>-->
+<!--            <field name="code">model.auto_simah_api()</field>-->
+<!--            <field name="active" eval="True"/>-->
+<!--            <field name="interval_number" eval="1"/>-->
+<!--            <field name="interval_type">hours</field>-->
+<!--            <field name="numbercall" eval="-1"/>-->
+<!--            <field name="doall" eval="False"/>-->
+<!--        </record>-->
+
+<!--        &lt;!&ndash; Schedule API call every day at midnight &ndash;&gt;-->
+<!--        <record id="ir_cron_api_call" model="ir.cron">-->
+<!--            <field name="name">API Call Scheduler</field>-->
+<!--            <field name="model_id" ref="model_loan_order"/>-->
+<!--            <field name="state">code</field>-->
+<!--            <field name="code">model.auto_simah_api()</field>-->
+<!--            <field name="active" eval="True"/>-->
+<!--            <field name="interval_number" eval="1"/>-->
+<!--            <field name="interval_type">hours</field>-->
+<!--            <field name="numbercall" eval="-1"/>-->
+<!--            <field name="doall" eval="False"/>-->
+<!--        </record>-->
+
+
+
+<!--        <record id="ir_cron_auto_reminder" model="ir.cron">-->
+<!--            <field name='name'>First Reminder</field>-->
+<!--            <field name="model_id" ref="model_loan_order"/>-->
+<!--            <field name='interval_number'>1</field>-->
+<!--            <field name='interval_type'>hours</field>-->
+<!--            <field name="numbercall">-1</field>-->
+<!--            <field name="doall" eval="False"/>-->
+<!--            <field name="active" eval="True"/>-->
+<!--            <field name="state">code</field>-->
+<!--            <field name="model_id" ref="model_loan_order"/>-->
+<!--            <field name="code">model._cron_auto_reminder()</field>-->
+<!--        </record>-->
+
+
+        <!-- send payment reminders on the 25th day of each month -->
+<!--        <record id="installment_payment_date_reminder_cron_job" model="ir.cron">-->
+<!--            <field name="name">Installment Payment Reminder Cron Job</field>-->
+<!--            <field name="model_id" ref="model_loan_order"/>-->
+<!--            <field name="state">code</field>-->
+<!--            <field name="code">model.send_message_installment_payment_date()</field>-->
+<!--            <field name="interval_number">1</field>-->
+<!--            <field name="interval_type">months</field>-->
+<!--            <field name="numbercall">1</field>-->
+<!--            &lt;!&ndash; Calculate the next call date using Python code &ndash;&gt;-->
+<!--            <field name="nextcall" eval="datetime.now().replace(day=25).strftime('%Y-%m-%d 00:00:00')"/>-->
+<!--            <field name="active" eval="True"/>-->
+<!--        </record>-->
+
+
+        <!-- Send Installment Reminder Messages -->
+<!--        <record id="ir_cron_send_installment_reminder_messages" model="ir.cron">-->
+<!--            <field name="name">Send Installment Reminder Messages</field>-->
+<!--            <field name="model_id" ref="model_loan_order"/>-->
+<!--            <field name="state">code</field>-->
+<!--            <field name="code">model.send_installment_reminder_messages()</field>-->
+<!--            <field name="interval_number">1</field> &lt;!&ndash; Run every month &ndash;&gt;-->
+<!--            <field name="interval_type">months</field>-->
+<!--            <field name="numbercall">1</field>-->
+<!--            <field name="active" eval="True"/>-->
+<!--            <field name="doall" eval="False"/>-->
+<!--            <field name="nextcall"-->
+<!--                   eval="datetime.datetime.now().replace(hour=0, minute=0, second=0) + relativedelta.relativedelta(day=min(1, 5))"/>-->
+<!--        </record>-->
+
+
+
+        <!--        <record id="ir_cron_second_reminder" model="ir.cron">-->
+        <!--            <field name='name'>Second Auto Reminder</field>-->
+        <!--            <field name='interval_number'>1</field>-->
+        <!--            <field name='interval_type'>hours</field>-->
+        <!--            <field name="numbercall">-1</field>-->
+        <!--            <field name="active" eval="True"/>-->
+        <!--            <field name="doall" eval="False"/>-->
+        <!--            <field name="code">model._action_second_auto_reminder()</field>-->
+        <!--            <field name="state">code</field>-->
+        <!--            <field name="model_id" ref="model_loan_order"/>-->
+        <!--        </record>-->
+
+<!--                <record id="ir_cron_monthly_sms" model="ir.cron">-->
+<!--                    <field name='name'>Monthly Send SMS</field>-->
+<!--                    <field name='interval_number'>1</field>-->
+<!--                    <field name='interval_type'>hours</field>-->
+<!--                    <field name="numbercall">-1</field>-->
+<!--                    <field name="active" eval="True"/>-->
+<!--                    <field name="doall" eval="False"/>-->
+<!--                    <field name="code">model._cron_monthly_sms()</field>-->
+<!--                    <field name="state">code</field>-->
+<!--                    <field name="model_id" ref="model_loan_order"/>-->
+<!--                </record>-->
+
+    </data>
+</odoo>

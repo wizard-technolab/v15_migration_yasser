@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_daily_report_wizard,daily.report.wizard,model_daily_report_wizard,base.group_user,1,1,1,1
+access_simah_report,simah.report,model_simah_report,base.group_user,1,1,1,1
+access_collection_report,collection.report,model_collection_report,base.group_user,1,1,1,1
+access_after_collection_report,after.collection.report,model_after_collection_report,base.group_user,1,1,1,1
+access_save_ex_report_wizard,save.ex.report.wizard,model_save_ex_report_wizard,base.group_user,1,1,1,1
+access_payment_report,payment.report,model_payment_report,base.group_user,1,1,1,1

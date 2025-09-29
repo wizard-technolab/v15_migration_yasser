@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem name="SIMAH"
+                  id="simah_root"
+                  sequence="10"
+                  action="simah_api.simah_action"
+                  groups="simah_api.group_use_simah_admin,simah_api.group_use_simah_user"
+                  web_icon="simah_api,static/description/icon.png"/>
+    </data>
+</odoo>

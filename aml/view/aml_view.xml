@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="aml_tree_view" model="ir.ui.view">
+            <field name="name">AML Management</field>
+            <field name="model">aml.aml</field>
+            <field name="arch" type="xml">
+                <tree string="AML Management">
+                    <field name="customer_id"/>
+                    <field name="alert_id"/>
+                    <field name="status_id"/>
+                    <field name="match_info"/>
+                    <field name="Message"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="aml_form_view" model="ir.ui.view">
+            <field name="name">AML Management</field>
+            <field name="model">aml.aml</field>
+            <field name="arch" type="xml">
+                <form string="AML Management">
+                    <header>
+                        <button name="check_api" class="oe_stat_button" type="object" string="Full Settings"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="customer_id"/>
+                                <field name="alert_id"/>
+                                <field name="status_id"/>
+                                <field name="match_info"/>
+                                <field name="Message"/>
+                            </group>
+                            <group>
+                                <field name="iq_number"/>
+                                <field name="date"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="aml_action" model="ir.actions.act_window">
+            <field name="name">AML Management</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">aml.aml</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="AML"
+                  id="aml_id"
+                  parent="aml_root_menu"
+                  action="aml_action"
+                  sequence="3"/>
+    </data>
+</odoo>

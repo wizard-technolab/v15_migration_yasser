@@ -1,0 +1,49 @@
+<odoo>
+    <data>
+        <record id="collection_loan_order_form_view" model="ir.ui.view">
+            <field name="name">loan.order.form.in.collection</field>
+            <field name="model">loan.order</field>
+            <field name="inherit_id" ref="loan.request_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='credit_user']" position="after">
+                    <field name="collector_user_id"
+                           domain="[('groups_id','in',[%(collection.group_collection_agent)d])]"
+                           options="{'no_create': True}"/>
+                </xpath>
+                <xpath expr="//notebook/page[7]" position="after">
+                    <page string="Collection">
+                        <field name="collection_line_ids" widget="one2many_list">
+                            <tree editable="bottom" create="1" edit="1">
+                                <field name="call_result_id"/>
+                                <field name="payment_date" attrs="{'required': [('call_result_id', '==', 1)]}"/>
+                                <field name="additional_phone" widget="phone"/>
+                                <field name="comment"/>
+                                <field name="create_date" readonly="1"/>
+                                <field name="collector_user_id" readonly="1"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Server Action -->
+        <record id="loan_order_action_form" model="ir.actions.server">
+            <field name="name">نقل الطلبات</field>
+            <field name="model_id" ref="loan.model_loan_order"/>
+            <field name="binding_model_id" ref="loan.model_loan_order"/>
+            <field name="state">code</field>
+            <field name="binding_view_types">list</field>
+            <field name="groups_id" eval="[(4, ref('collection.group_collection_admin'))]"/>
+            <field name="code">
+                action = {
+                'type': 'ir.actions.act_window',
+                'res_model': 'collection.transfer.wizard',
+                'view_mode': 'form',
+                'target': 'new',
+                'context': {'active_ids': records.ids}
+                }
+            </field>
+        </record>
+    </data>
+</odoo>

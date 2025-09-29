@@ -1,0 +1,112 @@
+.page{
+    font-size: 14px;
+    margin: auto;
+
+}
+.main-column{
+    /* margin-top: 5px; */
+    margin-left: 0px;
+    margin-right: 0px;
+    /* border:1px solid black; */
+}
+.main-column-left{
+  padding-right: 40px;
+}
+.main-column-right{
+  padding-left: 0px;
+}
+.seq-static{
+    font-size: 12px;
+    text-align: left;
+}
+.inner_columns{
+    border: 0px solid red;
+}
+.img_fuel_icon{
+    width: 219px;
+    height: 110px;
+    /* margin-right: 10px; */
+}
+.orang_text{
+    color: #aa4055;
+    font-weight: bold;
+}
+.ffc_code{
+    font-size: 15px;
+    margin-right: 7px;
+}
+.title_msfa{
+    align-self: center;
+    font-size: 16px;
+}
+.purple_text{
+    color: #7a2f91;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.custom_checkbox{
+  width: 29px;
+  height: 29px;
+  border: 1px solid #7a2f91;
+  background-color: #dee5ff;
+  border-radius: 5px;
+  font-size: 8px;
+  text-align: center;
+}
+.check_box_div{
+  margin-left: 10px;
+}
+.check_box_div_employe_type{
+  margin-left: 6px;
+}
+.check_box_text{
+  margin-left: 7px;
+  /* margin-top: -10px; */
+  line-height: 12px;
+}
+.check_box_request_information{
+  margin-left: 40px;
+}
+.checkbox_text{
+  width: 20px !important;
+}
+.black_bold_text{
+  font-weight: bold;
+  color: black;
+  font-size: 11px;
+  width: max-content;
+}
+.text_field_div{
+  border:1px solid #7a2f91;
+  background-color: #dee5ff;
+  height: 27px;
+  border-radius: 5px;
+}
+.text_field_under_div{
+  border-bottom:1px dashed #7a2f91;
+  background-color: #dee5ff;
+  height: 23px;
+}
+.text_field_tag_div{
+  background-color: #ede4f0;
+  font-size: 9px;
+  margin-right: 2px;
+  margin-left: 2px;
+  font-weight: bold;
+  border-radius: 4px;
+  padding:1px;
+}
+.empty_box{
+  margin-right: 45px;
+  color: #ffffff;
+}
+.table{
+  border:1px solid #7a2f91;
+  border-radius: 15px!important;
+  background-color: #dee5ff;
+  font-size: 11px;
+}
+th{
+  background-color: #ffffff;
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<!--    <template id="change_brand" inherit_id="web.brand_promotion" name="Change Brand">-->
+<!--        <xpath expr="//t[@t-call='web.brand_promotion_message']" position="replace">-->
+<!--            <t t-call="web.brand_promotion_message">-->
+<!--                <t t-set="_message">-->
+<!--                    Create a-->
+<!--                    <a target="_blank" href="http://www.odoo.com/app/website?utm_source=db&amp;utm_medium=website">free-->
+<!--                        website-->
+<!--                    </a>-->
+<!--                </t>-->
+<!--                <t t-set="_utm_medium" t-valuef="website"/>-->
+<!--            </t>-->
+<!--        </xpath>-->
+<!--    </template>-->
+</odoo>

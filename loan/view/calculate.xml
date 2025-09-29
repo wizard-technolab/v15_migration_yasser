@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="calculate_tree_view" model="ir.ui.view">
+            <field name="name">loan.calculate.tree.inherit</field>
+            <field name="model">loan.calculate</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="term_year"/>
+                    <field name="interest"/>
+                    <field name="liability"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="calculate_form_view" model="ir.ui.view">
+            <field name="name">loan.calculate.view.inherit</field>
+            <field name="model">loan.calculate</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="term_year"/>
+                                <field name="term_month"/>
+                                <field name="interest"/>
+                            </group>
+                            <group>
+                                <field name="liability"/>
+                                <field name="principal"/>
+                                <field name="total_interest"/>
+                                <field name="monthly_payments"/>
+<!--                                <div name="button_box" position="inside">-->
+<!--                                    <button class="btn-primary" type="object" name="monthly_payments"-->
+<!--                                            icon="fa-sar">-->
+<!--                                        <field string="Calculate" name="monthly_payments" widget="statinfo"/>-->
+<!--                                    </button>-->
+<!--                                </div>-->
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="loan_calculate_action" model="ir.actions.act_window">
+            <field name="name">Loan Calculator</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">loan.calculate</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                </p>
+            </field>
+        </record>
+        <menuitem name="Calculate"
+                  id="calculate_id"
+                  parent="loan_root"
+                  action="loan_calculate_action"
+                  sequence="8"
+        />
+
+    </data>
+</odoo>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="purchase_order_custom_form_view" model="ir.ui.view">
+            <field name="name">purchase form view</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='partner_ref']" position="before">
+                    <!-- XPath to access partner_ref field -->
+                    <field name="supplier_id" invisible="1"/>
+                    <field name="supplier_name" readonly="1"/>
+                </xpath>
+                <xpath expr="//field[@name='partner_ref']" position="after">
+                    <!-- XPath to access partner_ref field -->
+                    <field name="is_medical"/>
+                </xpath>
+                <xpath expr="//field[@name='invoice_lines']" position="attributes">
+                    <!-- XPath to access invoice_lines field -->
+                    <attribute name="required">False</attribute>
+                </xpath>
+                <xpath expr="/form/sheet/notebook/page[2]" position="before">
+                    <page string="Customer">
+                        <group>
+                            <group>
+                                <field name="customer_name"/>
+                                <field name="customer_phone"/>
+                                <field name="section_name"/>
+                            </group>
+                            <group>
+                                <field name="customer_id"/>
+                                <field name="age"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+        <record id="purchase_order_custom_action" model="ir.actions.act_window">
+            <field name="name">Purchase Custom</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">purchase.order</field>
+            <field name="view_mode">form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                </p>
+            </field>
+        </record>
+
+        <record id="purchase_order_custom_form_line_view" model="ir.ui.view">
+            <field name="name">purchase.order.line.form.view</field>
+            <field name="model">purchase.order.line</field>
+            <field name="inherit_id" ref="purchase.purchase_order_line_form2"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form//sheet//field[@name='order_id']" position="attributes">
+                    <!-- XPath to access fields -->
+                    <attribute name="required">False</attribute>
+                </xpath>
+            </field>
+        </record>
+        <record id="purchase_order_custom_line_view" model="ir.ui.view">
+            <field name="name">purchase.order.line.view</field>
+            <field name="model">purchase.order.line</field>
+            <field name="inherit_id" ref="purchase.purchase_order_line_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree//field[@name='order_id']" position="attributes">
+                    <!-- XPath to access order_id field -->
+                    <attribute name="required">False</attribute>
+                </xpath>
+                <xpath expr="//tree//field[@name='partner_id']" position="attributes">
+                    <!-- XPath to access partner_id field -->
+                    <attribute name="required">False</attribute>
+                </xpath>
+                <xpath expr="//tree//field[@name='product_id']" position="attributes">
+                    <!-- XPath to access product_id field -->
+                    <attribute name="required">False</attribute>
+                </xpath>
+                <xpath expr="//tree//field[@name='product_uom']" position="attributes">
+                    <!-- XPath to access product_uom field -->
+                    <attribute name="required">False</attribute>
+                </xpath>
+                <xpath expr="//tree//field[@name='currency_id']" position="attributes">
+                    <!-- XPath to access currency_id field -->
+                    <attribute name="required">False</attribute>
+                </xpath>
+                <xpath expr="//tree//field[@name='date_planned']" position="attributes">
+                    <!-- XPath to access date_planned field -->
+                    <attribute name="required">False</attribute>
+                </xpath>
+                <xpath expr="//tree//field[@name='name']" position="attributes">
+                    <!-- XPath to access name field -->
+                    <attribute name="required">False</attribute>
+                </xpath>
+                <xpath expr="//tree//field[@name='product_qty']" position="attributes">
+                    <!-- XPath to access product_qty field -->
+                    <attribute name="required">False</attribute>
+                </xpath>
+                <xpath expr="//tree//field[@name='price_unit']" position="attributes">
+                    <!-- XPath to access price_unit field -->
+                    <attribute name="required">False</attribute>
+                </xpath>
+                <xpath expr="//tree//field[@name='price_subtotal']" position="attributes">
+                    <!-- XPath to access price_subtotal field -->
+                    <attribute name="required">False</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

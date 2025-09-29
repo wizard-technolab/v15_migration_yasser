@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fuel_helpdesk_fuel_helpdesk,fuel_helpdesk.fuel_helpdesk,model_fuel_helpdesk_fuel_helpdesk,base.group_user,1,1,1,1

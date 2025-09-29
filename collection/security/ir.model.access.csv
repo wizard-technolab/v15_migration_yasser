@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_collection_admin,collection.collection,model_collection_collection,collection.group_collection_admin,1,1,1,0
+access_collection_user,collection.collection,model_collection_collection,collection.group_collection_agent,1,0,0,0
+access_sms_admin,collection.sms,model_collection_sms,,1,1,1,1
+access_sms_user,collection.sms,model_collection_sms,,1,1,0,0
+access_sms_configuration,collection.configuration,model_collection_configuration,,1,1,1,1
+access_massage_template,massage.template,model_massage_template,,1,1,1,0
+access_collection_call,collection.call,model_collection_call,,1,1,1,0
+access_collection_call_line,collection.call.line,model_collection_call_line,,1,1,1,0
+access_collection_transfer_wizard,collection.transfer.wizard,model_collection_transfer_wizard,,1,1,1,0
+
+

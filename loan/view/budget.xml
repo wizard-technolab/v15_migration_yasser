@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="crossovered_budget_view_form" model="ir.ui.view">
+            <field name="name">crossovered.budget.view.inherit</field>
+            <field name="model">crossovered.budget</field>
+            <field name="inherit_id" ref="account_budget.crossovered_budget_view_form"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/div[@class='oe_title']" position="before">
+                    <div class="oe_button_box" name="button_box" position="inside">
+                        <button class="oe_stat_button" type="object" name="get_total_active_loans"
+                                icon="fa-usd" context="{'default_partner_id': active_id}">
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_text">Amount</span>
+                                <span class="o_stat_value">
+                                    <field name="currency_id" invisible="1"/>
+                                    <field name="total_planned_amount" widget='monetary'
+                                           options="{'currency_field': 'currency_id'}"/>
+                                </span>
+                            </div>
+                        </button>
+                        <button class="oe_stat_button" type="object" name="action_view_loan_orders" icon="fa-user-o">
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_text">Customers</span>
+                                <span class="o_stat_value">
+                                    <field name="loan_order_count"/>
+                                </span>
+                            </div>
+                        </button>
+                        <button class="oe_stat_button" type="object" name="get_total_active_loans"
+                                icon="fa-usd" context="{'default_partner_id': active_id}">
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_text">Principle Due</span>
+                                <span class="o_stat_value">
+                                    <field name="currency_id" invisible="1"/>
+                                    <field name="loan_principle_due" widget='monetary'
+                                           options="{'currency_field': 'currency_id'}"/>
+                                </span>
+                            </div>
+                        </button>
+                        <button class="oe_stat_button" type="object" name="get_total_active_loans"
+                                icon="fa-usd" context="{'default_partner_id': active_id}">
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_text">Interest Due</span>
+                                <span class="o_stat_value">
+                                    <field name="currency_id" invisible="1"/>
+                                    <field name="loan_interest_due" widget='monetary'
+                                           options="{'currency_field': 'currency_id'}"/>
+                                </span>
+                            </div>
+                        </button>
+                        <button class="oe_stat_button" type="object" name="get_total_active_loans"
+                                icon="fa-usd" context="{'default_partner_id': active_id}">
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_text">Principle Paid</span>
+                                <span class="o_stat_value">
+                                    <field name="currency_id" invisible="1"/>
+                                    <field name="loan_principle_paid" widget='monetary'
+                                           options="{'currency_field': 'currency_id'}"/>
+                                </span>
+                            </div>
+                        </button>
+                        <button class="oe_stat_button" type="object" name="get_total_active_loans"
+                                icon="fa-usd" context="{'default_partner_id': active_id}">
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_text">Interest Paid</span>
+                                <span class="o_stat_value">
+                                    <field name="currency_id" invisible="1"/>
+                                    <field name="loan_interest_paid" widget='monetary'
+                                           options="{'currency_field': 'currency_id'}"/>
+                                </span>
+                            </div>
+                        </button>
+                        <button class="oe_stat_button" type="object" name="get_total_active_loans"
+                                icon="fa-usd" context="{'default_partner_id': active_id}">
+                            <div class="o_form_field o_stat_info">
+                                <span class="o_stat_text">Paid Amount</span>
+                                <span class="o_stat_value">
+                                    <field name="currency_id" invisible="1"/>
+                                    <field name="total_installment_paid" widget='monetary'
+                                           options="{'currency_field': 'currency_id'}"/>
+                                </span>
+                            </div>
+                        </button>
+                        <button type="object"
+                                name="action_view_paid_installments"
+                                class="oe_stat_button"
+                                icon="fa-check-circle">
+                            <field name="installment_paid_count" widget="statinfo" string="Paid"/>
+                        </button>
+                        <button type="object"
+                                name="action_view_unpaid_installments"
+                                class="oe_stat_button"
+                                icon="fa-times-circle">
+                            <field name="installment_unpaid_count" widget="statinfo" string="UnPaid"/>
+                        </button>
+                    </div>
+                </xpath>
+                <xpath expr="//field[@name='crossovered_budget_line']/tree/field[@name='practical_amount']"
+                       position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='crossovered_budget_line']/tree/field[@name='theoritical_amount']"
+                       position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='crossovered_budget_line']/tree/field[@name='percentage']"
+                       position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='crossovered_budget_line']/tree/field[@name='paid_date']"
+                       position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='crossovered_budget_line']/tree/field[@name='planned_amount']"
+                       position="after">
+                    <field name="expenses"/>
+                    <field name="amount_expenses"/>
+                    <field name="net_cash_flow"/>
+                    <field name="net_profit"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,17 @@
+<odoo>
+    <data>
+        <record id="mail_activity_nafaes_issue" model="mail.activity.type">
+            <field name="name">Nafaes Issue</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">100</field>
+            <field name="res_model">loan.order</field>
+        </record>
+
+        <record id="mail_activity_nafaes_sell" model="mail.activity.type">
+            <field name="name">Nafaes Order Sold</field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">100</field>
+            <field name="res_model">loan.order</field>
+        </record>
+    </data>
+</odoo>

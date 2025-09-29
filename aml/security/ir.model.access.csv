@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_aml_aml_admin,aml.aml,aml.model_aml_aml,aml.group_use_compliance_admin,1,1,1,1
+access_aml_aml_user,aml.aml,aml.model_aml_aml,aml.group_use_compliance_user,1,1,1,0
+access_api_access_token,access_api_access_token,model_api_access_token,,1,1,1,1

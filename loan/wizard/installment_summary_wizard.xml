@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_report_installment" model="ir.ui.view">
+            <field name="name">installment.report.wizard.form</field>
+            <field name="model">installment.report.wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="early_name"/>
+                                <field name="early_paid_amount"/>
+                            </group>
+                            <group>
+                                <field name="early_date"/>
+                                <field name="early_remaining_amount"/>
+                            </group>
+                        </group>
+                        <footer>
+                            <!--                            <button name="action_print_report" type="object" string="Print" class="btn-primary"/>-->
+                            <button string="Close" class="btn-secondary" special="cancel"/>
+                            <button string="Early Payment" class="btn-secondary" />
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- attrs="{'invisible':[('group', '!=', 'False')]}"-->
+        <record id="action_report_installment" model="ir.actions.act_window">
+            <field name="name">Installments</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">installment.report.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_report_installment"/>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>
+

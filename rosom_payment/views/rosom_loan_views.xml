@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+        <record id="view_loan_order_form_inherit" model="ir.ui.view">
+            <field name="name">loan.order.form.rosom</field>
+            <field name="model">loan.order</field>
+            <field name="inherit_id" ref="loan.request_form_view"/>
+            <field name="priority" eval="20"/>
+            <field name="arch" type="xml">
+                <header position="inside">
+                    <!--        <button name="do_rosom" type="object" string="Test Rosom"/>-->
+                    <button name="action_crate_rosom" type="object" string="Create Rosom Number"
+                            groups="rosom_payment.group_resom_manager"
+                    />
+<!--                    attrs="{'invisible':[('state','in',('simah','l1','l2','approve','contract','pending','return','early','close','cancel','reject','archive'))]}"-->
+                </header>
+            </field>
+        </record>
+    </data>
+</odoo>

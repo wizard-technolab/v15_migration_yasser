@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <!-- Action for Partner List View -->
+        <record id="action_partner_list" model="ir.actions.act_window">
+            <field name="name">Partners</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">tree,form</field> <!-- You can add more views if needed -->
+            <field name="context">{'search_default_customer': 1}</field> <!-- Optional context -->
+        </record>
+
+         <!-- Menu Item -->
+        <menuitem id="res_partner_menu" name="Partner" parent="fuel_report_root_menu" action="action_partner_list" sequence="1"/>
+    </data>
+</odoo>

@@ -1,0 +1,87 @@
+<odoo>
+    <data>
+        <record id="nafaes_order_result_view_search" model="ir.ui.view">
+            <field name="name">nafaes.order.result.search</field>
+            <field name="model">nafaes.order.result</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="transactionReference" string="transaction Reference"/>
+                </search>
+            </field>
+        </record>
+        <record id="nafaes_order_result_view_tree" model="ir.ui.view">
+            <field name="name">nafaes.order.result.tree</field>
+            <field name="model">nafaes.order.result</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="purchase_order_id"/>
+                    <field name="beneficiary"/>
+                    <field name="date"/>
+                    <field name="currency_id" invisible="1"/>
+                    <field name="amount"/>
+                    <field name="orderType"/>
+                </tree>
+            </field>
+        </record>
+        <record id="nafaes_order_result_view_form" model="ir.ui.view">
+            <field name="name">nafaes.order.result.form</field>
+            <field name="model">nafaes.order.result</field>
+            <field name="arch" type="xml">
+                <form edit="false" >
+                    <sheet>
+                        <group>
+                            <group string="General">
+                                <field name="purchase_order_id"/>
+                                <field name="beneficiary"/>
+                                <field name="date"/>
+                                <field name="transactionReference"/>
+                                <field name="orderType"/>
+                            </group>
+                            <group string="Amount">
+                                <field name="currency_id" invisible="1"/>
+                                <field name="amount"/>
+
+                                <field name="commission"/>
+                                <field name="comm_currency_id"/>
+                            </group>
+                            <group string="Commodity">
+                                <field name="commodityName"/>
+                                <field name="unit"/>
+                                <field name="executingUnit"/>
+                                <field name="quantity"/>
+                            </group>
+                            <group string="Attributes">
+                                <field name="attribute1"/>
+                                <field name="attribute2"/>
+                                <field name="attribute3"/>
+                            </group>
+                            <group string="Technical" groups="base.group_system">
+                                <field name="executionDate"/>
+                                <field name="executionTime"/>
+                                <field name="secretToken"/>
+                                <field name="certificateNo"/>
+                                <field name="json"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="nafaes_order_result_action_view_tree" model="ir.actions.act_window">
+            <field name="name">Order Results</field>
+            <field name="res_model">nafaes.order.result</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No Order Results found. Let's create one!
+                </p>
+                <p>
+                    Helps improving the business workflow.
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Order Results" action="nafaes_order_result_action_view_tree" id="nafaes_order_result_menu"
+                  parent="nafaes_root_menu" sequence="900" groups="base.group_system"/>
+    </data>
+</odoo>

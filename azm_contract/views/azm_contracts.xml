@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Define a view for the 'loan.order' model, which inherits from the 'loan.request_form_view' -->
+        <record id="azm_contract_form" model="ir.ui.view">
+            <field name="name">azm.contract.form</field>
+            <field name="model">loan.order</field>
+            <field name="inherit_id" ref="loan.request_form_view"/>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Azm &amp; Contract">
+
+                        <!-- First Notebook inside "Azm & Contract" -->
+                        <notebook>
+                            <page string="Upload Contract" groups="loan.group_view_contracts">
+                                <group>
+                                    <group>
+                                        <field name="contractDocument" filename="contract_name"/>
+                                        <field name="signedContractDocument" filename="contract_name_signed"/>
+                                    </group>
+                                    <group>
+                                        <!-- Another group of fields -->
+                                        <field name="nameEN" invisible="1"/> <!-- Field 'nameEN' (invisible) -->
+                                        <field name="phone_customer"
+                                               invisible="1"/> <!-- Field 'phone_customer' (invisible) -->
+                                        <field name="contractNumber"
+                                               invisible="1"/> <!-- Field 'contractNumber' (invisible) -->
+                                        <field name="shareApprovalURL"
+                                               invisible="1"/> <!-- Field 'shareApprovalURL' (invisible) -->
+                                        <field name="isSignatureMethodFingerprint"
+                                               invisible="1"/> <!-- Field 'isSignatureMethodFingerprint' (invisible) -->
+                                        <field name="isReadOnly" invisible="1"/>
+                                        <group>
+                                            <!-- Field 'isReadOnly' (invisible) -->
+                                            <button name="action_upload_contract" type="object" string="Upload Contract"
+                                                    class="oe_highlight" icon="fa-upload"
+                                                    groups="loan.group_customer_operation"/>
+                                        </group>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                        <!-- Second Notebook inside "Azm & Contract" -->
+                        <notebook>
+                            <page string="One Beneficiary" groups="loan.group_view_contracts">
+                                <group>
+                                    <group>
+                                        <button name="action_one_beneficiary" type="object" string="Get Data"
+                                                class="oe_highlight" groups="loan.group_customer_operation"/>
+                                    </group>
+                                    <group col="4">
+                                        <field name="res_identification_id" readonly="1"/>
+                                        <field name="res_name" readonly="1"/>
+                                        <field name="res_name_ar" readonly="1"/>
+                                        <field name="res_email" readonly="1"/>
+                                        <field name="res_mobile" readonly="1"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+
+                        <!-- Third Notebook inside "Azm & Contract" -->
+                        <notebook>
+                            <page string="All Beneficiary Contract" groups="loan.group_view_contracts">
+                                <group>
+                                    <field name="allBeneficiaries" readonly="1">
+                                        <tree decoration-danger="contractStatusCode == 'Canceled'"
+                                              decoration-success="contractStatusCode == 'Signed'" editable="bottom">
+                                            <field name="customerCR"/>
+                                            <field name="contractNumber"/>
+                                            <field name="beneficiaryIDNumbers" invisible="1"/>
+                                            <field name="contractStatusCode" widget="badge"
+                                                   groups="loan.group_sales_view_contract"/>
+                                            <field name="createdOn"/>
+                                            <field name="signDate"/>
+                                            <field name="unSignFile"/>
+                                            <button name="cancel_contract" style="background-color:red;border-color:red"
+                                                    type="object" string="Cancel" class="oe_highlight"
+                                                    groups="loan.group_customer_operation_manager"/>
+                                            <button name="action_download_signed_contract" type="object"
+                                                    string="Download Signed" icon="fa-download"
+                                                    groups="loan.group_customer_operation_manager"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                                <group>
+                                    <button name="action_all_beneficiary" type="object" string="Get Data"
+                                            class="btn btn-primary oe_highlight"
+                                            groups="loan.group_customer_operation"/>
+                                </group>
+                            </page>
+                        </notebook>
+                        <notebook>
+                            <page string="Sanad Groups" groups="loan.group_view_contracts">
+                                <group>
+                                    <group>
+                                        <button name="action_get_sanad_groups"
+                                                type="object"
+                                                string="⟳ Refresh from Nafith"
+                                                class="btn btn-primary"
+                                                icon="fa-refresh"
+                                                groups="loan.group_customer_operation"/>
+                                    </group>
+                                    <group>
+                                        <field name="sanad_group_ids" readonly="1">
+                                            <tree string="Sanad Groups">
+                                                <field name="reference_id"/>
+                                                <field name="status" widget="badge"/>
+                                                <field name="total_value"/>
+                                                <field name="issued_at"/>
+                                                <field name="created_on"/>
+                                            </tree>
+                                        </field>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Define an action to open the 'all.contracts.integration' model -->
+        <record id="all_contracts_action" model="ir.actions.act_window">
+            <field name="name">All Contracts</field>  <!-- Name of the action -->
+            <field name="type">ir.actions.act_window</field> <!-- Type of action (window) -->
+            <field name="res_model">all.contracts.integration</field> <!-- Model to be displayed by this action -->
+            <field name="view_mode">tree,form</field> <!-- View modes available for this action (tree and form) -->
+        </record>
+
+        <!-- Define a tree view for the 'all.contracts.integration' model -->
+        <record id="all_contracts_tree" model="ir.ui.view">
+            <field name="name">all.contracts.integration.tree</field> <!-- Name of the view -->
+            <field name="model">all.contracts.integration</field> <!-- The model this view is associated with -->
+            <field name="arch" type="xml">
+                <tree string="All Contracts">
+                    <!-- Tree view to display all contracts -->
+                    <field name="customerCR"/> <!-- Field for 'customerCR' -->
+                    <field name="contractNumber"/> <!-- Field for 'contractNumber' -->
+                    <field name="beneficiaryIDNumbers"/> <!-- Field for 'beneficiaryIDNumbers' -->
+                    <field name="contractStatusCode"/> <!-- Field for 'contractStatusCode' -->
+                    <field name="createdOn"/> <!-- Field for 'createdOn' -->
+                    <field name="signDate"/> <!-- Field for 'signDate' -->
+                    <field name="unSignFile"/> <!-- Field for 'unSignFile' -->
+                </tree>
+            </field>
+        </record>
+
+<!--        <record id="azm_contract_add_sanad_tab" model="ir.ui.view">-->
+<!--            <field name="name">azm.contract.add.sanad.tab</field>-->
+<!--            <field name="model">loan.order</field>-->
+<!--            <field name="inherit_id" ref="loan.request_form_view"/>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <xpath expr="//notebook/page[3]" position="after">-->
+<!--                    <page string="Sanad Groups" groups="loan.group_view_contracts">-->
+<!--                        <group>-->
+<!--                            <group>-->
+<!--                                <button name="action_get_sanad_groups"-->
+<!--                                        type="object"-->
+<!--                                        string="⟳ Refresh from Nafith"-->
+<!--                                        class="btn btn-primary"-->
+<!--                                        icon="fa-refresh"-->
+<!--                                        groups="loan.group_customer_operation"/>-->
+<!--                            </group>-->
+<!--                            <group>-->
+<!--                                <field name="sanad_group_ids" readonly="1">-->
+<!--                                    <tree string="Sanad Groups">-->
+<!--                                        <field name="reference_id"/>-->
+<!--                                        <field name="status" widget="badge"/>-->
+<!--                                        <field name="total_value"/>-->
+<!--                                        <field name="issued_at"/>-->
+<!--                                        <field name="created_on"/>-->
+<!--                                    </tree>-->
+<!--                                </field>-->
+<!--                            </group>-->
+<!--                        </group>-->
+<!--                    </page>-->
+<!--                </xpath>-->
+<!--            </field>-->
+<!--        </record>-->
+    </data>
+</odoo>
+
+
+        <!--<?xml version="1.0" encoding="utf-8"?>-->
+        <!--<odoo>-->
+        <!--    <data>-->
+        <!--        &lt;!&ndash; Define a view for the 'loan.order' model, which inherits from the 'loan.request_form_view' &ndash;&gt;-->
+        <!--        <record id="azm_contract_form" model="ir.ui.view">-->
+        <!--            <field name="name">azm.contract.form</field>  &lt;!&ndash; Name of the view &ndash;&gt;-->
+        <!--            <field name="model">loan.order</field>         &lt;!&ndash; The model this view is associated with &ndash;&gt;-->
+        <!--            <field name="inherit_id" ref="loan.request_form_view"/> &lt;!&ndash; Inherit from an existing view &ndash;&gt;-->
+        <!--            <field name="type">form</field>                &lt;!&ndash; Type of the view (form view) &ndash;&gt;-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                &lt;!&ndash; Extend the existing form view by adding a new notebook tab &ndash;&gt;-->
+        <!--                <notebook position="inside">-->
+        <!--                    <page string="Azm &amp; Contract">-->
+        <!--                        &lt;!&ndash; New page added to the notebook, visible to users in the 'loan.group_view_contracts' group &ndash;&gt;-->
+        <!--                        <notebook position="inside">-->
+        <!--                            &lt;!&ndash; Nested notebook inside the main page &ndash;&gt;-->
+        <!--                            <page string="Upload Contract" groups="loan.group_view_contracts">-->
+        <!--                                &lt;!&ndash; Page for uploading contracts &ndash;&gt;-->
+        <!--                                <group>-->
+        <!--                                    &lt;!&ndash; Group of fields for uploading contract information &ndash;&gt;-->
+        <!--                                    <group>-->
+        <!--                                        &lt;!&ndash; Inner group of fields &ndash;&gt;-->
+        <!--                                        <field name="name" invisible="1"-->
+        <!--                                               readonly="1"/> &lt;!&ndash; Field 'name' (invisible and read-only) &ndash;&gt;-->
+        <!--                                        <field name="identification_id"-->
+        <!--                                               invisible="1"/> &lt;!&ndash; Field 'identification_id' (invisible) &ndash;&gt;-->
+        <!--                                        <field name="contractName"-->
+        <!--                                               invisible="1"/> &lt;!&ndash; Field 'contractName' (invisible) &ndash;&gt;-->
+        <!--                                        <field name="contractBeneficiaries"-->
+        <!--                                               invisible="1"/> &lt;!&ndash; Field 'contractBeneficiaries' (invisible) &ndash;&gt;-->
+        <!--                                        <field name="contract_name"-->
+        <!--                                               invisible="1"/> &lt;!&ndash; Field 'contract_name' (invisible) &ndash;&gt;-->
+        <!--                                        <field name="contract_name_signed"-->
+        <!--                                               invisible="1"/> &lt;!&ndash; Field 'contract_name_signed' (invisible) &ndash;&gt;-->
+        <!--                                        <field name="contractDocument"-->
+        <!--                                               filename="contract_name" readonly="1"/> &lt;!&ndash; Field 'contractDocument' with filename attribute &ndash;&gt;-->
+        <!--                                        <field name="signedContractDocument"-->
+        <!--                                               filename="contract_name_signed" readonly="1"/> &lt;!&ndash; Field 'signedContractDocument' with filename attribute &ndash;&gt;-->
+        <!--                                        <field name="contractName"-->
+        <!--                                               invisible="1"/> &lt;!&ndash; Field 'contractName' (invisible) &ndash;&gt;-->
+        <!--                                        <field name="beneficiaryRegionCode"-->
+        <!--                                               invisible="1"/> &lt;!&ndash; Field 'beneficiaryRegionCode' (invisible) &ndash;&gt;-->
+        <!--                                        <field name="responseTimeInMinutes"-->
+        <!--                                               invisible="1"/> &lt;!&ndash; Field 'responseTimeInMinutes' (invisible) &ndash;&gt;-->
+        <!--                                        <field name="lang" invisible="1"/> &lt;!&ndash; Field 'lang' (invisible) &ndash;&gt;-->
+        <!--                                        <field name="signatureLang"-->
+        <!--                                               invisible="1"/> &lt;!&ndash; Field 'signatureLang' (invisible) &ndash;&gt;-->
+        <!--                                    </group>-->
+        <!--                                    <group>-->
+        <!--                                        &lt;!&ndash; Another group of fields &ndash;&gt;-->
+        <!--                                        <field name="nameEN" invisible="1"/> &lt;!&ndash; Field 'nameEN' (invisible) &ndash;&gt;-->
+        <!--                                        <field name="phone_customer"-->
+        <!--                                               invisible="1"/> &lt;!&ndash; Field 'phone_customer' (invisible) &ndash;&gt;-->
+        <!--                                        <field name="contractNumber"-->
+        <!--                                               invisible="1"/> &lt;!&ndash; Field 'contractNumber' (invisible) &ndash;&gt;-->
+        <!--                                        <field name="shareApprovalURL"-->
+        <!--                                               invisible="1"/> &lt;!&ndash; Field 'shareApprovalURL' (invisible) &ndash;&gt;-->
+        <!--                                        <field name="isSignatureMethodFingerprint"-->
+        <!--                                               invisible="1"/> &lt;!&ndash; Field 'isSignatureMethodFingerprint' (invisible) &ndash;&gt;-->
+        <!--                                        <field name="isReadOnly" invisible="1"/> &lt;!&ndash; Field 'isReadOnly' (invisible) &ndash;&gt;-->
+        <!--                                        <button name="action_upload_contract" type="object" string="Upload Contract"-->
+        <!--                                                class="oe_highlight" icon="fa-upload"-->
+        <!--                                                groups="loan.group_customer_operation"/>-->
+        <!--&lt;!&ndash;                                        attrs="{'invisible':[('state','in',('simah','l1','l2','approve','contract','pending','return','early','close','cancel','disburse','active','reject','archive'))]}"&ndash;&gt;-->
+        <!--                                        &lt;!&ndash; Button to trigger 'action_upload_contract' method, styled with 'oe_highlight' and 'fa-upload' icon &ndash;&gt;-->
+        <!--                                    </group>-->
+        <!--                                </group>-->
+        <!--                            </page>-->
+
+        <!--                            <page string="One Beneficiary" groups="loan.group_view_contracts">-->
+        <!--                                &lt;!&ndash; Page for displaying and interacting with one beneficiary &ndash;&gt;-->
+        <!--                                <button name="action_one_beneficiary" type="object" string="Get Data"-->
+        <!--                                        class="oe_highlight" groups="loan.group_customer_operation"/>-->
+        <!--&lt;!&ndash;                                attrs="{'invisible':[('state','in',('simah','l1','l2','approve','contract','pending','return','cancel','reject','archive'))]}"&ndash;&gt;-->
+        <!--                                &lt;!&ndash; Button to trigger 'action_one_beneficiary' method, styled with 'oe_highlight' &ndash;&gt;-->
+        <!--                                <group col="4">-->
+        <!--                                    &lt;!&ndash; Group displaying beneficiary information &ndash;&gt;-->
+        <!--                                    <field name="res_identification_id" attrs="{'readonly': [('state', 'in', ['active', 'early','close'])]}"/> &lt;!&ndash; Field for 'res_identification_id' &ndash;&gt;-->
+        <!--                                    <field name="res_name" attrs="{'readonly': [('state', 'in', ['active', 'early','close'])]}"/> &lt;!&ndash; Field for 'res_name' &ndash;&gt;-->
+        <!--                                    <field name="res_name_ar" attrs="{'readonly': [('state', 'in', ['active', 'early','close'])]}"/> &lt;!&ndash; Field for 'res_name_ar' &ndash;&gt;-->
+        <!--                                    <field name="res_email" attrs="{'readonly': [('state', 'in', ['active', 'early','close'])]}"/> &lt;!&ndash; Field for 'res_email' &ndash;&gt;-->
+        <!--                                    <field name="res_mobile" attrs="{'readonly': [('state', 'in', ['active', 'early','close'])]}"/> &lt;!&ndash; Field for 'res_mobile' &ndash;&gt;-->
+        <!--                                </group>-->
+        <!--                            </page>-->
+
+        <!--                            <page string="All Beneficiary Contract">-->
+        <!--                                &lt;!&ndash; Page for displaying all beneficiary contracts &ndash;&gt;-->
+        <!--                                <field name="allBeneficiaries" readonly="1">-->
+        <!--                                    &lt;!&ndash; Field for displaying all beneficiaries, set to read-only &ndash;&gt;-->
+        <!--                                    <tree decoration-danger="contractStatusCode == 'Canceled'"-->
+        <!--                                          decoration-success="contractStatusCode == 'Signed'" editable="bottom">-->
+        <!--                                        &lt;!&ndash; Tree view to display beneficiaries, with decorations for contract status and editable at the bottom &ndash;&gt;-->
+        <!--                                        <field name="customerCR"/> &lt;!&ndash; Field for 'customerCR' &ndash;&gt;-->
+        <!--                                        <field name="contractNumber"/> &lt;!&ndash; Field for 'contractNumber' &ndash;&gt;-->
+        <!--                                        <field name="beneficiaryIDNumbers"-->
+        <!--                                               invisible="1"/> &lt;!&ndash; Field for 'beneficiaryIDNumbers' (invisible) &ndash;&gt;-->
+        <!--                                        <field name="contractStatusCode" widget="badge"-->
+        <!--                                               groups="loan.group_sales_view_contract"/> &lt;!&ndash; Field for 'contractStatusCode' with badge widget &ndash;&gt;-->
+        <!--                                        <field name="createdOn"/> &lt;!&ndash; Field for 'createdOn' &ndash;&gt;-->
+        <!--                                        <field name="signDate"/> &lt;!&ndash; Field for 'signDate' &ndash;&gt;-->
+        <!--                                        <field name="unSignFile"/> &lt;!&ndash; Field for 'unSignFile' &ndash;&gt;-->
+        <!--                                        <button name="cancel_contract" style="background-color:red;border-color:red"-->
+        <!--                                                type="object" string="Cancel" class="oe_highlight"-->
+        <!--                                                groups="loan.group_customer_operation_manager"/>-->
+        <!--&lt;!&ndash;                                        attrs="{'invisible':[('state','in',('simah','l1','l2','approve','contract','pending','return','early','close','cancel','reject','archive'))]}"&ndash;&gt;-->
+        <!--                                        &lt;!&ndash; Button to trigger 'cancel_contract' method, styled with red background and border &ndash;&gt;-->
+        <!--                                        <button name="action_download_signed_contract" type="object"-->
+        <!--                                                string="Download Signed" icon="fa-download"-->
+        <!--                                                groups="loan.group_customer_operation_manager"/>-->
+        <!--&lt;!&ndash;                                        attrs="{'invisible':[('state','in',('simah','l1','l2','approve','contract','pending','return','cancel','reject','archive'))]}"&ndash;&gt;-->
+        <!--                                        &lt;!&ndash; Button to trigger 'action_download_signed_contract' method, with 'fa-download' icon &ndash;&gt;-->
+        <!--                                    </tree>-->
+        <!--                                </field>-->
+        <!--                                <button name="action_all_beneficiary" type="object" string="Get Data"-->
+        <!--                                        class="oe_highlight" groups="loan.group_customer_operation"/>-->
+        <!--&lt;!&ndash;                                attrs="{'invisible':[('state','in',('simah','l1','l2','approve','contract','pending','return','early','close','cancel','disburse','active','reject','archive'))]}"&ndash;&gt;-->
+        <!--                                &lt;!&ndash; Button to trigger 'action_all_beneficiary' method, styled with 'oe_highlight' &ndash;&gt;-->
+        <!--                            </page>-->
+        <!--                        </notebook>-->
+        <!--                    </page>-->
+        <!--                </notebook>-->
+        <!--            </field>-->
+        <!--        </record>-->
+
+        <!--        &lt;!&ndash; Define an action to open the 'all.contracts.integration' model &ndash;&gt;-->
+        <!--        <record id="all_contracts_action" model="ir.actions.act_window">-->
+        <!--            <field name="name">All Contracts</field>  &lt;!&ndash; Name of the action &ndash;&gt;-->
+        <!--            <field name="type">ir.actions.act_window</field> &lt;!&ndash; Type of action (window) &ndash;&gt;-->
+        <!--            <field name="res_model">all.contracts.integration</field> &lt;!&ndash; Model to be displayed by this action &ndash;&gt;-->
+        <!--            <field name="view_mode">tree,form</field> &lt;!&ndash; View modes available for this action (tree and form) &ndash;&gt;-->
+        <!--        </record>-->
+
+        <!--        &lt;!&ndash; Define a tree view for the 'all.contracts.integration' model &ndash;&gt;-->
+        <!--        <record id="all_contracts_tree" model="ir.ui.view">-->
+        <!--            <field name="name">all.contracts.integration.tree</field> &lt;!&ndash; Name of the view &ndash;&gt;-->
+        <!--            <field name="model">all.contracts.integration</field> &lt;!&ndash; The model this view is associated with &ndash;&gt;-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <tree string="All Contracts">-->
+        <!--                    &lt;!&ndash; Tree view to display all contracts &ndash;&gt;-->
+        <!--                    <field name="customerCR"/> &lt;!&ndash; Field for 'customerCR' &ndash;&gt;-->
+        <!--                    <field name="contractNumber"/> &lt;!&ndash; Field for 'contractNumber' &ndash;&gt;-->
+        <!--                    <field name="beneficiaryIDNumbers"/> &lt;!&ndash; Field for 'beneficiaryIDNumbers' &ndash;&gt;-->
+        <!--                    <field name="contractStatusCode"/> &lt;!&ndash; Field for 'contractStatusCode' &ndash;&gt;-->
+        <!--                    <field name="createdOn"/> &lt;!&ndash; Field for 'createdOn' &ndash;&gt;-->
+        <!--                    <field name="signDate"/> &lt;!&ndash; Field for 'signDate' &ndash;&gt;-->
+        <!--                    <field name="unSignFile"/> &lt;!&ndash; Field for 'unSignFile' &ndash;&gt;-->
+        <!--                </tree>-->
+        <!--            </field>-->
+        <!--        </record>-->
+        <!--    </data>-->
+        <!--</odoo>-->

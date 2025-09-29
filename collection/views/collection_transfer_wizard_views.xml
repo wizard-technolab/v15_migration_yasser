@@ -1,0 +1,29 @@
+<odoo>
+    <data>
+        <record id="view_collection_transfer_wizard_form" model="ir.ui.view">
+            <field name="name">collection.transfer.wizard.form</field>
+            <field name="model">collection.transfer.wizard</field>
+            <field name="arch" type="xml">
+                <form string="نقل الطلبات">
+                    <group>
+                        <field name="user_ids" widget="many2many_tags" options="{'no_create': True}" />
+                    </group>
+                    <footer>
+                        <button string="نقل" type="object" name="action_transfer" class="btn-primary"/>
+                        <button string="إلغاء" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_collection_transfer_wizard" model="ir.actions.act_window">
+            <field name="name">نقل الطلبات</field>
+            <field name="res_model">collection.transfer.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_collection_transfer_wizard_form"/>
+            <field name="target">new</field>
+            <field name="groups_id" eval="[(4, ref('collection.group_collection_admin'))]"/>
+        </record>
+
+    </data>
+</odoo>

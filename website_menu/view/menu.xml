@@ -1,0 +1,232 @@
+<odoo>
+    <record id="calculate" model="website.menu">
+        <field name="name">Calculate</field>
+        <field name="url">/calculation</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <!--        <field name="website_published">True</field>-->
+    </record>
+    <template id="menu_data" name="Loan calculator">
+        <t t-call="website.layout">
+            <link rel="stylesheet" href="/website_menu/static/src/css/style2.css" type="text/css"/>
+            <section class="form-main col-lg-12">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="form">
+                                    <div class="left-side col-12">
+                                        <div class="left-heading text-center">
+                                            <h3>الحاسبة</h3>
+                                            <br/>
+                                            <h5>تساعدك فيول للتمويل على التخطيط المالي وفقاً لاحتياجاتك الحالية
+                                                والمستقبلية من خلال تحديد قيمة التمويل بكل سهولة عن طريق حاسبة التمويل
+                                                المطورة خصيصاً لحساب التمويل الشخصي
+                                            </h5>
+                                        </div>
+                                    </div>
+                                    <div class="right-side col-12">
+                                        <form id="calculation-form" role="form" action="/calculate-result" method="POST"
+                                              novalidate="novalidate">
+                                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                            <div class="main active">
+                                                <div class="co-12 fields-group">
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-12 fields-group">
+                                                            <div class="col-12 group-container">
+                                                                <div class="form-group">
+                                                                    <label for="amount" class="control-label">مبلغ
+                                                                        التمويل:
+                                                                    </label>
+                                                                    <input type="text"
+                                                                           class="form-control"
+                                                                           t-att-value="loan_amount"
+                                                                           id="loan_amount" name="loan_amount"
+                                                                           placeholder="مبلغ التمويل"
+                                                                           required="required"/>
+                                                                </div>
+                                                                <!--                                                                <div class="form-group">-->
+                                                                <!--                                                                    <label for="liability" class="control-label">-->
+                                                                <!--                                                                        Liability:-->
+                                                                <!--                                                                    </label>-->
+                                                                <!--                                                                    <input type="text"-->
+                                                                <!--                                                                           class="form-control"-->
+                                                                <!--                                                                           t-att-value="liability"-->
+                                                                <!--                                                                           id="liability" name="liability"-->
+                                                                <!--                                                                           placeholder="Liability"-->
+                                                                <!--                                                                           required="required"/>-->
+                                                                <!--                                                                </div>-->
+                                                                <!--                                                                <div class="form-group">-->
+                                                                <!--                                                                    <label for="term_y" class="control-label">Loan Term-->
+                                                                <!--                                                                        <span class="text-danger">* (Year) :</span>-->
+                                                                <!--                                                                    </label>-->
+                                                                <!--                                                                    <input type="text"-->
+                                                                <!--                                                                           class="form-control"-->
+                                                                <!--                                                                           t-att-value="term_year"-->
+                                                                <!--                                                                           id="term_year" name="term_year"-->
+                                                                <!--                                                                           placeholder="years"-->
+                                                                <!--                                                                           required="required"/>-->
+                                                                <!--                                                                </div>-->
+                                                                <div class="form-group">
+                                                                    <label for="term_month">المدة
+                                                                        <span class="text-danger">* (بالشهور)</span>
+                                                                    </label>
+                                                                    <input type="text" class="form-control phone_input"
+                                                                           id="term_month" name="term_month"
+                                                                           placeholder="الشهور" required="required"/>
+                                                                </div>
+                                                                <!--                                                                <div class="form-group">-->
+                                                                <!--                                                                    <label for="interest_rate" class="control-label">-->
+                                                                <!--                                                                        Interest rate (per year):-->
+                                                                <!--                                                                    </label>-->
+                                                                <!--                                                                    <input type="text" class="form-control"-->
+                                                                <!--                                                                           t-att-value="interest"-->
+                                                                <!--                                                                           id="interest" name="interest"-->
+                                                                <!--                                                                           placeholder="interest rate"-->
+                                                                <!--                                                                           required="required"/>-->
+                                                                <!--                                                                </div>-->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-12">
+                                                    <button type="submit" class="btn btn-primary pull-center calculate">
+                                                        أحسب
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </t>
+    </template>
+    <record id="calculate-result" model="website.page">
+        <field name="name">Loan</field>
+        <field name="type">qweb</field>
+        <field name="url">/calculate-result</field>
+        <!--        <field name="loan_amount" ref="website.main_menu"/>-->
+        <!--        <field name="website_published">True</field>-->
+        <!--        <field name="key">website_menu.calculate-result</field>-->
+        <!--        <field name="arch" type="xml">-->
+        <!--        </field>-->
+    </record>
+    <template id="result_data" name="Loan calculator">
+        <t t-call="website.layout">
+            <link rel="stylesheet" href="/website_menu/static/src/css/style2.css" type="text/css"/>
+            <section class="form-main col-lg-12">
+                <div class="container">
+                    <t t-foreach="range(1)" t-as="p">
+                        <t t-foreach="docs" t-as="o">
+                            <div class="row justify-content-center">
+                                <div class="col-md-8">
+                                    <div class="card">
+                                        <div class="form text-center">
+                                            <div class="left-side col-12">
+                                                <div class="left-heading text-center">
+                                                    <h3>الحاسبة</h3>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 p-0">
+                                                <label>الإجمالي</label>
+                                            </div>
+                                            <div class="text-center">
+                                                <label>القسط الشهري :</label>
+                                                <strong t-esc="o.monthly_payments"/>
+                                                <![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]]>
+                                                <label>مدة التمويل بالاشهر :</label>
+                                                <strong t-esc="o.term_month"/>
+                                                <![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]]>
+                                            </div>
+                                            <br/>
+                                            <br/>
+                                            <div class="text-center">
+                                                <label>مبلغ التمويل :</label>
+                                                <strong t-esc="o.loan_amount"/>
+                                                <![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]]>
+                                                <!--                                                <label>Monthly Payment Period :</label>-->
+                                                <!--                                                <strong t-esc="o.term_month"/>-->
+                                            </div>
+                                            <div class="text-center">
+                                                <label>معدل الربح السنوي :</label>
+                                                <strong>0.24%</strong>
+                                                <![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]]>
+                                                <!--                                                <label>Monthly Payment Period :</label>-->
+                                                <!--                                                <strong t-esc="o.term_month"/>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </t>
+                    <t t-foreach="range(1)" t-as="p">
+                        <t t-foreach="docs" t-as="o">
+                            <div class="row justify-content-center">
+                                <div class="col-md-8">
+                                    <div class="card">
+                                        <div class="form text-center">
+                                            <div class="left-side col-12">
+                                                <div class="left-heading text-center">
+                                                    <!--                                <h3>الحاسبة</h3>-->
+                                                    <br/>
+                                                    <h5>ملاحظة: حاسبة التمويل تساعدك فقط على حساب النتيجة التقريبة لقيمة
+                                                        التمويل
+                                                        والدفعات
+                                                        الشهرية، وسيتم حساب معدل النسبة السنوي بعد تقديم الطلب والدراسة
+                                                        الإئتمانية
+                                                    </h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </t>
+                </div>
+            </section>
+        </t>
+    </template>
+</odoo>
+
+
+        <!--                                    <div class="form-group">-->
+        <!--                                        <h6 for="relative_relation">The amount of-->
+        <!--                                            financing received is-->
+        <!--                                        </h6>-->
+        <!--                                        <div class="form-group">-->
+        <!--                                            <label for="installment" class="control-label">Monthly-->
+        <!--                                                Installment:-->
+        <!--                                            </label>-->
+        <!--                                            <input type="text"-->
+        <!--                                                   class="form-control"-->
+        <!--                                                   id="monthly_payments" name="monthly_payments"-->
+        <!--                                                   placeholder="monthly_payments"-->
+        <!--                                                   required="required"-->
+
+        <!--                                            />-->
+        <!--                                        </div>-->
+        <!--                                        <div class="form-group">-->
+        <!--                                            <label for="period" class="control-label">Payment Period:-->
+        <!--                                            </label>-->
+        <!--                                            <input type="text"-->
+        <!--                                                   class="form-control"-->
+        <!--                                                   id="term_month" name="term_month"-->
+        <!--                                                   placeholder="term_month"-->
+        <!--                                                   required="required"/>-->
+        <!--                                        </div>-->
+        <!--                                    </div>-->
+        <!--                                    ////////////////////////////////////////////////-->
+        <!--                                    <t name="Thanks" t-name="website_menu.calculate-result">-->
+        <!--                                        <t t-call="website.layout">-->
+        <!--                                            <div class="col-md-6 col-12 fields-group">-->
+        <!--                                                <div class="col-12 group-container">-->
+        <!--                                                 -->
+        <!--                                                </div>-->
+        <!--                                            </div>-->
+        <!--                                        </t>-->
+        <!--                                    </t>-->

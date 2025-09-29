@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_nafaes_purchase_order,nafaes.purchase.order,model_nafaes_purchase_order,group_user,1,1,1,0
+access_nafaes_api_log,nafaes.api.log,model_nafaes_api_log,group_user,1,1,1,0
+access_nafaes_order_result,nafaes.order.result,model_nafaes_order_result,group_user,1,0,0,0
+access_nafaes_commodity,nafaes.commodity,model_nafaes_commodity,group_user,1,1,1,0
+access_nafaes_purchase_order_admin,nafaes.purchase.order,model_nafaes_purchase_order,group_admin,1,1,1,1

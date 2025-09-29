@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<odoo>
+    <data noupdate="1">
+        <record id="ir_cron_sync_active_loans" model="ir.cron">
+            <field name="name">Auto Sync Active Loans to Collection</field>
+            <field name="model_id" ref="model_collection_collection"/>
+            <field name="state">code</field>
+            <field name="code">model.sync_active_loans()</field>
+            <field name="interval_type">minutes</field> <!-- can be 'minutes', 'days', etc. -->
+            <field name="interval_number">10</field> <!-- runs every 1 hour -->
+            <field name="numbercall">-1</field> <!-- unlimited calls -->
+            <field name="active">True</field>
+        </record>
+    </data>
+</odoo>

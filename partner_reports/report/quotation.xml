@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+
+        <template id="quotation_template">
+            <t t-call="web.external_layout">
+                <t t-foreach="docs" t-as="doc">
+                    <div class="page" dir="rtl">
+                        <style type="text/css">
+                            @font-face {
+                            font-family: SST Arabic ;
+                            src: url(/loan/static/src/fonts/SST Arabic Bold.ttf);
+                            }
+                            h2 {font-family: SST Arabic;}
+                            td {font-family: SST Arabic;}
+                            th { font-family: SST Arabic;}
+                            h5 { font-family: SST Arabic;}
+                            h4 { font-family: SST Arabic;}
+                            p { font-family: SST Arabic;}
+                            div { font-family: SST Arabic;}
+
+
+                            span, table, th, td, b, p {
+                            text-align: center;
+                            }
+
+                            .newh {
+                            font-size: 16px;
+                            text-align: center;
+                            background-color:#138086;
+                            }
+
+                            table, tr, th,td {
+                            border:1px solid #000000 !important;
+                            }
+
+
+                            .con{float:right;padding-left: 10px;padding-right: 10px;margin:3px;}
+                            .bor{border: 1px solid black;;padding: 5px;}
+                            .fon{font-size: 10px;}
+                            .nob{border: no-border !important}
+                        </style>
+                        <div class="row text-center" dir="rtl">
+                            <div class="col-12">
+                                <p style="color:#d43d3d;font-size:14px;font-weight:bold;">عرض سعر خدمات طبية لغرض
+                                    التمويل
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row text-center" dir="rtl" style="font-weight:bold;font-size:13px;margin-top:20px;">
+                            <div class="col-12">
+                                السادة شركة المرجع الصحي - مدرف
+                            </div>
+                        </div>
+
+                        <div class="row text-center" dir="rtl" style="font-weight:bold;font-size:13px;margin-top:34px;">
+                            <div class="col-12">
+                                السلام عليكم و رحمة الله و بركاته تحية طيبة و بعد:-
+                            </div>
+                        </div>
+
+                        <div class="row text-center" dir="rtl" style="font-weight:bold;font-size:13px;margin-top:20px;">
+                            <div class="col-12">
+                                <p>بالإشارة إلى العقد المبرم معكم، ولرغبة العميل الموضح بياناته أدناه، نقدم لكم عرضنا
+                                    التالي
+                                    :-
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row text-center" dir="rtl" style="font-weight:bold;font-size:13px;margin-top:80px;">
+                            <div class="col-12">
+                                <table class="table table-borderd">
+                                    <tr class="text-right"
+                                        style="border:1px solid gray;background-color:#ffffff!important;font-size:13px;color:#d43d3d;">
+                                        <td style="border:1px solid gray;background-color:#ffffff!important;font-size:13px;color:#d43d3d;">
+                                            رقم العرض
+                                        </td>
+                                        <td style="border:1px solid gray;background-color:#ffffff!important;font-size:13px;color:black;width:50%">
+                                            <t t-esc="doc.seq"/>
+                                        </td>
+                                    </tr>
+                                    <tr class="text-right"
+                                        style="border:1px solid gray;background-color:#f2f2f2!important;font-size:13px;color:#d43d3d;">
+                                        <td style="border:1px solid gray;background-color:#f2f2f2!important;font-size:13px;color:#d43d3d;">
+                                            العميل
+                                        </td>
+                                        <td style="border:1px solid gray;background-color:#f2f2f2!important;font-size:13px;color:black;width:50%">
+                                            <t t-esc="doc.customer_name"/>
+                                        </td>
+                                    </tr>
+                                    <tr class="text-right"
+                                        style="border:1px solid gray;background-color:#ffffff!important;font-size:13px;color:#d43d3d;">
+                                        <td style="border:1px solid gray;background-color:#ffffff!important;font-size:13px;color:#d43d3d;">
+                                            رقم الهوية
+                                        </td>
+                                        <td style="border:1px solid gray;background-color:#ffffff!important;font-size:13px;color:black;width:50%">
+                                            <t t-esc="doc.customer_id"/>
+                                        </td>
+                                    </tr>
+                                    <tr class="text-right"
+                                        style="border:1px solid gray;background-color:#f2f2f2!important;font-size:13px;color:#d43d3d;">
+                                        <td style="border:1px solid gray;background-color:#f2f2f2!important;font-size:13px;color:#d43d3d;">
+                                            الخدمة الطبية
+                                        </td>
+                                        <td style="border:1px solid gray;background-color:#f2f2f2!important;font-size:13px;color:black;width:50%">
+                                            <t t-esc="doc.product_ids.product_id.name"/>
+                                        </td>
+                                    </tr>
+                                    <tr class="text-right"
+                                        style="border:1px solid gray;background-color:#ffffff!important;font-size:13px;color:#d43d3d;">
+                                        <td style="border:1px solid gray;background-color:#ffffff!important;font-size:13px;color:#d43d3d;">
+                                            السعر
+                                        </td>
+                                        <td style="border:1px solid gray;background-color:#ffffff!important;font-size:13px;color:#d43d3d;width:50%">
+                                            <t t-esc="doc.service_amount"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="row text-center" dir="rtl" style="font-weight:bold;font-size:13px;margin-top:40px;">
+                            <div class="col-12">
+                                <p style="text-align:justify;font-weight:normal;line-hight:16px;">
+                                    بعد الاطلاع وإبداء العميل رغبته الأولية لشروط التمويل وبعد إفهام العميل بحقوقه على
+                                    شركة
+                                    التمويل بحقوقه على شركة التمويل
+                                    وعلى مزود الخدمة الطبية، وبعد موافقتكم على تمويل العميل، نرجو منكم التكرم بالرد على
+                                    عرضنا بخطاب أمر
+                                    الشراء على البريد (
+                                    <span>
+                                        <t t-esc="doc.email"/>
+                                    </span>
+                                    ) أو بالتواصل معنا على الهاتف الموحد (
+                                    <span>
+                                        <t t-esc="doc.phone"/>
+                                    </span>
+                                    ).
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row text-center" dir="rtl" style="font-weight:bold;font-size:13px;margin-top:20px;">
+                            <div class="col-12">
+                                <p>و لكم جزيل الشكر ،،،</p>
+                            </div>
+                        </div>
+
+                        <div class="row text-center" dir="rtl" style="font-weight:bold;font-size:13px;margin-top:20px;">
+                            <div class="col-12">
+                                <p>شركة / عيادات
+                                    <span style="border:1px solid black;"></span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="row text-right" dir="rtl" style="font-weight:bold;font-size:13px;margin-top:20px;">
+                            <div class="col-12">
+                                <p>توقيع صاحب الصلاحية أو مدير العلاقة المذكور في عقد التوريد
+                                    <span></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <template id="quotation_form_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-set="o" t-value="o.with_context(lang='en_US')"/>
+                    <t t-call="partner_reports.quotation_template" t-lang="en_US"/>
+                </t>
+            </t>
+        </template>
+
+        <record id="quotation_form_paperformat" model="report.paperformat">
+            <field name="name">Custom Paperformat for Quotation form</field>
+            <field name="default" eval="False"/>
+            <field name="disable_shrinking" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">0</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">8</field>
+            <field name="margin_right">10</field>
+            <field name="dpi">130</field>
+        </record>
+
+        <record id="quotation_form_action" model="ir.actions.report">
+            <field name="name">Quotation form</field>
+            <field name="model">hospital.quotation</field>
+<!--            <field name="binding_model_id" ref="base.model_res_partner"/>-->
+            <field name="binding_type">report</field>
+            <field name="multi">True</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">partner_reports.quotation_form_template</field>
+            <field name="report_file">partner_reports.quotation_form_template</field>
+            <field name="paperformat_id" ref="quotation_form_paperformat"/>
+        </record>
+    </data>
+</odoo>

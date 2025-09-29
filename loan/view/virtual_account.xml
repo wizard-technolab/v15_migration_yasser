@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="virtual_account_tree" model="ir.ui.view">
+            <field name="name">virtual.account.tree.inherit</field>
+            <field name="model">virtual.account</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="virtual_account_form" model="ir.ui.view">
+            <field name="name">virtual.account.form.inherit</field>
+            <field name="model">virtual.account</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="virtual_account_action" model="ir.actions.act_window">
+            <field name="name">virtual Account</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">virtual.account</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Configuration"
+                  id="configuration_id"
+                  parent="loan_root"
+                  sequence="9"
+        />
+
+        <menuitem name="Virtual Account"
+                  id="virtual_account"
+                  parent="configuration_id"
+                  action="loan.virtual_account_action"
+                  sequence="12"
+        />
+    </data>
+</odoo>
+

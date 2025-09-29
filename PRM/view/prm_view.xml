@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="prm_inv_email_view_form" model="ir.ui.view">
+        <field name="name">crm.lead.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form//sheet//label[@for='email_from']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//form//sheet//label[@for='phone']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+<!--            <xpath expr="//form//sheet//label[@for='probability']" position="attributes">-->
+<!--                <attribute name="invisible">1</attribute>-->
+<!--            </xpath>-->
+        </field>
+    </record>
+    <record id="prm_inv_pho_view_field" model="ir.ui.view">
+        <field name="name">crm.lead.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <group>
+                    <field name="commission"/>
+                    <field name="discount"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <!--  invisable email field in form view  -->
+    <!--  invisable Email field in form view  -->
+    <record id="prm_inv_emi_view_form" model="ir.ui.view">
+        <field name="name">crm.lead.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <field name="email_from" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+        </field>
+    </record>
+    <!--  invisable Email field in form view  -->
+    <!--  invisable phone field in form view  -->
+    <record id="prm_inv_pho_view_form" model="ir.ui.view">
+        <field name="name">crm.lead.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <field name="phone" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+        </field>
+    </record>
+    <!--  invisable Email field in form view  -->
+    <record id="prm_form_view" model="ir.ui.view">
+        <field name="name">crm.lead.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.quick_create_opportunity_form"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="attributes">
+                <attribute name="string">Name</attribute>
+            </field>
+        </field>
+    </record>
+    <record id="prm_form_view_cosmtic" model="ir.ui.view">
+        <field name="name">crm.lead.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.quick_create_opportunity_form"/>
+        <field name="arch" type="xml">
+            <field name="name" position="attributes">
+                <attribute name="string">Cosmetic</attribute>
+            </field>
+        </field>
+    </record>
+    <record id="prm_form_view_commission" model="ir.ui.view">
+        <field name="name">crm.lead.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.quick_create_opportunity_form"/>
+        <field name="arch" type="xml">
+            <field name="name" position="after">
+                <field name="commission"/>
+                <!--                <attribute name="string">Discount</attribute>-->
+            </field>
+        </field>
+    </record>
+    <record id="prm_form_view_discount" model="ir.ui.view">
+        <field name="name">crm.lead.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.quick_create_opportunity_form"/>
+        <field name="arch" type="xml">
+            <field name="commission" position="after">
+                <field name="discount"/>
+                <!--                <attribute name="string">Discount</attribute>-->
+            </field>
+        </field>
+    </record>
+    <record id="prm_form_view_cosmtic_invs" model="ir.ui.view">
+        <field name="name">crm.lead.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.quick_create_opportunity_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form//group//field[@name='phone']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//form//group//field[@name='email_from']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+    <record id="prm_form_view_persent" model="ir.ui.view">
+        <field name="name">crm.lead.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.quick_create_opportunity_form"/>
+        <field name="arch" type="xml">
+            <field name="expected_revenue" position="after">
+                <span>%</span>
+            </field>
+        </field>
+    </record>
+
+
+    <menuitem name="PRM"
+              id="prm_root"
+              sequence="10"
+              web_icon="PRM,static/description/icon.png"/>
+
+
+    <menuitem name="Purchases"
+              id="vendor_relation"
+              parent="prm_root"
+              action="crm.action_your_pipeline"
+              sequence="1"/>
+
+    <menuitem name="My Pipeline"
+              id="pipeline_id"
+              parent="vendor_relation"
+              action="crm.crm_lead_action_pipeline"
+              sequence="2"/>
+
+    <menuitem name="Vendor"
+              id="vendor_id"
+              parent="vendor_relation"
+              action="account.res_partner_action_supplier"
+              sequence="3"/>
+
+    <menuitem name="Product"
+              id="product_id"
+              parent="vendor_relation"
+              action="purchase.product_normal_action_puchased"
+              sequence="4"/>
+</odoo>
+

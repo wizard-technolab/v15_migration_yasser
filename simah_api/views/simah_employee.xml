@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_simah_employee_form" model="ir.ui.view">
+            <field name="name">view.simah.employee.form</field>
+            <field name="model">simah.employee</field>
+            <field name="arch" type="xml">
+                <form string="Simah Employee">
+                    <sheet>
+                        <group string="Employers">
+                            <group>
+                                <field name="empEmployerNameDescAr"/>
+                                <field name="empOccupationDescAr"/>
+                                <field name="empDateOfEmployment"/>
+                                <field name="empIncome"/>
+                                <field name="adrsDateLoaded"/>
+                            </group>
+                            <group>
+                                <field name="empEmployerNameDescEn"/>
+                                <field name="empOccupationDescEn"/>
+                                <field name="empDateLoaded"/>
+                                <field name="empTotalIncome"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Address Types">
+                                <field name="addressID"/>
+                                <field name="addressTypeCode"/>
+                                <field name="addressNameAR"/>
+                                <field name="addressNameEN"/>
+                                <field name="adrsAddressLineFirstDescAr"/>
+                                <field name="adrsAddressLineFirstDescEn"/>
+                                <field name="adrsPOBox"/>
+                                <field name="adrsPostalCode"/>
+                                <field name="adrsCityDescAr"/>
+                                <field name="adrsCityDescEn"/>
+                            </group>
+                            <group string="National Address">
+                                <field name="buildingNumber"/>
+                                <field name="streetAr"/>
+                                <field name="streetEn"/>
+                                <field name="districtAr"/>
+                                <field name="districtEn"/>
+                                <field name="additionalNumber"/>
+                                <field name="unitNumber"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="employerStatusTypeCode"/>
+                            <field name="employerStatusTypeDescAr"/>
+                            <field name="employerStatusTypeDescEn"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="action_simah_employee" model="ir.actions.act_window">
+            <field name="name">simah Employee</field>
+            <field name="res_model">simah.employee</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="form4" name="Hospital Quotation Form">
+        <t t-call="website.layout">
+
+            <!-- Custom Style CSS -->
+            <link rel="stylesheet" href="/financing_services/static/src/css/style.css" type="text/css"/>
+            <script type="text/javascript" href="/financing_services/static/src/js/script.js"/>
+
+            <!-- multiselect cdn -->
+            <!-- <script type="text/javascript" src="/financing_services/static/src/js/multiselect-dropdown.js"/> -->
+
+            <section class="form-main col-lg-12">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <!--                            <img width="100" height="100"-->
+                            <!--                                 src="{logo.png}"/>-->
+                            <!--                            <img src='/financing_services/static/src/img/logo1.png' class="congrats" width="100"-->
+                            <!--                                 height='100px'/>-->
+                            <br/>
+                            <br/>
+                            <div class="left-side col-12 congrats" style="color:white; background-color:#db4444">
+                                <img src='/financing_services/static/src/img/logo.png' class="congrats" width="100"
+                                     height='100px'/>
+                                <h3>عرض السعر</h3>
+                                <h4>عرض السعر <span id="company_name"></span> الى شركة المرجع الصحي (مدرف)
+                                </h4>
+                            </div>
+                            <div class="card">
+                                <div class="form">
+                                    <div class="right-side col-12">
+                                        <form id="hospital-quotation-form" novalidate="novalidate">
+                                            <div class="main active">
+                                                <div class="co-12 fields-group">
+                                                    <!--                                                    <div class="form-group">-->
+                                                    <!--                                                        <tt>-->
+                                                    <!--                                                            <label for="birth_of_date">Contract Date</label>-->
+                                                    <!--                                                            <input type="date" class="form-control required"-->
+                                                    <!--                                                                   id="contract_date" name="birth_of_date"-->
+                                                    <!--                                                                   required="required" readonly="1"/>-->
+                                                    <!--                                                        </tt>-->
+                                                    <!--                                                    </div>-->
+                                                    <!--                                                    <div class="form-group">-->
+                                                    <!--                                                        <tt>-->
+                                                    <!--                                                            <label for="vat">Contract Number</label>-->
+                                                    <!--                                                            <input type="text" class="form-control required"-->
+                                                    <!--                                                                   id="contract_name" name="vat"-->
+                                                    <!--                                                                   placeholder="Contract Number" required="required" readonly="1"/>-->
+                                                    <!--                                                        </tt>-->
+                                                    <!--                                                    </div>-->
+
+                                                    <!-- <div class="form-group">
+                                                        <label for="service_amount">Service Amount</label>
+                                                        <input type="text" class="form-control required amount_v" id="service_amount" name="service_amount" placeholder="Service Amount" required="required" />
+                                                    </div> -->
+                                                    <div class="form-group">
+                                                        <tt>
+                                                            <label for="name">اسم المستشفى</label>
+                                                            <input type="text" class="form-control required"
+                                                                   id="clinic_name" name="name"
+                                                                   placeholder="Hospital Name"
+                                                                   required="required" readonly="1"/>
+                                                        </tt>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <tt>
+                                                            <label for="email">ايميل العيادة</label>
+                                                            <input type="text" class="form-control required email_v"
+                                                                   id="clinic_email" name="email"
+                                                                   placeholder="Hospital Email" required="required"
+                                                                   readonly="1"/>
+                                                        </tt>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <tt>
+                                                            <label for="phone">هاتف المستشفى / العيادة</label>
+                                                            <input type="text" class="form-control required phone_input"
+                                                                   id="clinic_phone" name="phone"
+                                                                   placeholder="Hospital Phone" required="required"
+                                                                   readonly="1"/>
+                                                        </tt>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <tt>
+                                                            <label for="name">موظف العيادة</label>
+                                                            <input type="text" class="form-control" id="applicant_name"
+                                                                   placeholder="Applicant Name" readonly="1"/>
+                                                        </tt>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <tt>
+                                                            <label for="customer_id">هوية العميل</label>
+                                                            <input type="text" class="form-control required id_number_v"
+                                                                   id="customer_id" name="customer_id"
+                                                                   placeholder="الهوية" required="required"/>
+                                                        </tt>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <tt>
+                                                            <label for="customer_name">اسم العميل</label>
+                                                            <input type="text" class="form-control required name_v"
+                                                                   id="customer_name" name="customer_name"
+                                                                   placeholder="اسم العميل" required="required"/>
+                                                        </tt>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <tt>
+                                                            <label for="department_name">القسم / العيادة</label>
+                                                            <input type="text" class="form-control required name_v custom-select"
+                                                                   id="department_name" name="department_name"
+                                                                    placeholder="اسم العيادة" required="required"/>
+                                                        </tt>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <tt>
+                                                            <label for="doctor_name">اسم الطبيب</label>
+                                                            <input type="text" class="form-control required name_v"
+                                                                   id="doctor_name" name="doctor_name"
+                                                                   placeholder="اسم الطبيب" required="required"/>
+                                                        </tt>
+                                                    </div>
+                                                    <div class="form-group" id="service_form_group">
+                                                        <!-- <label for="service">Service Name</label>
+                                                        <input type="text" class="form-control required name_v" id="service" name="service" placeholder="Service Name" required="required" /> -->
+                                                        <div class="row">
+                                                            <div class="col-4">
+                                                                <tt>
+                                                                    <label for="service">اسم الخدمة</label>
+                                                                    <select id="service_selection" name="service"
+                                                                            class="form-control service_selection custom-select">
+                                                                    </select>
+                                                                </tt>
+                                                            </div>
+                                                            <div class="col-2">
+                                                                <tt>
+                                                                    <label>الكمية</label>
+                                                                    <input type="text"
+                                                                           class="form-control required amount_v"
+                                                                           id="consistent_quantity"
+                                                                           placeholder="الكمية"
+                                                                           required="required"/>
+                                                                </tt>
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <tt>
+                                                                    <label>سعر الوحدة</label>
+                                                                    <input type="text"
+                                                                           class="form-control required amount_v"
+                                                                           id="consistent_price"
+                                                                           placeholder="سعر الوحدة"
+                                                                           required="required"/>
+                                                                </tt>
+                                                            </div>
+                                                            <div class="col-3">
+                                                                <tt>
+                                                                    <label>مبلغ الخدمة</label>
+                                                                    <input type="text"
+                                                                           class="form-control required amount_v"
+                                                                           id="consistent_amount"
+                                                                           placeholder="مبلغ الخدمة"
+                                                                           required="required"/>
+                                                                </tt>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <a style="color:white; background-color:#db4444"
+                                                           id="add_line_button"
+                                                           class="btn btn-success">إضافة خدمة
+                                                        </a>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <tt>
+                                                            <label for="describtion">الوصف</label>
+                                                            <textarea class="form-control" id="describtion"
+                                                                      name="describtion" placeholder="Describtion"
+                                                                      rows="3"></textarea>
+                                                        </tt>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" id="clinic_user_id"
+                                                               style="display:none;" name="clinic_user_id"/>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Modal -->
+                                                <!--                                                <div class="modal fade bd-example-modal-sm" id="modalLoader"-->
+                                                <!--                                                     data-backdrop="static" data-keyboard="false" tabindex="-1"-->
+                                                <!--                                                     role="dialog" aria-labelledby="exampleModalLabel"-->
+                                                <!--                                                     aria-hidden="true">-->
+                                                <!--                                                    <div class="modal-dialog modal-dialog-centered  modal-sm"-->
+                                                <!--                                                         role="document">-->
+                                                <!--                                                        <div class="modal-content">-->
+                                                <!--                                                            <div class="modal-body text-center">-->
+                                                <!--                                                                <div id='ajaxloader'>-->
+                                                <!--                                                                    <img src='/financing_services/static/src/img/loading3.gif'-->
+                                                <!--                                                                         class="ajax-loader" width='270px'-->
+                                                <!--                                                                         height='200px'/>-->
+                                                <!--                                                                </div>-->
+                                                <!--                                                            </div>-->
+                                                <!--                                                        </div>-->
+                                                <!--                                                    </div>-->
+                                                <!--                                                </div>-->
+
+
+                                                <div class="form-group mt-3">
+                                                    <button type="submit" class="submit_button btn btn-success"
+                                                            style="color:white; background-color:#db4444">Submit
+                                                        Form
+                                                    </button>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="main">
+                                                <svg class="checkmark"
+                                                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                                                    <circle class="checkmark__circle" cx="26" cy="26" r="25"
+                                                            fill="none"/>
+                                                    <path class="checkmark__check" fill="none"
+                                                          d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                                                </svg>
+                                                <div class="text congrats">
+                                                    <h2>Congratulations!</h2>
+                                                    <p>Thanks Mr./Mrs. <span class="shown_name"></span> your information
+                                                        have been submitted successfully for the future reference we
+                                                        will contact you soon.
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <script type="text/javascript" src="/financing_services/static/src/js/load_quot_data.js"/>
+
+        </t>
+    </template>
+
+</odoo>

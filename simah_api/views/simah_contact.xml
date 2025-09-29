@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_simah_contact_form" model="ir.ui.view">
+            <field name="name">view.simah.contact.form</field>
+            <field name="model">simah.contact</field>
+            <field name="arch" type="xml">
+                <form string="Simah Contact">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="contactNumberTypeCode"/>
+                                <field name="contactNumberTypeDescriptionAr"/>
+                                <field name="conAreaCode"/>
+                                <field name="conExtension"/>
+                            </group>
+                            <group string="salaried Non Mortgage">
+                                <field name="conCode"/>
+                                <field name="contactNumberTypeDescriptionEn"/>
+                                <field name="conPhoneNumber"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="action_simah_contact" model="ir.actions.act_window">
+            <field name="name">simah Contact</field>
+            <field name="res_model">simah.contact</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

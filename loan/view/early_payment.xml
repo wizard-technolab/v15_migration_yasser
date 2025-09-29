@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="early_payment_tree_view" model="ir.ui.view">
+            <field name="name">early.payment.tree.inherit</field>
+            <field name="model">early.payment</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="request_date"/>
+                    <field name="name"/>
+                    <field name="payment_method"/>
+                    <field name="payment_amount"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="early_payment_form_view_inherit" model="ir.ui.view">
+            <field name="name">early.payment.form.inherit</field>
+            <field name="model">early.payment</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="payment_method"/>
+                                <field name="payment_amount"/>
+                                <field name="source_money"/>
+                                <field name="payer_id"/>
+                            </group>
+                            <group>
+                                <field name="request_date"/>
+                                <field name="contract_no"/>
+                                <field name="payment_type"/>
+                                <field name="customer_relation"/>
+                                <field name="payer_name"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="early_payment_action" model="ir.actions.act_window">
+            <field name="name">Early Payment</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">early.payment</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Early Payment"
+                  id="early_id"
+                  parent="loan_id"
+                  action="loan.early_payment_action"
+                  groups="loan.group_accounting_move"
+                  sequence="15"/>
+
+    </data>
+</odoo>

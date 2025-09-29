@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="mail_activity_create_quotation" model="mail.activity.type">
+            <field name="name">Create Quotation </field>
+            <field name="icon">fa-tasks</field>
+            <field name="sequence">100</field>
+            <field name="res_model">hospital.quotation</field>
+        </record>
+    </data>
+</odoo>

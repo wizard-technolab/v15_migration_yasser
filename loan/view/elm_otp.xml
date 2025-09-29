@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:abs="http://www.moi.gov.sa/absher/otp/AbsherOTP/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <abs:sendOTPWithDynamicTemplate>
+         <clientId>7025856597-0001</clientId>
+         <clientAuthorization>loOBu0r3Q1raBL8D3xl0USmooWcSkDE8ns/J0UnATbi513QuExmIY1gWUrRju6Oe</clientAuthorization>
+         <operatorId>2511024529</operatorId>
+         <customerId><field name="id_iqama"></field></customerId>
+         <language>EN</language>
+         <reason>Loan Request</reason>
+         <otpType>GENERATED_4_DIGITS</otpType>
+         <!--Optional:-->
+         <otpCode>0000</otpCode>
+         <!--Optional:-->
+         <otpTemplate>
+            <!--Optional:-->
+            <otpTemplateId>Fuel-OTP-01</otpTemplateId>
+            <!--Optional:-->
+            <otpParams>
+               <!--1 to 13 repetitions:-->
+               <Param>
+                  <!--You may enter the following 2 items in any order-->
+                  <Name>Param1</Name>
+                  <Value>Loan Request</Value>
+               </Param>
+               <Param>
+                  <!--You may enter the following 2 items in any order-->
+                  <Name>Param2</Name>
+                  <Value>Fuel Finance</Value>
+               </Param>
+            </otpParams>
+         </otpTemplate>
+      </abs:sendOTPWithDynamicTemplate>
+   </soapenv:Body>
+</soapenv:Envelope>

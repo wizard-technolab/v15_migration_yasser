@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_contract" inherit_id="">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <header>
+                        <center>
+                            <h2>Financing Contract Summary</h2>
+                        </center>
+                        <left>
+                            <h2>Beneficiary data</h2>
+                        </left>
+                    </header>
+                    <div class="page" style="font-size: 10px !important;font-weight: bold;">
+                        <style type="text/css">
+                            @font-face {
+                            font-family: SST Arabic ;
+                            src: url(/loan/static/src/fonts/SST Arabic Bold.ttf);
+                            }
+                            h2 {font-family: SST Arabic;}
+                            td {font-family: SST Arabic;}
+                            th { font-family: SST Arabic;}
+                            h5 { font-family: SST Arabic;}
+                            h4 { font-family: SST Arabic;}
+                            p { font-family: SST Arabic;}
+                            div { font-family: SST Arabic;}
+
+
+                            span, table, th, td, b, p {
+                            text-align: center;
+                            }
+
+                            .newh {
+                            font-size: 16px;
+                            text-align: center;
+                            background-color:#138086;
+                            }
+
+                            table, tr, th,td {
+                            border:1px solid #000000 !important;
+                            }
+
+
+                            .con{float:right;padding-left: 10px;padding-right: 10px;margin:3px;}
+                            .bor{border: 1px solid black;;padding: 5px;}
+                            .fon{font-size: 10px;}
+                            .nob{border: no-border !important}
+                        </style>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Beneficiary No</th>
+                                    <th>
+                                        <strong t-esc="o.name.name"/>
+                                    </th>
+                                    <th>Date</th>
+                                    <th>
+                                        <strong t-esc="o.request_date"/>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <thead>
+                                <tr>
+                                    <th>No Civil Registry/iaqama</th>
+                                    <th>
+                                        <strong t-esc="o.identification_id"/>
+                                    </th>
+                                    <th>Contract Reference Number</th>
+                                    <th>
+                                        <strong t-esc="o.seq_num"/>
+                                    </th>
+                                </tr>
+                            </thead>
+                        </table>
+                        <left>
+                            <h2>Finance data</h2>
+                        </left>
+                        <table class="table">
+                            <thead>
+                                <center>
+                                    <tr>
+                                        <th>Amount to be paid</th>
+                                        <th>Amount (SAR)</th>
+                                        <th>Loan Type(SAR)</th>
+                                        <th>healthy</th>
+                                    </tr>
+                                </center>
+                            </thead>
+                            <tbody>
+                                <tr>
+
+                                    <td>Funding Amount</td>
+                                    <td>
+                                        <strong t-esc="o.remaining_amount"/>
+                                    </td>
+                                    <td>Annual Percentage Rate (APR)</td>
+                                    <td>
+                                        <strong t-esc="o.apr"/>
+                                        <span>%</span>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>(-) advance payment</td>
+                                    <td>
+                                        <span t-esc="o.down_payment_loan"/>
+                                    </td>
+                                    <td>Monthly interest rate</td>
+                                    <td>
+                                        <strong t-esc="o.rate_per_month"/>
+                                        <span>%</span>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>net financing amount</td>
+                                    <td>
+                                        <strong t-esc="o.loan_amount"/>
+                                    </td>
+                                    <td>The term of the financing contract</td>
+                                    <td>
+                                        <strong t-esc="o.loan_term"/>
+                                        <span>month</span>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>term cost</td>
+                                    <td>
+                                        <strong t-esc="o.interest_amount"/>
+                                    </td>
+                                    <td>number of installments</td>
+                                    <td>
+                                        <strong t-esc="o.loan_term"/>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>Administration fee</td>
+                                    <td>
+                                        <strong t-esc="o.fees"/>
+                                    </td>
+                                    <td>Monthly Installment Amount (SAR)</td>
+                                    <td>
+                                        <strong t-esc="o.installment_month"/>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>VAT</td>
+                                    <td>
+                                        <strong t-esc="o.tax_id"/>
+                                    </td>
+                                    <td>First installment due date</td>
+                                    <td>
+                                        <strong t-esc="o.installment_start_date"/>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>(+) Total financing cost</td>
+                                    <td>
+                                        <strong t-esc="o.total_loan"/>
+                                    </td>
+                                    <td>Last installment due date</td>
+                                    <td>
+                                        <strong t-esc="o.installment_end_date"/>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>(=) Total amount payable</td>
+                                    <td>
+                                        <strong t-esc="o.total_loan" style="color:Red;"/>
+                                    </td>
+                                    <td>Additional Notes</td>
+                                    <td>
+                                        <![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]]></td>
+
+                                </tr>
+                            </tbody>
+
+                        </table>
+
+                        <table class="table">
+                            <thead>
+                                <center>
+                                    <tr>
+                                        <th>بيانات الأصل الممول</th>
+                                        <th>المادة رقم - (4)</th>
+                                    </tr>
+                                    <tr>
+                                        <th>جدول سداد الأقساط</th>
+                                        <th>المادة رقم - (6) + الملحق رقم - (1)</th>
+                                    </tr>
+                                    <tr>
+                                        <th>الأثار المترتبة على التأخر في سداد الأقساط</th>
+                                        <th>المادة رقم - (8)</th>
+                                    </tr>
+                                    <tr>
+                                        <th>إجراءات إنهاء عقد التمويل</th>
+                                        <th>المادة رقم - (9)</th>
+                                    </tr>
+                                    <tr>
+                                        <th>احكام السداد المبكر</th>
+                                        <th>المادة رقم - (10)</th>
+                                    </tr>
+                                    <tr>
+                                        <th>وفاة المستفيد أو عجزه</th>
+                                        <th>المادة رقم - (16)</th>
+                                    </tr>
+                                </center>
+                            </thead>
+                        </table>
+                    </div>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <div class="w-100 row justify-content-between"
+                         style="
+                          text-align: right;
+                          direction: rtl;
+                          color: green;
+                        ">
+                        <span>تنوية: يتعين قراءة عقد التمويل وملحقاته وفهم الشروط والأحكام كاملة, ولا يعنى الاطلاع على هذا
+                            الملخص عن العقد , ولا يعفي من الالتزامات الواردة فيه
+                        </span>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <span>توقيع المستفيد بالاطلاع والاستلام</span>
+                        <!--                        <div class="col-4 ">-->
+                        <!--                            <span></span>-->
+                        <!--                            <br></br>-->
+                        <!--                            <span>اسم العميل.............................</span>-->
+                        <!--                            <br></br>-->
+                        <!--                            <span>التوقيع.............................</span>-->
+                        <!--                            <br></br>-->
+                        <!--                            <span>التاريخ: .............................</span>-->
+                        <!--                        </div>-->
+                        <td>
+                            <![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]]></td>
+                        <span>توقيع الشخص المفوض بالتوقيع من الممول والختم</span>
+                        <!--                        <div class="col-4 ">-->
+                        <!--                            <span>لاستخدام شركة فيول للتمويل يقر الموظف بالتأكد من توقيع العميل</span>-->
+                        <!--                            <br></br>-->
+                        <!--                            <span>اسم الموظف .............................</span>-->
+                        <!--                            <br></br>-->
+                        <!--                            <span>التوقيع .............................</span>-->
+                        <!--                            <br></br>-->
+                        <!--                            <span>التاريخ: .............................</span>-->
+                        <!--                        </div>-->
+                    </div>
+
+                </t>
+
+            </t>
+        </t>
+    </template>
+    <record id="contract_loan_report" model="ir.actions.report">
+        <field name="name">Financing Contract Summary</field>
+        <field name="model">loan.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">loan.report_contract</field>
+        <field name="report_file">loan.report_contract</field>
+        <field name="binding_model_id" ref="model_loan_order"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

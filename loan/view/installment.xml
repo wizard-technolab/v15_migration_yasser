@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_loan_installment_form" model="ir.ui.view">
+        <field name="name">view.loan.installment.form</field>
+        <field name="model">loan.installment</field>
+        <field name="arch" type="xml">
+            <form string="Loan">
+                <header>
+                    <button name="action_update_state"
+                            type="object"
+                            string="Update State"
+                            class="btn-primary"
+                            groups="loan.group_admin"/>
+                    <button name="unpaid_installment" string="Un Paid"
+                            class="btn-primary" type="object" groups="loan.group_user_finance"/>
+                    <button name="action_paid_installment" states="unpaid,partial" string="Pay"
+                            class="btn-primary" type="object" groups="account.group_account_invoice"/>
+                    <button name="generate_monthly_move" string="Monthly move"
+                            class="btn-primary" type="object" groups="loan.group_admin"/>
+                    <!--                    <button name="action_early_installment" states="unpaid" string="Early Pay"-->
+                    <!--                            class="btn-primary" type="object" groups="account.group_account_invoice"/>-->
+                    <field name="state" widget="statusbar" statusbar_visible="unpaid,partial,paid"/>
+                </header>
+                <sheet>
+                    <label for="name" class="oe_edit_only"/>
+                    <h1>
+                        <field name="seq_name" readonly="1"/>
+                    </h1>
+                    <group>
+                        <group>
+                            <field name="name" readonly="1"/>
+                            <field name="payment_messages" readonly="1"/>
+                            <field name="identification" readonly="1" invisible="1"/>
+                            <field name="i_num" invisible="1"/>
+                            <field name="remaining_amount" readonly="1"/>
+
+                        </group>
+                        <group>
+                            <field name="date" readonly="1"/>
+                            <field name="payment_date" readonly="1" attrs="{'invisible':[('state','!=','paid')]}"/>
+                            <field name="principal_amount" readonly="1"/>
+                            <field name="interest_amount" readonly="1"/>
+                            <field name="installment_amount" readonly="1"/>
+                            <field name="amount_paid" readonly="1"/>
+                            <field name="descending_installment" readonly="1" invisible="1"/>
+                            <field name="ascending_installment" readonly="1" invisible="1"/>
+                            <field name="installment_amount_early" readonly="1" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name="accounting" string='Accounting'>
+                            <group>
+                                <group>
+                                    <field name="interest_account" groups="account.group_account_invoice"/>
+                                    <field name="disburse_account" groups="account.group_account_invoice"/>
+                                    <field name="installment_account" groups="account.group_account_invoice"/>
+                                </group>
+                                <group>
+                                    <field name="payment_journal" groups="account.group_account_invoice"/>
+                                    <field name="journal_entry_id" readonly="0"
+                                           attrs="{'invisible': [('journal_entry_id', '=', False)]}"
+                                           groups="account.group_account_invoice"/>
+                                    <field name="payment_id" groups="account.group_account_invoice"/>
+                                    <field name="monthly_move_id"
+                                           groups="account.group_account_invoice,loan.group_collection"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="view_loan_installment_list" model="ir.ui.view">
+        <field name="name">loan.installment.list</field>
+        <field name="model">loan.installment</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="seq_name"/>
+                <field name="date"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_dev_loan_installment" model="ir.actions.act_window">
+        <field name="name">Loan Installments</field>
+        <field name="res_model">loan.installment</field>
+        <field name="domain">[('loan_state','in',['active']), ('loan_id.is_reschedule', '=', False)]</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Loan Installment"
+              id="loan_installment_id"
+              parent="loan_id"
+              action="action_dev_loan_installment"
+              groups="loan.group_installment_line"
+              sequence="10"/>
+
+</odoo>

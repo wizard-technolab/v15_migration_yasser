@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <template id="form1" name="Expression of Desire Form">
+        <t t-call="website.layout">
+
+            <!-- Custom Style CSS -->
+            <link rel="stylesheet" href="/financing_services/static/src/css/style2.css" type="text/css"/>
+
+            <section class="form-main col-lg-12">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="form">
+                                    <div class="left-side col-12">
+                                        <div class="left-heading text-center">
+                                            <h3>Expression of desire form</h3>
+                                        </div>
+                                    </div>
+                                    <div class="right-side col-12">
+                                        <form id="desire-form" novalidate="novalidate">
+                                            <div class="main active">
+                                                <div class="co-12 fields-group">
+                                                    <div class="form-group">
+                                                        <label for="name">Client Full Name</label>
+                                                        <input type="text" class="form-control name_v required" id="name" name="name" placeholder="Full Name" required="required" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="id_number">ID Number</label>
+                                                        <input type="text" class="form-control id_number_input id_number_v" id="id_number" name="id_number" placeholder="ID Number" required="required" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="mobile_number">Mobile No.</label>
+                                                        <input type="text" class="form-control phone_input" id="mobile_number" name="mobile_number" placeholder="Mobile No." required="required" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="finaning_type">Type of Financing (Medical Service Provided)</label>
+                                                        <input type="text" class="form-control required" id="finaning_type" name="finaning_type" placeholder="Type of Financing (Medical Service Provided)" required="required" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="service_provider">Service Provider (Clinic Name)</label>
+                                                        <input type="text" class="form-control required" id="service_provider" name="service_provider" placeholder="Service Provider (Clinic Name)" required="required" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="service_amount">Service Amount</label>
+                                                        <input type="text" class="form-control amount_v required" id="service_amount" name="service_amount" placeholder="Service Amount" />
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="beneficiary">The Real Beneficiary</label>
+                                                        <input type="text" class="form-control name_v required" id="beneficiary" name="beneficiary" placeholder="The Real Beneficiary" required="required" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 fields-group" id="terms-section">
+
+                                                    <div class="col-12 alert alert-warning">
+                                                        <div class="col-md-12 p-0">
+                                                            <h4>Notes:</h4>
+                                                        </div>
+                                                        <div class="col-md-12 p-0">
+                                                            <ol>
+                                                                <li>The company has the right to accept or reject any request with an explanation of the reasons.</li>
+                                                                <li>If the request is rejected, the customer has the right to receive his papers within a maximum period of two months from the date of the request.</li>
+                                                            </ol>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group mt-3">
+                                                <!-- submit_button -->
+                                                    <button type="submit" class="submit_button btn btn-success">Submit Form</button>
+                                                </div>
+
+                                            </div>
+                                            
+                                            <div class="main">
+                                                <svg class="checkmark"
+                                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                                                    <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+                                                    <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                                                </svg>
+                                                <div class="text congrats">
+                                                    <h2>Congratulations!</h2>
+                                                    <p>Thanks Mr./Mrs. <span class="shown_name"></span> your information have been submitted successfully for the future reference we will contact you soon.</p>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </t>
+    </template>
+
+</odoo>

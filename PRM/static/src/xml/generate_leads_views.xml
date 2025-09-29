@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template_crm_but" xml:space="preserve">
+   <t t-name="LeadMiningRequest.generate_leads_button" t-inherit="crm_iap_lead.LeadMiningRequest.generate_leads_button" t-inherit-mode="extension" owl="1">
+      <xpath expr="//button[hasclass('o_button_generate_leads')]" position="replace">
+         <button type="button" class="btn btn-secondary o_button_generate_leads">
+         Import
+         </button>
+      </xpath>
+   </t>
+</templates>

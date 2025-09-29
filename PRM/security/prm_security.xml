@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record model="ir.module.category" id="module_category_prm">
+        <field name="name">PRM Management</field>
+        <field name="description">Category For PRM</field>
+        <field name="sequence">22</field>
+    </record>
+
+    <record id="group_use_prm_user" model="res.groups">
+        <field name="name">User</field>
+        <field name="category_id" ref="module_category_prm"/>
+<!--        <field name="implied_ids" eval="[(4, ref('group_user'))]"/>-->
+    </record>
+
+    <record id="group_use_prm_admin" model="res.groups">
+        <field name="name">Administrator</field>
+        <field name="category_id" ref="module_category_prm"/>
+        <field name="implied_ids" eval="[(4, ref('group_use_prm_user'))]"/>
+    </record>
+
+    <!--        <record id="group_use_loan_manager" model="res.groups">-->
+    <!--            <field name="name">Administrator</field>-->
+    <!--            <field name="category_id" ref="Loan.module_category_loan"/>-->
+    <!--            <field name="implied_ids" eval="[(4, ref('group_use_loan_user'))]"/>-->
+
+    <!--        </record>-->
+
+
+</odoo>

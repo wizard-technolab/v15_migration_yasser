@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="collection_kanban_view">
+            <field name="name">collection.collection</field>
+            <field name="model">collection.collection</field>
+            <field name="arch" type="xml">
+                <kanban class="o_res_partner_kanban row" sample="1">
+                    <field name="name"/>
+                    <field name="loan_seq_num"/>
+                    <field name="loan_installment_month"/>
+                    <field name="loan_bkt"/>
+                    <field name="loan_days_since_first_unpaid"/>
+                    <field name="total_unpaid_loan_amount"/>
+                    <field name="total_unpaid_installments"/>
+                    <field name="is_summary"/>
+                    <field name="assigned_user_id"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <t t-if="record.is_summary.raw_value">
+                                <!-- ✅ بطاقة الملخص -->
+                                <div class="col-lg-3 col-md-4 col-sm-6 p-0">
+                                    <div class="card bg-primary text-white text-center p-4 mb-4">
+                                        <h2>📊 ملخص التحصيل</h2>
+                                        <p>
+                                            <b>عدد الطلبات النشطة:</b>
+                                            <t t-esc="record.loan_bkt.value or 0"/>
+                                        </p>
+                                        <p>
+                                            <b>عدد العملاء النشطين:</b>
+                                            <t t-esc="record.loan_bkt.value or 0"/>
+                                        </p>
+                                        <p>
+                                            <b>إجمالي مبلغ التمويل:</b>
+                                            <t t-esc="record.total_unpaid_loan_amount.value or 0.0"/>
+                                        </p>
+                                        <p>
+                                            <b>إجمالي الأقساط المتأخرة:</b>
+                                            <t t-esc="record.total_unpaid_installments.value or 0.0"/>
+                                        </p>
+                                        <a type="action" role="button"
+                                           name="collection.action_loan_order_by_card"
+                                           t-att-context="{'search_default_active_loans': 1}"
+                                           class="btn btn-outline-primary text-white btn-sm mt8">
+                                            عرض الطلبات
+                                        </a>
+                                    </div>
+                                </div>
+                            </t>
+
+                            <!-- ✅ بطاقة المحصل -->
+                            <t t-else="">
+                                <div class="col-lg-3 col-md-4 col-sm-6 p-0">
+                                    <div class="card bg-primary text-white text-center p-4 mb-4">
+                                        <h2>📋 محصل:
+                                            <t t-esc="record.assigned_user_id.value or 'غير محدد'"/>
+                                        </h2>
+                                        <p>
+                                            <b>عدد الطلبات النشطة:</b>
+                                            <t t-esc="record.loan_bkt.value or 0"/>
+                                        </p>
+                                        <p>
+                                            <b>إجمالي مبلغ التمويل:</b>
+                                            <t t-esc="record.total_unpaid_loan_amount.value or 0.0"/>
+                                        </p>
+                                        <p>
+                                            <b>إجمالي الأقساط المتأخرة:</b>
+                                            <t t-esc="record.total_unpaid_installments.value or 0.0"/>
+                                        </p>
+                                        <t t-if="record.assigned_user_id.raw_value">
+                                            <a type="object" role="button"
+                                               name="action_open_collector_loans"
+                                               t-att-data-collector_id="record.assigned_user_id.raw_value"
+                                               class="btn btn-outline-primary text-white btn-sm mt8">
+                                                عرض الطلبات
+                                            </a>
+                                        </t>
+                                        <t t-else="">
+                                            <span class="text-muted small">لا يوجد محصل</span>
+                                        </t>
+                                    </div>
+                                </div>
+                            </t>
+                        </t>
+
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        <!-- Form View -->
+        <record id="collection_form_view" model="ir.ui.view">
+            <field name="name">collection.collection.form</field>
+            <field name="model">collection.collection</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" readonly="0"/>
+                            </group>
+                            <group>
+                                <field name="loan_bkt" readonly="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="collection_tree_view" model="ir.ui.view">
+            <field name="name">collection.collection.tree</field>
+            <field name="model">collection.collection</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Active Loans" editable="bottom" multi_edit="1">
+                    <field name="name"/>
+                    <field name="loan_state"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="loan_order_collector_search_view" model="ir.ui.view">
+            <field name="name">loan.order.tree.collector</field>
+            <field name="model">loan.order</field>
+            <field name="inherit_id" ref="loan.request_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='name']" position="after">
+                    <field name="phone_customer" groups="collection.group_collection_agent"/>
+                    <field name="late_amount" groups="collection.group_collection_agent"/>
+                    <field name="bkt" groups="collection.group_collection_agent"/>
+                    <field name="remaining_amount" sum="remaining_amount" groups="collection.group_collection_agent"/>
+                    <field name="last_paid_installment_date" groups="collection.group_collection_agent"/>
+                    <field name="paid_amount" sum="paid_amount" groups="collection.group_collection_agent"/>
+                    <field name="collector_user_id" groups="collection.group_collection_agent"/>
+                    <field name="latest_payment_date" groups="collection.group_collection_agent"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="action_loan_order_by_card" model="ir.actions.act_window">
+            <field name="name">Active Loans</field>
+            <field name="res_model">loan.order</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('state','=','active')]</field>
+        </record>
+
+        <!--        <record id="action_loan_order_by_collector_card" model="ir.actions.act_window">-->
+        <!--            <field name="name">طلبات هذا المحصل</field>-->
+        <!--            <field name="res_model">loan.order</field>-->
+        <!--            <field name="view_mode">tree,form</field>-->
+        <!--            <field name="domain">[-->
+        <!--                ('state', '=', 'active'),-->
+        <!--                ('collector_user_id', '=', user_id)-->
+        <!--                ]-->
+        <!--            </field>-->
+        <!--            <field name="search_view_id" ref="loan.request_tree_view"/>-->
+        <!--        </record>-->
+
+        <record id="collection_action" model="ir.actions.act_window">
+            <field name="name">Collection Management</field>
+            <field name="res_model">collection.collection</field>
+            <field name="view_mode">kanban,tree</field>
+            <field name="context">{'create': False}</field>
+            <field name="domain">[]</field>
+        </record>
+
+        <!-- Menu -->
+        <menuitem name="Collection Management"
+                  id="collection_root_menu"
+                  sequence="15"
+                  web_icon="collection,static/description/icon.png"/>
+
+        <menuitem id="collection_dashboard_menu"
+                  name="Dashboard"
+                  parent="collection_root_menu"
+                  action="collection_action"
+                  sequence="1"/>
+    </data>
+</odoo>
